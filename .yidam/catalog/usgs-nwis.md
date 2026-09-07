@@ -42,19 +42,31 @@ used-by:
 ---
 
 **What a site is and what a record is.** The two are not the same thing and the difference is the
-whole of what this source taught. Allen County has 184 monitoring sites; **two** of them have a
-usable record of annual peak flow, and the two do not overlap in time. A county can be thick with
+whole of what this source taught. Allen County has 184 monitoring sites; **six** carry an annual
+peak record and **three** have ever carried a daily discharge series. A county can be thick with
 instruments and thin with measurements.
+
+**Ask the service, not the corpus.** This entry said before 2026-09-06 that two sites have a usable
+peak record. Six do. The right query is the site service's own `hasDataTypeCd=pk` filter, or
+`seriesCatalogOutput=true`, which returns one row per series per site with its parameter, its span
+and its count; enumerating the gauges somebody had already read finds only those.
 
 **Water years, not calendar years.** A water year runs 1 October to 30 September and is named for
 the calendar year it ends in, so a peak dated 30 December 1990 belongs to water year 1991. Counting
 peaks by calendar year gives some years two and some none, which is what the raw file looks like
 until the convention is applied.
 
-**Its silences are legible.** The Allentown gauge, 1924 to 1981, is missing water years 1936 to 1938
-and 1940 to 1942. The Lima gauge, 1989 to 2025, is missing 2000 to 2009 exactly. A gap of that shape
-is a gauge that was not funded, not a river that did not flood, and the file does not distinguish
-them — it simply has no row. See
+**Its silences are legible, and the daily record dates them better than the peak file does.** The
+Allentown gauge, 1924 to 1981, is missing water years 1936 to 1938 and 1940 to 1942 — one continuous
+outage, 31 December 1935 to 1 September 1943, that the water-year convention splits into two. The
+Lima gauge, 1989 to 2025, is missing 2000 to 2009 exactly, which in the daily record is 22 November
+1999 to 1 July 2009. A gap of that shape is a gauge that was not funded, not a river that did not
+flood, and the file does not distinguish them — it simply has no row.
+
+**A peak may be a reconstruction rather than a reading, and the file says which.** `peak_cd` 7 is
+"Discharge is an Historic Peak", 2 is an estimate, `Bd` is a day that is unknown or not exact. The
+Ottawa's second and third largest peaks at Allentown — 6,160 cfs in March 1939 and 6,000 in May 1943
+— both carry 7, both fall inside the outage above, and the 1943 one has no day. See
 [the intersection, not the union](../decisions/the-intersection-not-the-union.yml).
 
 **Hydrologic units come free with the site list.** Every site carries an eight-digit `huc_cd`, which

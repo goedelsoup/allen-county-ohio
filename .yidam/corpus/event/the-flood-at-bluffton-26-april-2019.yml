@@ -1,0 +1,86 @@
+class: event
+label: The flood at Bluffton, 26 April 2019
+description: |
+  **Riley Creek left its banks before dawn and reached the same street it reached in 1959.** "Riley
+  Creek expanded outside its banks, causing floodwaters to impact College Avenue, North Main Street,
+  Cherry Street, and Bluffton University property. Many homes along the creek reported water into
+  their basements." [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), event 824466, reported by the
+  county emergency manager. Sixty years earlier the village's firemen were "pumping out basements
+  of 12 homes on Cherry and Railroad streets". [verified] —
+  [The Bluffton News](../../catalog/chronicling-america.md), 29 January 1959; see
+  [that flood](the-flash-flood-at-bluffton-1959.yml). **Cherry Street and its basements are in both
+  accounts, from two sources sixty years apart that share nothing but the creek.** [inference]
+
+  **The interstate was shut.** "The Ohio Department of Transportation shut down northbound
+  Interstate 75 at Bentley Road in Bluffton because of floodwaters covering the lanes. One of the
+  southbound lanes was also closed by high water. Those lanes reopened Friday afternoon."
+  [verified] — the same source.
+
+  **The rain came in about four hours.** A mesoscale complex crossed from Indiana in the early
+  morning of the 26th and dropped "2.5 to 3.5 inches, most of which fell over a 4 hour timeframe";
+  the Lima station credits 3.26 inches to that day. [verified] — the same source and
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. Two independent instruments
+  agreeing to within a tenth is more than this corpus usually gets for a flood. [inference]
+
+  **Eleven flood insurance claims are dated 26 April 2019 and they paid $274,652.** [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003, counted here; see
+  [the claims](../measure/allen-county-flood-insurance-1978-2023.yml), which records that Bluffton
+  holds seventy of the county's 259 claims in a village of under four thousand.
+
+  **The creek was measured, 3.7 miles outside the county.** Riley Creek below Pandora, in Putnam
+  County, recorded 6,150 cubic feet a second on 26 April 2019 — the second highest of its fifteen
+  water years, behind only [28 February 2011](the-flood-of-28-february-2011.yml). [verified] —
+  [USGS peak streamflow](../../catalog/usgs-nwis.md), site 04189174. **Inside Allen County it was
+  not**: the USGS site *Riley Creek near Bluffton* has never carried a flow series, and every one of
+  the twenty-three discharge measurements ever made there was taken between mid-June and late
+  October, the largest of them 16.90 cubic feet a second. [verified] — the same source, its
+  field-measurements collection; see [Riley Creek](../natural-feature/riley-creek.yml).
+
+  **The Ottawa peaked the same day in the other basin**, at 3,900 cubic feet a second and 17.92 feet
+  — sixth of the Lima gauge's twenty-seven water years. [verified] — the same source, site 04187100;
+  see [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml). One storm, two basins,
+  and this time both were gauged. [inference]
+
+  **No federal disaster was declared.** [verified] —
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md); see
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml), whose last
+  weather row is 2012.
+
+  **The row states four positions and they are an extent.** They run from 0.89 miles south-west of
+  the Bluffton airport through Bluffton itself to 3.61 miles north-north-east of Rockport, over a
+  diameter of 5.75 miles, and the source does not claim an order for them. [verified] — the same
+  weather file; see [an extent is not a track](../../decisions/an-extent-is-not-a-track.yml).
+
+  [open] How much of Bluffton flooded, and how it compared with 1959. Both accounts name streets and
+  neither gives a stage, a depth or a count of buildings — the 1959 paper counted twelve houses
+  pumped out, and 2019 has "many homes along the creek" and eleven insurance claims, which are three
+  different quantities. No newspaper of 2019 is digitized here, and the Pandora gauge is below the
+  village and measures what left it rather than what stood in it.
+properties:
+  occurred: 2019-04-26
+  occurred_through: 2019-04-27
+  event_type: flood
+  location_description: |
+    Bluffton village and Riley Creek — College Avenue, North Main Street, Cherry Street, Bluffton
+    University, and Interstate 75 at Bentley Road. The weather row's four stated positions run
+    Bluffton airport, Bluffton, west-north-west of Bluffton, and north-north-east of Rockport.
+    [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md).
+links:
+  - target: ../place/bluffton.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../natural-feature/riley-creek.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: the-flash-flood-at-bluffton-1959.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../event.ont.yml
+    relationship: instance-of

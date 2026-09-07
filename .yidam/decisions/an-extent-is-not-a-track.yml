@@ -85,12 +85,27 @@ rationale: |
   a source that would have spoken has to be a source that could.
 
   **Why the flood extent is not quietly repurposed.** It is the available multi-point geometry and
-  it is the wrong one, which is exactly when a property gets filled because it is fillable. Four of
-  the six are flash floods whose positions cluster within half a mile; drawn as a stepped path they
-  would read as a thing crossing the county. The figure would be legible, wrong, and pass every gate
-  this repository has — the same failure mode
+  it is the wrong one, which is exactly when a property gets filled because it is fillable. Drawn as
+  a stepped path, five of the six would read as a thing crossing the county: their positions span
+  diameters of 15.32, 19.08, 12.73, 6.15 and 5.75 miles, and only event 908785's four positions,
+  0.40 miles across, could not be mistaken for a traverse. The figure would be legible, wrong, and
+  pass every gate this repository has — the same failure mode
   [an-animation-asserts-continuity](an-animation-asserts-continuity.yml) records about the tween,
   arriving through the data rather than through the renderer.
+
+  **A sentence in this rationale is corrected.** It read "Four of the six are flash floods whose
+  positions cluster within half a mile", which is true of one of those four and false of three: the
+  flash floods of 11 May 2011, 14 May 2011 and 28 May 2014 span 15.32, 19.08 and 12.73 miles. The
+  clustering was event 908785's alone, and the decision's own body says so correctly one paragraph
+  above. Nothing in the decision turns on it — the argument against reading these as tracks is that
+  they state no order, not that they are small — and the corrected sentence is stronger, because a
+  scattered extent drawn as a path is the more misleading figure, not the less.
+
+  **A disproof this decision did not use.** Event 593454's `BEGIN_DATE_TIME` and `END_DATE_TIME` are
+  both `16-JUN-15 04:45:00`. Five positions spanning 6.15 miles are stamped one instant, so no
+  ordering of them can be a passage order whatever the geometry says. Pooled across the six, the
+  fourteen interior turn angles run 1° to 107° with a median of 90° and twelve of them above 60°; a
+  traverse does not turn a right angle at every position it records.
 
   **Alternatives considered.**
 

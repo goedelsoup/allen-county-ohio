@@ -1,0 +1,86 @@
+class: event
+label: The flood of 28 February 2011
+description: |
+  **The largest flow ever measured on the Ottawa River at Lima: 5,700 cubic feet a second on 28
+  February 2011, at a gauge height of 20.81 feet.** [verified] —
+  [USGS peak streamflow](../../catalog/usgs-nwis.md), site 04187100. It is the highest of that
+  gauge's twenty-seven water years; see [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).
+
+  **Thirty flood insurance claims were paid on losses dated that day — more than any other date in
+  the county's forty-six-year insurance record — and they paid $512,924.** [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003, counted here. The next
+  largest single day is 16 June 2015 at twenty-nine. So this is not only a flow: thirty buildings
+  took water, which is what distinguishes this node from
+  [the flow of January 1959](the-ottawa-river-flood-of-1959.yml), where the corpus could establish
+  the discharge and nothing about what it reached.
+
+  **The National Weather Service recorded no flood here that month.** Its four Allen County rows for
+  February 2011 are a winter storm, two winter weather events and a heavy snow, and its flood-class
+  record for this county is silent from 22 August 2007 to 11 May 2011. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), filtered here; see
+  [the storm record](../measure/allen-county-storm-events-1950-2026.yml). **No federal disaster was
+  declared either**, in this or any 2011 incident window. [verified] —
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md); see
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).
+
+  **The insurance file is the one record that names it.** FEMA gives thirty-one Allen County claims
+  — the thirty of the 28th and one of 4 March — the event name **"Late winter storms"** and the
+  claims-office number 258, a number assigned only when a flood is large enough for the programme to
+  open an office for the state. It is one of three Allen County floods in forty-six years that FEMA's
+  own file names. [verified] — the same file, `floodEvent` and `ficoNumber`.
+
+  **Both of the county's drainages set their records that day.** Riley Creek below Pandora, 3.7
+  miles north of the county line on the Blanchard side, recorded 6,520 cubic feet a second on 28
+  February 2011 — the highest of its fifteen water years — while the Ottawa at Lima recorded its own.
+  [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md), sites 04189174 and 04187100.
+
+  **Nothing converts either figure into a flood stage, because the Ottawa at Lima has none.** Its
+  National Weather Service gauge, ORLO1, carries no action, minor, moderate or major threshold, no
+  impact statement and no inundation mapping. [verified] —
+  [the National Water Prediction Service](../../catalog/noaa-nwps-gauges.md). So the largest flow
+  ever measured in this county cannot be said, from any federal file, to have been a flood; the
+  thirty paid claims are what says so instead. [inference]
+
+  **It was rain on snow.** Six inches of snow lay at the Lima station on 25 and 26 February and five
+  on the 27th; on the 28th 2.15 inches of rain fell and the maximum reached 57 °F; the depth was
+  zero on 1 March. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551.
+  **That is the mechanism the corpus has already described once**, for the two inches of warm rain
+  that fell on frozen ground in January 1959 and produced the largest flow ever measured at
+  Allentown. [inference] — see [that January](the-ottawa-river-flood-of-1959.yml).
+
+  **A snowmelt flood is the kind this county's weather record is built to miss.** That record is
+  made by residents telephoning a forecast office — 240 of its 293 sourced rows name a person — and
+  a river rising under melting snow produces no telephone call and no warning. [inference] — see
+  [the storm record](../measure/allen-county-storm-events-1950-2026.yml) and
+  [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml). **2011 is
+  the wettest calendar year in a hundred and thirty-one, at 52.56 inches, and this is its fourth
+  wettest February.** [verified] —
+  [the county's precipitation](../measure/allen-county-precipitation-1895-2025.yml).
+
+  [open] What the water reached. Thirty paid claims is a count of policies, not a map: the file
+  gives this county no address, no street and no city — `reportedCity` reads "Currently
+  Unavailable" on all thirty — and no newspaper of 2011 is digitized anywhere this corpus can
+  reach. Nothing here says which ground was under water.
+properties:
+  occurred: 2011-02-28
+  event_type: flood
+  location_description: |
+    The Ottawa River at Lima, gauged at site 04187100, draining 128 square miles; and thirty
+    insured buildings somewhere in the county. The two are not established to be the same water:
+    the gauge is one point on one river and the claims file states no location finer than the
+    county. [verified] — [USGS](../../catalog/usgs-nwis.md) and
+    [the claims file](../../catalog/openfema-nfip.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: the-ottawa-river-flood-of-1959.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../event.ont.yml
+    relationship: instance-of

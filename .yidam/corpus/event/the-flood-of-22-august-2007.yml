@@ -1,0 +1,94 @@
+class: event
+label: The flood of 21–22 August 2007
+description: |
+  **The costliest flood in this county's record, and the only weather since 1965 to put federal
+  money into its households.** DR-1720-OH was declared on 27 August 2007 for severe storms, flooding
+  and tornadoes, with Individual Assistance — a designation this county has had twice in sixty
+  years, here and for the tornado of 11 April 1965. [verified] —
+  [OpenFEMA](../../catalog/fema-disaster-declarations.md); see
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml). FEMA's own
+  engineers put it plainly: "The greatest flood event on record in the City of Lima occurred in
+  2007." [verified] —
+  [the flood insurance study](../../catalog/fema-flood-insurance-study.md), section 2.3.
+
+  **No gauge in Allen County was running, and the flood was measured anyway.** Of the county's
+  twenty-nine USGS stream sites, three have ever carried a discharge record — Allentown to March
+  1982, Lima dark from 22 November 1999 to 1 July 2009, Kossuth from March 2017 — and the three
+  crest-stage gauges had stopped by 1987; not one recorded a value that August. [verified] —
+  [USGS](../../catalog/usgs-nwis.md), queried here. **So the Survey went and read the marks the water
+  left.** Along 2.4 miles of Riley Creek in Bluffton, from Bentley Road up to Interstate 75, it
+  surveyed thirty high-water marks and computed **10,300 cubic feet a second from 35.8 square miles
+  by the slope-area method, at a recurrence interval greater than 500 years**. [verified] —
+  [USGS Open-File Report 2009-1094](../../catalog/usgs-ohio-flood-reports.md), tables 2 and 3.
+
+  **That is the largest flow ever determined for any water in this county, and it is not on the
+  river the county gauges.** 10,300 cubic feet a second off 35.8 square miles is 288 per square
+  mile; the Ottawa's record 7,740 off 160 square miles at Allentown is 48. [inference] — computed
+  here from the two sources above; see
+  [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).
+
+  **It has a measured depth of water, household by household.** Of 329 Allen County registrations,
+  249 report a non-zero water level: **the median is eleven inches and the deepest is eighty-six** —
+  seven feet two. The mark was in the basement for 190 of them, on the first floor for 48 and in a
+  crawlspace for 10. [verified] —
+  [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), the registrant
+  file, read here. Inspectors recorded $1,060,733.68 of flood damage and $641,633.59 was approved.
+  [verified] — the same source; see
+  [the household aid](../measure/allen-county-household-disaster-aid-2007-2020.yml).
+
+  **Twenty-four of the 329 households held flood insurance. Two hundred and nine held homeowners
+  insurance, which does not cover flood.** [verified] — the same file. That is 7.3 per cent insured
+  against the peril that reached them, in the county's worst flood. [inference]
+
+  **It was Bluffton's flood.** 174 of the 329 damaged addresses are in ZIP 45817 against 127 in
+  Lima's five, and 72.6 per cent of the inspected damage is in that one ZIP. [verified] — the same
+  file. **Twenty-five flood insurance claims dated 20 to 22 August paid $872,323**, a fifth of
+  everything the programme has ever paid here. [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), counted here; see
+  [the claims](../measure/allen-county-flood-insurance-1978-2023.yml). FEMA's file names the four
+  claims of the 20th **"Tropical Storm Erin"** and gives them claims-office number 206 — one of only
+  three Allen County floods it names at all. [verified] — the same file, `floodEvent`.
+
+  **Downstream on the same water the Blanchard came within four hundredths of a foot of 1913**,
+  cresting at 18.46 feet at Findlay against 18.50 in March 1913, second of that gauge's ninety-nine
+  water years. The National Weather Service marks 18.5 feet there "High water mark of the 1913 and
+  2007 floods." [verified] — [USGS](../../catalog/usgs-nwis.md), site 04189000, and
+  [the National Water Prediction Service](../../catalog/noaa-nwps-gauges.md), gauge FDYO1.
+
+  **The county's own weather record gives it one sentence**: "Numerous roads closed across the county
+  caused by high, flowing water", $500,000, the fourth largest damage figure among the file's 390
+  Allen rows. [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md).
+
+  [open] What happened in Lima. A hundred and twenty-seven damaged addresses are Lima's, the weather
+  file names no street, and the Survey's marks stop at Bluffton.
+properties:
+  occurred: 2007-08-21
+  occurred_through: 2007-08-22
+  event_type: flood
+  location_description: |
+    Bluffton and Riley Creek, from Bentley Road to Interstate 75: 174 of 329 damaged addresses,
+    72.6 per cent of the inspected damage, and the only reach in the county the Survey levelled.
+    Countywide by the weather record, which places it 0.87 miles south-west of Lima and describes
+    roads closed "across the county". [verified] —
+    [USGS Open-File Report 2009-1094](../../catalog/usgs-ohio-flood-reports.md),
+    [OpenFEMA](../../catalog/openfema-assistance-programs.md) and
+    [the Storm Events Database](../../catalog/noaa-storm-events.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../place/bluffton.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/usgs-ohio-flood-reports.md
+  - target: ../natural-feature/riley-creek.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-ohio-flood-reports.md
+  - target: ../natural-feature/blanchard-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event.ont.yml
+    relationship: instance-of

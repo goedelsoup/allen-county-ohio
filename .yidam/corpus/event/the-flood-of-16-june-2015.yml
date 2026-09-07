@@ -1,0 +1,83 @@
+class: event
+label: The flood of 16 June 2015
+description: |
+  **The highest the Ottawa River has ever stood at Lima: 21.20 feet on 16 June 2015, carrying 5,230
+  cubic feet a second.** [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md), site
+  04187100. It is the highest of the twenty-five peaks in that gauge's record that carry a gauge
+  height, and its discharge is the second largest of the twenty-seven — the rank changes with the
+  quantity, and the corpus reports both rather than choosing. [inference] — computed here; see
+  [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).
+
+  **June 2015 is the wettest month in a hundred and thirty-one years, at 13.48 inches against a June
+  mean of 3.97.** [verified] —
+  [the county's precipitation](../measure/allen-county-precipitation-1895-2025.yml). **The Lima
+  station credits 9.33 inches of it to four days** — 2.17 on the 13th, 1.72 on the 14th, 0.51 on the
+  15th and 4.93 on the 16th. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station
+  USC00334551.
+
+  **Forty-two flood insurance claims are dated 14 to 16 June and they paid $1,241,747.** That is
+  almost exactly the whole of what the programme paid in Allen County in 2015 — $1,243,724, itself
+  thirty per cent of everything it has ever paid here — settled on three days. [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003, counted here against
+  [the claims](../measure/allen-county-flood-insurance-1978-2023.yml). Twenty-nine of the
+  forty-two fall on the 16th, the second largest single day in the county's insurance record after
+  [28 February 2011](the-flood-of-28-february-2011.yml). [verified] — the same file.
+
+  **No federal disaster was declared for any of it, and none was asked for.** Ohio made no
+  declaration request of any kind in 2015: the state's thirty-six turned-down requests run from
+  1955 to 2024 with nothing between March 2012 and July 2023, and Ohio received no declaration that
+  year either. [verified] — [OpenFEMA](../../catalog/fema-disaster-declarations.md), the
+  declaration-denials and declarations files; see
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml), whose table has
+  no 2015 row. The costliest flood in the county's insurance record produced no federal act at all
+  — not a declaration, not a denial, not a claims-office number. [inference]
+
+  **Downstream it was a major flood by the National Weather Service's own threshold.** The Ottawa
+  River near Kalida, 8.5 miles north of the county line and draining 350 square miles, crested at
+  22.37 feet on 17 June 2015 — the highest of its ten water years and above its 22-foot major
+  stage, whose impact statement reads "Water flows through Main Street and begins to affect Town
+  Square." [verified] —
+  [the National Water Prediction Service](../../catalog/noaa-nwps-gauges.md), gauge KALO1, and
+  [USGS](../../catalog/usgs-nwis.md), site 04188100. **That is Allen County's water, named as a
+  flood in Putnam County**, because the Ottawa at Lima has no flood stage of its own. [inference]
+
+  **The weather record holds one sentence and it is a rescue.** "Water rescue was needed on Piquad
+  Road, between State Route 309 and Wapakoneta Road as the Ottawa River flooded the roadway. An
+  unofficial report of 6.8 inches of rain was recorded since Friday afternoon." Reported by the
+  public; property damage coded zero. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), event 593454. **It is the only
+  row in the county's whole weather file that names the Ottawa River.** The word "Ottawa" appears
+  in five of the 390 narratives and the other four are the town of that name, in Putnam County on
+  the Blanchard. [verified] — the same source, searched here.
+
+  **The row states five positions and they do not include the road it describes.** Its stated ground
+  runs Elida, Needmore, Scotts Crossing, Gomer and Elida again, north-west of Lima, over a diameter
+  of 6.15 miles; Piquad Road is not among them, and begin and end are stamped the same minute, so
+  nothing in the row orders the five. [verified] — the same source; see
+  [an extent is not a track](../../decisions/an-extent-is-not-a-track.yml).
+
+  [open] What ground the water covered. The wettest month of a hundred and thirty-one years, the
+  highest stage on the county's only gauged river and the costliest month its flood insurance has
+  ever settled are all this month, and none of the three says where the water was: five stated
+  positions outline where reports came from and order nothing, the one named road is not among
+  them, and the claims file gives no address.
+properties:
+  occurred: 2015-06-16
+  event_type: flood
+  location_description: |
+    The Ottawa River at Lima, and Piquad Road between State Route 309 and Wapakoneta Road. The
+    weather row's own five positions lie north-west of Lima — Elida, Needmore, Scotts Crossing,
+    Gomer — and are an extent rather than a path. [verified] —
+    [the Storm Events Database](../../catalog/noaa-storm-events.md) and
+    [USGS](../../catalog/usgs-nwis.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../event.ont.yml
+    relationship: instance-of

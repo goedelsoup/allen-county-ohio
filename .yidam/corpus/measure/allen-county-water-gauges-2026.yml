@@ -1,18 +1,25 @@
 class: measure
 label: Allen County's water monitoring sites, 2026
 description: |
-  **The county holds 184 water monitoring sites and two usable stream records.** [verified] —
+  **The county holds 184 water monitoring sites and three usable stream records.** [verified] —
   [USGS NWIS](../../catalog/usgs-nwis.md), site service, county 39003, all statuses.
 
       90  groundwater wells        19  agricultural
       31  lake or reservoir        13  atmospheric
       29  stream                    2  soil / other
 
-  **Twenty-nine stream sites and two annual peak records between them.** The rest are levels,
-  samples or one-off measurements; three of the county's larger stream gauges answer the peak-flow
-  service with a 200 and no rows. A county can be thick with instruments and thin with
-  measurements. [inference] — computed here; see
-  [the peak flows](ottawa-river-peak-flows-1924-2025.yml).
+  **Twenty-nine stream sites and six annual peak records between them, and this node said two.**
+  The site service's own `hasDataTypeCd=pk` filter returns six: the two Ottawa gauges, the Auglaize
+  near Kossuth — 201 square miles, running since March 2017, and listed in the drainage table below
+  without anyone noticing it had a record — and three crest-stage gauges on basins of 0.51, 0.53 and
+  1.45 square miles, which ran between 1966 and 1987 and stopped. Three of the six have ever carried
+  a daily discharge series. Three further stream sites carry no series at all, and the rest are
+  levels, samples or one-off measurements. [verified] — the same source, with
+  `seriesCatalogOutput`; see [the peak flows](ottawa-river-peak-flows-1924-2025.yml), which this
+  now agrees with. **A county can be thick with instruments and thin with measurements** — and a
+  node can count the instruments right and the measurements wrong, which is what happened here: the
+  earlier figure came from the two gauges the corpus had already read rather than from a filter over
+  all twenty-nine. [inference]
 
   **The drainage areas put the county's rivers in order.** [verified] — same source.
 
@@ -42,7 +49,7 @@ description: |
   128 and 160 from the site service. Two files built for different purposes put the same two
   instruments on the same two drainages within a square mile. [inference]
 
-  **It also puts an estimate of mean annual flow on 1,150 reaches in a county with two peak
+  **It also puts an estimate of mean annual flow on 1,150 reaches in a county with six peak
   records.** The Ottawa leaves Allen County at an estimated 190.6 cubic feet a second and the
   Auglaize at 213.9. [verified] — the same source. Those are modelled from runoff and are not
   measurements; the corpus keeps them out of any table with a gauge in it. See

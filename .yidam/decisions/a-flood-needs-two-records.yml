@@ -1,0 +1,123 @@
+id: a-flood-needs-two-records
+summary: >-
+  No machine-readable federal file says a flood happened in Allen County. The one National Weather
+  Service gauge inside it has no flood stage, the storm record misses the county's largest measured
+  flood entirely, the insurance record cannot see four of its villages, and the declaration record
+  names one flood in sixty years. So a flood event here is established by two independent records
+  agreeing on a date, and the node names which two. Two engineering reports do say it in prose, and
+  finding them is the other half of this decision.
+context: |
+  The corpus had six measures about flooding — the claims, the declarations, the household aid, the
+  hazard mitigation, the mapped floodplain, the buildings inside it — and the peak flows beside them,
+  and two flood events, both in January 1959, both from a newspaper. It could say what floods cost
+  here and how often insurers paid and how much of the county is in the hundred-year zone, and it
+  could not say that a flood had happened since Eisenhower.
+
+  That was not an oversight. It is what the queryable sources do. **The Ottawa River at Lima is the
+  only National Weather Service gauge inside Allen County and it has no flood stage**: its action,
+  minor, moderate and major categories all read the API's −9999 sentinel, its impact list is empty
+  and its inundation mapping is off. [verified] —
+  [the National Water Prediction Service](../catalog/noaa-nwps-gauges.md), gauge ORLO1. Nothing in
+  any file the corpus could query converts a discharge into a flood, so it could rank the river's
+  flows for a year — [the peak flows](../corpus/measure/ottawa-river-peak-flows-1924-2025.yml) does
+  exactly that — and never say one of them flooded anything.
+
+  **And the answer was in two PDFs nobody had opened.** The county's own flood insurance study
+  enumerates eight Ottawa River floods by month and year, describes what the water did in Lima in
+  January 1959 street by street, and states that "The greatest flood event on record in the City of
+  Lima occurred in 2007". A USGS open-file report measured the 2007 flood on Riley Creek at Bluffton
+  from thirty high-water marks. [verified] —
+  [the flood insurance study](../catalog/fema-flood-insurance-study.md) and
+  [USGS Open-File Report 2009-1094](../catalog/usgs-ohio-flood-reports.md). **Both are prose in a
+  document, and every source the corpus had reached for a year was a table behind an API.** That is
+  the retrieval habit this decision is really about.
+decision: |
+  **A flood event in this corpus is established by two independent records agreeing on a date, and
+  the node says which two.** One record is a report; two that count different things and land on the
+  same day are a happening. The five floods written in the phase that produced this rule each name
+  their pair:
+
+  | event | records that agree |
+  |---|---|
+  | [21–22 Aug 2007](../corpus/event/the-flood-of-22-august-2007.yml) | a declaration with inspected damage, 25 insurance claims, a storm report, and the Blanchard's second-highest crest in 99 years |
+  | [28 Feb 2011](../corpus/event/the-flood-of-28-february-2011.yml) | the Ottawa at Lima's record discharge and 30 insurance claims, the most on any day here |
+  | [28 May 2014](../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml) | a $100,000 storm report naming a flooded library and an interstate, and one insurance claim |
+  | [16 Jun 2015](../corpus/event/the-flood-of-16-june-2015.yml) | the Ottawa at Lima's record stage, 42 insurance claims, and a storm report of a water rescue |
+  | [26 Apr 2019](../corpus/event/the-flood-at-bluffton-26-april-2019.yml) | a storm report naming four streets, 11 insurance claims, and Riley Creek's second-highest crest below Pandora |
+
+  **Before reading a file's silence as evidence, say what that file was watching.** Each of the four
+  is blind in a direction the others are not, and every one of those blindnesses is checkable:
+
+  - **The storm record** is written by residents telephoning a forecast office — 240 of its 293
+    sourced rows name a person — so it holds thirteen flood rows in seventy-six years and none at
+    all in February 2011, the month of the county's largest measured flow. A slow winter flood
+    generates no call.
+  - **The insurance record** sees insured buildings whose owners claimed. Cairo, Beaverdam, Harrod
+    and Fort Shawnee appear nowhere in the 857 Ohio rows of the community status book — they have
+    never joined the programme — and Lafayette has been suspended since 2 May 2014. County-wide,
+    163 residential policies are in force against 38,724 residential structures. [verified] —
+    [OpenFEMA](../catalog/openfema-nfip.md).
+  - **The declaration record** is an administrative threshold. Of ten declarations in sixty years,
+    one contains a flood that put water in this county's buildings.
+  - **The gauge record** covers three of the county's twenty-nine stream sites, has two multi-year
+    holes, and carries no flood stage.
+
+  **Where only one record sees it, write the event and say that only one did.** The rule bounds what
+  may be asserted, not what may be written down.
+
+  **Before concluding that no source says it, open the reports.** An engineering study, a
+  water-supply paper and an open-file report each say in a sentence what no queryable file here
+  says at all. They are not indexed, not filterable and not dated in their own text, and they are
+  where a county's flood history actually lives.
+
+  **A gauge outside the county may establish a flood inside it, if a source says so.** The National
+  Weather Service's minor-flood impact statement for the Auglaize at Ft. Jennings, in Putnam County,
+  reads "Minor flooding begins in the northwest Ohio counties of northwest Allen, northeast Van
+  Wert, and southwest Putnam." That is a stated threshold for named Allen County ground, and it is
+  the only one this corpus has found. [verified] —
+  [the National Water Prediction Service](../catalog/noaa-nwps-gauges.md), gauge FTJO1.
+rationale: |
+  **The alternative was to promote one file's category to an event, and it would have produced a
+  false history.** The storm record's thirteen flood rows are the obvious spine, and taken as one
+  they say Allen County flooded in ten of the thirty-one years since 1996 and not since 9 July 2020.
+  Against the insurance record, five of that file's eight largest loss clusters — February 2011,
+  February 2008, June 1981, May 2019, July 2013 — have no storm row at all, and two of the thirteen
+  storm rows are zone rows describing the Blanchard River in another county. A corpus built on the
+  weather file alone would have the county's biggest flood missing and somebody else's in its place.
+
+  **The reverse substitution fails the same way.** Built on the insurance file, the record would
+  begin in 1978, would hold nothing for the two villages that flooded in 2014, and would count the
+  1959 flood at zero.
+
+  **This is not [the intersection, not the union](the-intersection-not-the-union.yml) restated.**
+  That rule governs *comparing* two series: compute the span both cover and say how many cases the
+  comparison rests on. This one governs *asserting that something happened* when no source says so
+  in as many words. The two meet at one point — that decision named "whether any other gauge in the
+  county was running between 2000 and 2009" as the retrieval that would settle its own case, and the
+  phase that wrote this rule performed it across all twenty-nine sites and found none.
+
+  **It is [a dataset can make an event](a-dataset-can-make-an-event.yml) with a quorum.** That
+  decision established that a row with a date, a subject and a single occurrence is an event. This
+  adds that where the row is a *report* rather than a measurement — somebody telephoned, somebody
+  claimed — one is not enough, because the thing being reported is exactly the thing the file is
+  bad at seeing.
+
+  **Alternatives considered.**
+
+  *Require a gauge.* Rejected: the county has had no continuously gauged river for sixteen of the
+  last forty-four years, and the gauge it has carries no flood stage. The rule would refuse the
+  county's costliest flood, which happened in a decade when no instrument in Allen County recorded a
+  value.
+
+  *Require a federal declaration.* Rejected on the count. One in sixty years.
+
+  *Accept any storm-record flood row.* Rejected on the seven of thirteen that name no ground, carry
+  no damage figure and have no corroborating claim — including a countywide flash flood of 18 July
+  1996 whose event and episode narratives are both empty and whose source field is blank.
+
+  **What would change this rule.** A source that states, for ground inside Allen County, that water
+  left a channel on a date — a stage threshold on a gauge in the county, a county engineer's high
+  water record, or a run of local newspapers. Any of the three would make one record sufficient, and
+  the corpus has none of them.
+status: accepted
+date: "2026-09-06"

@@ -1,0 +1,86 @@
+class: event
+label: The flash flood at Cairo and Beaverdam, 28 May 2014
+description: |
+  **A storm that would not move put six inches of rain on the county's north and closed Interstate
+  75 in both directions.** "Flash flooding occurred across Interstate 75, south of Mile Marker 138,
+  resulting in closure of the Interstate in both directions." [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), event 509461, reported by a
+  county official. The episode reads: "A moist, but marginally unstable atmosphere allowed for
+  thunderstorms to develop and remain relatively stationary over the same areas. Local rainfall
+  amounts of 2 to as much as over 6 inches fell across mainly Allen County." [verified] — the same
+  source.
+
+  **It is the most fully described flood in the county's file.** "The Cairo Branch of the Lima
+  Public Library suffered water damage as six inches of water entered the building. Hundreds of
+  books were ruined as a result." [verified] — the same source, whose narrative for this row runs
+  896 characters, twice the next longest of the county's thirteen flood rows and four times the next
+  longest flash flood. [verified] — the same source, measured here.
+
+  **Eight to ten households, and a sheriff's account of where the water was.** "Sheriff department
+  officials reported extensive flooding in several areas north of U.S. 30, especially around Cairo
+  and Beaverdam. Water up to 1 foot deep was flowing over several roadways… While no specific
+  details were available, local media reported eight to 10 households suffered serious flooding
+  problems." [verified] — the same source. **$100,000 of property damage**, the second largest
+  flood figure in the county's file after [August 2007](the-flood-of-22-august-2007.yml).
+  [verified] — the same source.
+
+  **The rain is not at the Lima station and that is the point.** Lima recorded nothing on the 28th
+  and 2.01 inches credited to the 29th, while the storm's own account puts over six inches on the
+  county's north. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551,
+  against the same weather file. That station is the Lima water pollution control plant at 40.7247,
+  -84.1294 — 7.7 miles from Cairo's internal point and 11.1 from Beaverdam's. [verified] — the same
+  catalog entry against [Cairo](../place/cairo.yml) and [Beaverdam](../place/beaverdam.yml),
+  distances computed here. A station is a point, and a thunderstorm that will not move is smaller
+  than a county. [inference]
+
+  **Nothing measured the water either.** Cairo sits on Rattlesnake Creek, whose USGS crest-stage
+  gauge stopped in 1987, and the county's only running streamgage that spring was the Ottawa at
+  Lima, which recorded no annual peak in water year 2014 within a week of this date — its 2014 peak
+  is 22 December 2013. [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md), sites
+  04187945 and 04187100; see [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).
+
+  **One flood insurance claim is dated that day, and it is the county's only claim of 2014.** It
+  paid $14,595.34 on a building, in flood zone X — outside the mapped floodplain — in census tract
+  39003010200 in the county's north. [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003, searched here; see
+  [the claims](../measure/allen-county-flood-insurance-1978-2023.yml).
+
+  **Neither village it flooded can buy that insurance.** Cairo, Beaverdam, Harrod and Fort Shawnee
+  appear nowhere in the 857 Ohio rows of the National Flood Insurance Program's community status
+  book: they have never joined the programme, and no federal flood policy can be written in any of
+  them. [verified] — [OpenFEMA](../../catalog/openfema-nfip.md), the community status book, searched
+  here. So a library, an interstate and eight to ten households took water in two villages where the
+  insurance record cannot see them, and the single claim came from unincorporated ground. [inference]
+  — see [the intersection, not the union](../../decisions/the-intersection-not-the-union.yml).
+
+  **The row states five positions and they are an extent.** Bluffton airport, north of Maysville,
+  north of Lima, west of Cairo and north of Cairo, over a diameter of 12.73 miles, in no stated
+  order. [verified] — the same weather file; see
+  [an extent is not a track](../../decisions/an-extent-is-not-a-track.yml).
+
+  [open] Whether the Cairo library reopened, and what the eight to ten households were. The row
+  attributes both to "local media" it does not name, and no Allen County newspaper of 2014 is
+  digitized anywhere this corpus can reach.
+properties:
+  occurred: 2014-05-28
+  event_type: flash flood
+  location_description: |
+    The county north of U.S. 30 — Cairo, Beaverdam, Interstate 75 south of Mile Marker 138, and
+    Hillville Road at Stewart Road north of Cairo. The row's five stated positions run from the
+    Bluffton airport west to north of Cairo. [verified] —
+    [the Storm Events Database](../../catalog/noaa-storm-events.md).
+links:
+  - target: ../place/cairo.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../place/beaverdam.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../event.ont.yml
+    relationship: instance-of
