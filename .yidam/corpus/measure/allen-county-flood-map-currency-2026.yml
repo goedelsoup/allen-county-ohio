@@ -1,0 +1,124 @@
+class: measure
+label: The age of the engineering under Allen County's flood map, 2026
+description: |
+  **The county's flood map took effect on 20 June 2024 and nothing in it was computed after
+  15 October 2018.** That is 2,075 days — five years and eight months — between the newest
+  analysis in the study and the day the map became binding. [verified] —
+  [the Flood Insurance Study](../../catalog/fema-flood-insurance-study.md), Table 12's
+  date-of-analyses column and Table 28's work-completed column, forty rows each, the two agreeing
+  exactly on every date and count. The only later submittal in the FIRM database is the draft FIRM
+  database itself, 20 December 2023, which is map production and not engineering. [verified] —
+  [the FIRM database](../../catalog/fema-firm-database.md), `S_SUBMITTAL_INFO`.
+
+  **The median mapped mile's hydraulics were finished on 1 January 2010, fourteen and a half years
+  before the map took effect.** 146.56 miles of profile baseline lie inside this county — the lines
+  along which flood profiles are drawn, and so the mileage that has a studied water surface at all.
+  Only 10.55 of them, 7.2 per cent, rest on analyses completed after 2010; 64.89 miles, 44.3 per
+  cent, on analyses completed in 2002 or earlier. [verified] —
+  [the National Flood Hazard Layer](../../catalog/fema-nfhl.md) layer 17, clipped to
+  [the county polygon](../../catalog/census-tiger-roads.md) in EPSG:26916, joined to the study each
+  segment cites. The table below gives all twelve studies, their mileage and their dates.
+
+  **The oldest is a Corps of Engineers study finished forty-six years before the map that carries
+  it.** 2.12 miles of Pike Run and its unnamed tributary rest on work the USACE Detroit District
+  completed on 1 October 1977 under interagency agreements IAA-H-7-76 and IAA-H-7-77, published as
+  the City of Lima study of 15 August 1978. [verified] — Table 28 of the effective study. Another
+  0.75 miles rest on the 1984 study of the Village of Fort Shawnee, a corporation
+  [the electors abolished in 2012](../question/what-happened-to-the-village-of-fort-shawnee.yml).
+
+  **Two dates on one citation, and the study says which is which.** The NRCS line is titled
+  "Floodplain Management Study for Ottawa River and Tributaries… Completed December 2002, revised
+  July 2010", and the FIRM database's citation date for it is July 2010 while the study's own
+  Table 12 dates its analyses December 2002. [verified] — both sources. Fifty of this county's
+  146.56 mapped miles are twenty-one and a half years old or seven and a half, depending on which field is
+  read, and the corpus takes the analysis date because that is the water.
+
+  **By acre the map is newer as a drawing than as a computation.** Of the 15,622 acres in
+  [the special flood hazard area](allen-county-flood-hazard-2026.yml), 73.1 per cent cite COMPASS's
+  *Redelineated Streams* submittal — new LiDAR terrain, and hydraulic results the database itself
+  attributes to `HEC-2 4.6.2 (May 1991)`, `TR-20 Win (Feb 1992)` and `TR-20 Win 1.00 (Jan 2005)`.
+  Only 5.7 per cent comes from new hydrology and hydraulics of 2016 and 2018. [verified] —
+  the FIRM database, `S_FLD_HAZ_AR` against `S_SUBMITTAL_INFO`'s `METHOD_TYP`. See
+  [a redelineation is a new line on an old number](../../decisions/a-redelineation-is-a-new-line-on-an-old-number.yml).
+
+      acres  what drew this ground                    method            per cent
+      11,420  COMPASS, redelineated streams           redelineation       73.10
+       2,902  FIS, Allen County unincorporated, 1989  —                   18.58
+         832  COMPASS, new detailed study             new H and H          5.32
+         412  Hull & Associates, Little Riley Creek   —                    2.64
+          56  STARR, Auglaize watershed               new H and H          0.36
+
+  **What share of this county's water is studied depends on whose water you mean, and both answers
+  are defensible.** Against the federal flow network the corpus already holds — 735.37 miles here,
+  against the 735.22 that node reports — the studied mileage is 19.92 per cent, measured as overlay
+  rather than as a quotient: 146.49 of the network's miles lie within a hundred feet of a profile
+  baseline. Against FEMA's own water lines, which run 500.69 miles in this county, it is 29.27 per
+  cent. [verified] — [the stream network](allen-county-stream-network-2026.yml) and
+  `S_WTR_LN`, unioned and clipped in EPSG:26916. The two maps disagree about how much channel
+  is here: 93.8 per cent of FEMA's water lies on the USGS network at a 165-foot tolerance and only
+  63.9 per cent of the USGS network lies on FEMA's, so FEMA draws a subset and the missing 235
+  miles are mostly intermittent headwater.
+
+  **The map's own tables disagree about the day it took effect.** The panel layer and the study
+  report both say 20 June 2024; `S_SUBMITTAL_INFO`, `L_COMM_REVIS` and `L_COMM_INFO` all say
+  22 May 2024, and four source citations describe their contribution as shown on "FIRM panels dated
+  5/22/2024". [verified] — five tables of the FIRM database against the report. Twenty-nine days.
+  This node uses 20 June 2024, which is what the report is titled and what the panels carry.
+
+  [open] What the 2018 redelineation changed on the ground. The corpus holds the 2024 boundary and
+  not the 2013 one, so it cannot say how many acres moved when the floodplain was redrawn on LiDAR,
+  or which buildings crossed the line.
+properties:
+  parameter: days between the newest analysis in the effective flood map and its effective date
+  value: "2075"
+  unit: days
+  as_of: "2026"
+  method: |
+    The effective date is `EFF_DATE` on the thirty-seven 2024 panels of layer 3 of the National
+    Flood Hazard Layer, and the title page of study 39003CV001C. [verified] The newest analysis is
+    the maximum of Table 12's date-of-analyses column and Table 28's work-completed column in that
+    study, which hold the same forty dates. [verified] Profile-baseline mileage is layer 17 for
+    `DFIRM_ID='39003C'`, taken twice — from the ArcGIS service as GeoJSON and from the county
+    shapefile download — and both routes give 146.56 miles clipped to the 2024 TIGER county polygon
+    at full precision in EPSG:26916; the vendored county polygon gives the same to two decimals.
+    [verified] Acreage is `S_FLD_HAZ_AR` where `SFHA_TF='T'`, intersected with the county and summed
+    by `SOURCE_CIT`; the union is 15,621.9 acres, which reproduces the 15,622 this corpus already
+    held by a different route. [verified] The overlay share buffers the unioned flow network and
+    measures the length of profile baseline inside it, rather than dividing one source's numerator
+    by another's denominator. [verified] Dating a segment by the study it cites is exact; mapping
+    that study to an analysis date uses the report's own Table 28, and for the 1989 unincorporated
+    study that mapping is one-to-many — its segments carry 1979, 1987 and 1990 dates and the table
+    below carries `NA` rather than choosing. [inference]
+  table: |
+    study miles analyses_completed source_published contractor
+    USGS-Allen-County-flood-profiles 57.45 2010-09-01 2010-09-01 USGS
+    NRCS-Ottawa-River-and-tributaries 50.48 2002-12-01 2010-07-01 NRCS
+    COMPASS-new-detailed-study 10.55 2018-10-15 2018-09-30 COMPASS
+    FIS-Allen-County-unincorporated-areas 10.52 NA 1989-11-15 NA
+    Hull-and-Associates-Little-Riley-Creek 10.04 2010-01-01 2010-01-01 Hull-and-Associates
+    FIS-City-of-Lima 2.12 1977-10-01 1978-08-15 USACE-Detroit-District
+    Kohli-and-Kaliher-Dug-Run-and-Pike-Run 1.66 2010-07-01 2010-07-01 Kohli-and-Kaliher
+    LOMR-05-05-0634P 1.10 2007-03-08 2007-03-08 NA
+    LOMR-97-05-051P 1.02 1997-01-21 1997-01-21 NA
+    LOMR-03-05-0444P 0.88 2004-03-29 2004-03-29 NA
+    FIS-Village-of-Fort-Shawnee 0.75 1979-04-01 1984-02-15 USDA-Soil-Conservation-Service
+    STARR-Auglaize-watershed 0.00 2016-09-30 2016-09-30 STARR
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-firm-database.md
+  - target: allen-county-flood-hazard-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-nfhl.md
+  - target: allen-county-stream-network-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nhdplus-high-resolution.md
+  - target: ../question/what-happened-to-the-village-of-fort-shawnee.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
