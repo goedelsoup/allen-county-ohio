@@ -1,0 +1,150 @@
+class: measure
+label: Allen County's petitioned ditches, 2026
+description: |
+  **The county engineer maintains 346.41 miles of channel inside this county, under 169 petition
+  numbers, for ever.** [verified] —
+  [the ditch maintenance service](../../catalog/allen-county-ditch-maintenance.md), 249 line
+  features clipped to the county polygon in EPSG:3734. Their lengths *sum* to 349.69, and the
+  difference is one reach: petitions #1073 *Freed* and #1260 *Little Ottawa River* share 3.28 miles
+  of the same line, and no other pair in the file shares any. **A mile of ditch can be on two
+  petitions.** [verified] — computed here, pairwise over all 249. Including the parts of the six
+  joint-county petitions that run past the county line the network is 391.64 miles; 233 features
+  lie wholly inside the county and 16 cross the boundary.
+
+  **The office's own prose says 346.** *"Currently, the Drainage Department maintains 259 miles of
+  open ditches, 65 miles of agricultural and residential conduits, 22 miles of waterways, 21
+  detention ponds, and 3 wetlands."* [verified] —
+  [the Annual Report of the Engineer](../../catalog/allen-county-engineer-annual-reports.md),
+  April 2025. That is a tenth of one per cent from the distinct channel and one per cent from the
+  sum of the petitions, and **the closer agreement is with the deduplicated figure** — weak
+  evidence that the office counts channel and not instruments. [inference] Ten years earlier the
+  same page said 203, 34 and 14: **251 miles becoming 346 in a decade**, the conduit mileage very
+  nearly doubling. [verified] — the same series, 2014/2015.
+
+  **"For ever" is the statute and not a figure of speech.** *"Ohio Revised Code, sections 6131,
+  6133, and 6137 outline the petition process, and since 1957, all projects constructed through
+  petition are placed on permanent maintenance once construction is completed."* [verified] — the
+  2025 report. Chapter 6131 is Single County Drainage Improvements, 6133 Joint County, and 6137
+  the Drainage Improvement Maintenance Fund. Six of the 169 petitions are joint-county.
+
+  **Nine of the county's named watercourses are petitions, and they are two fifths of the
+  network.** The table below is the nine, carrying 150.14 miles of petition line of the 349.69 the
+  file holds — 42.9 per cent. This is not a coincidence of naming: 104.86 of the 117.43 miles the
+  flow network draws for those nine streams inside this county, **89.3 per cent, lie within fifty
+  feet of the petition's own line**, and for the Ottawa River it is 97.3 per cent. [verified] — the
+  service against
+  [USGS NHDPlus High Resolution](../../catalog/usgs-nhdplus-high-resolution.md), matched on
+  geometry here. **The county's principal river is petition #1239.**
+
+  **The statute expects this.** ORC 6131.01(C) defines an improvement to include *"the deepening,
+  widening, or straightening or any other change in the course, location, or terminus of a river,
+  creek, or run"*. [verified] — the chapter. A river on the maintenance list is the law working,
+  not a filing error; see
+  [a watercourse can be an improvement](../../decisions/a-watercourse-can-be-an-improvement.yml).
+
+  **Between a third and two fifths of every channel on the map is one of these.** 270.24 of the
+  county's 735.09 mapped miles — 36.8 per cent — fall within fifty feet of a maintained line.
+  Widening the tolerance to 100 feet gives 38.3 per cent and to 200 feet 39.7, so the answer
+  plateaus rather than climbing, which is what two independent digitisations of the same lines look
+  like. [inference] — computed here; the figure moves with the tolerance and is reported with it.
+
+  **And the class that names the thing holds almost none of it.** By the flow network's own
+  `FCode`, the county has 9.99 miles of *canal or ditch* — and **0.10 miles of that, one per cent,
+  is on a maintained ditch**; the rest is [the canal](miami-and-erie-canal-in-allen-county-2026.yml).
+  The maintained miles are filed as streams:
+
+      NHD class              county mi   on a ditch   share
+      intermittent stream       468.38       128.12   27.4%
+      perennial stream          174.11       100.85   57.9%
+      artificial path            79.87        40.82   51.1%
+      canal or ditch              9.99         0.10    1.0%
+      connector                   2.74         0.36   13.1%
+
+  **The likelier a channel is to look natural, the likelier it is to be a legal improvement.**
+  57.9 per cent of the county's perennial stream miles are maintained against 27.4 per cent of its
+  intermittent ones, and 57.2 per cent of its *named* channel against 24.7 per cent of its
+  unnamed. [verified] — same computation. The corpus's stream network node read naming as a fact
+  about permanence; it is also a fact about which channels were worth petitioning for.
+
+  **Seventy-eight per cent of this county lies inside the watershed of a petitioned ditch.**
+  203,261 acres of 260,359. [inference] — the service's 175 watershed polygons, unioned and
+  clipped here. The office said the same thing in prose in 2015 and gave the assessment roll with
+  it: *"These pr ojects benefit 206,638 watershed acres and 38,324 parcel owners."* [verified] —
+  the 2014/2015 report, line break the PDF's.
+
+  **The watershed column cannot be summed and the file does not say so.** Those 175 polygons total
+  403,626 acres in a county of 260,359, because a trunk's assessed watershed contains its
+  laterals': **136 of the 175 lie ≥99 per cent inside another one.** Their union is 253,118 acres.
+  [verified] — computed here. One polygon, `#1231-Lidarws`, encloses no area at all.
+
+  **The network is named after the people who asked for it.** `PWName` is a petitioner: Hamaide,
+  Burkholder Group, Karl Gierman, Merlin Derringer, Marion Twp. Truss., Proctor & Gamble MFG. Co.,
+  Girl Scouts, Walmart Ponds, Camden Ridge Subdivision, Allen County Airport. [verified] — the
+  service. **A county's hydrography under one name is its natural history and under the other is
+  its assessment roll**, and the second is a list of surnames, townships, factories and
+  subdivisions in the order they filed. [inference]
+
+      township ditch miles, and miles per square mile of land
+      Marion       45.14  1.06    Shawnee      33.82  1.16    Jackson    16.17  0.45
+      American     36.23  1.50    Sugar Creek  26.77  1.11    Auglaize   13.45  0.37
+      Spencer      35.80  1.53    Richland     25.70  0.61    Perry      13.30  0.41
+      Bath         35.52  1.11    Amanda       19.57  0.57    Lima       13.15  0.95
+      Monroe       35.08  0.97
+
+  [open] Whether ditch density follows the wet ground. Marion is both the county's wettest
+  township at 58.0 per cent hydric soil and its most ditched in absolute miles, but three of the
+  county's thirteen subdivisions have a published hydric share and thirteen have a ditch length,
+  so there is no correlation here to state. Closing it is one Soil Data Access query per
+  subdivision; see [what the soils say](allen-county-soils-2026.yml).
+properties:
+  parameter: petitioned drainage on permanent county maintenance, inside Allen County
+  value: "346.41"
+  unit: miles
+  as_of: "2026"
+  method: |
+    Layers 0 and 1 of the county engineer's ditch maintenance service, taken whole as GeoJSON in
+    the service's native EPSG:3734 — NAD83 / Ohio North, US survey feet — so no reprojection
+    stands between the geometry and the mileage. [verified] Lengths reproduce the service's own
+    `Shape.STLength()` to the foot and areas its `Shape.STArea()` exactly, which is a check on the
+    arithmetic and not on the data. Clipping is against the Census 2020 county polygon requested
+    from TIGERweb in the same projection, whose area comes to 406.811 square miles against the
+    gazetteer's 406.851 — four hundredths apart, the projection's distortion across the county.
+    [verified] The same pipeline reproduces this corpus's independently computed
+    [stream network](allen-county-stream-network-2026.yml) total at 735.09 miles against 735.22,
+    which is the cross-check that licenses comparing the two files at all. The two clips disagree
+    in the third figure and are not reconciled here: this one finds 35 named watercourses in the
+    county where that node finds 36, and 9.99 miles of canal or ditch where it finds 9.82. Every
+    figure above is from this pipeline and every figure attributed to that node is from its own.
+    [verified] Overlap between a maintained line and a mapped channel is a buffered intersection
+    and therefore a function of the tolerance; every share that depends on one names it.
+    [inference] Two totals are carried and are not interchangeable: 346.41 miles is distinct
+    channel — the union of the 249 lines, and the figure above — while 349.69 is the sum of their
+    individual lengths and the denominator of any share computed petition by petition. [verified]
+  table: |
+    petition name petition_mi nhd_mi on_the_petition_pct
+    1239 Ottawa-River 38.14 31.99 97.3
+    1304 Warrington-Sugar-Creek 26.69 21.35 81.4
+    1160 Jennings-Creek 23.70 13.27 94.7
+    1251 Lost-Creek 12.54 8.59 82.8
+    1150 Pike-Run 12.52 9.55 95.2
+    1222 Cranberry-Creek-Phase-3 11.63 7.75 99.6
+    1260 Little-Ottawa-River 9.01 8.01 66.9
+    1224 Flat-Fork-Creek 8.80 9.23 91.1
+    1151 Dug-Run 7.11 7.69 79.4
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-ditch-maintenance.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/allen-county-ditch-maintenance.md
+  - target: allen-county-stream-network-2026.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: allen-county-soils-2026.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../measure.ont.yml
+    relationship: instance-of
