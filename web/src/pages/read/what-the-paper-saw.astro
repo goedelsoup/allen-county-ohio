@@ -8,7 +8,7 @@ import { bar } from '../../lib/chart-spec'
 const struck = assertion('what-the-tornado-struck')
 const injuries = assertion('two-injuries-named-and-thirty-counted')
 const clock = assertion('the-paper-and-the-file-disagree-about-the-clock')
-const money = assertion('a-million-dollars-apart')
+const money = assertion('the-million-dollars-that-were-not-apart')
 
 const second = assertion('a-second-storm-the-file-does-not-hold')
 const track = assertion('five-miles-in-a-semicircle-around-bluffton')
@@ -24,7 +24,7 @@ const day = assertion('the-creek-rose-a-day-before-the-river')
 const moneySpec = bar(
   money.figures.map((f) => f.label),
   money.figures.map((f) => f.value),
-  { yTitle: 'Property damage, dollars of 1950', labelValues: true },
+  { yTitle: 'The band the file recorded, dollars of 1950', labelValues: true },
 )
 ---
 
@@ -34,7 +34,8 @@ const moneySpec = bar(
     file made a tornado; a river gauge reading of 7,740 cubic feet a second made a flood. Both
     carried the same admission in different words — this is a number and it does not know what it
     did. The county's own weekly newspaper answers both, and disagrees with the machines about the
-    clock, the cost, and how many storms there were.
+    clock and about how many storms there were. It seemed to disagree about the cost too, until the
+    file's damage column turned out to be a band the paper's figure sits inside.
   </p>
 
   <h2>What the tornado struck</h2>
@@ -51,9 +52,9 @@ const moneySpec = bar(
   <AssertionCard assertion={money} open />
   <ChartFigure
     id="money"
-    title="What the same tornado cost, according to two sources"
-    caption="A village weekly writing eight days after the storm, against a national compilation assembled later. Both are in 1950 dollars and neither is stated here as the figure."
-    columns={['Source', 'Property damage']}
+    title="The band the federal file actually recorded"
+    caption="The file's $2.5M is not an estimate: it is damage category 6 of nine, $500,000 to $5,000,000, printed as a dollar amount. The paper's one and a half million falls inside it. This page said for a day that the two were a million apart."
+    columns={['Bound', 'Property damage']}
     rows={money.figures.map((f) => [f.label, `$${f.value.toLocaleString()}`])}
   />
   <script type="application/json" data-chart-spec="money" set:html={JSON.stringify(moneySpec)} is:inline />
