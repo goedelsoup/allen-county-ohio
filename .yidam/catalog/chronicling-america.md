@@ -35,6 +35,7 @@ location:
 used-by:
   - ../corpus/event/allen-county-jail-raid-1933.yml
   - ../corpus/event/lima-adopts-commission-government-1922.yml
+  - ../corpus/event/the-cloudburst-of-1-september-1959.yml
   - ../corpus/event/the-flash-flood-at-bluffton-1959.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
   - ../corpus/event/the-flood-of-12-march-1939.yml
@@ -73,6 +74,7 @@ used-by:
   - ../corpus/person/william-v-daley.yml
   - ../corpus/place/bluffton.yml
   - ../corpus/place/lima.yml
+  - ../corpus/question/the-wettest-days-with-no-event.yml
   - ../corpus/question/two-irregular-sheriff-transitions.yml
   - ../corpus/site/allen-county-courthouse.yml
   - ../corpus/site/lima-army-tank-plant.yml
@@ -236,8 +238,51 @@ both counts together puts **12 June 1947 and 20 May 1943 at the top of what was 
 beside 16 March 1939. All three are now written up — [6 June
 1947](../corpus/event/the-flood-of-6-june-1947.yml), [16–18 May
 1943](../corpus/event/the-storm-of-16-18-may-1943.yml), [12 March
-1939](../corpus/event/the-flood-of-12-march-1939.yml) — and what is left of the vein is 1959, which
-returns forty pages on the county facet alone.
+1939](../corpus/event/the-flood-of-12-march-1939.yml) — and what was left of the vein was 1959,
+which returns forty pages on the county facet alone.
+
+## 1959, read to the end
+
+**All forty pages are now read, and the shape of them is the finding.** Eight are the two flood
+issues this corpus already had; **sixteen are consequence**, running from 5 February to 31 December;
+fifteen are the word doing something else — floodlights at Harmon Field again, a freezer
+advertisement whose "recessed lid light floods interior", cranberry growers flooding their bogs,
+a flood of birthday cards, and three Mennonite Disaster Service reports on floods in Columbus,
+Findlay and Fremont; and **one is an event this corpus did not hold**. [verified] — all forty
+enumerated by LCCN facet and read through the ALTO here.
+
+The sixteen are where the county engineer, the Red Cross, the crop-insurance supervisor, the
+township road budget, twenty-seven sewer cave-ins, the quarry's new dike and the ruined public
+tennis courts are — and no phase before this one had opened any of them. See
+[the flash flood at Bluffton](../corpus/event/the-flash-flood-at-bluffton-1959.yml). The paper's
+verdict on the January flood also moved across them: "Approaches 1913 Grandaddy of Them All" on
+29 January, "probably the highest since 1913" on 5 February, and flat in the year-end review of
+31 December. [verified]
+
+**The paper runs corrections, and a corpus that reads only the event issue will never see one.**
+5 February 1959, page three: "A CORRECTION — Flood waters from the January 21 inundation did not at
+any time enter Meadowbrook Lanes, Pandora. as was erroneously reported in The Bluffton News of
+January 29." The withdrawn sentence is in the very issue this corpus built its January account
+from. It is not a one-off: 24 December 1959 corrects the dating of a photograph printed the week
+before. [verified] — both issues. A correction is always in a later issue than the story and always
+a single occurrence of the word, so it is always outside the top of a `flood` ranking. See
+[a retraction is never in the issue it corrects](../decisions/a-retraction-is-never-in-the-issue-it-corrects.yml).
+
+**And the ranking cannot find an event the paper filed under something else.** The wettest day this
+county's gauge recorded in nineteen years — 77.2 mm at Lima on 2 September 1959, nineteenth of
+45,273 days of record — is in this paper under the headline "Lightning Hits Large Elm On Campus
+Drive". The words "flood" and "high water" appear **nowhere on that front page**; the storm's only
+occurrence in the issue is four sentences in the jump on page six. [verified] — both pages, read
+here. Four phases searched this paper for floods and none of them could have found it. See
+[the cloudburst of 1 September 1959](../corpus/event/the-cloudburst-of-1-september-1959.yml) and
+[a paper files an event under its lead](../decisions/a-paper-files-an-event-under-its-lead.yml).
+
+**One more property of the search, measured.** This entry says above that the `description` field
+"is not reliable"; across these forty results **thirty-four of them do not contain the matched word
+at all**, the field running about 1,100 characters where the pages run ten to twenty thousand.
+[verified] — all forty compared against their ALTO. It fails to show the match five times in six,
+which is a rate rather than a caveat: use it to recognise a page already identified, never to
+decide whether a page is worth fetching.
 
 **The ranking that produced those three is a finding aid and not a census, and here is what it
 gets wrong.** All 527 pages were enumerated and the issues ranked by flood-page count. The method
