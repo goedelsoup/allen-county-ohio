@@ -76,6 +76,16 @@ Ottawa's second and third largest peaks at Allentown — 6,160 cfs in March 1939
 — both carry 7, both fall inside the outage above, and the 1943 one has no day. See
 [the intersection, not the union](../decisions/the-intersection-not-the-union.yml).
 
+**Across the two long records here, exactly two rows are dated to the month and no further, and
+they are the two floods this corpus has spent the most on.** Allentown's 6,000 cfs of May 1943 reads
+`1943-05-00` and carries `2,7,Bd` — an estimate, a historic peak, day unknown; the Blanchard near
+Findlay's 22,000 cfs of March 1913, the largest in ninety-nine water years, reads `1913-03-00` with
+`7,Bd`. 151 rows across the two files and 2 incomplete dates. [verified] — both peak files, counted
+here. The 1943 one is now dated to a day or two by a newspaper and a rain gauge; see
+[the storm of 16–18 May 1943](../corpus/event/the-storm-of-16-18-may-1943.yml) and
+[an instrument dates it and a witness describes it](../decisions/an-instrument-dates-it-and-a-witness-describes-it.yml).
+1913 has no such witness and this corpus has looked.
+
 **Hydrologic units come free with the site list.** Every site carries an eight-digit `huc_cd`, which
 is how this phase confirmed that 168 of the county's 184 sites are in the Auglaize subbasin
 (`04100007`), 14 in the Blanchard (`04100008`), and the remaining two in other Maumee units — and
