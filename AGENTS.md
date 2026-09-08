@@ -155,8 +155,9 @@ Reads: `.yidam/decisions/kuten.yml` and the profile it names under
 -->
 **This corpus's practice is `inquiry`, at revision 1:** the corpus grows through sustained inquiry — questions opened, and settled.
 
+> The vendored profile is at revision 2, and the decision record names 1. Re-vendor, or record a superseding decision.
+
 - **Phases** — Investigation, Extraction, Synthesis, Assessment. Between 12% and 27% of commits settle one.
-- **Shape** — 0.50–1.12 nodes per commit, and a median node of 35–62 lines.
 - **Vocabulary** — 30 verbs, and between 0% and 2% of commits outside them.
 - **Object** — the corpus is authored in git, so its history is the record.
 - **Questions** — this practice presses toward epistemic ones. It creates the pressure and authors nothing.
