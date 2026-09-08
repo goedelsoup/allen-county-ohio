@@ -1,0 +1,93 @@
+id: what-a-class-says-is-prose
+summary: >-
+  Thirteen property declarations across ten classes now carry `prose: true`, so that the 381
+  nodes of 695 which keep substance in a property are measured on what they say rather than on
+  their `description` alone. `measure.table` is the one candidate declined, on this corpus's own
+  argument that a table is not prose. `node-too-long` goes from 58 findings to 95 and nothing
+  else moves — the 37 are the length those nodes have always been, read for the first time.
+context: |
+  Until template v0.5.0, `description` was the only key anything read as prose. Every check that
+  read a *field* — `node-too-long`, `missing-description`, `yidam embed` — saw that key and
+  nothing else, while the claim counter, which scans the file, saw all of it. A corpus keeping
+  substance anywhere else was measured on a fraction of what it wrote and nothing said so.
+
+  This corpus is such a corpus, and heavily. 381 of its 695 nodes carry a block scalar under
+  `properties:`: 287 `measure.method`, 36 `event.location_description`, 21 `measure.table`, 17
+  `jurisdiction.authority_source`, 16 `question.would_close_this`, and nine smaller declarations
+  down to a single `site.address`. Upstream's release note measures fourteen such declarations on
+  one public corpus moving it from 58 findings to 94; 58 was this repository's `node-too-long`
+  count at the v0.5.0 re-vendor, so the corpus that note was written against is this one.
+
+  v0.5.0 lets a class say which of its keys hold prose, and lets a property declare that its
+  value is prose. Absent means false — a corpus written before the field existed never had the
+  chance to say — so nothing changed on adopting the release. This record is the saying.
+decision: |
+  **Thirteen declarations, in ten classes, carry `prose: true`:** `measure.method`,
+  `event.location_description`, `jurisdiction.authority_source`, `question.would_close_this`,
+  `question.resolution`, `organization.also_known_as`, `person.also_known_as`,
+  `person.birthplace`, `period.character`, `period.boundary_basis`, `natural-feature.mouth`,
+  `site.address` and `place.former_names`.
+
+  The test applied was not length and not frequency. It is whether the field is the node
+  *saying* something, and every one of the thirteen answers by carrying a claim tag. A
+  single-instance `natural-feature.mouth` reads `40.7708852, -83.9557761 — the head of the
+  Ottawa River, shared with Hog Creek and confirmed by the flow network [verified]`. That is a
+  claim with provenance, sitting in a property, invisible to everything that read prose. Size is
+  why it was never noticed; it is not why it qualifies.
+
+  **`measure.table` is declined, and it is the only candidate declined.** It is the second
+  largest of the fourteen at 21 instances, so this is a deliberate exclusion rather than an
+  oversight, and the argument is already written down twice in this repository. Its own
+  declaration in `measure.ont.yml` says it is held outside the description because "a table a
+  reader can read and a machine cannot is a table nothing can draw" — it exists to be parsed by
+  `crates/publish` and rendered as a table, not read as sentences. And three `measure` nodes say
+  it in their own prose — two as *"Written out, because a table is not prose and this corpus
+  publishes prose"* and a third as *"Written out, because a table is not prose"* — each followed
+  by the sentences that table was turned into. None of the three carries the `table` property;
+  they hold their figures as indented blocks inside `description` and then write them out, which
+  is the practice the property was later declared to serve. A corpus that argues in its own text
+  that a table is not prose cannot then declare that it is.
+  [a table a machine cannot read](a-table-a-machine-cannot-read.yml) is the record.
+
+  **Measured, both before and after, on one tree.** `lint` goes 1597 findings to 1634 and
+  `node-too-long` goes 58 to 95. The difference is 37 either way: every new finding is
+  `node-too-long` and no other check moves by one. `graph-check` reports 695 instances across 13
+  classes clean at both, and `mise run ci` passes at both.
+rationale: |
+  Why declare at all, when declaring only makes the corpus look worse.
+
+  **Because it does not make the corpus worse; it makes it legible.** The 37 nodes newly over
+  their limit were exactly as long yesterday. What changed is that a `method` block explaining
+  how a figure was computed now counts toward the budget written to stop a node sprawling, which
+  is what a budget on a node's substance is for. The alternative is a measurement that is
+  precise, stable, green, and about a third of the document.
+
+  **The strongest single case is `measure.method`.** 287 of the corpus's 695 nodes carry one,
+  and it is where this repository records how a published figure was arrived at — which file,
+  which filter, which denominator, and what internal check confirmed the reading. That is the
+  most audit-bearing prose in the corpus and the least visible: it sat below `description`, was
+  never embedded, never counted, and never charged. A corpus whose whole discipline is saying
+  where a number came from was not measuring the place it says it.
+
+  **What this breaks, and it is one thing, named.** `node-length-limits` derived every class's
+  `max_lines` from that class's own description-length distribution at p90, measured 2026-09-06.
+  The metric those limits gate now counts more than the distribution they were fitted to, so
+  the limits and the thing they measure have come apart — which is the same shape as the problem
+  that record was written to fix, arriving from the other direction. The 37 are therefore not
+  evidence that 37 nodes are too long. They are evidence that thirteen limits are fitted to a
+  smaller quantity than the one now being compared against them.
+
+  **Re-deriving them is deliberately not this commit.** A distribution measured in the same
+  change that alters what is being distributed cannot be checked against anything, and
+  `node-length-limits` is worth more as a record of one measurement, dated, than as a number
+  kept green. The next question is that re-derivation, and it is now askable with the counts the
+  gate actually uses. Until it is answered the baseline carries the 37: they are Warn, the
+  ratchet in `.yidam/lint-baseline.yml` holds only error-severity violations and is empty, and
+  `mise run ci` passes.
+
+  **What is not affected.** `yidam embed` composes the declared prose, so an index built before
+  this would need rebuilding — this repository has no index, `yidam index-build` needs a feature
+  the release does not ship by default, and `doctor` has reported the absence since before the
+  upgrade. `missing-description` reports nothing here either way. And the derived feeds under
+  `web/src/feeds/` are unchanged: `crates/publish`'s corpus test compares them byte for byte
+  against a fresh derivation and passes, so what the public site publishes did not move.

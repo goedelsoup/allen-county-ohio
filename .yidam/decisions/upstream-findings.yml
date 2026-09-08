@@ -1,14 +1,16 @@
 id: upstream-findings
 summary: >-
-  Seven findings against the pinned yidam, of which five are now fixed upstream and two remain
+  Eight findings against the pinned yidam, of which five are now fixed upstream and three remain
   open. Two defects in `yidam crates-index` found while writing the first crate — both closed by
   template v0.3.0 — two gaps in the corpus format found while tagging every edge in the graph,
   one in what genesis installs, found the first time CI ran on a remote, and one in what a
   vendored crate does to this repository's own formatting gate. Four were filed on 2026-09-04 as
   goedelsoup/yidam#587 through #590 and three of those closed at template v0.4.0. What is still
-  open is #587, that an edge cannot carry a claim tag while the conventions call it a claim, and
+  open is #587, that an edge cannot carry a claim tag while the conventions call it a claim,
   #647, that a REGEN block the CLI gates on `--check` reads git refs and so cannot be correct in
-  two checkouts of one commit at the same time.
+  two checkouts of one commit at the same time — demonstrated on this repository's own `main` at
+  the v0.5.0 re-vendor, where it is red — and finding 8, unfiled, that the CI staleness report
+  warns on a file where it means a table.
 context: |
   Found on 2026-08-28 against the pinned yidam, 0.5.0 at commit 1162287 — the version this
   repository builds from `.yidam.toml`, and the newest the origin then had. Finding 5 was found
@@ -39,6 +41,15 @@ context: |
   upstream rather than being worked around locally, because a local workaround is invisible to
   every other derived repository and is discarded at the next re-vendor. This record exists so
   that both findings and the workarounds are recoverable when that report is made.
+  Revisited a third time on 2026-09-07, at the re-vendor to template v0.5.0 (commit 29962860,
+  cli/v0.11.0), 65 commits upstream. Nothing closed in that interval and nothing was expected to:
+  the release is about which keys hold prose and a kuten revision, and neither is where these two
+  live. Both were re-checked at the pin rather than assumed — #587 against the registered check
+  set, #647 against the tracker and then against this repository's own `main`, where it stopped
+  being a reasoned hazard and became a red build. One new finding was found by the re-vendor
+  itself, which is now the second time that has happened and the reason this file is opened on a
+  re-vendor at all.
+
 decision: |
   **Finding 1 — `crates-index` misses `description` when the key is aligned. FIXED upstream in
   template v0.3.0.**
@@ -137,6 +148,20 @@ decision: |
   binaries against one tree. The 43 and 49 above were counted from source at the previous
   revisit and are not the same measurement; the conclusion is unchanged either way.)
 
+  **Still open at template v0.5.0.** Third re-vendor, same answer, measured the same way. The
+  registered set went 52 ids to 53 and the one addition is `malformed-yaml`, which reports a file
+  that will not parse. The edge rules are still `claim-tag-malformed`, `dangling-edge`,
+  `edge-target-class`, `unlicensed-edge` and `verified-unsourced` — the same five across three
+  re-vendors, and across the 65 commits of this one. `crates/provenance` keeps its job.
+
+  This release is worth naming even so, because it moved the ground under this finding's own
+  argument without reaching it. A class may now declare which of its top-level keys hold prose,
+  and a property may declare that its value is prose — so the format grew a way for a corpus to
+  tell the tool what a field *is*, which is the shape of what #587 asks for on a link, arriving
+  one level up. And the upstream note says in as many words where it stops: prose under `links:`
+  is "the edge vocabulary" and is not in this release. After three re-vendors the gap is a named
+  gap rather than an unconsidered one, which is the most movement this finding has had.
+
   **Finding 4 — `node-too-long` charges a node for being auditable.** Filed as
   goedelsoup/yidam#588.
 
@@ -191,6 +216,23 @@ decision: |
   finding named and left the older question underneath it standing: a limit half a class exceeds
   is still not a budget anybody is enforcing. Whether `measure` nodes are too long or the number
   is fiction is a corpus question, not an upstream one, and it is now askable on its own terms.
+
+  **The fix generalised at template v0.5.0, and the question underneath it did not move.**
+  `node-too-long` now counts every field the ontology declares as prose rather than
+  `description` by name, so the budget follows what a class says it writes rather than what
+  serde happened to name. With nothing declared here the effective set is `{description}` and
+  every count is identical: the only difference in 1,597 lines of lint output is the word —
+  `36 lines of prose` where it read ``36 lines of `description` `` — and every file named and
+  every number beside it is unchanged. So the repair this finding asked for has been generalised
+  past what it asked for, at no cost until a class declares.
+
+  It will cost the moment one does, and this corpus is the one the upstream note measured. 380 of
+  694 nodes carry a block scalar under `properties:` — 287 `method`, 35 `location_description`,
+  21 `table` and eleven more declarations — and the note records flagging fourteen of them moving
+  a corpus from 58 findings to 94. 58 is this repository's `node-too-long` count today. That is
+  not a regression waiting to happen; it is the length those nodes have always been, unread.
+  Whether to declare it is the same corpus question this finding has carried across three
+  revisits, now with a second and better way to ask it.
 
   **Finding 5 — genesis replaces one workflow and leaves six.** Filed as goedelsoup/yidam#589.
 
@@ -295,6 +337,15 @@ decision: |
   if it recurs is an upstream report, not a second narrowing — the assertion against `-p` says so
   at the point somebody would reach for it.
 
+  **Re-checked at template v0.5.0, and it did not recur.** The vendored geodesics crate is
+  rustfmt-clean at 29962860 and `cargo fmt --manifest-path crates/Cargo.toml --all --check` exits
+  0 — the second consecutive pin, which is the difference between a gate upstream and a lucky
+  accident. One new thing arrived under that directory: upstream committed 33 domain lockfiles
+  this cycle, and geodesics' `rust/Cargo.lock` is one of them. It is invisible to git here,
+  because a `Cargo.lock` rule in this machine's global gitignore reaches under `.vendor/`. That
+  costs nothing in a tree replaced wholesale, and it is recorded only because it is the second
+  thing this repository has learned about that directory from a tool rather than from reading it.
+
   **Finding 7 — a `--check`-gated REGEN block counts git refs, so it cannot be right in two
   checkouts at once.** Filed as goedelsoup/yidam#647.
 
@@ -347,6 +398,78 @@ decision: |
   rather than inferred from the changelog, and nothing in the 112 commits between the pins
   touches where a gated REGEN field may read from. The workaround stands and so does the rule
   this finding is really about.
+
+  **Still open at template v0.5.0, and it is no longer a hazard. `main` is red.** #647 is OPEN
+  and nothing in the 65 commits touches where a gated field may read from. What is new is that
+  this repository stopped reasoning about the defect and started being failed by it. The CI run
+  on `14b0720` — the merge of phase/three-marks-for-1913 — fails at `yidam regen --check` with
+  `1 REGEN block(s) stale: README.md (status)`, and fails again on a re-run, so it is not a
+  timing accident.
+
+  On this machine that same commit is green. Both binaries were run against a worktree detached
+  at `14b0720` and both reproduce the committed block character for character, including its
+  `1 active phase(s)`. Nothing in the tree differs; the corpus is identical; the CLI version is
+  not the variable, because 0.10.0 and 0.11.0 agree.
+
+  The variable is one ref, and it was isolated the way the original finding was.
+  `git update-ref -d refs/remotes/origin/phase/three-marks-for-1913` turns that green checkout
+  red with the identical message, and `status` then computes `0 active phase(s)` against the
+  committed `1`. Restoring the ref makes it green again. That is a demonstration that this field
+  can produce exactly the failure `main` is showing, from a ref and nothing else.
+
+  **What it is not is a diagnosis of `main`, and the record has to say so.** The obvious
+  inference — CI does not hold that ref — was tested and does not survive. `main` failed three
+  times, twice on deliberate re-runs hours after the merge, while the CI run on this branch's own
+  pull request passed the same job on a tree whose status block is byte-identical to `main`'s.
+  The corpus is the same, the committed block is the same, and the two verdicts differ. The
+  checkout log for the failing job shows it fetching `phase/three-marks-for-1913` as a new
+  branch, and the branch is on origin now. So the mechanism inside CI is not established, and
+  what it computed is not recoverable: `regen --check` names the stale block and never prints
+  the value it wanted.
+
+  **The finding stands on the outcome rather than on the mechanism, and that is enough for it.**
+  One commit, two verdicts, no file different — which is the thing #647 says a `--check`-gated
+  ref-derived field makes possible. Locating the specific ref state that produced this instance
+  would sharpen the report and is not needed to make it.
+
+  **The likely repair for `main` is not a commit.** phase/three-marks-for-1913 is merged and
+  still on origin; the house habit is to delete a phase branch when it lands, which the last two
+  `regen:` commits both say they did. If the count is what CI disagrees about, deleting it makes
+  `0 active phase(s)` true in both places and the block can be regenerated once — verify by
+  re-running the job afterwards rather than assuming. Committing `0` while the branch survives
+  would move the red from CI onto every developer machine, which is the deadlock this finding
+  named and the reason it is about where a gated field may read from rather than about a count.
+
+  **Finding 8 — the staleness report warns on a file where it means a table.** Found at the
+  v0.5.0 re-vendor, by the re-vendor. Not filed.
+
+  `.github/workflows/ci.yml`'s staleness step prints how far behind the pin is and escalates to
+  nothing, with one documented exception: it raises a `::warning::` when
+  `yidam/prelude/GRAPH.md` has moved, because that is where the closed commit vocabulary lives
+  and, in its own words, "your log is already written against the old one and cannot be rewritten
+  to match." The reasoning is right. The proxy has stopped being.
+
+  GRAPH.md gained 121 lines at v0.5.0 and not one of them is a verb. The vocabulary table holds
+  32 rows at both pins — counted at each rather than assumed, because the warning is exactly the
+  reason not to assume — and `refresh` and `reconcile` were already among them. What the file
+  gained is the ontology's prose rules: which top-level keys hold prose, and whether a property
+  does. A corpus can adopt or decline that at leisure and no history becomes unrewritable either
+  way.
+
+  So the warning fired on `main`, at the top of the run, for a change that cannot affect what it
+  warns about. The cost is the ordinary cost of a warning that cries wolf, and it is already
+  being paid: this re-vendor answered it by counting verb rows at both pins, and the next
+  repository's answer will be to stop reading it.
+
+  What upstream would need: warn on the vocabulary rather than on the file. The verb list is
+  enumerable, `yidam vocabulary` already prints it, and two printed lists can be diffed where
+  today two file blobs are. Until v0.5.0 the two were the same thing, so the proxy was sound when
+  it was written; this is the first release in which GRAPH.md carries something else, and it will
+  carry more of it.
+
+  **Not worked around.** The step is `continue-on-error` and warns rather than gating, so nothing
+  is broken. Narrowing it here would be a repair invisible to every other derived repository that
+  inherits this workflow at genesis, which is the thing this file exists to stop.
 
 rationale: |
   Why these are recorded rather than quietly fixed and forgotten.
