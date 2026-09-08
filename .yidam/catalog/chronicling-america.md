@@ -277,6 +277,21 @@ here. Four phases searched this paper for floods and none of them could have fou
 [the cloudburst of 1 September 1959](../corpus/event/the-cloudburst-of-1-september-1959.yml) and
 [a paper files an event under its lead](../decisions/a-paper-files-an-event-under-its-lead.yml).
 
+**Read by date, the method finds its own counter-case.** Three issues of July 1946 were opened by
+the calendar rather than by a search term — 27 June, 4 July, 11 July — to settle whether the
+Ottawa's largest instant of water year 1946 had flooded anything. It had not: 4 July carries that
+morning as "Lightning Damages Two Homes Here", and no flood, high water or creek appears anywhere in
+the issue. The only flood story it prints is the *June 16th* flood's, eleven days on and in Hardin
+County. [verified] — the issue, read page by page. So this paper has now produced two lightning
+headlines thirteen years apart, one concealing a flood and one being the whole event, which is why
+the rule is to read the issue and not the headline; see
+[a paper files an event under its lead](../decisions/a-paper-files-an-event-under-its-lead.yml).
+
+**The issue before an event is worth opening too.** The same run turned up 27 June 1946 — "FARMERS
+BUSY IN FIELDS — STORM'S DAMAGE IS SMALL" — which is the aftermath of the flood of 16–19 June and
+was never read by the phase that wrote that flood up. Two of this paper's floods have now been
+completed from the issues on either side of the one that reported them.
+
 **One more property of the search, measured.** This entry says above that the `description` field
 "is not reliable"; across these forty results **thirty-four of them do not contain the matched word
 at all**, the field running about 1,100 characters where the pages run ten to twenty thousand.
