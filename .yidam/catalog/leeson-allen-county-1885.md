@@ -21,6 +21,23 @@ location:
       sponsored by the Allen County Historical Society of Lima. Full text at
       historyofallenco00unse_0_djvu.txt (2.7 MB). Cleaner OCR than A.
 used-by:
+  - ../corpus/person/alexander-shenk.yml
+  - ../corpus/measure/allen-county-lives-in-the-county-histories.yml
+  - ../corpus/person/benjamin-s-miller.yml
+  - ../corpus/person/calvin-s-brice.yml
+  - ../corpus/person/dr-samuel-a-baxter.yml
+  - ../corpus/organization/first-national-bank-of-lima.yml
+  - ../corpus/person/henry-van-gunter.yml
+  - ../corpus/person/isaiah-pillars.yml
+  - ../corpus/person/james-a-hover.yml
+  - ../corpus/person/lawrence-oneill.yml
+  - ../corpus/person/mathias-ridenour.yml
+  - ../corpus/person/samuel-collins.yml
+  - ../corpus/person/samuel-s-yoder.yml
+  - ../corpus/person/william-akerman.yml
+  - ../corpus/person/william-h-harter.yml
+  - ../corpus/person/william-miller.yml
+  - ../corpus/event/the-wood-party-reaches-sugar-creek-1824.yml
   - ../corpus/event/erection-of-allen-county.yml
   - ../corpus/event/lima-oil-strike.yml
   - ../corpus/event/organization-of-the-town-of-lima-1842.yml
@@ -238,6 +255,18 @@ Republican figure for Lima's Third Ward as 108 where the page says 103, and Gree
 2,403 where the page says 2,463. The first error is exactly the five votes that reconcile the
 Republican column to its own printed total, so the column's arithmetic catches it; nothing catches
 the second but the page image. No figure in this chapter is safe from the OCR alone.
+
+**Both djvu texts separate words with two spaces, so a phrase search fails and reports nothing.**
+`grep -i "christopher wood"` returns zero lines from either scan, on a book that names him
+twenty-one times, because the OCR emits `Christopher  Wood`. The failure is silent and looks like
+absence. [verified] — both scans, searched both ways. Collapse runs of whitespace before searching,
+or search one word at a time; a negative result from this source is not evidence until that is done.
+
+**Each township chapter carries an "original land buyers" list, section by section with the year of
+entry.** They are how a person is placed on the ground here: Christopher Wood appears in Bath's list
+at section 7 in 1828 and again in Monroe's at section 32 in 1830, which is more than the biography
+chapter says about where he lived. [verified] — the Bath and Monroe chapters. The lists are long, in
+section order, and this corpus has read two names out of them.
 
 **What else is in it, still unread.** The rest of Chapter VII; Chapter VIII a roll of every lawyer
 admitted 1831-1884; Chapter X the county's newspapers by town, twenty-odd of them; Chapter XI the
