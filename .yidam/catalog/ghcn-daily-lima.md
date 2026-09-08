@@ -44,6 +44,7 @@ used-by:
   - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
   - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-13-february-1950.yml
   - ../corpus/event/the-flood-of-16-june-2015.yml
   - ../corpus/event/the-flood-of-28-february-2011.yml
   - ../corpus/event/the-flood-of-6-june-1947.yml

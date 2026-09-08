@@ -1,0 +1,75 @@
+id: a-filter-that-is-ignored-is-worse-than-one-that-is-refused
+summary: >-
+  The date parameters this corpus's catalog entry documents for Chronicling America do nothing. A
+  search for tornado pages in Allen County in 1950 returns 984 through them and 5 through the
+  parameter that works; a search for pages in September–December 1940 returns 25,033 through them
+  and 0. The service never errors and never returns less. The rule is that a filter is proved by a
+  control query before any count taken through it is reported, and the proof costs one request.
+context: |
+  [The archive's entry](../catalog/chronicling-america.md) has recorded its search URL since the
+  first newspaper phase as `?q=<terms>&start_date=&end_date=&dl=page&fo=json`. Those two parameters
+  are inert. The collection search accepts them, returns HTTP 200, and answers the query as though
+  no date had been given. The parameter that filters is `dates=YYYY-MM-DD/YYYY-MM-DD`.
+
+  Three pairs, each run in the same minute against the same facet:
+
+      query                                    start_date/end_date   dates=      unfiltered
+      county facet, q=tornado, 1950                          984          5             984
+      county facet, q=flood, 1959                          2,407         40           2,407
+      county facet, no query, Sep-Dec 1940                25,033          0          25,033
+
+  [verified] — the collection search, run here. The first column of figures equals the third
+  exactly, which is the whole proof: the windowed total *is* the unwindowed total, to the page, in
+  all three cases.
+
+  **Every figure this corpus has published from a date-windowed search of this archive is
+  nonetheless correct.** Five pages of `tornado` in 1950 and forty of `flood` in 1959; the last
+  Bluffton News issue of 1940 on 8 August and the next on 9 January 1941 with none between; 29
+  issues in 1940 and 9 in 1951, of which exactly one falls between 7 June 1951 and 1 May 1952. All
+  re-run under `dates=` here, and all confirmed. [verified] So the entry's numbers are right and the
+  method printed beside them cannot produce them, which is the worse arrangement of the two: it
+  passes every check a reader would think to run.
+decision: |
+  **Before reporting a count taken through a filter, prove the filter with a control. Run the query
+  with the filter and without it. If the two totals are equal, the filter did nothing.**
+
+  - **One request, and it goes in the entry.** The control is the same query minus the parameter.
+    Where a source's filter is proved, the catalog `location` block records the parameter that was
+    proved, not the one the documentation implies.
+  - **An ignored filter inflates, and inflation reads as a vein.** This is the asymmetry that makes
+    it dangerous. A refused parameter returns an error, a mistyped one returns nothing, and both
+    stop the reader. A silently dropped one returns the whole collection — 2,407 pages where there
+    are 40 — and the reader concludes the source is richer than it is and goes looking for two
+    thousand stories that were never in this county.
+  - **A total is part of a query's result and belongs beside the figure.** `pagination.of` is what
+    made this visible: the windowed and unwindowed totals were identical integers. A phase that
+    records only the rows it read cannot notice.
+  - **This does not put unfiltered counts in doubt.** 952 issues, 9,576 pages, 527 matching `flood`,
+    949 Thursdays — none passed through a date parameter and none is affected.
+rationale: |
+  **The corpus has a rule for a dead endpoint and needed one for a live one that answers wrongly.**
+  [a live url is not a live file](a-live-url-is-not-a-live-file.yml) was written when a USGS service
+  had been redirecting for seven months while the entry that named it said nothing. That failure
+  announced itself the moment anyone called it. This one cannot: the call succeeds, the body parses,
+  the results are real pages from the right newspaper, and only the count is wrong. The check that
+  catches it is not "did it work" but "did it do anything".
+
+  **The same shape has now appeared twice in this one source in two phases.** The word-coordinates
+  service drops every numeral from a page and reports no error; the collection search drops every
+  date bound and reports no error. Both are cheap routes that return plausible output. A source is
+  entitled to fail; what this entry keeps learning is that this one fails *quietly*, and that the
+  cost is paid by whoever reads the entry next rather than by whoever wrote it.
+
+  **What it cost here, concretely.** The catalog entry said the paper's unread remainder could be
+  ranked by flood-page count. Ranked that way, its top twenty includes the floodlights over Harmon
+  field, a line of serialised fiction in which "bright lights flooded auditorium and stage", and
+  thirty-eight trucks sent from Allen County to a flood somewhere else. A full-text count is a count
+  of a word. The ranking was still worth running — it put all four floods the corpus already held in
+  its top seven — but it is a finding aid and not a census, which is the same sentence this entry
+  already prints about the word-coordinates service.
+
+  **What would change this rule.** Nothing about this source. It generalises to any service whose
+  filter is expressed in a query string, which is most of the catalog, and the control is one
+  request against a total that is already in the response.
+status: accepted
+date: "2026-09-07"

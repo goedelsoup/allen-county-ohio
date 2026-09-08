@@ -42,6 +42,11 @@ location:
       longitude. Fetched for 1972 and for every year 1996 through 2026 — the whole of its non-empty
       run — and joined to this county's rows. What that found is below.
 used-by:
+  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
+  - ../corpus/event/the-flood-of-16-june-2015.yml
+  - ../corpus/event/the-flood-of-22-august-2007.yml
+  - ../corpus/event/the-flood-of-28-february-2011.yml
   - ../corpus/event/the-tornado-of-11-april-1965.yml
   - ../corpus/event/the-tornado-of-19-july-1950.yml
   - ../corpus/event/the-tornadoes-of-april-1965.yml
@@ -49,6 +54,7 @@ used-by:
   - ../corpus/measure/allen-county-disaster-declarations-1965-2020.yml
   - ../corpus/measure/allen-county-storm-events-1950-2026.yml
   - ../corpus/measure/allen-county-tornadoes-1950-2026.yml
+  - ../corpus/measure/ohio-tornadoes-of-11-april-1965.yml
   - ../corpus/office/allen-county-sheriff.yml
 ---
 

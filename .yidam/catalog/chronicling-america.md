@@ -12,12 +12,13 @@ retrieved: 2026-08-30
 ttl_days: 365
 location:
   - kind: url
-    value: https://www.loc.gov/collections/chronicling-america/?q=<terms>&start_date=&end_date=&dl=page&fo=json
+    value: https://www.loc.gov/collections/chronicling-america/?q=<terms>&dates=<yyyy-mm-dd>/<yyyy-mm-dd>&dl=page&fo=json
     description: >-
       Full-text page search. `fo=json` is what makes it usable; `dl=page` returns pages rather
       than title records. `fa=location_city:<city>` restricts to one town's papers,
       `fa=location_county:<name>` to a county — but see the note below on what that facet
-      actually matches.
+      actually matches. **`dates=` is the date filter and `start_date=`/`end_date=` are ignored** —
+      this entry carried the second pair for six phases; see the note below.
   - kind: url
     value: https://www.loc.gov/item/<lccn>/<yyyy-mm-dd>/ed-1/?fo=json
     description: >-
@@ -37,6 +38,7 @@ used-by:
   - ../corpus/event/the-flash-flood-at-bluffton-1959.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
   - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-13-february-1950.yml
   - ../corpus/event/the-flood-of-16-july-1915.yml
   - ../corpus/event/the-flood-of-6-june-1947.yml
   - ../corpus/event/the-mob-at-the-allen-county-jail-1916.yml
@@ -83,6 +85,16 @@ an automated client. The JSON API on the same host does not, and neither does `t
 the working route is three calls: search with `fo=json`, resolve the issue with `fo=json`, then
 take the ALTO XML from the tile host. Recorded here because the obvious route fails in a way that
 looks like the archive is gone, and it is not.
+
+**The date filter this entry documented for six phases does nothing.** `start_date=` and
+`end_date=` are accepted, return HTTP 200, and are ignored: the county facet with `q=tornado`
+answers **984** pages whether or not a 1950 window is attached, and `dates=1950/1950` answers
+**5**. With `q=flood` it is 2,407 against 40; with no query and a September–December 1940 window
+it is 25,033 against 0. [verified] — the collection search, three pairs run here. Every number
+this corpus has published from a windowed search of this archive has been re-run under `dates=`
+and every one is confirmed, so the entry's figures were right and the route printed beside them
+could not have produced them. See
+[a filter that is ignored is worse than one that is refused](../decisions/a-filter-that-is-ignored-is-worse-than-one-that-is-refused.yml).
 
 **The ALTO trap.** A hyphenated word is stored as two `<String>` elements — `SUBS_TYPE="HypPart1"`
 and `HypPart2` — each carrying the whole word in `SUBS_CONTENT` and its own half in `CONTENT`. A
@@ -224,6 +236,23 @@ beside 16 March 1939. All three are now written up — [6 June
 1943](../corpus/event/the-storm-of-16-18-may-1943.yml), [12 March
 1939](../corpus/event/the-flood-of-12-march-1939.yml) — and what is left of the vein is 1959, which
 returns forty pages on the county facet alone.
+
+**The ranking that produced those three is a finding aid and not a census, and here is what it
+gets wrong.** All 527 pages were enumerated and the issues ranked by flood-page count. The method
+works — all four floods this corpus already held sit in the top seven — and its top twenty also
+contains the **floodlights over Harmon field** on 14 September 1939, a line of serialised fiction
+in which "bright lights flooded auditorium and stage" on 7 January 1943, and thirty-eight trucks
+sent from Allen County to a flood somewhere else on 15 March 1945. [verified] — the enumeration and
+the matched text of each page, read here. **A full-text count is a count of a word.** Rank by it,
+then read the page before believing the rank; it is the same sentence this entry already prints
+about the word-coordinates service.
+
+**Run properly, the corrected search found a flood nobody here had.** Ranked and read, 16 February
+1950 carries "TOWN MENACED BY HIGH WATER FOR TWO DAYS" over an account of the Riley creeks out of
+their banks for more than twenty-four hours — the week in which both of the county's gauged rivers
+took their eighth-largest peak of record on consecutive days. [verified] — see
+[the flood of 13–14 February 1950](../corpus/event/the-flood-of-13-february-1950.yml). That issue
+was in reach of every phase that has used this archive.
 
 **And this entry got a county wrong, in the sentence that named the 1943 issue.** It said the paper
 "reports a tornado that blew down four barns in Orange township early on Monday 17 May 1943 — seven
