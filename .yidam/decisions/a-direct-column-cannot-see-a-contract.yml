@@ -1,0 +1,74 @@
+id: a-direct-column-cannot-see-a-contract
+summary: >-
+  Sugar Creek Township spends nothing on fire protection and has fire protection. The Census finance
+  survey's expenditure definition counts what a government does itself and excludes what it pays
+  another government to do, so a township that buys a service reads exactly like a township that
+  goes without one. The county's twelve townships paid out $16,341,000 in 2022 and the survey's
+  expenditure line is $15,818,000; the whole of one township's fire budget is in the $523,000
+  difference.
+context: |
+  The phase set out to answer a standing question — what the twelve townships do with $16,912,000 —
+  by reading [the finance survey](../catalog/census-government-finances.md) by function instead of
+  by total. The functional columns answered it cleanly for eleven townships: fire is a third of what
+  a township here spends, police another sixth.
+
+  The twelfth township returned a zero. Sugar Creek has no `E24` and no `F24` — no fire operations
+  and no fire construction — in a county where every other township has one and where the village
+  standing inside it, Cairo, has none either. Read off the functional columns, 1,207 people live in
+  a township that spends nothing on fire.
+
+  The answer is one column over. Sugar Creek carries $29,000 of item `M89`, intergovernmental
+  expenditure to a local government, and Marion Township carries $295,000 of the same beside a fire
+  line of its own. [verified] — the 2022 individual unit file, by unit. Those payments are **not in
+  the survey's expenditure figure at all**: the definition sums the `E`, `F`, `G` and `I` codes and
+  drops `L` and `M`, which is why the twelve townships reconcile to $15,818,000 rather than to the
+  $16,341,000 they actually paid out.
+
+  So the file has both halves and puts them in different places, and only one of the two is labelled
+  by function. `M89` is "General NEC" — the code records that money went to a local government and
+  not what it bought. The service is visible as an absence in one column and as an unlabelled
+  transfer in another, and neither cell says "fire".
+decision: |
+  **Where a functional expenditure column reads zero, read the intergovernmental column before
+  writing that the government does not provide the service.**
+
+  - **A direct-expenditure column reports who did the work, not who has the service.** It is the
+    right column for "what does this government run" and the wrong one for "what does this
+    government provide". A node that uses it for the second question says which it means.
+  - **The transfer names a payer and not a payee.** `M89` establishes that a township bought
+    something from some local government; it does not name the government, the function or the
+    contract. That Sugar Creek buys fire protection is an inference from the shape of the two cells
+    and is tagged as one.
+  - **Reconcile the parts to the published total, and say which parts the total excludes.** The
+    twelve townships summing to $15,818,000 is what proved the read correct; the $523,000 the sum
+    leaves out is what proved it incomplete. A functional breakdown that reconciles is not thereby a
+    complete account of what a government spent.
+  - **The same shape applies wherever a service can be bought instead of run** — policing,
+    dispatch, refuse, health. This corpus has one confirmed case and eleven governments it has not
+    checked against their own annual financial reports.
+rationale: |
+  **The failure this prevents is a negative claim about a place, drawn from a column that was never
+  asked the question.** "Sugar Creek Township spends nothing on fire protection" is true of the
+  cell and false of the township, and it is the kind of sentence this corpus publishes — a
+  well-sourced figure, correctly read, describing something other than what the reader will take it
+  to describe.
+
+  **It is the unit-level version of a rule the catalog already carries.** That entry says the
+  survey's "universe is the government and not the service", and gives the example of a fire
+  department appearing inside whichever township or village runs it. This is the next case down:
+  inside one government's own row, a service it buys rather than runs is absent from the column
+  named for it. The general rule was written and the particular cell still caught the corpus.
+
+  **What it does not license.** Treating every intergovernmental payment as a service contract.
+  Amanda Township's $199,000 to the State of Ohio sits in the same family of codes and this corpus
+  has no idea what it is; the decision says to look at the column, not to explain it. See
+  [the twelve townships](../corpus/measure/allen-county-townships-2022.yml), whose open claim is
+  exactly that.
+
+  **It is the same argument as** [a county column is a filing decision](a-county-column-is-a-filing-decision.yml),
+  moved from geography to function. There, a query by county returned the projects a clerk filed
+  under the county rather than the works standing in it. Here, a query by function returns the
+  services a government administers rather than the services its residents get. Both are the file
+  answering a question about paperwork when it was asked a question about the world.
+status: accepted
+date: "2026-09-08"

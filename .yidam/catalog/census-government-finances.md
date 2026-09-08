@@ -42,8 +42,10 @@ location:
       to know what a code excludes.
 used-by:
   - ../corpus/measure/allen-county-local-government-finance-2022.yml
+  - ../corpus/measure/allen-county-townships-2022.yml
   - ../corpus/measure/allen-county-local-government-debt-2017-2022.yml
   - ../corpus/measure/allen-county-in-the-federal-finance-file-2022.yml
+  - ../corpus/measure/allen-county-conduit-debt-2010-2023.yml
 ---
 
 **Thirty per cent of this county's cells are the Bureau's arithmetic and not the county's.** Of the
@@ -91,6 +93,15 @@ back.
 $1,027,008,000. The unit is stated once, in the technical documentation inside the zip, and a
 reader who works from the data file alone will publish a county government that raised a hundred
 and five thousand dollars. [verified] — the 2022 technical documentation, record layout.
+
+**Its expenditure line drops the money one government pays another, so a bought service reads as no
+service.** The definition sums the `E`, `F`, `G` and `I` codes and excludes `L` (to the state) and
+`M` (to a local government). Allen County's twelve townships paid out $16,341,000 in 2022 and the
+survey's expenditure figure for them is $15,818,000; Sugar Creek Township's whole fire budget is in
+the $523,000 difference, appearing as $29,000 of `M89` against a fire line of zero. [verified] — the
+2022 individual unit file, by unit and by item. `M89` is "General NEC" and names neither the payee
+nor the function, so the contract is legible only as the shape of two cells. See
+[a direct column cannot see a contract](../decisions/a-direct-column-cannot-see-a-contract.yml).
 
 **Its universe is the government and not the service.** A school district appears here and its
 buildings do not; a fire department appears inside whichever township or village runs it and never
