@@ -1,57 +1,66 @@
 id: kuten
-summary: the `inquiry` kuten, adopted at revision 1
+summary: the `inquiry` kuten at revision 2, with the two bands that measured age retired
 kuten: inquiry
-revision: 1
+revision: 2
 decision: |
-  This corpus's practice is `inquiry`: the corpus grows through sustained inquiry — questions opened, and settled.
+  This corpus's practice is `inquiry`: the corpus grows through sustained inquiry — questions
+  opened, and settled. That is unchanged.
 
-  Adopted with `yidam kuten adopt` against the profile vendored at
-  `.yidam/.vendor/prelude/kuten/inquiry/kuten.yml`, at revision 1.
-  The revision is copied from that profile, and every consumer reads the
-  kuten at the vintage this repository holds rather than at upstream's
-  current one.
+  This supersedes the revision-1 adoption in `0eaf32d`. The profile vendored at
+  `.yidam/.vendor/prelude/kuten/inquiry/kuten.yml` is at revision 2, which deletes its
+  `classes:` slot: `nodes_per_commit` and `median_node_lines` are no longer bands. Nothing else
+  in the profile moved, and nothing about how this corpus works changed.
+
+  The revision is copied from that profile, and every consumer reads the kuten at the vintage
+  this repository holds rather than at upstream's current one. Recording it is what makes an
+  upstream revision a visible `decide:` event rather than a silent adoption — the one
+  obligation revision 1 took on, met here for the first time.
 rationale: |
-  Why this corpus adopts this practice, rather than accepting it because it is the only profile
-  shipped.
+  Why a revision bump is an argument rather than a digit.
 
-  **The declaration is a description before it is an aspiration.** `yidam kuten check` was run
-  against `inquiry` immediately after adopting, and four of the five bands hold without anything
-  here being changed to make them: 12% of commits settle a phase against a declared 12–27%, 0%
-  of commits fall outside the vocabulary against a declared 0–2%, 0.50 nodes per commit against
-  a declared 0.50–1.12, and the question pressure is epistemic with 448 open. A corpus adopting
-  a practice it does not already have would be writing an intention into a record built to hold
-  facts.
+  **The one divergence this record carried was not answered. The band was withdrawn.** Revision
+  1 declared that the median node here ran 64 lines against a declared 35–62, and said so in
+  its summary line. It is 66.0 now, over 694 nodes. Nothing was shortened and nothing was
+  reconciled: the metric left the kuten. `yidam kuten check` reports three rows where it
+  reported five, and this corpus conforms on all three.
 
-  **This repository is almost certainly one of the six the bands were fitted over. [inference]**
-  The profile's sixth member reads `{authored: 1312, phase: 164, off_vocabulary: 2, instances:
-  673, median_lines: 62, open_questions: 440}`; this repository at adoption reads 1356 commits,
-  169 `phase:` commits, 2 off-vocabulary before the artifact register, 683 instances, median 64,
-  448 open questions. Every figure is this one a few days earlier. That is worth stating because
-  it weakens the evidence rather than strengthening it: a band this corpus helped define is not
-  independent confirmation that the corpus fits it, and the four bands that hold should be read
-  as "this repository has not moved" and not as "this repository was tested".
+  **Two of the four bands the adoption rested on are also gone, and this corpus is now outside
+  both.** The revision-1 rationale cited four holding bands as evidence that "this repository
+  has not moved", and `nodes_per_commit` was one of them — 0.50 against a declared 0.50–1.12.
+  It is 0.4816 today, 694 nodes over the 1,441 commits `kuten check` measures, which is below a
+  floor this corpus helped set. So of five bands, the two retired are exactly the two this
+  corpus has left, and it left them by doing nothing but continue.
 
-  **The fifth band diverges, and it is the same question two other records are already asking.**
-  The median node here is 64 lines against a declared 35–62 — two lines past the top of a band
-  this corpus's own 62 helped set, which means the drift happened after the measurement and is
-  recent. It arrives on the same day `node-too-long` was re-measured and found 139 of 282
-  `measure` nodes over their class limit, and both are versions of a question
-  [upstream-findings](upstream-findings.yml) finding 4 has now been carrying across three
-  revisits: whether the nodes are long or the number is fiction. The kuten does not answer it.
-  What it does is make the question arrive on its own, from the population end, without anybody
-  running a lint check and reading the result — which is the argument for holding a kuten at all.
+  **That is the retirement's own argument, and this repository is a witness for it rather than
+  against it.** Upstream's case is that both metrics measure how old a repository is and not how
+  it works — nodes per commit halves over a life, so an unmatched comparison reads age — and
+  that every member of the fit exits both by ageing. The fit was observed on 2026-09-06. This
+  corpus adopted at 16:44 that same day already reading 64 against a 35–62 it had helped
+  measure, and reads 66.0 a day later. **It is almost certainly the fit's sixth member
+  [inference]** — that member records `median_lines: 62` and `instances: 673`, against 683 and
+  64 here hours later — which is why the hours matter: a band a corpus exits within a day of
+  helping to set it is not measuring the thing it was written to measure. [verified] — the two
+  figures are `measurement.median_node_lines` and `measurement.nodes / measurement.commits` in
+  `yidam kuten check --format json` at this pin.
 
-  **What adopting costs, and why it is small.** A kuten binds nobody: divergence is a question
-  for a person, `kuten check` writes nothing and exits zero however far the corpus drifts, and
-  it is deliberately outside `mise run ci` on the argument that a question wired into a gate
-  becomes a defect the next person learns to silence. It may not widen the model — it adds no
-  verb, alters no claim standing, and changes no gate. The one real obligation it creates is
-  that revision 1 is now pinned in a record, so a later upstream revision is a visible
-  `decide:` event rather than a silent adoption.
+  **What the retirement does not do is answer the length question.** It moves it. Whether the
+  nodes here are long or the declared numbers are fiction is
+  [upstream-findings](upstream-findings.yml) finding 4, carried across three revisits and still
+  standing at `measure`'s `max_lines: 60`. Revision 1 valued the kuten for making that question
+  arrive from the population end without anybody running a lint check; revision 2 stops it
+  arriving that way. The question is now `node-too-long`'s alone, which is where it was before
+  the kuten existed and where this record says it should be watched.
 
-  **What was declined.** No `rationale:` was written by the tool, deliberately, and no
-  `policy:` override is taken. The `clocks` the profile proposes — `due.questions_after: 100`,
-  `due.phases_after: 60`, `due.index_after: 25`, `catalog.ttl_days: 180` — are proposals a
-  corpus's own config holds or declines, and this repository declines them for now: it has no
-  `[due]` configuration today, and adopting four intervals at the same moment as the practice
-  would make it impossible to tell later which of the two was the thing that changed.
+  **The three surviving bands hold, measured rather than assumed.** Phase-commit share 12.3%
+  against 12%–27% (177 of 1,441); off-vocabulary 0.6% against 0%–2% (8 commits);
+  question-pressure epistemic, 456 open. The release also taught the vocabulary check to read
+  `verb(scope):` as a verb wearing a scope, and `suffixed_commits` here is 0 — so the 0.6% is
+  eight genuine coinages and not a punctuation habit, which is a distinction this number could
+  not previously make.
+
+  **What does not change.** A kuten still binds nobody: divergence is a question for a person,
+  `kuten check` writes nothing and exits zero, and it stays deliberately outside `mise run ci`
+  on the argument that a question wired into a gate becomes a defect the next person learns to
+  silence. The `clocks` the profile proposes — `due.questions_after: 100`, `due.phases_after:
+  60`, `due.index_after: 25`, `catalog.ttl_days: 180` — are still declined, for the reason
+  revision 1 gave and which a second adoption event does not weaken.

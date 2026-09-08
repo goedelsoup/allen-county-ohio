@@ -153,9 +153,7 @@ Reads: `.yidam/decisions/kuten.yml` and the profile it names under
        `.yidam/.vendor/prelude/kuten/`. Holding no kuten is a supported state and is
        reported as one.
 -->
-**This corpus's practice is `inquiry`, at revision 1:** the corpus grows through sustained inquiry — questions opened, and settled.
-
-> The vendored profile is at revision 2, and the decision record names 1. Re-vendor, or record a superseding decision.
+**This corpus's practice is `inquiry`, at revision 2:** the corpus grows through sustained inquiry — questions opened, and settled.
 
 - **Phases** — Investigation, Extraction, Synthesis, Assessment. Between 12% and 27% of commits settle one.
 - **Vocabulary** — 30 verbs, and between 0% and 2% of commits outside them.
