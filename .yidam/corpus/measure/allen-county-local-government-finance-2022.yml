@@ -7,13 +7,6 @@ description: |
   [the government finance survey](../../catalog/census-government-finances.md), the 2022 individual
   unit file, summed here over the forty-six units the survey places in this county.
 
-      2022, by kind of government        units       revenue      share      spending
-      school districts and boards           12   259,134,000      47.5%   251,230,000
-      municipalities                         9   117,130,000      21.5%    95,762,000
-      the county                             1   105,391,000      19.3%   147,763,000
-      special districts                     12    47,120,000       8.6%    38,835,000
-      townships                             12    16,912,000       3.1%    15,818,000
-
   **Half of what local government here costs is schools, and a thirtieth is townships.** Twelve
   school districts, boards and consortia take 47.5 per cent of the money; the twelve townships that
   cover every acre outside the cities and villages take 3.1. [verified] — the same file, by type of
@@ -78,17 +71,30 @@ description: |
   [what the twelve townships spend it on](allen-county-townships-2022.yml), which carries the
   township-by-township table and reproduces the $15,818,000 above to the dollar.
 
-  [open] What the county's own $147,763,000 of spending bought, which is the largest single row in
-  this file and the one every cell of which is imputed. The county's audited statements give
-  expenses by programme and this corpus has read only their total; setting the survey's functional
-  codes beside the audit's programmes would show whether the Bureau's model puts the money in the
-  right places as well as in the right sum.
+  **The county's $147,763,000 is the one figure above that should not be read.** It is eighty-five
+  per cent higher than the county's audited expenses of $79,882,062, and a third of it is one
+  imputed interest cell already known to be 227 times the audited figure. [verified] — the same file
+  against [the audit](../../catalog/ohio-auditor-of-state-audit-search.md); see
+  [what the federal file knows about this county](allen-county-in-the-federal-finance-file-2022.yml),
+  which now carries the comparison function by function.
+
+  [open] Whether the other fourteen wholly imputed governments are wrong in the same place. Every one
+  of them carries the code the county's error is concentrated in, and the five villages that answered
+  none of their questions — Bluffton, Elida, Harrod, Lafayette and Beaverdam — each file an audit in
+  the same search the county's was read from.
 
 properties:
   parameter: revenue of all local governments in the county
   value: "545687000"
   unit: dollars, fiscal 2022, across forty-six governments
   as_of: "2022"
+  table: |
+    kind_of_government           units      revenue  share_pct     spending
+    school-districts-and-boards     12    259134000       47.5    251230000
+    municipalities                   9    117130000       21.5     95762000
+    the-county                       1    105391000       19.3    147763000
+    special-districts               12     47120000        8.6     38835000
+    townships                       12     16912000        3.1     15818000
   method: |
     The forty-six units are every government the survey's directory file places in Allen County,
     Ohio, which is a Census county code and not the FIPS code the rest of this corpus uses.
