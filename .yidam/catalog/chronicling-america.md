@@ -41,6 +41,7 @@ used-by:
   - ../corpus/event/the-flood-of-13-february-1950.yml
   - ../corpus/event/the-flood-of-16-july-1915.yml
   - ../corpus/event/the-flood-of-6-june-1947.yml
+  - ../corpus/event/the-flood-of-9-february-1959.yml
   - ../corpus/event/the-mob-at-the-allen-county-jail-1916.yml
   - ../corpus/event/the-ottawa-river-flood-of-1959.yml
   - ../corpus/event/the-storm-at-beaverdam-1950.yml

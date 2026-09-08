@@ -48,6 +48,7 @@ used-by:
   - ../corpus/event/the-flood-of-16-june-2015.yml
   - ../corpus/event/the-flood-of-28-february-2011.yml
   - ../corpus/event/the-flood-of-6-june-1947.yml
+  - ../corpus/event/the-flood-of-9-february-1959.yml
   - ../corpus/event/the-ottawa-river-flood-of-1959.yml
   - ../corpus/event/the-storm-of-16-18-may-1943.yml
   - ../corpus/measure/allen-county-frost-free-season-1902-2025.yml
