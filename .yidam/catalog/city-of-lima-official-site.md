@@ -22,7 +22,12 @@ location:
     description: >-
       "Lima City Charter and Code", at American Legal Publishing. **Not obtained.** Returns 403 to
       an automated client with or without a browser user agent, which is a Cloudflare refusal rather
-      than a missing document.
+      than a missing document. Two further routes were tried and refused: the legacy gateway
+      `library.amlegal.com/nxt/gateway.dll/Ohio/lima_oh/` **302s onto the same host** and ends at the
+      same challenge, and sending no user-agent header at all is refused like the others — so the
+      trick that works on `www.loc.gov` does not work here. The client slug is **`lima`**, not
+      `limaoh`; the latter is a different code and also 403s, so a failed fetch does not distinguish
+      a wrong slug from a refusal.
   - kind: url
     value: https://www.limaohio.gov/117/Mayor
     description: >-
@@ -41,6 +46,13 @@ used-by:
   - ../corpus/tenure/lima-council-5th-ward-2026-thomas-michael-wa-jones.yml
   - ../corpus/tenure/mayor-2025-sharetta-t-smith.yml
 ---
+
+**And Municode is not the way round it, though it looks like one.** `library.municode.com/oh/lima`
+returns HTTP 200 — and so does `library.municode.com/oh/notarealcity`. [verified] — both requested
+here in the same minute. The page is a six-kilobyte JavaScript shell that answers 200 for any path,
+so **a 200 from that host is not evidence that a code is held there**, and an agent checking
+availability by status code will conclude Lima is on Municode when nothing says it is. The city's
+own Government page links to American Legal and to nothing else.
 
 **It establishes that Lima has a charter**, which the corpus had carried as an inference since
 genesis and as an explicit `[open]` on [the mayor's office](../corpus/office/mayor-of-lima.yml).
