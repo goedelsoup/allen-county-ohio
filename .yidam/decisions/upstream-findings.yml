@@ -414,16 +414,31 @@ decision: |
   The variable is one ref, and it was isolated the way the original finding was.
   `git update-ref -d refs/remotes/origin/phase/three-marks-for-1913` turns that green checkout
   red with the identical message, and `status` then computes `0 active phase(s)` against the
-  committed `1`. Restoring the ref makes it green again. So `main` holds a value that is true
-  here and false in CI, and no commit can be authored that is true in both while the branch
-  exists in one and not the other.
+  committed `1`. Restoring the ref makes it green again. That is a demonstration that this field
+  can produce exactly the failure `main` is showing, from a ref and nothing else.
 
-  **The repair for `main` is not a commit.** phase/three-marks-for-1913 is merged and still on
-  origin; the house habit is to delete a phase branch when it lands, which the last two
-  `regen:` commits both say they did. Deleting it makes `0 active phase(s)` true everywhere and
-  the block can then be regenerated once. Committing `0` while the branch survives would only
-  move the red from CI to every developer machine, which is the deadlock this finding named and
-  the reason it is about where a gated field may read from rather than about a count.
+  **What it is not is a diagnosis of `main`, and the record has to say so.** The obvious
+  inference — CI does not hold that ref — was tested and does not survive. `main` failed three
+  times, twice on deliberate re-runs hours after the merge, while the CI run on this branch's own
+  pull request passed the same job on a tree whose status block is byte-identical to `main`'s.
+  The corpus is the same, the committed block is the same, and the two verdicts differ. The
+  checkout log for the failing job shows it fetching `phase/three-marks-for-1913` as a new
+  branch, and the branch is on origin now. So the mechanism inside CI is not established, and
+  what it computed is not recoverable: `regen --check` names the stale block and never prints
+  the value it wanted.
+
+  **The finding stands on the outcome rather than on the mechanism, and that is enough for it.**
+  One commit, two verdicts, no file different — which is the thing #647 says a `--check`-gated
+  ref-derived field makes possible. Locating the specific ref state that produced this instance
+  would sharpen the report and is not needed to make it.
+
+  **The likely repair for `main` is not a commit.** phase/three-marks-for-1913 is merged and
+  still on origin; the house habit is to delete a phase branch when it lands, which the last two
+  `regen:` commits both say they did. If the count is what CI disagrees about, deleting it makes
+  `0 active phase(s)` true in both places and the block can be regenerated once — verify by
+  re-running the job afterwards rather than assuming. Committing `0` while the branch survives
+  would move the red from CI onto every developer machine, which is the deadlock this finding
+  named and the reason it is about where a gated field may read from rather than about a count.
 
   **Finding 8 — the staleness report warns on a file where it means a table.** Found at the
   v0.5.0 re-vendor, by the re-vendor. Not filed.
