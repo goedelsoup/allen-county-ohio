@@ -66,6 +66,28 @@ fiscal charges for 2022 at $206,079, so the published figure is 227 times the au
 for the year ended 31 December 2022. See
 [a flag column is part of the figure](../decisions/a-flag-column-is-part-of-the-figure.yml).
 
+**Measured across Ohio, the imputation's centre is right and its tail is impossible.** Of the state's
+3,979 local governments, 1,746 carry both an interest figure and a beginning-debt figure. The 612
+that reported both run a median implied rate of 3.2 per cent and **one** exceeds 25. The 456 whose
+records are wholly modelled run a median of 4.8 per cent — near enough the same — and **fifteen**
+exceed 25. [verified] — the 2022 individual unit file, every Ohio government, computed here.
+Seventeen governments in the state imply a rate above 25 per cent and fifteen of them are wholly
+imputed, one is mixed, and the one reported case is 28.2 per cent, which a mid-year retirement
+explains. **A model can be unbiased in the middle and produce impossible values at the edge, and an
+average error rate will not show it.**
+
+**And the model does not tie a cell to the cell it depends on.** Ninety-nine wholly imputed Ohio
+governments carry interest on no debt at all; ninety carry debt and no interest. [verified] — the
+same file, by unit. Allen County holds one of each: Jackson Township has $4,000 of interest and no
+debt line, and Auglaize Township Park District retires $682,000 of debt with no interest line. The
+county's own 258 per cent is the same failure loud enough to see.
+
+**This county's row is not the worst in the state.** Ohio's counties are imputed more often than its
+other governments — **39 of the 88 county governments are wholly modelled** against 25 wholly
+reported — and six of the seven counties implying more than 25 per cent are among the modelled.
+Clark County reads **$123,670,000 of interest on $20,351,000 of debt, 608 per cent**; then Allen at
+259, Seneca 207, Ross 147. The median county is 4.0. [verified] — the same file, all 88.
+
 **The same imputation gets the aggregates nearly right.** Its total for the county's revenue is
 $105,391,000 against the audit's $106,515,249 — 1.1 per cent low; its permissive sales tax is
 $22,513,000 against $20,678,894 and its property tax $14,959,000 against $13,200,749. [verified] —

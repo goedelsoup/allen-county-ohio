@@ -254,7 +254,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-lives-in-the-county-histories.yml](measure/allen-county-lives-in-the-county-histories.yml) | measure | What the county histories record of the people in them | 4 | 14v / 4i / 2o | 133 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
 | [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 7 | 9v / 2i / 1o | 104 |
-| [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 8 | 12v / 1i / 1o | 139 |
+| [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 8 | 13v / 1i / 1o | 142 |
 | [allen-county-local-option-elections-2003-2012.yml](measure/allen-county-local-option-elections-2003-2012.yml) | measure | Local option liquor elections in Allen County, 2003–2012 | 4 | 13v / 3i / 1o | 107 |
 | [allen-county-manufactured-home-lending-2018-2024.yml](measure/allen-county-manufactured-home-lending-2018-2024.yml) | measure | Lending on Allen County's manufactured homes, 2018-2024 | 4 | 12v / 0i / 1o | 77 |
 | [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
