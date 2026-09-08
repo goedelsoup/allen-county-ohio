@@ -432,6 +432,39 @@ decision: |
   ref-derived field makes possible. Locating the specific ref state that produced this instance
   would sharpen the report and is not needed to make it.
 
+  **The check ran, and it answered a different question than the one it was set.** `main` is
+  green at `18e50bb`. Deleting the merged branch and writing `0` once made this machine and CI
+  agree, so the repair is the right one and is now performed. It did not identify why they
+  disagreed at `14b0720`, and that stays open.
+
+  One hypothesis has to be withdrawn before it sets. The disagreement appeared to track the
+  workflow event — `pull_request` runs passing, `push` runs failing — and it does not: the push
+  run on `3f29fc6` overlapped the branch deletion itself (merged 01:59:48Z, run created
+  01:59:51Z, branch certainly gone by 02:02:01Z when the next run passed against `0`), so that
+  run cannot be read in either direction. A correlation over two runs, one of them unreadable,
+  is not a mechanism.
+
+  **What the run history shows instead is that this is not an incident.** It is what happens
+  every time a phase merges, and it happened once before this re-vendor existed:
+
+      2026-09-07  15:24:38Z  main red   the flood-map phase merged
+                  15:41:03Z  main green 0dd0ed8 landed — whole diff: 1 → 0 active phase(s)
+                                        16 minutes
+
+      2026-09-08  01:05:19Z  main red   the 1913 phase merged
+                  02:18:29Z  main green 03e4247 landed — whole diff: 1 → 0 active phase(s)
+                                        73 minutes
+
+  The first one's log has expired; the commit that repaired it has not, and its entire diff is
+  the same single field in the same direction as the repair made here. Two occurrences, two
+  identical one-field repairs, and this repository already carries a branch-naming convention —
+  `regen/after-the-*-phase`, five of them in the history — that exists because of it.
+
+  That is the sentence for the upstream report, and it is stronger than the one this record set
+  out to write: the defect is not that a gated field *can* disagree across checkouts. It is that
+  in a repository following the phase discipline the prelude prescribes, `main` is red after
+  every phase merge until somebody notices and lands a commit that changes one digit.
+
   **The likely repair for `main` is not a commit.** phase/three-marks-for-1913 is merged and
   still on origin; the house habit is to delete a phase branch when it lands, which the last two
   `regen:` commits both say they did. If the count is what CI disagrees about, deleting it makes
