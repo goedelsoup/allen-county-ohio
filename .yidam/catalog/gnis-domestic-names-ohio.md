@@ -12,15 +12,20 @@ location:
     value: https://prd-tnm.s3.amazonaws.com/StagedProducts/GeographicNames/DomesticNames/DomesticNames_OH_Text.zip
     description: Ohio domestic names, pipe-delimited — Text/DomesticNames_OH.txt
 used-by:
+  - ../corpus/event/the-storm-of-16-18-may-1943.yml
+  - ../corpus/event/the-tornado-of-11-april-1965.yml
+  - ../corpus/measure/allen-county-distance-to-the-sea-2026.yml
   - ../corpus/measure/allen-county-named-features-2026.yml
   - ../corpus/measure/allen-county-water-systems-2026.yml
   - ../corpus/natural-feature/auglaize-river.yml
+  - ../corpus/natural-feature/blanchard-river.yml
   - ../corpus/natural-feature/great-black-swamp.yml
   - ../corpus/natural-feature/hog-creek.yml
   - ../corpus/natural-feature/little-hog-creek.yml
   - ../corpus/natural-feature/little-ottawa-river.yml
   - ../corpus/natural-feature/maumee-river.yml
   - ../corpus/natural-feature/ottawa-river.yml
+  - ../corpus/natural-feature/riley-creek.yml
   - ../corpus/natural-feature/sugar-creek.yml
   - ../corpus/place/amanda-township.yml
   - ../corpus/place/delphos.yml

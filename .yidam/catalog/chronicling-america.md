@@ -31,6 +31,50 @@ location:
     value: https://www.loc.gov/item/sn87076554/
     description: >-
       The Bluffton News — the only Allen County newspaper in the archive. 952 issues, 1939–1959.
+used-by:
+  - ../corpus/event/allen-county-jail-raid-1933.yml
+  - ../corpus/event/lima-adopts-commission-government-1922.yml
+  - ../corpus/event/the-flash-flood-at-bluffton-1959.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
+  - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-16-july-1915.yml
+  - ../corpus/event/the-flood-of-6-june-1947.yml
+  - ../corpus/event/the-mob-at-the-allen-county-jail-1916.yml
+  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
+  - ../corpus/event/the-storm-at-beaverdam-1950.yml
+  - ../corpus/event/the-storm-of-16-18-may-1943.yml
+  - ../corpus/event/the-tornado-of-11-april-1965.yml
+  - ../corpus/event/the-tornado-of-19-july-1950.yml
+  - ../corpus/measure/allen-county-ballot-1956.yml
+  - ../corpus/measure/allen-county-lives-in-the-county-histories.yml
+  - ../corpus/measure/allen-county-presidential-vote-1944-1956.yml
+  - ../corpus/measure/allen-county-storm-events-1950-2026.yml
+  - ../corpus/measure/bluffton-and-beaverdam-elections-1939-1959.yml
+  - ../corpus/measure/lima-mayors-1886-1922.yml
+  - ../corpus/measure/lima-mayors-1939-1956.yml
+  - ../corpus/office/mayor-of-lima.yml
+  - ../corpus/organization/lima-locomotive-works.yml
+  - ../corpus/organization/the-bluffton-news.yml
+  - ../corpus/period/the-second-world-war-in-allen-county.yml
+  - ../corpus/person/allen-l-metheany.yml
+  - ../corpus/person/benjamin-faurot.yml
+  - ../corpus/person/calvin-s-brice.yml
+  - ../corpus/person/charles-n-lamison.yml
+  - ../corpus/person/donald-f-sarber.yml
+  - ../corpus/person/frank-e-mcclain.yml
+  - ../corpus/person/jess-l-sarber.yml
+  - ../corpus/person/richard-metheany.yml
+  - ../corpus/person/samuel-s-yoder.yml
+  - ../corpus/person/william-l-ferguson.yml
+  - ../corpus/person/william-v-daley.yml
+  - ../corpus/place/bluffton.yml
+  - ../corpus/place/lima.yml
+  - ../corpus/question/two-irregular-sheriff-transitions.yml
+  - ../corpus/site/allen-county-courthouse.yml
+  - ../corpus/site/lima-army-tank-plant.yml
+  - ../corpus/site/lima-locomotive-works-plant.yml
+  - ../corpus/tenure/sheriff-1931-jess-l-sarber.yml
+  - ../corpus/tenure/sheriff-1933-donald-f-sarber.yml
 ---
 
 **Two routes in, and only one of them works.** The documented `.../ocr.txt` path and every HTML
@@ -172,16 +216,28 @@ penniless". The book he is a subscriber to was printed in the town he built, two
 records the date.
 
 **What it carries that these phases did not take.** The Bluffton News in full — 952 issues, of
-which three phases have now read perhaps a score. The weather vein is the one that has been
-sampled: 527 pages match `flood` and 133 match `riley creek flood`, and ranking the issues by both
-counts together puts **12 June 1947 and 20 May 1943 at the top of what is still unread**, beside
-16 March 1939 which this phase took. The 1947 issue is a second "worst flood since 1913" and is
-discussed in [the flood of 12 March 1939](../corpus/event/the-flood-of-12-march-1939.yml); the 1943
-one is headed "RAIN, FLOOD AND TORNADO SWEEP BLUFFTON AREA" and reports a tornado that blew down
-four barns in Orange township early on Monday 17 May 1943 — **seven years before the first Allen
-County tornado in the federal storm record**, which begins in 1950. [verified] — the ALTO of both
-front pages, read here; see
-[a category has a birthday](../decisions/a-category-has-a-birthday.yml). Neither is written up.
+which four phases have now read perhaps a score and a half. The weather vein is the one that has
+been sampled: 527 pages match `flood` and 133 match `riley creek flood`, and ranking the issues by
+both counts together puts **12 June 1947 and 20 May 1943 at the top of what was still unread**,
+beside 16 March 1939. All three are now written up — [6 June
+1947](../corpus/event/the-flood-of-6-june-1947.yml), [16–18 May
+1943](../corpus/event/the-storm-of-16-18-may-1943.yml), [12 March
+1939](../corpus/event/the-flood-of-12-march-1939.yml) — and what is left of the vein is 1959, which
+returns forty pages on the county facet alone.
+
+**And this entry got a county wrong, in the sentence that named the 1943 issue.** It said the paper
+"reports a tornado that blew down four barns in Orange township early on Monday 17 May 1943 — seven
+years before the first Allen County tornado in the federal storm record". The tornado, the barns and
+the hour are all in the paper and correct. **Orange township is in Hancock County.** Ohio has six
+Orange townships and none of them is in Allen, whose twelve are named elsewhere in this corpus;
+[GNIS](gnis-domestic-names-ohio.md) settles it in one lookup. So nothing here antedates
+[the tornado of 19 July 1950](../corpus/event/the-tornado-of-19-july-1950.yml) in this county's
+weather record, and [a category has a birthday](../decisions/a-category-has-a-birthday.yml) stands
+untouched. The paper never says Hancock because it is a village weekly writing for readers on both
+sides of the line; see
+[a village weekly does not name its county](../decisions/a-village-weekly-does-not-name-its-county.yml).
+The flood half of that storm *is* Allen County's, and the paper turns out to date a peak on the
+county's own river that the gauge published without a day.
 
 Also, for whoever comes next: the archive's `location_county` facet matches on the *name*, so
 `allen` returns Allen County, Kansas and Allen County, Kentucky alongside Ohio's, and a search

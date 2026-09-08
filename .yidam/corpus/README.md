@@ -56,12 +56,13 @@ Sorted by: kind, then alphabetically.
 | [the-first-railroad-reaches-allen-county.yml](event/the-first-railroad-reaches-allen-county.yml) | event | The first railroad reaches Allen County | 5 | 6v / 4i / 1o | 76 |
 | [the-flash-flood-at-bluffton-1959.yml](event/the-flash-flood-at-bluffton-1959.yml) | event | The flash flood at Bluffton, 21 January 1959 | 5 | 9v / 0i / 1o | 79 |
 | [the-flash-flood-at-cairo-28-may-2014.yml](event/the-flash-flood-at-cairo-28-may-2014.yml) | event | The flash flood at Cairo and Beaverdam, 28 May 2014 | 4 | 13v / 2i / 1o | 86 |
-| [the-flood-at-bluffton-26-april-2019.yml](event/the-flood-at-bluffton-26-april-2019.yml) | event | The flood at Bluffton, 26 April 2019 | 6 | 11v / 3i / 1o | 92 |
-| [the-flood-of-12-march-1939.yml](event/the-flood-of-12-march-1939.yml) | event | The flood of 12 March 1939 | 6 | 8v / 1i / 1o | 92 |
+| [the-flood-at-bluffton-26-april-2019.yml](event/the-flood-at-bluffton-26-april-2019.yml) | event | The flood at Bluffton, 26 April 2019 | 6 | 11v / 3i / 1o | 94 |
+| [the-flood-of-12-march-1939.yml](event/the-flood-of-12-march-1939.yml) | event | The flood of 12 March 1939 | 7 | 8v / 1i / 1o | 96 |
 | [the-flood-of-16-july-1915.yml](event/the-flood-of-16-july-1915.yml) | event | The flood of 16 July 1915 | 5 | 10v / 1i / 1o | 87 |
 | [the-flood-of-16-june-2015.yml](event/the-flood-of-16-june-2015.yml) | event | The flood of 16 June 2015 | 3 | 11v / 3i / 1o | 83 |
 | [the-flood-of-22-august-2007.yml](event/the-flood-of-22-august-2007.yml) | event | The flood of 21–22 August 2007 | 5 | 13v / 2i / 1o | 94 |
 | [the-flood-of-28-february-2011.yml](event/the-flood-of-28-february-2011.yml) | event | The flood of 28 February 2011 | 4 | 10v / 3i / 1o | 86 |
+| [the-flood-of-6-june-1947.yml](event/the-flood-of-6-june-1947.yml) | event | The flood of 6 June 1947 | 6 | 10v / 1i / 0o | 91 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 4 | 6v / 2i / 1o | 61 |
 | [the-lima-news-strike-of-1957.yml](event/the-lima-news-strike-of-1957.yml) | event | The Lima News strike of 1957 | 4 | 7v / 1i / 1o | 49 |
 | [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 4 | 6v / 2i / 1o | 65 |
@@ -69,6 +70,7 @@ Sorted by: kind, then alphabetically.
 | [the-organization-of-cairo-1875.yml](event/the-organization-of-cairo-1875.yml) | event | The organization of Cairo, 1875 | 3 | 6v / 1i / 1o | 48 |
 | [the-ottawa-river-flood-of-1959.yml](event/the-ottawa-river-flood-of-1959.yml) | event | The Ottawa River flood of January 22, 1959 | 4 | 9v / 1i / 1o | 87 |
 | [the-storm-at-beaverdam-1950.yml](event/the-storm-at-beaverdam-1950.yml) | event | The storm at Beaverdam and Orange Township, 19 July 1950 | 5 | 7v / 1i / 1o | 79 |
+| [the-storm-of-16-18-may-1943.yml](event/the-storm-of-16-18-may-1943.yml) | event | The storm of 16–18 May 1943 | 7 | 11v / 1i / 1o | 91 |
 | [the-tornado-of-11-april-1965.yml](event/the-tornado-of-11-april-1965.yml) | event | The tornado of 11 April 1965 | 4 | 10v / 2i / 1o | 92 |
 | [the-tornado-of-19-july-1950.yml](event/the-tornado-of-19-july-1950.yml) | event | The tornado of 19 July 1950 | 3 | 7v / 3i / 1o | 80 |
 | [the-tornadoes-of-april-1965.yml](event/the-tornadoes-of-april-1965.yml) | event | The tornado declaration of April 1965 | 3 | 8v / 3i / 1o | 81 |
@@ -400,7 +402,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [ohio-tornadoes-of-11-april-1965.yml](measure/ohio-tornadoes-of-11-april-1965.yml) | measure | The Ohio tornadoes of 11 April 1965 | 3 | 6v / 3i / 0o | 101 |
-| [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 13v / 6i / 1o | 118 |
+| [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 14v / 7i / 1o | 127 |
 | [spencerville-annexations-1997-2023.yml](measure/spencerville-annexations-1997-2023.yml) | measure | Spencerville annexations, 1997–2023 | 4 | 3v / 2i / 0o | 54 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |

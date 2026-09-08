@@ -34,16 +34,24 @@ location:
     description: >-
       Which element each station holds and between which years. It is what found the two stations
       above out of 132,501, and it is not a statement that the years between are populated.
+  - kind: url
+    value: https://www.ncei.noaa.gov/access/homr/services/station/search?qid=COOP:334551&definition=full
+    description: >-
+      The station's own history — names, identifiers, relocations, observers, equipment and
+      observation hour — which the `.dly` file does not carry. Its element records for this station
+      begin in December 2022; everything earlier survives only as undated free-text remarks.
 used-by:
+  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
+  - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-16-june-2015.yml
+  - ../corpus/event/the-flood-of-28-february-2011.yml
+  - ../corpus/event/the-flood-of-6-june-1947.yml
+  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
+  - ../corpus/event/the-storm-of-16-18-may-1943.yml
   - ../corpus/measure/allen-county-frost-free-season-1902-2025.yml
   - ../corpus/measure/allen-county-temperature-extremes-1901-2026.yml
   - ../corpus/measure/lima-snowfall-1901-2025.yml
-  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
-  - ../corpus/event/the-flood-of-12-march-1939.yml
-  - ../corpus/event/the-flood-of-28-february-2011.yml
-  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
-  - ../corpus/event/the-flood-of-16-june-2015.yml
-  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
 ---
 
 **Six hundred and seventy-two values were dropped before anything was computed, and the file said
@@ -75,6 +83,18 @@ or changed observation hour across a hundred and twenty-five years is not in thi
 change in the hour of observation is known to shift daily maxima and minima. The corpus reads this
 record for thresholds and dates rather than for tenths. [verified] — the file has no metadata
 beyond a single coordinate.
+
+**The station history exists, it says the hour changed, and it will not say when — so a day in this
+file is a day of unknown boundary.** NOAA's HOMR record for COOP 334551 carries the remark "CHANGE
+OBSERVATION TIME FROM 7 AM TO MIDNIGHT" with no date on it, and its dated element rows for this
+station begin on 1 December 2022, where the observation time is 2400. [verified] — the service
+above, fetched here. Eighty years of this record therefore sit on one side or the other of that
+change and the file does not say which side. It costs nothing for a monthly total or a frost date
+and it costs a whole day on a flood: the cloudburst that flooded Bluffton on the evening of Friday
+6 June 1947 is carried in this file against Saturday the 7th, which is exactly right under a 7 a.m.
+reading and a day late under a midnight one. See
+[the flood of 6 June 1947](../corpus/event/the-flood-of-6-june-1947.yml) and
+[a file has more than one date](../decisions/a-file-has-more-than-one-date.yml).
 
 **And it contains a hole that looks like data.** From the 1978–79 season through 2005–06 the Lima
 station reported snowfall on two days out of twenty-eight winters, while reporting hundreds of days
