@@ -252,7 +252,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-life-expectancy-2010-2015.yml](measure/allen-county-life-expectancy-2010-2015.yml) | measure | Life expectancy at birth in Allen County's census tracts, 2010–2015 | 3 | 6v / 5i / 1o | 77 |
 | [allen-county-lives-in-the-county-histories.yml](measure/allen-county-lives-in-the-county-histories.yml) | measure | What the county histories record of the people in them | 4 | 14v / 4i / 2o | 133 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
-| [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 6 | 8v / 2i / 1o | 91 |
+| [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 7 | 9v / 2i / 1o | 104 |
 | [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 8 | 11v / 1i / 1o | 133 |
 | [allen-county-local-option-elections-2003-2012.yml](measure/allen-county-local-option-elections-2003-2012.yml) | measure | Local option liquor elections in Allen County, 2003–2012 | 4 | 13v / 3i / 1o | 107 |
 | [allen-county-manufactured-home-lending-2018-2024.yml](measure/allen-county-manufactured-home-lending-2018-2024.yml) | measure | Lending on Allen County's manufactured homes, 2018-2024 | 4 | 12v / 0i / 1o | 77 |
@@ -374,6 +374,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-zip-codes-2020.yml](measure/allen-county-zip-codes-2020.yml) | measure | Allen County's ZIP codes, 2020 | 6 | 12v / 0i / 1o | 119 |
 | [bluffton-and-beaverdam-elections-1939-1959.yml](measure/bluffton-and-beaverdam-elections-1939-1959.yml) | measure | Municipal elections in Bluffton and Beaverdam as their paper reported them, 1939–1959 | 3 | 13v / 4i / 2o | 110 |
 | [bluffton-annexations-1994-2024.yml](measure/bluffton-annexations-1994-2024.yml) | measure | Bluffton annexations, 1994–2024 | 4 | 6v / 1i / 0o | 67 |
+| [city-of-lima-debt-2022.yml](measure/city-of-lima-debt-2022.yml) | measure | What the City of Lima owes, and what it built, 2022 | 5 | 11v / 2i / 1o | 122 |
 | [delphos-annexations-1990-2018.yml](measure/delphos-annexations-1990-2018.yml) | measure | Delphos annexations, 1990–2018 | 4 | 6v / 1i / 1o | 89 |
 | [elida-annexations-1990-2021.yml](measure/elida-annexations-1990-2021.yml) | measure | Elida annexations, 1990–2021 | 4 | 5v / 1i / 1o | 62 |
 | [federal-contracts-in-allen-county-2008-2025.yml](measure/federal-contracts-in-allen-county-2008-2025.yml) | measure | Federal contracts performed in Allen County, 2008–2025 | 5 | 10v / 5i / 1o | 101 |
