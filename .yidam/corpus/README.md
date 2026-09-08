@@ -81,6 +81,7 @@ Sorted by: kind, then alphabetically.
 | [the-united-states-buys-the-tank-plant-ground-1951.yml](event/the-united-states-buys-the-tank-plant-ground-1951.yml) | event | The United States expands the tank plant, June 1951 | 3 | 7v / 3i / 3o | 79 |
 | [the-windstorm-of-22-june-2006.yml](event/the-windstorm-of-22-june-2006.yml) | event | The windstorm of 22 June 2006 | 3 | 7v / 3i / 1o | 62 |
 | [the-winter-storms-of-2004-2005.yml](event/the-winter-storms-of-2004-2005.yml) | event | The winter storms of December 2004 and January 2005 | 2 | 6v / 1i / 1o | 51 |
+| [the-wood-party-reaches-sugar-creek-1824.yml](event/the-wood-party-reaches-sugar-creek-1824.yml) | event | The Wood party reaches Sugar Creek, April 1824 | 5 | 6v / 6i / 1o | 81 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
 | [allen-county-educational-service-center.yml](jurisdiction/allen-county-educational-service-center.yml) | jurisdiction | Allen County Educational Service Center | 2 | 5v / 0i / 2o | 44 |
@@ -504,7 +505,7 @@ Sorted by: kind, then alphabetically.
 | [charles-n-lamison.yml](person/charles-n-lamison.yml) | person | Charles N. Lamison | 2 | 13v / 3i / 1o | 79 |
 | [charles-w-baxter.yml](person/charles-w-baxter.yml) | person | Charles W. Baxter | 2 | 1v / 1i / 0o | 18 |
 | [charles-w-harrod.yml](person/charles-w-harrod.yml) | person | Charles W. Harrod | 2 | 1v / 1i / 0o | 18 |
-| [christopher-wood.yml](person/christopher-wood.yml) | person | Christopher Wood | 2 | 5v / 0i / 1o | 45 |
+| [christopher-wood.yml](person/christopher-wood.yml) | person | Christopher Wood | 2 | 8v / 0i / 1o | 64 |
 | [clay-t-cotterman.yml](person/clay-t-cotterman.yml) | person | Clay T. Cotterman | 2 | 1v / 1i / 0o | 18 |
 | [cory-alan-noonan.yml](person/cory-alan-noonan.yml) | person | Cory Alan Noonan | 2 | 2v / 1i / 0o | 21 |
 | [daniel-w-beck.yml](person/daniel-w-beck.yml) | person | Daniel W. Beck | 2 | 1v / 1i / 0o | 18 |
