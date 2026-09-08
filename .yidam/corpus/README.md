@@ -58,12 +58,13 @@ Sorted by: kind, then alphabetically.
 | [the-flash-flood-at-cairo-28-may-2014.yml](event/the-flash-flood-at-cairo-28-may-2014.yml) | event | The flash flood at Cairo and Beaverdam, 28 May 2014 | 4 | 13v / 2i / 1o | 86 |
 | [the-flood-at-bluffton-26-april-2019.yml](event/the-flood-at-bluffton-26-april-2019.yml) | event | The flood at Bluffton, 26 April 2019 | 6 | 11v / 3i / 1o | 94 |
 | [the-flood-of-12-march-1939.yml](event/the-flood-of-12-march-1939.yml) | event | The flood of 12 March 1939 | 7 | 8v / 1i / 1o | 96 |
-| [the-flood-of-13-february-1950.yml](event/the-flood-of-13-february-1950.yml) | event | The flood of 13–14 February 1950 | 7 | 9v / 1i / 1o | 87 |
+| [the-flood-of-13-february-1950.yml](event/the-flood-of-13-february-1950.yml) | event | The flood of 13–14 February 1950 | 7 | 10v / 1i / 1o | 90 |
 | [the-flood-of-16-july-1915.yml](event/the-flood-of-16-july-1915.yml) | event | The flood of 16 July 1915 | 5 | 10v / 1i / 1o | 87 |
 | [the-flood-of-16-june-2015.yml](event/the-flood-of-16-june-2015.yml) | event | The flood of 16 June 2015 | 3 | 11v / 3i / 1o | 83 |
 | [the-flood-of-22-august-2007.yml](event/the-flood-of-22-august-2007.yml) | event | The flood of 21–22 August 2007 | 5 | 13v / 2i / 1o | 94 |
 | [the-flood-of-28-february-2011.yml](event/the-flood-of-28-february-2011.yml) | event | The flood of 28 February 2011 | 4 | 10v / 3i / 1o | 86 |
-| [the-flood-of-6-june-1947.yml](event/the-flood-of-6-june-1947.yml) | event | The flood of 6 June 1947 | 6 | 10v / 1i / 0o | 91 |
+| [the-flood-of-6-june-1947.yml](event/the-flood-of-6-june-1947.yml) | event | The flood of 6 June 1947 | 6 | 11v / 1i / 0o | 95 |
+| [the-flood-of-9-february-1959.yml](event/the-flood-of-9-february-1959.yml) | event | The flood of 9–10 February 1959 | 8 | 10v / 1i / 1o | 100 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 4 | 6v / 2i / 1o | 61 |
 | [the-lima-news-strike-of-1957.yml](event/the-lima-news-strike-of-1957.yml) | event | The Lima News strike of 1957 | 4 | 7v / 1i / 1o | 49 |
 | [the-mob-at-the-allen-county-jail-1916.yml](event/the-mob-at-the-allen-county-jail-1916.yml) | event | The mob at the Allen County jail, 1916 | 4 | 6v / 2i / 1o | 65 |
@@ -403,7 +404,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-counties-of-1820-and-their-names.yml](measure/ohio-counties-of-1820-and-their-names.yml) | measure | The Ohio counties of 1820 and the names Howe gives them | 2 | 9v / 4i / 1o | 83 |
 | [ohio-house-district-4-land-area-2020.yml](measure/ohio-house-district-4-land-area-2020.yml) | measure | Ohio House District 4 land area, 2020 geography | 2 | 2v / 0i / 0o | 31 |
 | [ohio-tornadoes-of-11-april-1965.yml](measure/ohio-tornadoes-of-11-april-1965.yml) | measure | The Ohio tornadoes of 11 April 1965 | 3 | 6v / 3i / 0o | 101 |
-| [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 14v / 7i / 1o | 127 |
+| [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 15v / 7i / 1o | 135 |
 | [spencerville-annexations-1997-2023.yml](measure/spencerville-annexations-1997-2023.yml) | measure | Spencerville annexations, 1997–2023 | 4 | 3v / 2i / 0o | 54 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |

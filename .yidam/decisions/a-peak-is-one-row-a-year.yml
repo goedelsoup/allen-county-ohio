@@ -1,0 +1,78 @@
+id: a-peak-is-one-row-a-year
+summary: >-
+  This corpus has ranked its floods for many phases from a file that holds one row per water year.
+  That row answers "the highest instant of this year" and cannot answer "the floods of this year",
+  and in water year 1959 the two answers are in different months — the Blanchard's largest
+  instantaneous reading is 11 February and its largest daily mean is 22 January. The daily series
+  that settles it has existed on the county's own river since 1923 and this corpus had not asked
+  for it.
+context: |
+  [The peak flows](../corpus/measure/ottawa-river-peak-flows-1924-2025.yml) and every flood event
+  written beside them come from `nwis/peak`, which returns one row per water year: the highest
+  instantaneous discharge and the day it happened. It is the right file for "how big was the biggest
+  flood on this river" and this corpus has quietly used it for two other questions — how many floods
+  a year had, and which of two floods was larger.
+
+  Water year 1959 is where that breaks. The corpus holds three events in it — the flash flood at
+  Bluffton of [21 January](../corpus/event/the-flash-flood-at-bluffton-1959.yml), the
+  [Ottawa River flood of 22 January](../corpus/event/the-ottawa-river-flood-of-1959.yml), and the
+  [flood of 9–10 February](../corpus/event/the-flood-of-9-february-1959.yml) — and the Blanchard
+  near Findlay contributes **one** row to that year, 12,100 cfs on 11 February. Read as the year's
+  flood it erases January; read as the year's highest instant it is exactly right.
+
+  And the two "largest" are in different months. Daily mean discharge at Findlay reads **11,600 cfs
+  on 22 January** against **10,300 on 11 February**, while the instantaneous peak of the year is the
+  February one at 12,100. [verified] — [USGS](../catalog/usgs-nwis.md), daily values and peak
+  streamflow, sites 04189000 and 04187500. January was a crest broad enough for a day to hold;
+  February was a spike a day could not.
+
+  **The daily service was there the whole time.** The Ottawa at Allentown carries daily discharge
+  from **1 October 1923 to 23 March 1982 — 18,545 days** — and the Ottawa at Lima from 30 September
+  1988. [verified] — the site service's own series catalogue, `outputDataTypeCd=dv`. This corpus has
+  been ranking that river's floods from fifty-two annual rows.
+decision: |
+  **A peak row is an answer to one question: the highest instantaneous discharge of one water year.
+  Never read it as the year's flood, as a count of floods, or as a comparison between two floods in
+  different months.**
+
+  - **Where a year holds more than one event, fetch the daily series.** It exists for more of this
+    county's record than the corpus assumed, and where it does not exist the node says so rather
+    than falling back on the annual row.
+  - **Name the quantity in the same sentence as the superlative.** "Largest peak of ninety-nine
+    water years" and "largest day of 1959" are different claims about the same river, and in 1959
+    they name different months. A node that says only "largest" has not said which.
+  - **A peak beside its own daily mean is itself a reading.** February 1950 ran 4,760 over 4,410 on
+    the Ottawa and 10,200 over 8,020 on the Blanchard in one storm; February 1959 ran 12,100 over
+    10,300. The wider the gap the sharper the flood, and the corpus may print the pair and say that,
+    which it cannot say from either number alone.
+  - **A peak file's silence about a second flood is structural, not evidential.** It is the same
+    shape as [a category has a birthday](a-category-has-a-birthday.yml): the file counts one thing
+    per year by construction, so an absence in it is undefined rather than zero.
+rationale: |
+  **The failure this prevents is a ranking, which is the thing this corpus keeps having to refuse.**
+  [a worst-since is not a ranking](a-worst-since-is-not-a-ranking.yml) refused a newspaper's
+  superlative as a rank order of floods. The annual peak file invites exactly the same error with an
+  instrument's authority behind it: fifty-two rows sorted descending look like a ranked list of a
+  river's floods, and they are a ranked list of its water years' highest instants. A year with two
+  floods appears once, and the one that appears is not necessarily the one the county remembers.
+
+  **It also explains a disagreement rather than deciding it.** The village put February 1959 ten
+  inches below January at Bluffton; the peak file puts February above January at Findlay. Both are
+  right, because a stage on a creek in one county and a discharge on a river in the next are
+  different quantities in different places, and because a flood can be lower and sharper at once.
+  The node prints all three figures and asserts no order.
+
+  **What it cost to find.** Four phases of flood events were written from the peak file, on a river
+  whose daily record runs from 1923. Nothing written is wrong — every figure was labelled as an
+  annual peak — but the second flood of water year 1959 sat outside the corpus for as long as the
+  corpus was asking a one-row-a-year file how many floods a year had. The catalog entry now carries
+  the daily service as a fourth route in.
+
+  **What this does not license.** Treating the daily mean as the better number. It is the flatter
+  one: it cannot see a two-hour crest, which is what a flash flood on a creek is, and the February
+  1959 account describes 3.13 inches in about nine hours. The two files are good at different
+  questions, which is the same argument
+  [an instrument dates it and a witness describes it](an-instrument-dates-it-and-a-witness-describes-it.yml)
+  makes about a dataset and a newspaper, one level down and inside one agency's own data.
+status: accepted
+date: "2026-09-08"
