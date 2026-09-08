@@ -1,0 +1,122 @@
+class: measure
+label: What the City of Lima owes, and what it built, 2022
+description: |
+  **Lima's debt is its water and sewer system.** Of the $143,291,818 the city owed in bonds and
+  loans at the end of 2022, **$129,409,690 — ninety per cent — is nineteen loans from the Ohio Water
+  Development Authority**, and every one of them is named in the city's own schedule for the work it
+  paid for. [verified] — [the city's audit](../../catalog/ohio-auditor-of-state-audit-search.md),
+  City of Lima, year ended 31 December 2022, Note 14. See
+  [what the county's governments owe](allen-county-local-government-debt-2017-2022.yml), whose
+  federal figure for this city is $146,750,000.
+
+  **The largest single debt the city carries is a storage basin: $38,179,516, at 1.48 per cent.**
+  That one loan is nearly five times the city's entire general obligation bonded debt of $7,720,359,
+  and seven times the $5,148,635 of it that the general fund repays. [verified] — the same note,
+  computed here.
+
+  **The city's whole general-obligation debt is two bond issues, and both are unvoted.** A 2012 and
+  a 2018 issue, each titled "various purpose", between them $4,976,250 of principal outstanding in
+  the governmental funds. The note breaks both down and most of what they did was refinance:
+  of the 2012 issue's $6.81 million, $1,380,000 was new governmental improvement and $3,065,000
+  refunded 2004 bonds for wastewater. [verified] — the same note, sections A and B.
+
+  **Two of the corpus's dams are on this schedule.** $1,294,000 of the 2018 bonds went to
+  Schoonover Lake and Dam improvements — the 1890 dam this corpus records as low-hazard and in
+  satisfactory condition. And the **Bresler Termination Agreement was fully repaid in 2022**: in 2003
+  the city agreed to repay the State's share of the 1970 construction of Bresler Reservoir,
+  $2,841,646 over twenty years at zero per cent interest, in exchange for the State's claim on the
+  water. [verified] — the same note. **The county's largest reservoir finished being paid for
+  fifty-two years after it was built**, and it is the only obligation on this schedule that went to
+  zero in 2022. [inference] — computed from the two dates; see
+  [the dams](allen-county-dams-2026.yml).
+
+  **The legal debt limit can see $4,866,651 of it.** Ohio's constitution caps voted debt at 10.5 per
+  cent of assessed valuation and unvoted at 5.5; on Lima's valuation those are $45,260,146 and
+  $23,707,696. Against them the city's *net debt applicable to the limit* is **$4,866,651**, leaving
+  89.25 per cent of the limit unused. [verified] — the same audit, statistical section, legal debt
+  margin. The city owes thirty times what the limit is measuring.
+
+  **Two exclusions do it, and only one of them is an exemption.** Gross indebtedness for the limit is
+  $13,407,160 — general obligation bonds, revenue bonds and special assessments, which reconciles to
+  the dollar and **contains no OWDA loan at all**; from that, water and sewer bonds and revenue bonds
+  are then subtracted as exempt categories. [verified] — the same table, recomputed here from Note
+  14. So $129 million never enters the calculation and a further $8 million is taken out of it. See
+  [a debt limit is a list of exemptions](../../decisions/a-debt-limit-is-a-list-of-exemptions.yml).
+
+  **The clearest evidence is a year the city borrowed nothing.** Gross indebtedness fell from
+  $39,152,810 at the end of 2020 to $15,037,650 at the end of 2021 — sixty-two per cent — across a
+  year whose principal event was refunding the 2014 sewer revenue bonds into an OWDA loan.
+  [verified] — the same table and Note 14B. Moving a debt from a bond to a state loan removes it
+  from the measure without repaying it. [inference]
+
+  [open] What the other forty-five governments borrowed for. This node reads one city's schedule
+  because it is half the county's debt; Elida Local Schools at $45,709,000, Delphos at $23,359,000
+  and Bath Local Schools at $21,455,000 have audits in the same search and have not been opened.
+properties:
+  parameter: long-term bonds and loans outstanding, City of Lima
+  value: "143291818"
+  unit: dollars, 31 December 2022
+  as_of: "2022-12-31"
+  table: |
+    obligation                          balance_2022  rate_pct  utility
+    OWDA-Storage-Basin                      38179516      1.48  sewer
+    OWDA-Reservoir                          23976881      4.32  water
+    OWDA-WWTP-Improvements                  13689141      2.54  sewer
+    OWDA-Carbon-Filter-Project              13318729      3.83  water
+    OWDA-Refi-2014-Revenue-Bonds            13272753      2.20  sewer
+    OWDA-Water-Meter-Replacement             6946106      2.58  water
+    OWDA-Grand-Ave-Seg-Block-Rehab           4124569      0.51  sewer
+    OWDA-Refi-2010-Revenue-Bonds             4018175      0.58  sewer
+    OWDA-CSO-Separation                      2530053      2.69  storm
+    OWDA-Elevated-Storage-Tank               2227281      4.64  water
+    OWDA-Interceptor                         2055233      3.09  sewer
+    OWDA-Mumaugh-and-Cable-Pump-Stations     1455170      1.12  sewer
+    OWDA-Segmented-Block-Rehab               1314299      2.01  sewer
+    OWDA-Melrose-Storm-Improvement            853500      2.74  storm
+    OWDA-Bresler-Pump-Station                 837041      3.49  water
+    OWDA-Softening-Basin                      275337      3.17  water
+    OWDA-Wastewater-Improvements-56           182013      3.20  sewer
+    OWDA-Storm-Water-Project                  129533      3.25  storm
+    OWDA-Storm-Water-Project-II                24360      2.66  storm
+    Revenue-Bond-2018-Sewer-Refunding        6161769      3.00  sewer
+    GO-2018-Various-Purpose                  4811250      2.00  governmental
+    GO-2012-Sewer-Improvement                1180000      1.00  sewer
+    GO-2012-Sewer-Refunding                   640000      1.00  sewer
+    GO-2018-Water-Various-Purpose             589375      3.02  water
+    GO-2018-Sewer-Various-Purpose             119375      3.02  sewer
+    GO-2012-Various-Purpose                   165000      1.00  governmental
+  method: |
+    Read from Note 14, Long-Term Obligations, of the city's audited statements for the year ended
+    31 December 2022. [verified] The table gives principal outstanding at 31 December 2022 and omits
+    unamortized premiums and discounts, which is why it sums to $142,761,778 against the note's
+    $143,291,818; `rate_pct` is the low end where the note gives a range. Pension liabilities,
+    OPEB liabilities, compensated absences and leases are **not** here: they are liabilities and not
+    debt, which is the distinction
+    [the county's debt node](allen-county-local-government-debt-2017-2022.yml) already draws.
+    [verified] The Bresler Termination Agreement is omitted because its balance went to zero in 2022,
+    which is how the note's $129,409,690 of direct borrowings is exactly the nineteen OWDA loans.
+    [verified]
+
+    **The federal survey and the audit do not agree, and the gap is not explained here.** Item `49U`
+    gives $146,750,000 against the note's $143,291,818 — $3,458,182 apart, which is close to but not
+    equal to the city's $3,393,256 of compensated absences. [verified] Which figure a reader should
+    use depends on whether compensated absences are debt, and this node asserts nothing about that.
+links:
+  - target: allen-county-local-government-debt-2017-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: allen-county-dams-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../jurisdiction/city-of-lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../place/lima.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-auditor-of-state-audit-search.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

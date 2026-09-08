@@ -1,0 +1,69 @@
+id: a-debt-limit-is-a-list-of-exemptions
+summary: >-
+  The City of Lima owes $143,291,818 and its constitutional debt limit is measuring $4,866,651 of it.
+  Ninety per cent of what the city owes is loans from a state authority, which never enter the
+  limit's gross indebtedness at all, and most of the rest is water and sewer, which is subtracted
+  from it by name. The city has used a tenth of a limit it is thirty times over.
+context: |
+  Ohio caps a municipality's voted debt at 10.5 per cent of assessed valuation and its unvoted debt
+  at 5.5. On Lima's valuation those are $45,260,146 and $23,707,696, and the city's audit reports
+  **89.25 per cent of the limit unused**. [verified] —
+  [the city's audit](../catalog/ohio-auditor-of-state-audit-search.md), statistical section, legal
+  debt margin, and Note 14.
+
+  The same audit says the city owes $143,291,818.
+
+  Two things get it from one number to the other, and only one of them is written down as an
+  exemption. The table's own *gross indebtedness* is $13,407,160, which recomputes exactly as
+  general obligation bonds plus revenue bonds plus special assessments — and **contains not one of
+  the nineteen OWDA loans that are ninety per cent of the city's debt**. That exclusion is not in the
+  exemption list; it is in what the category was defined to hold. From the $13,407,160 the table then
+  subtracts water bonds, sewer bonds, revenue bonds, special assessments and the bond retirement
+  fund balance by name, leaving $4,866,651.
+
+  The clearest evidence is a year in which the city borrowed nothing new. Gross indebtedness fell
+  from $39,152,810 at the end of 2020 to $15,037,650 at the end of 2021, sixty-two per cent, across
+  the year the city refunded its 2014 sewer revenue bonds into an OWDA loan. [verified] — the same
+  table with Note 14B. The obligation did not go away. It changed instrument, and the instrument it
+  changed to is outside the measure.
+decision: |
+  **A statutory limit measures a legal category, not a quantity. Never report a percentage of a debt
+  limit as a statement about how much a government owes.**
+
+  - **Name the numerator.** "Lima has used 10.75 per cent of its debt limit" and "Lima owes
+    $143,291,818" are both true and are about different things. A node that gives the percentage
+    gives the base it is a percentage of, or gives neither.
+  - **The exclusions that matter are the ones not in the exemption list.** A published table names
+    what it subtracts. It does not name what its gross figure never contained, and that was the
+    larger of the two here by an order of magnitude. Recompute the gross from the underlying
+    schedule before trusting it as a total.
+  - **A limit responds to refinancing.** Where a series moves sharply in a year with no new
+    borrowing, suspect an instrument change before an economic one, and check the debt note for a
+    refunding.
+  - **This is about what taxes repay.** The limit exists to bound what a government can charge its
+    taxpayers, so revenue-backed utility debt is outside it by design. That makes it the right
+    measure for the question it was written for and the wrong one for "what does this city owe".
+rationale: |
+  **The failure this prevents is a solvency claim.** A reader given "89 per cent of the debt limit
+  unused" concludes a city has room to borrow and is barely in debt. Lima has room to borrow *against
+  its taxes*, and owes thirty times the figure that statement is about, secured on water and sewer
+  charges its residents pay. Both facts are in one audit, four hundred pages apart.
+
+  **It is the same shape as** [a direct column cannot see a contract](a-direct-column-cannot-see-a-contract.yml),
+  found in the phase before this one: a published column that answers a narrower question than its
+  label, where the narrowing is a definition rather than an error. There the survey's expenditure
+  line dropped what a government paid another government; here the debt limit's gross figure drops
+  what a government borrowed from a state authority. **In both cases the missing part was the larger
+  part**, and in both the file held it one column over.
+
+  **What this does not license.** Treating the limit as wrong or as concealment. It is a correctly
+  computed statutory figure and the audit prints the full schedule sixty pages earlier; nothing is
+  hidden. The defect would be entirely the corpus's, for quoting a ratio whose denominator it had
+  not read.
+
+  **And it does not license the reverse error either** — reading the $143,291,818 as a burden on
+  taxpayers. Ninety per cent of it is repaid from water, sewer and storm water charges, which is a
+  different population and a different instrument from a property tax. See
+  [what the city owes](../corpus/measure/city-of-lima-debt-2022.yml).
+status: accepted
+date: "2026-09-08"

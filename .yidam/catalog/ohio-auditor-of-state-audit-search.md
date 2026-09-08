@@ -16,9 +16,12 @@ location:
     description: >-
       An ASP.NET WebForms page, so the search is a POST carrying `__VIEWSTATE`,
       `__VIEWSTATEGENERATOR` and `__EVENTVALIDATION` back from a GET of the same page. The county
-      filter is `ddlCounty=Allen`; the three "all" dropdowns must be sent with their exact option
-      text — `All Fiscal Years`, `All Release Months`, `All Release Years` — and sending `All Months`
-      instead returns HTTP 500. One request returns every row for the county unpaginated, 2 MB.
+      filter is `ddlCounty=Allen`, and **all five** "all" dropdowns must be sent with their exact
+      option text — `All Entity Types`, `All Report Types`, `All Fiscal Years`, `All Release Months`,
+      `All Release Years` — plus `txtQueryString=` and `btnSubmitSearch=Search`. An empty string in
+      `ddlEntityType` or `ddlReportType` returns HTTP 500, and so does `All Months` for the month.
+      This entry said "three" until 2026-09-08 and the omission cost a request. One POST returns
+      every row for the county unpaginated, 2 MB, 1,261 rows.
   - kind: url
     value: https://ohioauditor.gov/auditsearch/detail.aspx?ReportID=941547cb-c03b-46f7-9a1f-bd2e6d02c24d
     description: >-
@@ -29,8 +32,30 @@ location:
 used-by:
   - ../corpus/measure/allen-county-audits-1999-2026.yml
   - ../corpus/measure/allen-county-findings-for-recovery-1999-2026.yml
+  - ../corpus/measure/city-of-lima-debt-2022.yml
+  - ../corpus/measure/allen-county-local-government-debt-2017-2022.yml
   - ../corpus/event/fort-shawnee-declared-in-fiscal-emergency-2010.yml
+  - ../corpus/measure/allen-county-governments-and-their-employees-2022.yml
+  - ../corpus/jurisdiction/lima-municipal-court.yml
+  - ../corpus/jurisdiction/village-of-fort-shawnee.yml
+  - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
 ---
+
+**Every report PDF is AES-encrypted, and a naive reader gets nothing rather than an error.** The
+files carry `/Filter /Standard /V 4 /R 4 /CFM /AESV2` with an **empty user password** — they open in
+any reader without being asked for one — so the permissions flags are the only thing the encryption
+carries. A script that decompresses content streams itself, which works on every other PDF in this
+catalog, returns zero pages here and reports no failure, because the streams are encrypted before
+they are deflated. [verified] — the City of Lima's 2022 report, 6.6 MB, 315 pages, read with
+`pypdf` after `decrypt("")`. Nothing on this host says the files are encrypted.
+
+**The financial statements are in here, and they are the city's annual financial report.** A
+"Financial Audit" row for a city or county carries the whole audited statements — the notes, the
+schedule of long-term obligations issue by issue, and the statistical section — not just an opinion
+letter. [verified] — the same report, Note 14 and the legal debt margin table. This matters because
+the corpus's other route to a city's financial report is the city's own website, and
+[Lima's refuses](city-of-lima-official-site.md). Where a government is audited by the state, its
+financial report has a second address.
 
 **An asterisk on an entity name means a finding for recovery, and the legend is the only place the
 file says so.** 62 of the 1,260 rows carry one. The `cbxFindingsForRecovery` checkbox on the search

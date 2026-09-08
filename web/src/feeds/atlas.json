@@ -12485,6 +12485,52 @@
       ]
     },
     {
+      "node": "measure/city-of-lima-debt-2022.yml",
+      "class": "measure",
+      "label": "What the City of Lima owes, and what it built, 2022",
+      "tier": "inference",
+      "from": 2022,
+      "to": 2022,
+      "precision": "day",
+      "open_end": "instantaneous",
+      "undated": null,
+      "treatment": "count",
+      "hops": 1,
+      "route_tier": "verified",
+      "anchors": [
+        {
+          "node": "jurisdiction/city-of-lima.yml",
+          "lat": null,
+          "lon": null,
+          "points": [],
+          "geoid": "3943554",
+          "level": "place",
+          "via": [
+            {
+              "relationship": "describes",
+              "to": "jurisdiction/city-of-lima.yml",
+              "tier": "verified"
+            }
+          ]
+        },
+        {
+          "node": "place/lima.yml",
+          "lat": 40.740679,
+          "lon": -84.112091,
+          "points": [],
+          "geoid": null,
+          "level": null,
+          "via": [
+            {
+              "relationship": "describes",
+              "to": "place/lima.yml",
+              "tier": "verified"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "node": "measure/delphos-annexations-1990-2018.yml",
       "class": "measure",
       "label": "Delphos annexations, 1990–2018",
