@@ -46,6 +46,17 @@ scrape that reads `CONTENT` from every element renders "automobiles" as `au tomo
 three times over, and every quotation taken from it is unusable. Read `SUBS_CONTENT` on part one
 and skip part two.
 
+**The cheap route cannot see a number, and it fails silently.** Each search result carries a
+`word-coordinates-service` URL in its `image_url` list, and it returns a JSON index of every term
+on the page with pixel coordinates and a `position: [line, word]` — from which the whole page can be
+reassembled without fetching the ALTO at all. It is one call instead of two, and it **drops every
+numeral**: the front page of 16 March 1939 yields **1,308 distinct terms through it and not one of
+them contains a digit**, so a story that turns on "the disastrous 1913 inundation" comes back
+reading "the disastrous inundation". [verified] — the index and the ALTO for that page, fetched and
+compared here. Dates, stages, counts, ages, prices and years are what this corpus goes to a
+newspaper for, and they are exactly what this route deletes — without an error, a gap or a warning.
+Use it to find a page and never to quote one.
+
 **And it is a source about Lima all the same, which an earlier reading of this entry denied.**
 The paragraph below is true and the conclusion once drawn from it was not. The Bluffton weekly
 carries a standing column of news notes from four counties, and inside it are four mayors of Lima
@@ -160,10 +171,21 @@ the Ohio Supreme Court deciding against "the one-time millionaire railway organi
 penniless". The book he is a subscriber to was printed in the town he built, two years after, and
 records the date.
 
-**What it carries that these phases did not take.** The Bluffton News in full — 952 issues, and two
-phases have read perhaps a dozen. Also, for whoever comes next: the archive's `location_county` facet matches on the *name*, so `allen` returns Allen
-County, Kansas and Allen County, Kentucky alongside Ohio's, and a search filtered that way will
-quietly hand back the Iola Register.
+**What it carries that these phases did not take.** The Bluffton News in full — 952 issues, of
+which three phases have now read perhaps a score. The weather vein is the one that has been
+sampled: 527 pages match `flood` and 133 match `riley creek flood`, and ranking the issues by both
+counts together puts **12 June 1947 and 20 May 1943 at the top of what is still unread**, beside
+16 March 1939 which this phase took. The 1947 issue is a second "worst flood since 1913" and is
+discussed in [the flood of 12 March 1939](../corpus/event/the-flood-of-12-march-1939.yml); the 1943
+one is headed "RAIN, FLOOD AND TORNADO SWEEP BLUFFTON AREA" and reports a tornado that blew down
+four barns in Orange township early on Monday 17 May 1943 — **seven years before the first Allen
+County tornado in the federal storm record**, which begins in 1950. [verified] — the ALTO of both
+front pages, read here; see
+[a category has a birthday](../decisions/a-category-has-a-birthday.yml). Neither is written up.
+
+Also, for whoever comes next: the archive's `location_county` facet matches on the *name*, so
+`allen` returns Allen County, Kansas and Allen County, Kentucky alongside Ohio's, and a search
+filtered that way will quietly hand back the Iola Register.
 
 ## The county canvass, which the weekly does print
 
@@ -209,14 +231,41 @@ twelve-page issue is a two-minute read and not a two-second one.
 facet does not: `fa=partof:bluffton+news` returns nothing at all, and the title record `sn87076554`
 carries zero resources of its own because issues are separate items. [verified]
 
+**But `fa=number_lccn:sn87076554` is the one to use, and it is exact.** It names the title rather
+than a place-name, so it is immune to the collision recorded above — `location_county:allen` also
+returns Allen County, Kansas and Allen County, Kentucky, and the LCCN cannot. Against it the paper
+answers **952 issues, 9,576 pages, and 527 pages matching `flood`**. [verified] — `dl=issue`,
+`dl=page`, and the same query with `q=flood`, run here. The county facet is the right tool for
+finding *which* papers cover a county; the LCCN facet is the right tool once the paper is known.
+
 ## The press day, and what it costs
 
-**The paper went to press on Wednesday, so a Wednesday event misses that week entirely.** The
-tornado of 19 July 1950 struck on a Wednesday evening; the issue of Thursday 20 July does not
-mention it, and the account appears on the front page of 27 July as a clean-up story, opening
-"still are effecting repairs". [verified] — both issues, read page by page. That is a week's delay
-on the largest weather event of the paper's own decade, and it is a property of the press day
-rather than of the archive.
+**The paper is dated Thursday. It was this entry that said Wednesday, and the difference is a day
+a reader will spend looking for an issue that does not exist.** All 952 issues were enumerated:
+**949 are dated Thursday**, and the three that are not are 24 and 31 December 1946, both Tuesdays,
+and 28 December 1956, a Friday — every one of them a Christmas or New Year week, which is when a
+weekly moves its own date. [verified] — the collection search restricted by LCCN, `dl=issue`,
+all ten result pages read.
+
+**What was right underneath it was the deadline, not the date.** The tornado of 19 July 1950 struck
+on a Wednesday evening; the issue of Thursday 20 July does not mention it, and the account appears
+on the front page of 27 July as a clean-up story, opening "still are effecting repairs".
+[verified] — both issues, read page by page. That is a week's delay on the largest weather event of
+the paper's own decade. It shows that copy closed before Wednesday evening; it does not show that
+the paper was dated Wednesday, and this entry read the second off the first. The cost of the error
+is exact: an agent working from it asked for "the front page of Sunday 12 March 1939" and there is
+no issue of that date, because 12 March 1939 is the Sunday the flood happened and 16 March is the
+Thursday the paper reported it. See
+[the flood of 12 March 1939](../corpus/event/the-flood-of-12-march-1939.yml).
+
+**And the run is thinner than a year-by-year count makes it look.** The span 5 January 1939 to
+31 December 1959 contains **1,096 Thursdays and the archive holds 949 of them — 86.6 per cent**,
+leaving 147 weeks with no issue at all. [verified] — the same enumeration, computed here. The
+entry above already said a run continuous by year is not continuous by week; this is the number.
+The worst of it is not the 1940 election gap but **1951, which holds nine issues** — and between
+7 June 1951 and 1 May 1952 there is exactly one, of 22 November, so a question put to this paper
+about the year either side of that will come back empty for reasons that have nothing to do with
+the county.
 
 **It is also why the account is worth having.** A week later the paper can say which roads were
 still blocked, which woodlots will be "a mass of debris for months", and that the township trustees

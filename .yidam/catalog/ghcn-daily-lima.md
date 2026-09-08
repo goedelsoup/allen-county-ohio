@@ -39,6 +39,11 @@ used-by:
   - ../corpus/measure/allen-county-temperature-extremes-1901-2026.yml
   - ../corpus/measure/lima-snowfall-1901-2025.yml
   - ../corpus/event/the-ottawa-river-flood-of-1959.yml
+  - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-28-february-2011.yml
+  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
+  - ../corpus/event/the-flood-of-16-june-2015.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
 ---
 
 **Six hundred and seventy-two values were dropped before anything was computed, and the file said
