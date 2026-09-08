@@ -1,0 +1,76 @@
+id: a-paper-files-an-event-under-its-lead
+summary: >-
+  Five phases have found events in The Bluffton News by searching its full text for `flood` and
+  ranking the issues by how many pages match. The method's blind spot is now measured: the wettest
+  day the county's gauge recorded in nineteen years was reported by this paper under the headline
+  "Lightning Hits Large Elm On Campus Drive", and the words "flood" and "high water" appear nowhere
+  on that front page. A full-text count finds a word. A paper names an event after whatever it led
+  with, and the two are not the same index.
+context: |
+  The catalog entry for [Chronicling America](../catalog/chronicling-america.md) already carries
+  the warning that "a full-text count is a count of a word", and the case it was written from is
+  the false-positive direction: the ranking's top twenty contained floodlights over a football
+  field, a line of serialised fiction, and thirty-eight trucks sent to a flood in another state.
+  That warning says *read the page before believing the rank*, and it is right.
+
+  It says nothing about the other direction, which is worse because it leaves no trace. On the
+  evening of Tuesday 1 September 1959 a storm put 77.2 mm on the Lima gauge — the nineteenth
+  largest daily fall in 45,273 days of record — overtaxed Bluffton's sewers and backed water into
+  numerous basements and across its streets curb to curb. The paper of 3 September led with the
+  elm tree that the lightning stripped. The rain is the story's second paragraph, the sewers are
+  four sentences in the jump on page six, and that jump holds the issue's only occurrence of the
+  word this corpus was searching for.
+
+  So the event sat in the archive through four phases that were looking for exactly it, in a paper
+  those phases had ranked page by page, and the corpus wrote up a whole year of this paper's floods
+  without it. See [the cloudburst of 1 September 1959](../corpus/event/the-cloudburst-of-1-september-1959.yml).
+decision: |
+  **Rank by the word to find candidates; enumerate by the calendar to establish absence.**
+
+  The ranking stays — it is a good finding aid and it found four of this county's floods. What it
+  may no longer do is answer the question "does this paper report a flood in year X", because that
+  question is about events and the ranking is about a word.
+
+  Where an absence matters, the query is not a better search term. It is an independent index of
+  when the event happened — a gauge series, a peak file, a damage report — read first, and the
+  paper's issue for the following week opened by date. The instrument says *when to look*; the
+  paper says *what it was like*. That is
+  [an instrument dates it and a witness describes it](an-instrument-dates-it-and-a-witness-describes-it.yml)
+  turned around and used as a finding aid rather than as a caution.
+
+  Applied here: the 45,273-day precipitation record at Lima was sorted, and its largest days were
+  read against the corpus's event list. That is how 1 September 1959 was found, and it is the
+  method the open question
+  [the wettest days with no event](../corpus/question/the-wettest-days-with-no-event.yml) hands
+  forward.
+
+  **A negative result from a full-text search is recorded as what it is.** "No page of this paper
+  matches `flood` in that month" is a fact about the OCR and the vocabulary of a headline writer.
+  It is not "this paper does not report a flood that month", and a node may not say the second on
+  the evidence of the first.
+rationale: |
+  **The alternative — searching more words — does not fix it and pretends to.** Adding `high
+  water`, `deluge`, `cloudburst`, `inundation` and `storm` to the query would have found this
+  event, and would have found it by luck: the paragraph that matters here uses "deluge", but the
+  headline uses none of them and the next such event will be led with a drowned cow or a closed
+  road. A vocabulary can always be extended by one word after the fact, which is another way of
+  saying it can always be short by one.
+
+  **What makes the calendar index reliable is that it does not go through the OCR at all.** The
+  gauge file is a table of dates. It cannot mangle "flood" into "flood" the way this archive's
+  newsprint OCR mangles whole words into other real words, and it cannot bury the event under a
+  tree. It also has the property the search does not: it is complete over its span, so the absence
+  of a large day is evidence and the absence of a matching page is not.
+
+  **This does not license reading the calendar alone.** A rain gauge dates a storm and cannot say
+  whether anything flooded — the same 77.2 mm at the same station produced the largest flow ever
+  measured on the Ottawa in January and a rise of 168 cubic feet a second in September. The paper
+  is what says which one it was, and this decision is about the order the two are used in, not
+  about replacing one with the other.
+
+  **What it costs.** Reading the calendar is more expensive than reading the rank: it means one
+  issue fetched per candidate date rather than one ranked list per year, and this archive
+  rate-limits a burst and charges two calls per page. That is the price of being able to say
+  "there was no flood" rather than "no page said so".
+status: accepted
+date: "2026-09-08"

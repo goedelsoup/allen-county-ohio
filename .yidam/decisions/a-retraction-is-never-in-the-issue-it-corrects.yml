@@ -1,0 +1,77 @@
+id: a-retraction-is-never-in-the-issue-it-corrects
+summary: >-
+  The corpus took its whole account of the Bluffton flood of 21 January 1959 from the issue of
+  29 January. The issue of 5 February carries "A CORRECTION" withdrawing part of that account. A
+  method that ranks issues by how often they say `flood` and reads the top of the ranking will
+  read the story and never the retraction, because a retraction is one paragraph in an issue about
+  something else, and it is by construction in a later issue than the thing it corrects. Read
+  forward from a story before quoting it.
+context: |
+  [The flash flood at Bluffton](../corpus/event/the-flash-flood-at-bluffton-1959.yml) rests on the
+  front page and page eight of The Bluffton News of 29 January 1959 — eleven quotations, four named
+  businesses, twelve houses pumped out, a broken water main. That issue is second in the paper's
+  own `flood` ranking for 1959 and was always going to be read.
+
+  The issue of 5 February 1959 carries, on page three, between a used-car advertisement and a
+  closing-down sale:
+
+      A CORRECTION
+      Flood waters from the January 21 inundation did not at any time enter Meadowbrook Lanes,
+      Pandora. as was erroneously reported in The Bluffton News of January 29. The Bluffton News
+      regrets this error.
+
+  One paragraph, one occurrence of the word, on an interior page of an issue that ranks nowhere.
+  The corpus was lucky: the withdrawn claim is about a bowling alley in Putnam County and never
+  entered a node. Nothing in the method made that luck.
+
+  The paper does this as a matter of habit rather than as an exception — the issue of 24 December
+  1959 corrects the dating of a photograph printed the week before. [verified] — both issues, read
+  here.
+decision: |
+  **Before a newspaper story is quoted into a node, read the paper's next two issues.**
+
+  Two is the interval this paper actually uses: the flood correction ran seven days after the
+  story, the photograph correction seven days after the photograph. A weekly that missed the first
+  week would run it the second, and beyond that a correction is no longer a correction but a new
+  story. The cost is two issues per source story, against the twelve-page read the story itself
+  already costs.
+
+  **What is being read for is not another `flood` hit.** It is the standing furniture of a
+  newspaper: the correction column, the letter answering the story, the follow-up under a different
+  headline. None of it is reachable by the search term that found the original, which is the same
+  reason [a paper files an event under its lead](a-paper-files-an-event-under-its-lead.yml) gives
+  for not trusting a full-text count to establish an absence.
+
+  **A node quoting a story from an issue whose successors were not read says so.** Every quotation
+  this corpus takes from a newspaper already carries the paper and the date; what this adds is that
+  the corpus can distinguish a quotation it checked forward from one it did not, and the
+  distinction lives in the sentence rather than in a field, exactly as
+  [a single witness read once](a-single-witness-read-once.yml) puts the weight of a one-scan source
+  in the prose that carries the claim.
+rationale: |
+  **The asymmetry is what makes this worth a record.** A story and its retraction are not two
+  readings of equal standing that a corpus weighs. The retraction is the paper's own final word,
+  it is strictly better evidence than the story, and it is strictly harder to find — shorter, later,
+  unheadlined, and in an issue about something else. Every property that makes it authoritative
+  also makes it invisible to a search built on the story's vocabulary.
+
+  **Ranking makes it worse rather than better.** The ranking's whole purpose is to concentrate
+  reading on the issues that say the word most, and the correction issue says it once. The better
+  the finding aid gets at locating the event, the more reliably it excludes the paragraph that
+  qualifies it.
+
+  **What this does not claim.** It does not claim the corpus has published a withdrawn fact — it
+  has not, and the one instance found was checked. It does not extend to sources that do not
+  publish corrections: a gauge file, a census table and a county history have no retraction genre,
+  and revisions to them arrive as new editions, which
+  [a file has more than one date](a-file-has-more-than-one-date.yml) already covers. And it does
+  not licence treating an uncorrected story as confirmed. Silence in the next two issues means the
+  paper did not withdraw it, which is a weaker thing than the paper standing behind it.
+
+  **The rule is held by writing and not by a gate.** Nothing in `mise run ci` can tell whether an
+  issue's successors were opened. That is the same honest limit
+  [a single witness read once](a-single-witness-read-once.yml) states about itself, and it is
+  acceptable for the same reason: the catalog entry for the source says so where the next reader
+  meets it.
+status: accepted
+date: "2026-09-08"
