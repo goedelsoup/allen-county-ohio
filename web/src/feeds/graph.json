@@ -1313,6 +1313,46 @@
       "withheld": 2
     },
     {
+      "id": "event/the-flood-of-13-february-1950.yml",
+      "class": "event",
+      "label": "The flood of 13–14 February 1950",
+      "tier": "inference",
+      "properties": {
+        "event_type": "flood",
+        "location_description": "The Bluffton district on Big and Little Riley creeks, and the country roads and ditches around it; worse at Ada, Findlay and Ottawa, with schools closed in Allen, Putnam and Hancock counties. [verified] — [The Bluffton News](../../catalog/chronicling-america.md), 16 February 1950.",
+        "occurred": "1950-02-13",
+        "occurred_through": "1950-02-14"
+      },
+      "blocks": [
+        {
+          "text": "**Both of this county's rivers took their eighth-largest peak of record on consecutive days, and no file this corpus can query holds the flood.** \"Rampaging outside their banks for more than 24 hours on Monday and Tuesday, Big and Little Riley creeks were at flood stage in the Bluffton district for one of the longest periods since the long-remembered 1913 inundation.\" [verified] — [The Bluffton News](../../catalog/chronicling-america.md), 16 February 1950, page one. The rain fell \"over a 36-hour period beginning Sunday night and continuing until early Tuesday afternoon\", and \"altho rainfall was steady it rarely reached the downpour stage\" — a slow flood, which is the kind the reporting record is worst at seeing.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Four records agree on the week.** Lima recorded **1.41 inches on 13 February, 1.20 on the 14th and 0.59 on the 15th**. [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. The Ottawa at Allentown peaked at **4,760 cubic feet a second on 14 February**, eighth of fifty-two water years; the Blanchard near Findlay at **10,200 cfs on the 15th**, eighth of ninety-nine and that river's largest between December 1927 and February 1959. [verified] — [USGS peak streamflow](../../catalog/usgs-nwis.md), sites 04187500 and 04189000; see [a flood needs two records](../../decisions/a-flood-needs-two-records.yml). Both are direct readings rather than reconstructions — the Allentown gauge came back into service in September 1943 — which no earlier flood in this corpus's newspaper decade can say.",
+          "tier": "verified"
+        },
+        {
+          "text": "**What was underneath it was the wettest January in the record.** The paper says the ground was saturated by \"more than three times the normal January rainfall total\", and it is exactly right: Lima measured **8.33 inches in January 1950 against a 124-year January mean of 2.66**, a ratio of 3.13, and it is the wettest January the station has ever recorded. [verified] — the same file, computed here. **The second wettest is January 1913.** [verified] — same.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the paper counts the floods rather than dating them.** \"Since early January, Big and Little Riley creeks have flooded outside their banks here six times. In normal seasons that many floods in a year would be an exception.\" [verified] — the same page. Six overbank events in six weeks, of which this corpus can date one. That is a frequency from a witness with no instrument behind it, and it is not admissible as six events under the two-records rule; it is admissible as evidence that the rule's denominator is wrong. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Bluffton is the place that got off lightly.** \"Bluffton fared better than most surrounding communities because of its favorable high-ground location. Serious floods were reported in Ada, Findlay and Ottawa on Tuesday.\" Schools closed across Allen, Putnam and Hancock counties; Mt. Cory-Rawson dismissed at noon on Tuesday for water in the boiler room. [verified] — the same page. Every other flood this corpus holds from this newspaper is a flood the village took the worst of, because the village is what the paper reports; this one is the control on that.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The federal weather record for this county begins in 1950 and could not have held this.** Its first Allen County row of any kind is [the tornado of 19 July 1950](the-tornado-of-19-july-1950.yml), five months later, and no flood category appears in the file until 1996. [verified] — [the storm record](../measure/allen-county-storm-events-1950-2026.yml). A zero before a category's first year means \"not counted yet\"; see [a category has a birthday](../../decisions/a-category-has-a-birthday.yml). This is the first flood in the corpus that falls *inside* the file's span and outside its vocabulary.",
+          "tier": "verified"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
+    },
+    {
       "id": "event/the-flood-of-16-july-1915.yml",
       "class": "event",
       "label": "The flood of 16 July 1915",
@@ -29395,6 +29435,48 @@
     },
     {
       "from": "event/the-flood-of-12-march-1939.yml",
+      "to": "event/the-flood-of-6-june-1947.yml",
+      "relationship": "relates-to",
+      "tier": "inference",
+      "source": null
+    },
+    {
+      "from": "event/the-flood-of-13-february-1950.yml",
+      "to": "place/bluffton.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/chronicling-america.md"
+    },
+    {
+      "from": "event/the-flood-of-13-february-1950.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "occurred-in",
+      "tier": "verified",
+      "source": "catalog/chronicling-america.md"
+    },
+    {
+      "from": "event/the-flood-of-13-february-1950.yml",
+      "to": "natural-feature/riley-creek.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/chronicling-america.md"
+    },
+    {
+      "from": "event/the-flood-of-13-february-1950.yml",
+      "to": "natural-feature/ottawa-river.yml",
+      "relationship": "affected",
+      "tier": "verified",
+      "source": "catalog/usgs-nwis.md"
+    },
+    {
+      "from": "event/the-flood-of-13-february-1950.yml",
+      "to": "organization/the-bluffton-news.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/chronicling-america.md"
+    },
+    {
+      "from": "event/the-flood-of-13-february-1950.yml",
       "to": "event/the-flood-of-6-june-1947.yml",
       "relationship": "relates-to",
       "tier": "inference",
