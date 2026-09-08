@@ -6913,6 +6913,10 @@
           "tier": "inference"
         },
         {
+          "text": "**The definition did not move between 1950 and 1954, and the volume says so:** the change was made \"in 1950, and continued In [sic] 1954\". [verified] — [the 1954 volume](../../catalog/census-of-agriculture-historical.md), its comparability section. The break is before this pair, not inside it, so the 12,926 acres and 463 farms lost between them are a change in the county, not in the question. That section also says 1954 prints each county's farm count **twice** — an actual count and a sample estimate which \"differ\" in \"almost every county\"; 2,097 is County Table 1's, a complete count, so it is the actual one. [inference]",
+          "tier": "inference"
+        },
+        {
           "text": "**Between 1954 and 1982 the county lost farmland and grew more crops on what was left.** Land in farms fell 17,762 acres; harvested cropland rose 16,749. [inference] — same table. The two nearly cancel, so the land that went was pasture, woodland and farmstead rather than the ground under the corn.",
           "tier": "inference"
         },
@@ -8055,14 +8059,18 @@
       "tier": "inference",
       "properties": {
         "as_of": "2026-08-18",
-        "method": "Fetched from the OpenFEMA hazard mitigation assistance projects endpoint filtered to state Ohio and county \"Allen\" — the short spelling, where the public assistance endpoint requires \"Allen County\". `as_of` is the last close-out date in the file. The federal share for the denied project is null rather than zero and is printed as absent, because a project that was never obligated is not a project obligated at nothing. Dollars are nominal across twenty-two years and are not summed. [inference]",
+        "method": "Fetched from the OpenFEMA hazard mitigation assistance projects endpoint filtered to state Ohio and county \"Allen\" — the short spelling, where the public assistance endpoint requires \"Allen County\". `as_of` is the last close-out date in the file. The federal share for the denied project is null rather than zero and is printed as absent, because a project that was never obligated is not a project obligated at nothing. Dollars are nominal across twenty-two years and are not summed. [inference] **The value counts projects filed under this county and not works standing in it**, and the two are different numbers. The companion mitigated-properties endpoint returns **six structures under five project identifiers** for the same county, three of those identifiers being filed `county = Statewide` and therefore invisible to the query above. The figure is left at three because that is what the parameter names; the six are in the prose, and a reader wanting the works rather than the filings should read that. [verified]",
         "parameter": "federal hazard mitigation projects recorded for Allen County",
         "unit": "projects",
         "value": "3"
       },
       "blocks": [
         {
-          "text": "**Three projects in twenty-three years: a plan, a house bought, and a house refused.** [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), hazard mitigation assistance projects, Ohio, county Allen.",
+          "text": "**The projects file says three. The properties file says six structures under five projects, and four of them are storm shelters nobody here knew about.** [verified] — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), hazard mitigation assistance projects **and** mitigated properties, Ohio, county Allen. The two endpoints answer different questions and this node had only asked one of them.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The projects file undercounts, because of its own county column.** Three project identifiers appear against Allen County ground in the properties file and against no county in the projects file, because all three are filed `county = Statewide`: DR-4002-0019-R and DR-4002-0020-R (2011, 77 and 67 properties statewide) and DR-4507-0044-R (2020, 74). [verified] — the same source, queried by identifier without a county filter. A query by county returns the projects a clerk filed under the county and not the works standing in it; see [a county column is a filing decision](../../decisions/a-county-column-is-a-filing-decision.yml).",
           "tier": "verified"
         },
         {
@@ -8078,7 +8086,7 @@
           "tier": "inference"
         },
         {
-          "text": "**So the county's whole federal flood-buyout record is two houses, one bought and one not.** [inference] — computed here. Neither is located: `projectCounties` reads ALLEN and there is no coordinate, address or watershed in the file. [verified] — same source.",
+          "text": "**So the county's whole federal flood-buyout record is two houses, one bought and one not.** [inference] — computed here. **Both are now placed, and this node said neither was.** It read `projectCounties: ALLEN` off the projects file and concluded there was no location anywhere; the mitigated-properties file puts both in Lima, one in ZIP 45801 and the refused one in 45801 as well, with the structure and foundation type of each. [verified] — same source's companion endpoint. What is still absent from both files is a coordinate, an address and a watershed.",
           "tier": "inference"
         },
         {
@@ -8087,6 +8095,14 @@
         },
         {
           "text": "**There are twenty-seven buildings in this county that a buyout could have been about.** The repeat-loss file names twenty-seven properties paid on twice or more — twelve in Lima, nine in Bluffton, four in Delphos, one in Elida and one in Spencerville — of which twenty-six have not been mitigated and one has been paid on thirteen times. [verified] — [the repeat-loss file](../../catalog/openfema-nfip.md); see [the claims](allen-county-flood-insurance-1978-2023.yml). Against that, three projects in twenty-three years, one house bought and one refused. [inference]",
+          "tier": "inference"
+        },
+        {
+          "text": "**Which house: Lima, 45801, slab on grade.** The bought-out property is a single-family, owner-occupied principal residence in Lima ZIP 45801, on a slab, with **$160,000 actually paid** against a $174,417 project and a $156,975 federal share — three dollar figures for one house, and the properties file is the only one of them that is a price. [verified] — the mitigated-properties endpoint. The refused FMA property is also in Lima 45801 and is the only Allen County row in either file carrying a damage category: \"0 – 49%\".",
+          "tier": "verified"
+        },
+        {
+          "text": "**And four residential safe rooms, in four different towns.** Lima 45807, Elida 45807 and Bluffton 45817 on basements, Spencerville 45887 on a crawl space — every one a single-family owner-occupied principal residence, built under two statewide HMGP safe-room programmes. [verified] — the same source. **Three of them come from a disaster this county was never part of**: DR-4002, declared for Ohio on 13 July 2011 for severe storms and flooding, designates twenty-one areas and Allen County is not among them. [verified] — [the declarations](../../catalog/fema-disaster-declarations.md), queried for that number and this county's FIPS code, which returns nothing; and see [the county's declarations](allen-county-disaster-declarations-1965-2020.yml), which has no 2011 row. This node already said a mitigation allocation is not confined to the hazard that caused it. It is not confined to the geography either, and the evidence this time is four buildings rather than a plan. [inference]",
           "tier": "inference"
         }
       ],

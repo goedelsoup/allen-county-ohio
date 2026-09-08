@@ -180,7 +180,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-farm-output-1909.yml](measure/allen-county-farm-output-1909.yml) | measure | Allen County farm output and farm expenses, 1909 | 2 | 6v / 1i / 1o | 61 |
 | [allen-county-farmland-1910-2022.yml](measure/allen-county-farmland-1910-2022.yml) | measure | Land in farms, Allen County, 1910–2022 | 3 | 10v / 4i / 0o | 105 |
 | [allen-county-farms-1900-1910.yml](measure/allen-county-farms-1900-1910.yml) | measure | Allen County farms and farm property, 1900–1910 | 2 | 9v / 2i / 2o | 77 |
-| [allen-county-farms-1949-1987.yml](measure/allen-county-farms-1949-1987.yml) | measure | Allen County farms, 1949–1987 | 2 | 11v / 6i / 2o | 106 |
+| [allen-county-farms-1949-1987.yml](measure/allen-county-farms-1949-1987.yml) | measure | Allen County farms, 1949–1987 | 2 | 12v / 7i / 2o | 113 |
 | [allen-county-farms-2002-2022.yml](measure/allen-county-farms-2002-2022.yml) | measure | Allen County farms, farmland and farm income, 2002–2022 | 3 | 8v / 3i / 0o | 92 |
 | [allen-county-federal-aid-highways-2018.yml](measure/allen-county-federal-aid-highways-2018.yml) | measure | The federal-aid highways of Allen County, 2018 | 4 | 11v / 0i / 1o | 105 |
 | [allen-county-federal-contributions-1980-2024.yml](measure/allen-county-federal-contributions-1980-2024.yml) | measure | Federal campaign contributions from Allen County, 1980–2024 | 5 | 20v / 2i / 1o | 179 |
@@ -202,7 +202,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-graduation-rates-2010-2019.yml](measure/allen-county-graduation-rates-2010-2019.yml) | measure | Graduation rates in Allen County's twelve school districts, 2010–2019 | 7 | 10v / 4i / 0o | 119 |
 | [allen-county-groundwater-1962-2026.yml](measure/allen-county-groundwater-1962-2026.yml) | measure | Water levels in Allen County's wells, 1962–2026 | 6 | 17v / 2i / 2o | 130 |
 | [allen-county-group-quarters-2020.yml](measure/allen-county-group-quarters-2020.yml) | measure | Allen County group quarters, 2020 | 4 | 10v / 7i / 2o | 164 |
-| [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 3 | 7v / 5i / 1o | 72 |
+| [allen-county-hazard-mitigation-2003-2026.yml](measure/allen-county-hazard-mitigation-2003-2026.yml) | measure | Allen County's federal hazard mitigation, 2003–2026 | 3 | 12v / 6i / 1o | 114 |
 | [allen-county-health-2023.yml](measure/allen-county-health-2023.yml) | measure | CDC's health estimates for Allen County and Lima, 2022–2023 | 5 | 10v / 2i / 1o | 114 |
 | [allen-county-health-care-employment-2010-2022.yml](measure/allen-county-health-care-employment-2010-2022.yml) | measure | Allen County health care employment by subsector, 2010–2023 | 6 | 8v / 3i / 1o | 95 |
 | [allen-county-health-insurance-2008-2024.yml](measure/allen-county-health-insurance-2008-2024.yml) | measure | Who in Allen County has no health insurance, 2008–2024 | 5 | 12v / 1i / 1o | 103 |

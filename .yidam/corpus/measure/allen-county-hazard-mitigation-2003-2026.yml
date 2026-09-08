@@ -1,14 +1,24 @@
 class: measure
 label: Allen County's federal hazard mitigation, 2003–2026
 description: |
-  **Three projects in twenty-three years: a plan, a house bought, and a house refused.** [verified]
-  — [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), hazard
-  mitigation assistance projects, Ohio, county Allen.
+  **The projects file says three. The properties file says six structures under five projects, and
+  four of them are storm shelters nobody here knew about.** [verified] —
+  [OpenFEMA assistance programs](../../catalog/openfema-assistance-programs.md), hazard mitigation
+  assistance projects **and** mitigated properties, Ohio, county Allen. The two endpoints answer
+  different questions and this node had only asked one of them.
 
       project              programme  approved     status            project $   federal $  properties
       DR-1484-0009-P       HMGP       2004-11-22   closed 2009-05-21   $46,220     $34,500      —
       FMA-PJ-05-OH-2016-9  FMA        —            not approved       $135,540         —       1
       DR-4507-0041-R       HMGP       2023-04-05   closed 2026-08-18  $174,417    $156,975      1
+
+  **The projects file undercounts, because of its own county column.** Three project
+  identifiers appear against Allen County ground in the properties file and against no county in
+  the projects file, because all three are filed `county = Statewide`: DR-4002-0019-R and
+  DR-4002-0020-R (2011, 77 and 67 properties statewide) and DR-4507-0044-R (2020, 74). [verified] —
+  the same source, queried by identifier without a county filter. A query by county returns the
+  projects a clerk filed under the county and not the works standing in it; see
+  [a county column is a filing decision](../../decisions/a-county-column-is-a-filing-decision.yml).
 
   **The county's flood buyout was paid for with pandemic money.** DR-4507 is the COVID-19 major
   disaster declaration, and the project it funded is "Acquisition of Private Real Property
@@ -31,8 +41,11 @@ description: |
   HMGP rows carry zero. [inference]
 
   **So the county's whole federal flood-buyout record is two houses, one bought and one not.**
-  [inference] — computed here. Neither is located: `projectCounties` reads ALLEN and there is no
-  coordinate, address or watershed in the file. [verified] — same source.
+  [inference] — computed here. **Both are now placed, and this node said neither was.** It read
+  `projectCounties: ALLEN` off the projects file and concluded there was no location anywhere; the
+  mitigated-properties file puts both in Lima, one in ZIP 45801 and the refused one in 45801 as
+  well, with the structure and foundation type of each. [verified] — same source's companion
+  endpoint. What is still absent from both files is a coordinate, an address and a watershed.
 
   **The buyout took three years and four months for one house.** Initially approved 5 April 2023,
   obligated on the 7th, closed 18 August 2026. [verified] — same source.
@@ -45,8 +58,30 @@ description: |
   [the claims](allen-county-flood-insurance-1978-2023.yml). Against that, three projects in
   twenty-three years, one house bought and one refused. [inference]
 
-  [open] Which river, and which house. The companion mitigated-properties endpoint names the
-  structures a buyout removed and was not fetched.
+  **Which house: Lima, 45801, slab on grade.** The bought-out property is a single-family,
+  owner-occupied principal residence in Lima ZIP 45801, on a slab, with **$160,000 actually paid**
+  against a $174,417 project and a $156,975 federal share — three dollar figures for one house, and
+  the properties file is the only one of them that is a price. [verified] — the mitigated-properties
+  endpoint. The refused FMA property is also in Lima 45801 and is the only Allen County row in
+  either file carrying a damage category: "0 – 49%".
+
+  **And four residential safe rooms, in four different towns.** Lima 45807, Elida 45807 and Bluffton
+  45817 on basements, Spencerville 45887 on a crawl space — every one a single-family
+  owner-occupied principal residence, built under two statewide HMGP safe-room programmes.
+  [verified] — the same source. **Three of them come from a disaster this county was never part
+  of**: DR-4002, declared for Ohio on 13 July 2011 for severe storms and flooding, designates
+  twenty-one areas and Allen County is not among them. [verified] —
+  [the declarations](../../catalog/fema-disaster-declarations.md), queried for that number and this
+  county's FIPS code, which returns nothing; and see
+  [the county's declarations](allen-county-disaster-declarations-1965-2020.yml), which has no 2011
+  row. This node already said a mitigation allocation is not confined to the hazard that caused it.
+  It is not confined to the geography either, and the evidence this time is four buildings rather
+  than a plan. [inference]
+
+  [open] Which river. The buyout is placed to a five-digit ZIP and no closer — no coordinate, no
+  address and no watershed appears in either file, and 45801 covers most of central and eastern
+  Lima. The companion question this node opened has been half answered and the half that named a
+  house is the half that closed.
 properties:
   parameter: federal hazard mitigation projects recorded for Allen County
   value: "3"
@@ -59,6 +94,13 @@ properties:
     project is null rather than zero and is printed as absent, because a project that was never
     obligated is not a project obligated at nothing. Dollars are nominal across twenty-two years
     and are not summed. [inference]
+
+    **The value counts projects filed under this county and not works standing in it**, and the two
+    are different numbers. The companion mitigated-properties endpoint returns **six structures
+    under five project identifiers** for the same county, three of those identifiers being filed
+    `county = Statewide` and therefore invisible to the query above. The figure is left at three
+    because that is what the parameter names; the six are in the prose, and a reader wanting the
+    works rather than the filings should read that. [verified]
 links:
   - target: allen-county-flood-insurance-1978-2023.yml
     relationship: relates-to
