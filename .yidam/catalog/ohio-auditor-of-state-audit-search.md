@@ -33,6 +33,8 @@ used-by:
   - ../corpus/measure/allen-county-audits-1999-2026.yml
   - ../corpus/measure/allen-county-findings-for-recovery-1999-2026.yml
   - ../corpus/measure/city-of-lima-debt-2022.yml
+  - ../corpus/measure/allen-county-in-the-federal-finance-file-2022.yml
+  - ../corpus/measure/allen-county-local-government-finance-2022.yml
   - ../corpus/measure/allen-county-local-government-debt-2017-2022.yml
   - ../corpus/event/fort-shawnee-declared-in-fiscal-emergency-2010.yml
   - ../corpus/measure/allen-county-governments-and-their-employees-2022.yml

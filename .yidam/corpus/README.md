@@ -232,7 +232,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-in-congress-1831-1933.yml](measure/allen-county-in-congress-1831-1933.yml) | measure | Allen County in Congress, 1831–1933 | 3 | 10v / 2i / 2o | 104 |
 | [allen-county-in-congress-2000-2020.yml](measure/allen-county-in-congress-2000-2020.yml) | measure | Allen County's vote for Congress, 2000–2020 | 4 | 8v / 1i / 1o | 83 |
 | [allen-county-in-state-prison-1983-2019.yml](measure/allen-county-in-state-prison-1983-2019.yml) | measure | People sent to state prison from Allen County, 1983–2019 | 5 | 9v / 6i / 1o | 90 |
-| [allen-county-in-the-federal-finance-file-2022.yml](measure/allen-county-in-the-federal-finance-file-2022.yml) | measure | What the federal finance survey knows about Allen County, 2022 | 6 | 10v / 4i / 1o | 108 |
+| [allen-county-in-the-federal-finance-file-2022.yml](measure/allen-county-in-the-federal-finance-file-2022.yml) | measure | What the federal finance survey knows about Allen County, 2022 | 6 | 12v / 6i / 1o | 138 |
 | [allen-county-in-the-general-assembly-2000-2020.yml](measure/allen-county-in-the-general-assembly-2000-2020.yml) | measure | Allen County in the Ohio General Assembly, 2000–2020 | 3 | 8v / 1i / 1o | 79 |
 | [allen-county-income-and-poverty-2023.yml](measure/allen-county-income-and-poverty-2023.yml) | measure | Allen County household income and poverty, 2023 | 4 | 9v / 1i / 0o | 82 |
 | [allen-county-institutional-population-2023.yml](measure/allen-county-institutional-population-2023.yml) | measure | Allen County's institutional population, 2019–2023 | 6 | 18v / 4i / 1o | 141 |
@@ -254,7 +254,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-lives-in-the-county-histories.yml](measure/allen-county-lives-in-the-county-histories.yml) | measure | What the county histories record of the people in them | 4 | 14v / 4i / 2o | 133 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
 | [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 7 | 9v / 2i / 1o | 104 |
-| [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 8 | 11v / 1i / 1o | 133 |
+| [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 8 | 12v / 1i / 1o | 139 |
 | [allen-county-local-option-elections-2003-2012.yml](measure/allen-county-local-option-elections-2003-2012.yml) | measure | Local option liquor elections in Allen County, 2003–2012 | 4 | 13v / 3i / 1o | 107 |
 | [allen-county-manufactured-home-lending-2018-2024.yml](measure/allen-county-manufactured-home-lending-2018-2024.yml) | measure | Lending on Allen County's manufactured homes, 2018-2024 | 4 | 12v / 0i / 1o | 77 |
 | [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
