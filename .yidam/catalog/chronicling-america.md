@@ -38,6 +38,7 @@ used-by:
   - ../corpus/event/the-flash-flood-at-bluffton-1959.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
   - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-13-february-1950.yml
   - ../corpus/event/the-flood-of-16-july-1915.yml
   - ../corpus/event/the-flood-of-6-june-1947.yml
   - ../corpus/event/the-mob-at-the-allen-county-jail-1916.yml
