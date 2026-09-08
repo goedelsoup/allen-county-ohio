@@ -2027,7 +2027,7 @@
           "published": "3",
           "tier": "verified",
           "source": "catalog/openfema-assistance-programs.md",
-          "method": "Fetched from the OpenFEMA hazard mitigation assistance projects endpoint filtered to state Ohio and county \"Allen\" — the short spelling, where the public assistance endpoint requires \"Allen County\". `as_of` is the last close-out date in the file. The federal share for the denied project is null rather than zero and is printed as absent, because a project that was never obligated is not a project obligated at nothing. Dollars are nominal across twenty-two years and are not summed. [inference]"
+          "method": "Fetched from the OpenFEMA hazard mitigation assistance projects endpoint filtered to state Ohio and county \"Allen\" — the short spelling, where the public assistance endpoint requires \"Allen County\". `as_of` is the last close-out date in the file. The federal share for the denied project is null rather than zero and is printed as absent, because a project that was never obligated is not a project obligated at nothing. Dollars are nominal across twenty-two years and are not summed. [inference] **The value counts projects filed under this county and not works standing in it**, and the two are different numbers. The companion mitigated-properties endpoint returns **six structures under five project identifiers** for the same county, three of those identifiers being filed `county = Statewide` and therefore invisible to the query above. The figure is left at three because that is what the parameter names; the six are in the prose, and a reader wanting the works rather than the filings should read that. [verified]"
         }
       ]
     },
@@ -23608,7 +23608,7 @@
         {
           "node": "measure/allen-county-hazard-mitigation-2003-2026.yml",
           "node_label": "Allen County's federal hazard mitigation, 2003–2026",
-          "span": "**So the county's whole federal flood-buyout record is two houses, one bought and one not.** [inference] — computed here. Neither is located: `projectCounties` reads ALLEN and there is no coordinate, address or watershed in the file. [verified] — same source.",
+          "span": "**So the county's whole federal flood-buyout record is two houses, one bought and one not.** [inference] — computed here. **Both are now placed, and this node said neither was.** It read `projectCounties: ALLEN` off the projects file and concluded there was no location anywhere; the mitigated-properties file puts both in Lima, one in ZIP 45801 and the refused one in 45801 as well, with the structure and foundation type of each. [verified] — same source's companion endpoint. What is still absent from both files is a coordinate, an address and a watershed.",
           "tier": "inference",
           "sources": [
             "catalog/openfema-assistance-programs.md"
