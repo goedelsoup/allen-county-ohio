@@ -39,6 +39,13 @@ used-by:
   - ../corpus/event/the-ottawa-river-flood-of-1959.yml
   - ../corpus/measure/allen-county-water-gauges-2026.yml
   - ../corpus/measure/ottawa-river-peak-flows-1924-2025.yml
+  - ../corpus/measure/allen-county-water-systems-2026.yml
+  - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-22-august-2007.yml
+  - ../corpus/event/the-flood-of-28-february-2011.yml
+  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
+  - ../corpus/event/the-flood-of-16-june-2015.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
 ---
 
 **What a site is and what a record is.** The two are not the same thing and the difference is the
