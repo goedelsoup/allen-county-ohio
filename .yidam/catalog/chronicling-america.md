@@ -31,6 +31,50 @@ location:
     value: https://www.loc.gov/item/sn87076554/
     description: >-
       The Bluffton News — the only Allen County newspaper in the archive. 952 issues, 1939–1959.
+used-by:
+  - ../corpus/event/allen-county-jail-raid-1933.yml
+  - ../corpus/event/lima-adopts-commission-government-1922.yml
+  - ../corpus/event/the-flash-flood-at-bluffton-1959.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
+  - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-16-july-1915.yml
+  - ../corpus/event/the-flood-of-6-june-1947.yml
+  - ../corpus/event/the-mob-at-the-allen-county-jail-1916.yml
+  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
+  - ../corpus/event/the-storm-at-beaverdam-1950.yml
+  - ../corpus/event/the-storm-of-16-18-may-1943.yml
+  - ../corpus/event/the-tornado-of-11-april-1965.yml
+  - ../corpus/event/the-tornado-of-19-july-1950.yml
+  - ../corpus/measure/allen-county-ballot-1956.yml
+  - ../corpus/measure/allen-county-lives-in-the-county-histories.yml
+  - ../corpus/measure/allen-county-presidential-vote-1944-1956.yml
+  - ../corpus/measure/allen-county-storm-events-1950-2026.yml
+  - ../corpus/measure/bluffton-and-beaverdam-elections-1939-1959.yml
+  - ../corpus/measure/lima-mayors-1886-1922.yml
+  - ../corpus/measure/lima-mayors-1939-1956.yml
+  - ../corpus/office/mayor-of-lima.yml
+  - ../corpus/organization/lima-locomotive-works.yml
+  - ../corpus/organization/the-bluffton-news.yml
+  - ../corpus/period/the-second-world-war-in-allen-county.yml
+  - ../corpus/person/allen-l-metheany.yml
+  - ../corpus/person/benjamin-faurot.yml
+  - ../corpus/person/calvin-s-brice.yml
+  - ../corpus/person/charles-n-lamison.yml
+  - ../corpus/person/donald-f-sarber.yml
+  - ../corpus/person/frank-e-mcclain.yml
+  - ../corpus/person/jess-l-sarber.yml
+  - ../corpus/person/richard-metheany.yml
+  - ../corpus/person/samuel-s-yoder.yml
+  - ../corpus/person/william-l-ferguson.yml
+  - ../corpus/person/william-v-daley.yml
+  - ../corpus/place/bluffton.yml
+  - ../corpus/place/lima.yml
+  - ../corpus/question/two-irregular-sheriff-transitions.yml
+  - ../corpus/site/allen-county-courthouse.yml
+  - ../corpus/site/lima-army-tank-plant.yml
+  - ../corpus/site/lima-locomotive-works-plant.yml
+  - ../corpus/tenure/sheriff-1931-jess-l-sarber.yml
+  - ../corpus/tenure/sheriff-1933-donald-f-sarber.yml
 ---
 
 **Two routes in, and only one of them works.** The documented `.../ocr.txt` path and every HTML

@@ -41,15 +41,17 @@ location:
       observation hour — which the `.dly` file does not carry. Its element records for this station
       begin in December 2022; everything earlier survives only as undated free-text remarks.
 used-by:
+  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
+  - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-16-june-2015.yml
+  - ../corpus/event/the-flood-of-28-february-2011.yml
+  - ../corpus/event/the-flood-of-6-june-1947.yml
+  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
+  - ../corpus/event/the-storm-of-16-18-may-1943.yml
   - ../corpus/measure/allen-county-frost-free-season-1902-2025.yml
   - ../corpus/measure/allen-county-temperature-extremes-1901-2026.yml
   - ../corpus/measure/lima-snowfall-1901-2025.yml
-  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
-  - ../corpus/event/the-flood-of-12-march-1939.yml
-  - ../corpus/event/the-flood-of-28-february-2011.yml
-  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
-  - ../corpus/event/the-flood-of-16-june-2015.yml
-  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
 ---
 
 **Six hundred and seventy-two values were dropped before anything was computed, and the file said

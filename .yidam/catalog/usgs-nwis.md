@@ -35,17 +35,19 @@ location:
       path with `site_no` changed serves any gauge; a gauge with no peak record returns a 200 with
       a 60-byte body and no rows, which is how three of the county's larger stream sites answered.
 used-by:
-  - ../corpus/measure/allen-county-groundwater-1962-2026.yml
-  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
-  - ../corpus/measure/allen-county-water-gauges-2026.yml
-  - ../corpus/measure/ottawa-river-peak-flows-1924-2025.yml
-  - ../corpus/measure/allen-county-water-systems-2026.yml
+  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
+  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
   - ../corpus/event/the-flood-of-12-march-1939.yml
+  - ../corpus/event/the-flood-of-16-june-2015.yml
   - ../corpus/event/the-flood-of-22-august-2007.yml
   - ../corpus/event/the-flood-of-28-february-2011.yml
-  - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
-  - ../corpus/event/the-flood-of-16-june-2015.yml
-  - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
+  - ../corpus/event/the-flood-of-6-june-1947.yml
+  - ../corpus/event/the-ottawa-river-flood-of-1959.yml
+  - ../corpus/event/the-storm-of-16-18-may-1943.yml
+  - ../corpus/measure/allen-county-groundwater-1962-2026.yml
+  - ../corpus/measure/allen-county-water-gauges-2026.yml
+  - ../corpus/measure/allen-county-water-systems-2026.yml
+  - ../corpus/measure/ottawa-river-peak-flows-1924-2025.yml
 ---
 
 **What a site is and what a record is.** The two are not the same thing and the difference is the
