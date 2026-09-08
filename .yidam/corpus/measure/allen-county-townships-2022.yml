@@ -1,0 +1,154 @@
+class: measure
+label: What Allen County's twelve townships spend it on, 2022
+description: |
+  **A township here is a fire department with a road crew attached.** Of the twelve townships'
+  $15,818,000 of direct spending in fiscal 2022, **fire protection is $5,405,000** — 34 per cent —
+  and police another $2,588,000, so **half of everything a township in this county spends is public
+  safety**. Roads are 17 per cent and running the township itself 13. [verified] —
+  [the government finance survey](../../catalog/census-government-finances.md), the 2022 individual
+  unit file, item codes `E24`/`F24`, `E62`/`F62`, `E44`/`F44`/`E45` and `E23`/`E29`/`E31`, summed
+  here. See [what the forty-six raise and spend](allen-county-local-government-finance-2022.yml),
+  whose township total this reproduces to the dollar.
+
+  **Eleven of the twelve pay for fire themselves. The twelfth pays somebody else.** Sugar Creek is
+  the only township with no fire line at all, and it is one of two that send money to another local
+  government — $29,000 from Sugar Creek and $295,000 from Marion, which carries a $123,000 fire line
+  besides. [verified] — the same file, item `M89`. **The file records the payment and never names
+  the government at the other end**, so that Sugar Creek buys its fire protection is the reading and
+  not the record. [inference] Those transfers are outside the survey's expenditure definition
+  altogether, which is why a township that buys a service reads exactly like one that goes without;
+  see [a direct column cannot see a contract](../../decisions/a-direct-column-cannot-see-a-contract.yml).
+
+  **Police is the exception in Ohio and it is not the exception here.** Only **162 of Ohio's 1,303
+  townships** spend anything on police at all — 12 per cent — and five of Allen County's twelve do.
+  [verified] — the same file, every Ohio township read. Three of the five are forces: Shawnee at
+  $1,510,000, American at $791,000 and Bath at $217,000. Two are a line item: Perry $46,000 and
+  Marion $24,000.
+
+  **Shawnee Township is a city that never incorporated.** Its 12,105 residents are more than the
+  county's seven villages put together, it runs its own police and its own fire, and the two are
+  **$4,320,000 of its $6,435,000 of direct spending — 67 per cent**. It spent $1,708,000 more than
+  it raised. [verified] — the same file. Its fire costs $232 a resident against a median of $50
+  among the 711 Ohio townships of a thousand people or more that have a fire line at all.
+
+  **Perry Township levies no property tax.** The file gives it no property-tax line, and its whole
+  $216,000 of revenue is the motor fuels tax ($127,000), local intergovernmental money ($51,000),
+  the motor vehicle licence ($27,000), the alcohol tax and $2,000 of fines. Against that it spends
+  $402,000 — nearly twice as much — including $176,000 on fire and $46,000 on
+  [the police department](../jurisdiction/perry-township.yml) this corpus places at 2501 E Breese
+  Road. **All ten of its cells are reported rather than imputed**, so the absence is the township's
+  own answer and not a model's. [verified] — the same file. It is one of 63 Ohio townships out of
+  1,303 with no property-tax line, and **one of only 19 of the 472 that have three thousand
+  residents or more**.
+
+  **A third of these figures are the Bureau's arithmetic.** Sixty-six of the twelve townships' 191
+  cells are imputed, and **four townships — Monroe, Spencer, Richland and Jackson — have not one
+  reported figure between them**. [verified] — the same file, flag column; see
+  [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml).
+  Every figure below that names one of those four is a model, and the table says which.
+
+  **And the denominator is not the one a reader expects.** The twelve townships' 65,540 residents
+  plus Lima's 36,440 are the county's 101,980 exactly, which means **every municipality but Lima is
+  counted inside its township**. [verified] — the same file's directory. So Richland Township's
+  $67,000 of fire is divided by 6,059 residents of whom 4,030 are Bluffton's, and Bluffton runs its
+  own fire department on $695,000. [verified] — the same file, by unit. **A township's fire spending
+  per resident is not what a resident of it pays for fire protection**, anywhere a village stands
+  inside the township. [inference]
+
+  [open] Which government Sugar Creek and Marion pay, and what Amanda Township's $199,000 to the
+  State of Ohio buys. Items `M89` and `L89` record a transfer and no counterparty. The townships'
+  own annual financial reports, filed with the Auditor of State, name the payee; this corpus holds
+  none of them.
+properties:
+  parameter: direct spending by the county's township governments
+  value: "15818000"
+  unit: dollars, fiscal 2022, across twelve townships
+  as_of: "2022"
+  table: |
+    township     population  revenue  direct_spending  fire     police   roads   administration  intergovernmental  property_tax  imputed_cells  cells
+    Shawnee           12105  4727000          6435000  2810000  1510000  792000          617000                  0       2918000              0     20
+    American          13847  4533000          3379000   700000   791000  300000          139000                  0       3656000              0     20
+    Bath               9427  2590000          2352000  1125000   217000  163000          490000                  0       1490000              0     18
+    Auglaize           2648   660000           585000   148000        0  308000           83000                  0        302000              0     13
+    Richland           6059   540000           555000    67000        0  239000          226000                  0        445000             21     21
+    Jackson            2901   542000           442000    83000        0  176000          156000                  0        391000             18     18
+    Marion             6829   908000           410000   123000    24000  208000           36000             295000        542000              0     15
+    Perry              3381   216000           402000   176000    46000       0           69000                  0             0              0     10
+    Monroe             2103   614000           374000   100000        0  163000           93000                  0        231000             17     17
+    Amanda             2083   666000           362000    42000        0  178000          103000             199000        129000              0     15
+    Sugar-Creek        1207   281000           274000        0        0   59000          111000              29000         52000              0     14
+    Spencer            2950   635000           248000    31000        0   59000               0                  0        223000             10     10
+  method: |
+    The twelve are every unit the survey's directory file places in Allen County, Ohio with a
+    township type code. [verified] Amounts in the file are thousands of dollars and are written out
+    here. [verified] `direct_spending` sums the `E`, `F`, `G` and `I` codes and excludes the `L` and
+    `M` intergovernmental payments, which is the survey's own expenditure definition and is why the
+    twelve sum to the $15,818,000 the companion node publishes rather than to $16,341,000.
+    [verified] `intergovernmental` is those excluded payments, shown so that a township that buys a
+    service does not read as a township that goes without one. `administration` is financial
+    administration, central staff and general public buildings. `revenue` adds the `C` and `D`
+    codes back, as every revenue figure in this corpus does; see
+    [the catalog](../../catalog/census-government-finances.md). Ohio comparisons repeat the
+    identical read over all 1,303 Ohio townships in the same file. [verified] `cells` is how many
+    item codes the file carries for that township and `imputed_cells` how many of them are flagged
+    `I`; a township with no row for an item is shown as zero here and the file does not distinguish
+    a reported nothing from an unasked question. [inference]
+links:
+  - target: allen-county-local-government-finance-2022.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/amanda-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/american-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/auglaize-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/bath-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/jackson-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/marion-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/monroe-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/perry-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/richland-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/shawnee-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/spencer-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../jurisdiction/sugar-creek-township.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/census-government-finances.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

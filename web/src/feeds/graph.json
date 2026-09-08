@@ -504,7 +504,7 @@
       "id": "event/fort-shawnee-declared-in-fiscal-emergency-2010.yml",
       "class": "event",
       "label": "Fort Shawnee declared in fiscal emergency, 16 September 2010",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
         "event_type": "declaration",
         "location_description": "The Village of Fort Shawnee, in Shawnee Township. The analysis was made as of 31 December 2009 and 31 May 2010 and certified in Columbus.",
@@ -530,6 +530,14 @@
         {
           "text": "**Twenty-five months later its electors surrendered the corporation.** On 6 November 2012 Fort Shawnee voted 1,058 to 858 to give up its corporate powers. [verified] — [the Secretary of State's report of miscellaneous questions](../../catalog/ohio-sos-local-issue-reports.md); see [what happened to the village](../question/what-happened-to-the-village-of-fort-shawnee.yml).",
           "tier": "verified"
+        },
+        {
+          "text": "**It ended on 3 December 2013, after three years and three months** — case 45 of the seventy-five terminated Chapter 118 emergencies, and the only row in the report that names this county. Nothing in Allen County is in emergency, watch or caution now, and nothing else has ever been in emergency since the list begins in 1980. [verified] — [the fiscal distress report](../../catalog/ohio-auditor-fiscal-distress.md), 28 July 2026, all four tables. **So the state's supervision outlived the vote to abolish the village by thirteen months**, and the register footnotes this very row with the surrender vote without joining the two — which is exactly where this corpus had already stopped. [verified] — the same source.",
+          "tier": "verified"
+        },
+        {
+          "text": "**The commission's roster was here all along, filed as a distribution list.** At 3,855 people the village was over the line below which the Auditor supervises alone, so it had a commission: the Treasurer of State, the Director of Budget and Management, the mayor and the presiding officer of council, and three appointed within fifteen days by the Governor, the mayor and the Allen County Auditor. [verified] — the same source. **Every one of those offices is on the service list in the first paragraph above**, read there as the people told rather than the people appointed. [inference]",
+          "tier": "inference"
         }
       ],
       "refusals": [
@@ -10629,6 +10637,10 @@
         {
           "text": "**A revenue total is not a budget and a spending total is not a service.** [inference] The survey counts money moving through a government, so a school district's state aid, a county's federal pass-through and a consortium's premium income are all revenue, and the same dollar can be counted by two governments in this table if one sends it to the other. The corpus has already learned the first half of this from [the county's own funds](allen-county-funds-2025.yml); see [a grand total is not a budget](../../decisions/a-grand-total-is-not-a-budget.yml).",
           "tier": "inference"
+        },
+        {
+          "text": "**What the twelve townships do with it is fire.** Read by function, $5,405,000 of their $15,818,000 of direct spending is fire protection and $2,588,000 is police — half of a township's money in this county is public safety, against 17 per cent for roads. Eleven run a fire line of their own and Sugar Creek runs none; five of the twelve spend anything at all on police, where 12 per cent of Ohio's townships do; and Perry Township levies no property tax. [verified] — the same file, item codes by unit. See [what the twelve townships spend it on](allen-county-townships-2022.yml), which carries the township-by-township table and reproduces the $15,818,000 above to the dollar.",
+          "tier": "verified"
         }
       ],
       "refusals": [
@@ -15454,6 +15466,52 @@
       ],
       "refusals": [],
       "withheld": 4
+    },
+    {
+      "id": "measure/allen-county-townships-2022.yml",
+      "class": "measure",
+      "label": "What Allen County's twelve townships spend it on, 2022",
+      "tier": "inference",
+      "properties": {
+        "as_of": "2022",
+        "method": "The twelve are every unit the survey's directory file places in Allen County, Ohio with a township type code. [verified] Amounts in the file are thousands of dollars and are written out here. [verified] `direct_spending` sums the `E`, `F`, `G` and `I` codes and excludes the `L` and `M` intergovernmental payments, which is the survey's own expenditure definition and is why the twelve sum to the $15,818,000 the companion node publishes rather than to $16,341,000. [verified] `intergovernmental` is those excluded payments, shown so that a township that buys a service does not read as a township that goes without one. `administration` is financial administration, central staff and general public buildings. `revenue` adds the `C` and `D` codes back, as every revenue figure in this corpus does; see [the catalog](../../catalog/census-government-finances.md). Ohio comparisons repeat the identical read over all 1,303 Ohio townships in the same file. [verified] `cells` is how many item codes the file carries for that township and `imputed_cells` how many of them are flagged `I`; a township with no row for an item is shown as zero here and the file does not distinguish a reported nothing from an unasked question. [inference]",
+        "parameter": "direct spending by the county's township governments",
+        "table": "township population revenue direct_spending fire police roads administration intergovernmental property_tax imputed_cells cells Shawnee 12105 4727000 6435000 2810000 1510000 792000 617000 0 2918000 0 20 American 13847 4533000 3379000 700000 791000 300000 139000 0 3656000 0 20 Bath 9427 2590000 2352000 1125000 217000 163000 490000 0 1490000 0 18 Auglaize 2648 660000 585000 148000 0 308000 83000 0 302000 0 13 Richland 6059 540000 555000 67000 0 239000 226000 0 445000 21 21 Jackson 2901 542000 442000 83000 0 176000 156000 0 391000 18 18 Marion 6829 908000 410000 123000 24000 208000 36000 295000 542000 0 15 Perry 3381 216000 402000 176000 46000 0 69000 0 0 0 10 Monroe 2103 614000 374000 100000 0 163000 93000 0 231000 17 17 Amanda 2083 666000 362000 42000 0 178000 103000 199000 129000 0 15 Sugar-Creek 1207 281000 274000 0 0 59000 111000 29000 52000 0 14 Spencer 2950 635000 248000 31000 0 59000 0 0 223000 10 10",
+        "unit": "dollars, fiscal 2022, across twelve townships",
+        "value": "15818000"
+      },
+      "blocks": [
+        {
+          "text": "**A township here is a fire department with a road crew attached.** Of the twelve townships' $15,818,000 of direct spending in fiscal 2022, **fire protection is $5,405,000** — 34 per cent — and police another $2,588,000, so **half of everything a township in this county spends is public safety**. Roads are 17 per cent and running the township itself 13. [verified] — [the government finance survey](../../catalog/census-government-finances.md), the 2022 individual unit file, item codes `E24`/`F24`, `E62`/`F62`, `E44`/`F44`/`E45` and `E23`/`E29`/`E31`, summed here. See [what the forty-six raise and spend](allen-county-local-government-finance-2022.yml), whose township total this reproduces to the dollar.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Eleven of the twelve pay for fire themselves. The twelfth pays somebody else.** Sugar Creek is the only township with no fire line at all, and it is one of two that send money to another local government — $29,000 from Sugar Creek and $295,000 from Marion, which carries a $123,000 fire line besides. [verified] — the same file, item `M89`. **The file records the payment and never names the government at the other end**, so that Sugar Creek buys its fire protection is the reading and not the record. [inference] Those transfers are outside the survey's expenditure definition altogether, which is why a township that buys a service reads exactly like one that goes without; see [a direct column cannot see a contract](../../decisions/a-direct-column-cannot-see-a-contract.yml).",
+          "tier": "inference"
+        },
+        {
+          "text": "**Police is the exception in Ohio and it is not the exception here.** Only **162 of Ohio's 1,303 townships** spend anything on police at all — 12 per cent — and five of Allen County's twelve do. [verified] — the same file, every Ohio township read. Three of the five are forces: Shawnee at $1,510,000, American at $791,000 and Bath at $217,000. Two are a line item: Perry $46,000 and Marion $24,000.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Shawnee Township is a city that never incorporated.** Its 12,105 residents are more than the county's seven villages put together, it runs its own police and its own fire, and the two are **$4,320,000 of its $6,435,000 of direct spending — 67 per cent**. It spent $1,708,000 more than it raised. [verified] — the same file. Its fire costs $232 a resident against a median of $50 among the 711 Ohio townships of a thousand people or more that have a fire line at all.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Perry Township levies no property tax.** The file gives it no property-tax line, and its whole $216,000 of revenue is the motor fuels tax ($127,000), local intergovernmental money ($51,000), the motor vehicle licence ($27,000), the alcohol tax and $2,000 of fines. Against that it spends $402,000 — nearly twice as much — including $176,000 on fire and $46,000 on [the police department](../jurisdiction/perry-township.yml) this corpus places at 2501 E Breese Road. **All ten of its cells are reported rather than imputed**, so the absence is the township's own answer and not a model's. [verified] — the same file. It is one of 63 Ohio townships out of 1,303 with no property-tax line, and **one of only 19 of the 472 that have three thousand residents or more**.",
+          "tier": "verified"
+        },
+        {
+          "text": "**A third of these figures are the Bureau's arithmetic.** Sixty-six of the twelve townships' 191 cells are imputed, and **four townships — Monroe, Spencer, Richland and Jackson — have not one reported figure between them**. [verified] — the same file, flag column; see [a flag column is part of the figure](../../decisions/a-flag-column-is-part-of-the-figure.yml). Every figure below that names one of those four is a model, and the table says which.",
+          "tier": "verified"
+        },
+        {
+          "text": "**And the denominator is not the one a reader expects.** The twelve townships' 65,540 residents plus Lima's 36,440 are the county's 101,980 exactly, which means **every municipality but Lima is counted inside its township**. [verified] — the same file's directory. So Richland Township's $67,000 of fire is divided by 6,059 residents of whom 4,030 are Bluffton's, and Bluffton runs its own fire department on $695,000. [verified] — the same file, by unit. **A township's fire spending per resident is not what a resident of it pays for fire protection**, anywhere a village stands inside the township. [inference]",
+          "tier": "inference"
+        }
+      ],
+      "refusals": [],
+      "withheld": 1
     },
     {
       "id": "measure/allen-county-toxic-releases-1987-2024.yml",
@@ -33777,6 +33835,13 @@
     },
     {
       "from": "measure/allen-county-local-government-finance-2022.yml",
+      "to": "measure/allen-county-townships-2022.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-local-government-finance-2022.yml",
       "to": "measure/allen-county-local-government-debt-2017-2022.yml",
       "relationship": "relates-to",
       "tier": "verified",
@@ -35790,6 +35855,104 @@
       "relationship": "not-comparable-to",
       "tier": "verified",
       "source": "catalog/census-1950-number-of-inhabitants-ohio.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "measure/allen-county-local-government-finance-2022.yml",
+      "relationship": "relates-to",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/amanda-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/american-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/auglaize-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/bath-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/jackson-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/marion-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/monroe-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/perry-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/richland-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/shawnee-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/spencer-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
+    },
+    {
+      "from": "measure/allen-county-townships-2022.yml",
+      "to": "jurisdiction/sugar-creek-township.yml",
+      "relationship": "describes",
+      "tier": "verified",
+      "source": "catalog/census-government-finances.md"
     },
     {
       "from": "measure/allen-county-toxic-releases-1987-2024.yml",

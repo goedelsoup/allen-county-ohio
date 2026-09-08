@@ -42,6 +42,7 @@ used-by:
   - ../corpus/measure/allen-county-local-option-elections-2003-2012.yml
   - ../corpus/question/what-happened-to-the-village-of-fort-shawnee.yml
   - ../corpus/jurisdiction/village-of-fort-shawnee.yml
+  - ../corpus/event/fort-shawnee-declared-in-fiscal-emergency-2010.yml
 ---
 
 **A question is filed under one county and its votes are all the counties'.** The header on every
