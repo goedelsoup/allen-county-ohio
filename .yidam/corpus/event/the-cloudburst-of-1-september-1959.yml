@@ -1,0 +1,85 @@
+class: event
+label: The cloudburst of 1 September 1959
+description: |
+  **The county's wettest day in nineteen years, and neither of its rivers rose.** The Lima
+  station recorded **3.04 inches on 2 September 1959** — the nineteenth largest daily
+  precipitation in **45,273 days of record**, 1901 to 2026. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551, the whole file ranked here.
+  The Ottawa River at Allentown answered with a daily mean of **203 cubic feet a second**, against
+  35 two days before. [verified] — [USGS](../../catalog/usgs-nwis.md), site 04187500.
+
+  **The comparison is exact and it is the point of this node.** The rain that produced
+  [the largest flow ever measured on the Ottawa](the-ottawa-river-flood-of-1959.yml) was 46.7 mm
+  on 21 January and 30.5 on the 22nd — **77.2 mm**, at this station, in that January. This storm
+  put **77.2 mm** on the same gauge in one evening. The river's daily mean was 5,870 cubic feet a
+  second in January and 203 in September: **the same rainfall, to the tenth of a millimetre, and a
+  factor of twenty-nine between the answers.** [verified] — the two sources above, both series read
+  here. January's fell over two days onto frozen ground under melting snow and September's fell in
+  about three hours onto a dry August; that is the whole difference, and it is why this corpus
+  dates floods by what the water did and not by what fell. [inference]
+
+  **What it did instead was fill the sewers.** "The deluge overtaxed the local sewer system backing
+  water into numerous basements and flooding streets from curb to curb." [verified] —
+  [The Bluffton News](../../catalog/chronicling-america.md), 3 September 1959, page six. It was the
+  same network that [the winter's two floods](the-flood-of-9-february-1959.yml) had left with
+  twenty-seven cave-ins six months earlier.
+
+  **Three rain gauges within twenty miles, and they do not agree.** Ray Burkholder, "official
+  weather observer of near Pandora", measured **3.25 inches**; "one farmer closer to Bluffton" said
+  his gauge measured **four**; and at Findlay "more than six inches of rain fell within a period of
+  approximately three hours". [verified] — the same paper, pages one and six. Lima's 3.04 is the
+  fourth figure and the only one from an instrument this corpus can audit. The Blanchard near
+  Findlay, under the six inches, rose from 19 cubic feet a second to 716 and fell back inside three
+  days. [verified] — [USGS](../../catalog/usgs-nwis.md), site 04189000.
+
+  **It was more rain than the whole of the August before it.** Burkholder's records gave August
+  3.23 inches against a normal of 2.86, and the paper says the downpour was "just slightly more
+  rain than fell in Bluffton during the entire month". [verified] — the same page.
+
+  **The paper filed it under a tree.** The front page of 3 September carries it as "Lightning Hits
+  Large Elm On Campus Drive" — a strike that stripped the bark from an elm outside 303 Campus
+  drive, Tuesday evening — and the rain is the second paragraph. **The words "flood" and "high
+  water" do not appear on that front page at all**; the only occurrence in the issue is in the
+  jump on page six. [verified] — both pages, read here. Four phases have searched this paper for
+  `flood` and ranked its issues by the count; this event was never in the ranking, because a
+  full-text count finds a word and a paper names an event after whatever it led with. See
+  [a paper files an event under its lead](../../decisions/a-paper-files-an-event-under-its-lead.yml).
+
+  **And no federal file holds it.** Flood and flash flood first appear in the county's storm record
+  in 1996. [verified] — [the storm record](../measure/allen-county-storm-events-1950-2026.yml). The
+  village weekly is the only witness there is.
+
+  [open] What the storm did outside Bluffton. Lima took 77.2 mm of it and nothing here says whether
+  its own sewers backed up; the county's only daily gauge measures rain and not what the rain
+  reached.
+properties:
+  occurred: 1959-09-01
+  event_type: flood
+  location_description: |
+    Bluffton village — its sewers, its streets and its basements — with rain gauges reported at
+    Pandora, at an unnamed farm nearer Bluffton, at Findlay and at Lima. No stream is named as
+    having left its banks. [verified] —
+    [The Bluffton News](../../catalog/chronicling-america.md), 3 September 1959.
+links:
+  - target: ../place/bluffton.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/ghcn-daily-lima.md
+  - target: ../organization/the-bluffton-news.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: the-ottawa-river-flood-of-1959.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: the-flood-of-9-february-1959.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../event.ont.yml
+    relationship: instance-of
