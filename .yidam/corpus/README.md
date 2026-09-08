@@ -49,7 +49,7 @@ Sorted by: kind, then alphabetically.
 | [the-army-builds-at-lima-1942.yml](event/the-army-builds-at-lima-1942.yml) | event | The Army begins building south of Lima, May 1942 | 4 | 6v / 1i / 1o | 72 |
 | [the-building-of-fort-amanda-1812.yml](event/the-building-of-fort-amanda-1812.yml) | event | The building of Fort Amanda, September 1812 | 2 | 6v / 1i / 1o | 51 |
 | [the-buses-replace-the-streetcars-1938.yml](event/the-buses-replace-the-streetcars-1938.yml) | event | Motor buses begin replacing Lima's street cars, 1938 | 2 | 3v / 0i / 1o | 34 |
-| [the-cloudburst-of-1-september-1959.yml](event/the-cloudburst-of-1-september-1959.yml) | event | The cloudburst of 1 September 1959 | 6 | 10v / 1i / 1o | 85 |
+| [the-cloudburst-of-1-september-1959.yml](event/the-cloudburst-of-1-september-1959.yml) | event | The cloudburst of 1 September 1959 | 6 | 11v / 2i / 1o | 95 |
 | [the-contested-commissioner-election-of-1920.yml](event/the-contested-commissioner-election-of-1920.yml) | event | The contested commissioner election of 1920 | 2 | 4v / 1i / 1o | 40 |
 | [the-execution-of-andrew-brentlinger-1872.yml](event/the-execution-of-andrew-brentlinger-1872.yml) | event | The execution of Andrew Brentlinger, 1872 | 4 | 7v / 2i / 2o | 62 |
 | [the-first-electric-car-in-lima-1886.yml](event/the-first-electric-car-in-lima-1886.yml) | event | The first electric car in Lima, July 4, 1886 | 3 | 6v / 4i / 1o | 66 |
