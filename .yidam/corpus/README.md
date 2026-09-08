@@ -37,7 +37,7 @@ Sorted by: kind, then alphabetically.
 | [davis-v-watkins.yml](event/davis-v-watkins.yml) | event | Davis v. Watkins, 1973–1980 | 3 | 10v / 2i / 1o | 100 |
 | [erection-of-allen-county.yml](event/erection-of-allen-county.yml) | event | Erection of Allen County | 2 | 6v / 0i / 2o | 60 |
 | [ford-assembles-the-lima-plant-ground-1955.yml](event/ford-assembles-the-lima-plant-ground-1955.yml) | event | The assembly of the Ford Lima engine plant's ground | 3 | 5v / 1i / 3o | 60 |
-| [fort-shawnee-declared-in-fiscal-emergency-2010.yml](event/fort-shawnee-declared-in-fiscal-emergency-2010.yml) | event | Fort Shawnee declared in fiscal emergency, 16 September 2010 | 3 | 5v / 0i / 1o | 69 |
+| [fort-shawnee-declared-in-fiscal-emergency-2010.yml](event/fort-shawnee-declared-in-fiscal-emergency-2010.yml) | event | Fort Shawnee declared in fiscal emergency, 16 September 2010 | 3 | 8v / 1i / 1o | 86 |
 | [lima-adopts-commission-government-1922.yml](event/lima-adopts-commission-government-1922.yml) | event | Lima abolishes the mayor, January 1, 1922 | 3 | 8v / 3i / 2o | 70 |
 | [lima-oil-strike.yml](event/lima-oil-strike.yml) | event | The 1885 Lima oil strike | 5 | 13v / 11i / 2o | 151 |
 | [lima-returns-to-mayor-and-council-1933.yml](event/lima-returns-to-mayor-and-council-1933.yml) | event | Lima returns to mayor and council, 1933 | 3 | 3v / 1i / 1o | 43 |
@@ -253,7 +253,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-lives-in-the-county-histories.yml](measure/allen-county-lives-in-the-county-histories.yml) | measure | What the county histories record of the people in them | 4 | 14v / 4i / 2o | 133 |
 | [allen-county-livestock-2002-2022.yml](measure/allen-county-livestock-2002-2022.yml) | measure | Allen County livestock, 2002–2022 | 2 | 7v / 3i / 1o | 82 |
 | [allen-county-local-government-debt-2017-2022.yml](measure/allen-county-local-government-debt-2017-2022.yml) | measure | What Allen County's governments owe, 2017 and 2022 | 6 | 8v / 2i / 1o | 91 |
-| [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 7 | 10v / 1i / 1o | 118 |
+| [allen-county-local-government-finance-2022.yml](measure/allen-county-local-government-finance-2022.yml) | measure | What Allen County's forty-six governments raise and spend, 2022 | 8 | 11v / 1i / 1o | 133 |
 | [allen-county-local-option-elections-2003-2012.yml](measure/allen-county-local-option-elections-2003-2012.yml) | measure | Local option liquor elections in Allen County, 2003–2012 | 4 | 13v / 3i / 1o | 107 |
 | [allen-county-manufactured-home-lending-2018-2024.yml](measure/allen-county-manufactured-home-lending-2018-2024.yml) | measure | Lending on Allen County's manufactured homes, 2018-2024 | 4 | 12v / 0i / 1o | 77 |
 | [allen-county-manufactures-1929.yml](measure/allen-county-manufactures-1929.yml) | measure | Allen County manufactures, 1929 | 3 | 8v / 7i / 1o | 96 |
@@ -348,6 +348,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-total-employment-1969-2022.yml](measure/allen-county-total-employment-1969-2022.yml) | measure | Allen County total employment, 1969–2022 | 2 | 4v / 3i / 1o | 52 |
 | [allen-county-townships-1890-1910.yml](measure/allen-county-townships-1890-1910.yml) | measure | Allen County townships, 1890–1910 | 2 | 6v / 3i / 1o | 73 |
 | [allen-county-townships-1930-1950.yml](measure/allen-county-townships-1930-1950.yml) | measure | Allen County townships, 1930–1950 | 3 | 8v / 4i / 1o | 121 |
+| [allen-county-townships-2022.yml](measure/allen-county-townships-2022.yml) | measure | What Allen County's twelve townships spend it on, 2022 | 15 | 12v / 3i / 1o | 154 |
 | [allen-county-toxic-releases-1987-2024.yml](measure/allen-county-toxic-releases-1987-2024.yml) | measure | Toxic releases reported in Allen County, 1987–2024 | 8 | 12v / 3i / 2o | 166 |
 | [allen-county-transfer-receipts-1969-2024.yml](measure/allen-county-transfer-receipts-1969-2024.yml) | measure | Government transfers to Allen County, 1969–2024 | 6 | 11v / 1i / 1o | 113 |
 | [allen-county-tree-canopy-2011-2021.yml](measure/allen-county-tree-canopy-2011-2021.yml) | measure | Allen County tree canopy, 2011–2021 | 4 | 9v / 0i / 1o | 83 |
