@@ -34,6 +34,17 @@ location:
       Annual peak streamflow, one row per water year, for the Ottawa River at Allentown. The same
       path with `site_no` changed serves any gauge; a gauge with no peak record returns a 200 with
       a 60-byte body and no rows, which is how three of the county's larger stream sites answered.
+  - kind: url
+    value: https://waterservices.usgs.gov/nwis/dv/?format=rdb&sites=04187500&startDT=&endDT=&parameterCd=00060
+    description: >-
+      Daily mean discharge, one row per day per site. This is the file the peak service is a summary
+      of, and it answers the questions the annual row cannot — how many floods a year held, and how
+      broad a crest was. `startDT`/`endDT` here are real filters, unlike the collection search's.
+  - kind: url
+    value: https://waterservices.usgs.gov/nwis/site/?format=rdb&countyCd=39003&seriesCatalogOutput=true&outputDataTypeCd=dv&parameterCd=00060&siteStatus=all
+    description: >-
+      Which sites carry a daily discharge series and between which dates, one row per series. Ask
+      this before assuming a gauge has only annual peaks.
 used-by:
   - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
@@ -72,6 +83,16 @@ outage, 31 December 1935 to 1 September 1943, that the water-year convention spl
 Lima gauge, 1989 to 2025, is missing 2000 to 2009 exactly, which in the daily record is 22 November
 1999 to 1 July 2009. A gap of that shape is a gauge that was not funded, not a river that did not
 flood, and the file does not distinguish them — it simply has no row.
+
+**The peak file is one row a water year, and the daily file underneath it has been there since
+1923.** The Ottawa at Allentown carries **18,545 days of mean discharge, 1 October 1923 to 23 March
+1982**; the Ottawa at Lima 10,338 days from 30 September 1988; the Auglaize near Kossuth from March
+2017. [verified] — the site service with `seriesCatalogOutput=true&outputDataTypeCd=dv`, run here.
+This corpus ranked that river's floods from fifty-two annual rows for four phases, and an annual row
+cannot show a year's second flood or say whether a crest was broad or sharp. In water year 1959 the
+difference is a month: the Blanchard's largest instantaneous reading is 11 February and its largest
+daily mean is 22 January. See
+[a peak is one row a year](../decisions/a-peak-is-one-row-a-year.yml).
 
 **A peak may be a reconstruction rather than a reading, and the file says which.** `peak_cd` 7 is
 "Discharge is an Historic Peak", 2 is an estimate, `Bd` is a day that is unknown or not exact. The
