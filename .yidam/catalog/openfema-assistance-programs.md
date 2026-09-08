@@ -31,6 +31,18 @@ location:
       Three project rows across three programmes — HMGP, FMA — with the project amount, the federal
       share, the cost-share percentage, the benefit-cost ratio and the number of properties. Here
       the county field reads "Allen" without the word County, the opposite of the previous endpoint.
+      **Three is what this county filed, not what stands in it**: a statewide programme is filed
+      `county = Statewide`, so three further projects with property in Allen County are invisible to
+      this query and visible to the mitigated-properties one below.
+  - kind: url
+    value: "https://www.fema.gov/api/open/v4/HazardMitigationAssistanceMitigatedProperties?$filter=state eq 'Ohio' and county eq 'Allen'"
+    description: >-
+      One row per structure rather than per project: the property action, the structure and
+      foundation type, whether the residence is owner-occupied, the city and ZIP, and — for an
+      acquisition — the amount actually paid. Six rows here against the projects endpoint's three,
+      because a property is filed where it stands and a project where it was administered. **It is
+      `v4`; `v3` returns 404 with an HTML body**, and the way to find the live version of any of
+      these is `api/open/v1/OpenFemaDataSets`, whose rows carry `title` and `version`.
   - kind: url
     value: "https://www.fema.gov/api/open/v2/HousingAssistanceOwners?$filter=state eq 'OH' and county eq 'Allen (County)'"
     description: >-
@@ -75,8 +87,19 @@ one Allen County project of $23,122 carries a federal share of $1,740.
 20 April 2005 and its ten declarations reach back to 1965; the absence of a 1965 or 1978 row is a
 limit of the file and not a fact about the money.
 
+**`HazardMitigationAssistanceMitigatedProperties` has now been read, and it disagrees with the
+projects file about how much mitigation this county has had.** Six structures under five project
+identifiers, against three projects filed under the county — because three of the five are
+statewide safe-room programmes filed `county = Statewide` while their buildings stand in Lima,
+Elida, Bluffton and Spencerville. [verified] — both endpoints, queried by county and then by
+identifier without a county filter. The projects file is not wrong; it answers "what did this
+county file" and was being read as "what was built here", which is
+[a county column is a filing decision](../decisions/a-county-column-is-a-filing-decision.yml) in a
+grant file rather than a gazetteer. It is also the endpoint that prices a buyout: `actualAmountPaid`
+appears nowhere in the projects file. See
+[the hazard mitigation](../corpus/measure/allen-county-hazard-mitigation-2003-2026.yml).
+
 **What else is in it, unread.** `PublicAssistanceFundedProjectsSummaries`,
 `PublicAssistanceGrantAwardActivities` and `PublicAssistanceApplicantsProgramDeliveries`;
-`HazardMitigationAssistanceMitigatedProperties`, which names the structures a buyout removed;
 `HazardMitigationGrantProgramDisasterSummaries`; and forty other OpenFEMA datasets including
 firefighter grants and emergency management performance grants.
