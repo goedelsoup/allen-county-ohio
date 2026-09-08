@@ -1,0 +1,91 @@
+class: event
+label: The flood of 6 June 1947
+description: |
+  **The second time in eight years the same paper called a Bluffton flood the worst since 1913.**
+  "Bluffton's worst flood since 1913 wreaked widespread damage here last Friday night and Saturday
+  as rampaging water spilled over the banks of Big and Little Riley creeks for nearly a 24-hour
+  period." [verified] — [The Bluffton News](../../catalog/chronicling-america.md), 12 June 1947,
+  page one. A torrential downpour "shortly before dusk Friday" set it off; the creeks were out of
+  their banks before midnight and crested "about 7 a. m. the following morning", and there was
+  "little recession in the height of the flood stage until late Saturday". It is the other half of
+  [a worst-since is not a ranking](../../decisions/a-worst-since-is-not-a-ranking.yml), and this
+  corpus does not say whether it or [March 1939](the-flood-of-12-march-1939.yml) was the larger.
+
+  **What it did was mostly basements.** "By 9 p. m. it was estimated that roughly half the
+  basements in Bluffton had water in them, as overloaded storm sewers were unable to handle the
+  inundation" — flooded "to a depth of as much as four feet", drowning washing-machine motors, coal
+  stokers and oil burners while householders "were hunting tools to remove them". [verified] — the
+  same page. At Harmon field "the water came up to the ticket windows in the stadium", closed
+  College avenue until late Saturday and gouged out the tennis courts opposite; a block downstream
+  Cherry street was blocked again, for the third of the four floods that street stands in.
+
+  **Two quarries filled, and the paper's own headline disagrees with its story about one of them.**
+  The deck reads "27-Acre Quarry of Bluffton Stone Co. Is Filled by Rampaging Waters"; the story
+  below it reads "The Bluffton Stone Company's seven-acre quarry was two-thirds full of water" and
+  quotes the manager on pumping out "the 27-foot deep quarry". [verified] — the same page. Seven
+  acres and twenty-seven feet went into the headline as twenty-seven acres, and two-thirds full
+  became filled. Page three has the second: "It is a rare occasion when Big Riley creek will
+  overflow the dike and flood the Buckeye quarry during high waters", and this time the creek and
+  Marsh run ditch both did, leaving carp "as big around as nail kegs" in the grass by the bath
+  house on Monday morning. [verified] — the same issue, page three.
+
+  **Two instrument records land on the day of the crest and a third on the day after.** Lima
+  recorded **1.68 inches** against 7 June and 0.61 against the 8th. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. The Ottawa at Allentown
+  peaked at **2,220 cubic feet a second on 7 June 1947** — its annual peak, and fortieth of
+  fifty-two water years, below the gauge's own median of 3,240 — while the Blanchard near Findlay
+  peaked at **8,160 cfs on 8 June**, the largest of that river's decade and sixteenth of
+  ninety-nine water years. [verified] —
+  [USGS peak streamflow](../../catalog/usgs-nwis.md), sites 04187500 and 04189000. Two records
+  agreeing on a date is what makes this an event here; see
+  [a flood needs two records](../../decisions/a-flood-needs-two-records.yml).
+
+  **Neither gauge is on the water the paper describes, and the pair is the argument.** Riley Creek
+  drains to the Blanchard and joins it two counties downstream of Findlay, so the Findlay gauge is
+  not below Bluffton and the Allentown gauge is in another basin entirely. [verified] —
+  [Riley Creek](../natural-feature/riley-creek.yml). One storm crossed both basins on one night and
+  left the Ottawa below its median and the Blanchard at a ten-year high — which is how a village on
+  a divide can have its worst flood twice in eight years from two different directions. [inference]
+
+  **The rain gauge is one day off the paper and the corpus cannot close the gap.** The account puts
+  the cloudburst on Friday evening, 6 June; the daily file carries the water against Saturday the
+  7th. The station's observation hour for 1947 is not on record — its own history says only that it
+  changed "FROM 7 AM TO MIDNIGHT", with no date — so a daily total here is assigned to a day whose
+  boundary is unknown. [verified] — [NOAA's station history](../../catalog/ghcn-daily-lima.md) for
+  COOP 334551. Under a 7 a.m. reading the two agree exactly; see
+  [a file has more than one date](../../decisions/a-file-has-more-than-one-date.yml).
+
+  **What it cost was the corn.** Farmers "virtually abandoned hopes of planting anything near a
+  normal acreage", with water "still standing in the furrows" a week later and rough estimates
+  putting the district "from one-third to one-half under normal" in a place where "corn and hogs
+  form the backbone of farming operations". [verified] — the same page.
+properties:
+  occurred: 1947-06-06
+  occurred_through: 1947-06-07
+  event_type: flood
+  location_description: |
+    Bluffton, on Big and Little Riley creeks — Harmon field, College avenue, Cherry street, Riley
+    street, the Bluffton Stone Company and Buckeye quarries, and Marsh run ditch. [verified] —
+    [The Bluffton News](../../catalog/chronicling-america.md), 12 June 1947.
+links:
+  - target: ../place/bluffton.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../natural-feature/riley-creek.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: ../organization/the-bluffton-news.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/chronicling-america.md
+  - target: the-flood-of-12-march-1939.yml
+    relationship: relates-to
+    claim_tag: inference
+  - target: ../event.ont.yml
+    relationship: instance-of
