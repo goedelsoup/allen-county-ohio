@@ -52,10 +52,13 @@ description: |
   [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml), whose last
   weather row is 2012.
 
-  **The row states four positions and they are an extent.** They run from 0.89 miles south-west of
-  the Bluffton airport through Bluffton itself to 3.61 miles north-north-east of Rockport, over a
-  diameter of 5.75 miles, and the source does not claim an order for them. [verified] — the same
-  weather file; see [an extent is not a track](../../decisions/an-extent-is-not-a-track.yml).
+  **The row states four positions and they are neither a path nor an extent.** They run from 0.89
+  miles south-west of the Bluffton airport through Bluffton itself to 3.61 miles north-north-east of
+  Rockport, the widest pair 9.26 kilometres apart, and the source claims no order for them.
+  [verified] — the same weather file. They are where reports reached the forecast office and they
+  bound nothing. [verified] — see
+  [an extent is not a track](../../decisions/an-extent-is-not-a-track.yml) and
+  [positions bound the reports, not the water](../../decisions/positions-bound-the-reports-not-the-water.yml).
 
   [open] How much of Bluffton flooded, and how it compared with 1959. Both accounts name streets and
   neither gives a stage, a depth or a count of buildings — the 1959 paper counted twelve houses
@@ -69,8 +72,11 @@ properties:
   location_description: |
     Bluffton village and Riley Creek — College Avenue, North Main Street, Cherry Street, Bluffton
     University, and Interstate 75 at Bentley Road. The weather row's four stated positions run
-    Bluffton airport, Bluffton, west-north-west of Bluffton, and north-north-east of Rockport.
-    [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md).
+    Bluffton airport, Bluffton, west-north-west of Bluffton, and north-north-east of Rockport, the
+    widest pair 9.26 km apart; they are where reports came from and bound nothing. [verified] —
+    [the Storm Events Database](../../catalog/noaa-storm-events.md); see
+    [positions bound the reports, not the water](../../decisions/positions-bound-the-reports-not-the-water.yml).
+  reported_positions: "40.87, -83.8807; 40.8996, -83.8807; 40.9187, -83.9532; 40.9175, -83.9712"
 links:
   - target: ../place/bluffton.yml
     relationship: occurred-in

@@ -47,6 +47,28 @@ properties:
 
       Claim-tagged in the prose that states it, the way `place.centroid` and `site.coordinates`
       are, so the value stays parseable.
+  - name: reported_positions
+    type: string
+    description: |
+      The positions a source states for a happening that did not move along a line, as
+      "latitude, longitude" points separated by semicolons, in the source's own order and
+      asserting nothing by it: `40.87, -83.88; 40.90, -83.88; 40.92, -83.95`. Same format as
+      `track` and deliberately a different field, because `track` says "in the order it passed
+      them" and this says only "here is where the source put its marks".
+
+      **It is not an extent, and the name says so on purpose.** These are the places reports came
+      from. In this county's storm record the six events carrying more than two positions spread
+      between 0.64 and 30.71 kilometres apart, and a convex hull over them would range from 0.13
+      to 377.54 square kilometres — a factor of two thousand nine hundred between events of the
+      same type, from four reports each. That is a fact about who telephoned a forecast office,
+      not about how much ground was under water. See
+      `positions-bound-the-reports-not-the-water`.
+
+      **So no area, centroid, hull or bounding box may be derived from it**, and a figure drawing
+      it draws marks and no connector. `a-derived-placement-is-a-claim` refuses the invented
+      middle; this refuses the invented edge.
+
+      Claim-tagged in the prose that states it, like `track`.
 edges:
   - relationship: occurred-in
     target: place

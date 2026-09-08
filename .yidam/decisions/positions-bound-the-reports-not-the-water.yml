@@ -1,0 +1,87 @@
+id: positions-bound-the-reports-not-the-water
+summary: >-
+  Six Allen County floods state four or five positions each, and #120 asked what property should
+  hold them. The answer is not `extent`. A convex hull over those positions ranges from 0.13 to
+  377.54 square kilometres across events of the same type reported the same number of times — a
+  factor of two thousand nine hundred, which is a fact about how far apart the callers stood. The
+  positions get a field of their own, named for what they are, and nothing may be derived from
+  their outline.
+context: |
+  [an extent is not a track](an-extent-is-not-a-track.yml) established what these six rows are not:
+  the positions are not in passage order, event 593454 ends beside where it began, and `event.track`
+  may not be filled from them. It left the positive question open, and
+  [#120](https://github.com/goedelsoup/allen-county-ohio/issues/120) named it — "an extent is a
+  third shape — several positions, unordered, bounding rather than tracing" — and named the danger
+  in the same breath: "four reported positions do not bound a flood; they bound the reports".
+
+  Measured, that caution turns out to be the whole finding.
+
+      event    type          date          n   widest pair   convex hull
+      339223   flash flood   14 May 2011   4      30.71 km    377.54 km²
+      315034   flash flood   11 May 2011   4      24.66 km    287.11 km²
+      509461   flash flood   28 May 2014   5      20.49 km    174.88 km²
+      593454   flood         16 Jun 2015   5       9.90 km     39.47 km²
+      824466   flood         26 Apr 2019   4       9.26 km     14.47 km²
+      908785   flash flood    9 Jul 2020   4       0.64 km      0.13 km²
+
+  [verified] — [Storm Events](../catalog/noaa-storm-events.md) `StormEvents_locations` for 2011,
+  2014, 2015, 2019 and 2020, joined on `EVENT_ID`; separations and hulls computed here. The county
+  holds 402.545 square miles of land — 1,042.6 km² — so the largest hull is **36 per cent of Allen
+  County** and the smallest is **twelve thousandths of one per cent**.
+
+  Both are four reports. The July 2020 flash flood's four positions sit within six hundred and forty
+  metres of Cairo; the May 2011 one's four are scattered across the county. The catalog entry
+  already records what the file is made of: residents telephoning a forecast office, 240 of 293
+  sourced rows naming a person. **The spread of the positions is the spread of the callers.**
+decision: |
+  **The positions get a field named for what they hold — `event.reported_positions` — and no
+  geometry may be derived from it.**
+
+  - **Not `extent`.** A name is a claim, and that one asserts the thing the data cannot support. The
+    field holds where reports came from, in the source's own order, asserting nothing by that order.
+  - **A separate field from `track`, not a widening of it.** `track` means "in the order it passed
+    them" and is answerable about the ground between its points. Widening it to N unordered points
+    would make every consumer of it — the mileage sum, the connector, the replay — quietly wrong.
+  - **No hull, no bounding box, no area, no centroid.** The table above is the argument: the same
+    derivation applied to the same kind of event with the same number of reports differs by three
+    orders of magnitude. `a-derived-placement-is-a-claim` refuses an invented middle; this refuses
+    an invented edge, for the same reason and with a number attached.
+  - **A figure draws marks and no connector.** Whatever eventually renders this may draw four dots.
+    It may not draw a polygon, and it may not order them, because
+    [an animation asserts continuity](an-animation-asserts-continuity.yml) licenses no reveal order
+    where the source states none.
+  - **Say how far apart they are, in the node.** The widest pair is the honest one-number summary of
+    a set of reports and it costs one line. 0.64 km and 30.71 km are different findings and a reader
+    who sees only "four positions" cannot tell them apart.
+rationale: |
+  **The alternative was available, defensible and wrong.** A hull is what a mapping library gives
+  you for free, it renders well, and for the 2019 flood it would have looked entirely reasonable —
+  14.47 km² around Bluffton is about the size of the flooded ground that flood plausibly had. It is
+  the July 2020 row that shows the method is unsound: the identical derivation says a flash flood
+  covered thirteen hectares. A method that is right when you already know the answer and absurd when
+  you do not is not a method.
+
+  **This is the third time this corpus has refused a derived geometry and the first time it could
+  price the refusal.** `a-derived-placement-is-a-claim` refused a tornado's midpoint on principle;
+  `an-extent-is-not-a-track` refused a passage order on the evidence that one event returns to its
+  start. Here the refusal is a ratio: 2,900 between the largest and smallest hull, from six rows
+  that are alike in type, in county and in how many people rang up.
+
+  **What the field is good for is still real.** Four marks around Bluffton and four marks inside
+  Cairo are genuinely different observations, and the corpus could not previously hold either. The
+  2019 flood's four positions are the reason its node can say the water reached ground north-west of
+  the village as well as the four streets its narrative names.
+
+  **What this does not license.** Reading a wide spread as a big flood. It is equally consistent
+  with a big flood and with a forecast office that happened to take calls from four townships; the
+  file cannot separate them, and neither can this corpus. The number goes in the node labelled as
+  the spread of the reports, and the flood's size comes from somewhere else or from nowhere.
+
+  **What is not done here.** Three of the six events have no node —
+  [#120](https://github.com/goedelsoup/allen-county-ohio/issues/120)'s two flash floods of May 2011
+  and the flash flood of 9 July 2020 — and stating positions is not a reason to write them; the
+  flooding is, and each still needs its second record under
+  [a flood needs two records](a-flood-needs-two-records.yml). The figure is not done either, and the
+  issue is right that it may turn out to be four dots.
+status: accepted
+date: "2026-09-08"
