@@ -61,7 +61,7 @@ Sorted by: kind, then alphabetically.
 | [the-flood-of-12-march-1939.yml](event/the-flood-of-12-march-1939.yml) | event | The flood of 12 March 1939 | 7 | 10v / 1i / 1o | 108 |
 | [the-flood-of-13-february-1950.yml](event/the-flood-of-13-february-1950.yml) | event | The flood of 13–14 February 1950 | 7 | 10v / 1i / 1o | 90 |
 | [the-flood-of-16-july-1915.yml](event/the-flood-of-16-july-1915.yml) | event | The flood of 16 July 1915 | 5 | 10v / 1i / 1o | 87 |
-| [the-flood-of-16-june-1946.yml](event/the-flood-of-16-june-1946.yml) | event | The flood of 16–19 June 1946 | 6 | 6v / 1i / 1o | 79 |
+| [the-flood-of-16-june-1946.yml](event/the-flood-of-16-june-1946.yml) | event | The flood of 16–19 June 1946 | 6 | 8v / 1i / 0o | 89 |
 | [the-flood-of-16-june-2015.yml](event/the-flood-of-16-june-2015.yml) | event | The flood of 16 June 2015 | 3 | 11v / 3i / 1o | 86 |
 | [the-flood-of-22-august-2007.yml](event/the-flood-of-22-august-2007.yml) | event | The flood of 21–22 August 2007 | 5 | 13v / 2i / 1o | 94 |
 | [the-flood-of-28-february-2011.yml](event/the-flood-of-28-february-2011.yml) | event | The flood of 28 February 2011 | 4 | 10v / 3i / 1o | 86 |
