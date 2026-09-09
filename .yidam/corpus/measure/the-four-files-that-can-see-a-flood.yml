@@ -1,0 +1,106 @@
+class: measure
+label: The four files that can see a flood here, and what each alone would report
+description: |
+  **This county has four independent federal records that can register a flood, they disagree about
+  almost everything, and no two of them name the same set of days.** The rain gauge, the stream
+  gauges, the insurance claims and the storm database each answer a different question; read alone
+  each produces a plausible and different flood history. [verified] — the table below.
+
+  **Read from the claims file, seven flood days of three or more claims had no event node.**
+  14 April 1979, 1 July 1986, 27 February 1997, 6 February 2008, 8 March 2009, 8 July 2013 and
+  17 May 2019 — and three of the ten largest claim days in the whole forty-six-year record are among
+  them. [verified] — [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003.
+  Three now have nodes; the other four have one record each and stay unwritten.
+
+  **Read from the storm database, nine of its thirteen Allen County flood rows had no event node.**
+  18 July 1996, 27 February and 1 March and 25 May 1997, 2 August 2003, 3 September 2004, 11 and
+  14 May 2011, and 9 July 2020. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), all years 1996–2022 filtered
+  here. **1997 alone holds three of the thirteen**, and its May row reads "Riley creek in Bluffton
+  rose out of its banks causing 6 residents to be evacuated" at $10,000. Only two of the thirteen
+  mention an evacuation or a rescue, and the other is
+  [16 June 2015](../event/the-flood-of-16-june-2015.yml).
+
+  **Read from the rain gauge, six of eighteen floods appear at all.** That was
+  [settled two phases ago](the-twenty-wettest-days-against-the-river.yml) and is the weakest of the
+  four. **Read from the river, twenty-six rises above the 99th percentile fall in the thirty-three
+  years the corpus had no cold-season flood** — a gap it had named as possibly its own, and which
+  was. [verified] — [USGS](../../catalog/usgs-nwis.md), sites 04187500 and 04187100.
+
+  **The strongest single day in the record by agreement is 27 February 1997, and the corpus had
+  nothing on it.** A storm-database row of type Flood, seven insurance claims paying $43,151, and
+  the Ottawa at Lima at its 99.9th percentile — three files, three counts of different things, one
+  date. [verified] — the three sources above; see [the node](../event/the-flood-of-27-february-1997.yml).
+  For comparison the county's largest flood, August 2007, has no county stream gauge at all.
+
+  [open] The four days with one record each. 1 July 1986 and 8 March 2009 fall in stream-gauge
+  holes; 6 February 2008 has eight claims and $345,988 and no gauge and no storm row; 8 July 2013
+  has three claims, $92,672, and a gauge at only its 94.5th percentile. Each needs a witness this
+  corpus has not reached, and for 1986 and 2008 that is likely a newspaper.
+properties:
+  parameter: >-
+    Every day on which one of this county's four flood-registering federal records reports a flood,
+    against the days the corpus holds an event for
+  value: >-
+    Seven claim days of three or more and nine of thirteen storm-database flood rows had no event
+    node; three are written in this phase and the rest are named
+  as_of: "2026-09-09"
+  unit: flood days
+  method: |
+    Four sources, each filtered to Allen County and each asked the question it can answer.
+    **Claims**: `countyCode` 39003, grouped by `dateOfLoss`, days of three or more taken.
+    **Storm database**: every detail file 1993–2022, `STATE` OHIO and `CZ_NAME` ALLEN, rows whose
+    `EVENT_TYPE` contains Flood. **Stream gauges**: daily means at 04187500, 04187100, 04185935 and
+    04189174, rises above each gauge's own 99th percentile, consecutive days within five grouped
+    into one rise. **Rain**: GHCN-Daily USC00334551.
+
+    `gauge_cfs` is the daily mean on the date itself, not the crest of a window around it, so that
+    a row reports what its own day carried; `gauge_pct` is that figure's percentile among every day
+    the gauge has recorded. `NA` means no county gauge was in service — which for 1986, 2003, 2004,
+    2008 and 2009 is the Lima gauge's hole of 23 November 1999 to 30 June 2009 or the six years
+    between Allentown closing and Lima opening.
+
+    A day is counted as covered if any event node in this corpus carries a date within three of it.
+    `records` counts how many of the four register that day, and it is the count that decides
+    whether a node may be written at all, per
+    [a flood needs two records](../../decisions/a-flood-needs-two-records.yml).
+  table: |
+    date claims paid_usd gauge_cfs gauge_pct storm_row records node
+    1979-04-14 5 2498 3200 99.9 no 2 new
+    1986-07-01 3 16384 NA NA no 1 no
+    1996-07-18 0 0 NA NA yes 1 no
+    1997-02-27 7 43151 3470 99.9 yes 3 new
+    1997-03-01 0 0 934 97.1 yes 1 no
+    1997-05-25 0 0 NA NA yes 1 no
+    2003-08-02 0 0 NA NA yes 1 no
+    2004-09-03 0 0 NA NA yes 1 no
+    2008-02-06 8 345988 NA NA no 1 no
+    2009-03-08 4 11229 NA NA no 1 no
+    2011-05-11 0 0 NA NA yes 1 no
+    2011-05-14 0 0 NA NA yes 1 no
+    2013-07-08 3 92672 602 94.5 no 1 no
+    2019-05-17 11 185317 5000 100.0 no 2 new
+    2020-07-09 0 0 NA NA yes 1 no
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../event/the-flood-of-27-february-1997.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../event/the-flood-of-17-may-2019.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../event/the-flood-of-14-april-1979.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../measure/allen-county-storm-events-1950-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

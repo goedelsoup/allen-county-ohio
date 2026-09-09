@@ -1,0 +1,52 @@
+class: event
+label: The flood of 14 April 1979
+description: |
+  **The Ottawa River at Allentown took its water year's largest daily mean on 14 April 1979 — 3,200
+  cubic feet a second, the 99.9th percentile of that gauge's 18,545 days — and five flood insurance
+  claims are dated the same day.** [verified] — [USGS](../../catalog/usgs-nwis.md), site 04187500,
+  and [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003. The river went
+  from 551 cubic feet a second on the 13th to 3,200 on the 14th and back under 600 by the 16th.
+
+  **It is the second-oldest flood in the insurance record and the second the corpus has written from
+  it.** The programme's Allen County file opens on
+  [14 March 1978](the-flood-of-14-march-1978.yml) and this is thirteen months later; between them
+  they hold seven of the record's first ten claims. [verified] — the same file, sorted by date of
+  loss.
+
+  **April 1979 was a wet fortnight and the claims say so before the gauge does.** Single claims are
+  dated 6, 7 and 13 April and five on the 14th, and the month's rain came in two pulses — 0.59
+  inches on the 12th and 1.59 on the 14th, neither in the station's five hundred wettest days.
+  [verified] — the same claims file and
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551.
+
+  **The federal storm record has one Allen County row in the whole of 1979 and it is not this.**
+  [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), 1979 detail file.
+  That file was not filled here before 1996 in any useful way, and its silence is not evidence; see
+  [the storm record](../measure/allen-county-storm-events-1950-2026.yml).
+
+  [open] What the water reached. Five claims paid $2,498 between them — an average of five hundred
+  dollars, the smallest of any multi-claim day in the county's record — and the file gives no
+  address. Whether that means shallow water in many buildings or contents-only losses in a few is
+  not established. [inference]
+properties:
+  occurred: 1979-04-14
+  event_type: flood
+  location_description: |
+    The Ottawa River at Allentown, gauged at site 04187500 draining 160 square miles, and five
+    insured buildings located no more precisely than the county. [verified] —
+    [USGS](../../catalog/usgs-nwis.md) and [the claims file](../../catalog/openfema-nfip.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/allen-county-flood-insurance-1978-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../event.ont.yml
+    relationship: instance-of

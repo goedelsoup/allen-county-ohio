@@ -1,0 +1,68 @@
+class: event
+label: The flood of 17 May 2019
+description: |
+  **The Auglaize River near Kossuth ran 5,000 cubic feet a second on 17 May 2019 — the largest daily
+  mean in that gauge's entire record — and ten of the eleven insurance claims from this flood are in
+  Delphos, which stands on the Auglaize.** [verified] — [USGS](../../catalog/usgs-nwis.md), site
+  04185935, and [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003. **A
+  gauge and a loss on the same water is a thing most of this corpus's flood nodes cannot say**, and
+  they usually say so; see [28 February 2011](the-flood-of-28-february-2011.yml).
+
+  **Eleven claims paid $185,317.** The Ottawa at Lima reached 1,730 cubic feet a second, its 99.1st
+  percentile, and Riley Creek below Pandora 233, its 93rd — so all three of the county's reporting
+  gauges rose and only the Auglaize set a record. [verified] — the same claims file and the same
+  source, sites 04187100 and 04189174.
+
+  **This county flooded twice in three weeks and the corpus had written one of them.**
+  [The flood at Bluffton of 26 April](the-flood-at-bluffton-26-april-2019.yml) drew eleven claims
+  and $274,651; this one drew eleven and $185,317. Together they are **$459,969, 11.2 per cent of
+  the $4,106,934 the programme has ever paid here** — a ninth of the record in twenty-two days.
+  [verified] — the same file, summed here.
+
+  **The Kossuth gauge's two largest days ever are these two floods, in this order.** 5,000 cubic
+  feet a second on 17 May and 4,420 on 26 April lead its 3,183 days. [verified] — the same gauge.
+
+  **And they took opposite ends of the county.** Ten of this flood's eleven claims are in Delphos's
+  postal area at the west edge; seven of April's were in Bluffton's, in the north-east corner,
+  thirty-five kilometres away on different water. [verified] — the same file's `reportedZipCode`
+  against [the postal areas](../measure/allen-county-zip-codes-2020.yml). One spring, two floods,
+  and no overlap in the ground they took.
+
+  **The rain arrived in one day and the river answered in one day.** 2.37 inches fell on 17 May —
+  59th of the station's 45,272 days, outside the twenty this corpus spent a phase ranking — and the
+  Ottawa went from 61 cubic feet a second to 1,730 and back to 350 by morning. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551.
+
+  **The federal storm record has no row for it, and this corpus had already noticed.** May 2019 is
+  one of the five largest insurance clusters the storm file misses, named as such before any event
+  was written for it. [verified] —
+  [the storm record](../measure/allen-county-storm-events-1950-2026.yml) against
+  [the claims](../measure/allen-county-flood-insurance-1978-2023.yml). Eleven of that file's Allen
+  County rows fall in 2019 and none is in May.
+properties:
+  occurred: 2019-05-17
+  event_type: flood
+  location_description: |
+    The Auglaize River near Kossuth, gauged at site 04185935 draining 201 square miles above
+    Delphos; the Ottawa at Lima, site 04187100; Riley Creek below Pandora, site 04189174; and
+    eleven insured buildings, ten of them in Delphos's postal area on the Auglaize. [verified] —
+    [USGS](../../catalog/usgs-nwis.md) and [the claims file](../../catalog/openfema-nfip.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../place/delphos.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event/the-flood-at-bluffton-26-april-2019.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../event.ont.yml
+    relationship: instance-of
