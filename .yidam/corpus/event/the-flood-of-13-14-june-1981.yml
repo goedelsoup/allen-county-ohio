@@ -1,0 +1,80 @@
+class: event
+label: The flood of 13–14 June 1981
+description: |
+  **Twenty-six flood insurance claims were paid on losses dated 13 June 1981 — the third-largest
+  single day in the county's forty-six-year insurance record, behind 28 February 2011 and 16 June
+  2015 and ahead of the county's largest flood.** They paid $121,705, of which $73,405 was contents;
+  nineteen were single-family homes and seven were non-residential buildings; three were paid
+  nothing. [verified] — [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003,
+  counted here.
+
+  **The Ottawa River at Allentown ran 5,450 cubic feet a second on 14 June, the second-largest daily
+  mean in that gauge's 18,545 days.** Only 22 January 1959 is larger. Its instantaneous peak, 5,860
+  cubic feet a second at a stage of 10.09 feet, is fourth of the gauge's fifty-two water years.
+  [verified] — [USGS](../../catalog/usgs-nwis.md), site 04187500, daily values and annual peaks; see
+  [the peak flows](../measure/ottawa-river-peak-flows-1924-2025.yml).
+
+  **It is the largest flow at that gauge for which this corpus had no event.** Of its eight biggest
+  instantaneous peaks the corpus holds four — [1959](the-ottawa-river-flood-of-1959.yml),
+  [1939](the-flood-of-12-march-1939.yml), [1943](the-storm-of-16-18-may-1943.yml) and
+  [1950](the-flood-of-13-february-1950.yml) — and this was the largest of the four it did not.
+  [verified] — the same file against this corpus. **It is also the only warm-season flood among
+  them**: the other seven crested in January, February, March, April or May. [verified] — the same
+  peaks.
+
+  **The federal storm record has no row for it, and it was not asleep that month.** The database
+  holds six Allen County rows for 1981, four of them in June — thunderstorm wind on the 8th, a
+  tornado on the 21st, hail and thunderstorm wind on the 24th — and nothing on the 13th or 14th.
+  [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), 1981 detail file,
+  filtered here; see [the storm record](../measure/allen-county-storm-events-1950-2026.yml). No
+  federal disaster was declared. [verified] —
+  [the declarations](../measure/allen-county-disaster-declarations-1965-2020.yml).
+
+  **The water took the county's two ends and left its middle.** Twelve of the twenty-six claims are
+  in [Delphos](../place/delphos.yml)'s postal area at the west edge and eight in
+  [Bluffton](../place/bluffton.yml)'s at the north-east corner; four fall one apiece in
+  [Lima](../place/lima.yml)'s four, one in [Spencerville](../place/spencerville.yml)'s, and one
+  carries no postal code at all. [verified] — the same file's
+  `reportedZipCode` against [the postal areas](../measure/allen-county-zip-codes-2020.yml). Lima
+  holds most of this county's people and most of its claims in every other year of the record, and
+  the gauge that measured the flood stands between the two places that were flooded rather than in
+  either.
+
+  **The rain, the river and the claims disagree by one day, and the disagreement is the reading
+  hour.** 4.38 inches is credited to 14 June — fourth-wettest day in a hundred and twenty-five years
+  — the losses are dated the 13th, and the river was already at 1,660 cubic feet a second on the
+  13th under no rain at all. A cooperative observer's daily total is read once each morning and
+  credited to the day it is read, so a night of rain lands on the following date. [inference] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551, against the two files above.
+
+  [open] What the water reached. The claims file gives this county no address, no street and no city
+  — `reportedCity` reads "Currently Unavailable" on all twenty-six — and no Lima or Delphos
+  newspaper of 1981 is digitized anywhere this corpus can reach. Eleven of the twenty-six carry a
+  cause-of-loss code that the current dictionary reads as *tidal water overflow*, four hundred
+  kilometres from tidewater; see
+  [a code list is dated](../../decisions/a-code-list-is-dated-and-the-rows-are-older.yml).
+properties:
+  occurred: 1981-06-13
+  occurred_through: 1981-06-14
+  event_type: flood
+  location_description: |
+    The Ottawa River at Allentown, gauged at site 04187500 draining 160 square miles; and
+    twenty-six insured buildings, twelve in the Delphos postal area and eight in Bluffton's.
+    The gauge and the buildings are not established to be the same water — Delphos stands on the
+    Auglaize and Bluffton on Riley Creek, and neither is on the Ottawa. [verified] —
+    [USGS](../../catalog/usgs-nwis.md) and [the claims file](../../catalog/openfema-nfip.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/allen-county-flood-insurance-1978-2023.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../event.ont.yml
+    relationship: instance-of
