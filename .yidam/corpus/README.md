@@ -423,7 +423,7 @@ Sorted by: kind, then alphabetically.
 | [the-flood-studys-flood-history.yml](measure/the-flood-studys-flood-history.yml) | measure | The flood study's flood history, read against the instruments | 5 | 7v / 3i / 0o | 119 |
 | [the-four-files-that-can-see-a-flood.yml](measure/the-four-files-that-can-see-a-flood.yml) | measure | The four files that can see a flood here, and what each alone would report | 6 | 5v / 0i / 1o | 106 |
 | [the-twenty-wettest-days-against-the-river.yml](measure/the-twenty-wettest-days-against-the-river.yml) | measure | The twenty wettest days, read against the county's own rivers | 5 | 8v / 1i / 0o | 111 |
-| [who-stood-for-the-village-seats-2023-2025.yml](measure/who-stood-for-the-village-seats-2023-2025.yml) | measure | Who stood for the county's village and township seats, 2023 and 2025 | 4 | 6v / 0i / 0o | 143 |
+| [who-stood-for-the-village-seats-2023-2025.yml](measure/who-stood-for-the-village-seats-2023-2025.yml) | measure | Who stood for the county's village and township seats, 2023 and 2025 | 4 | 7v / 0i / 0o | 154 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 9v / 6i / 1o | 117 |
@@ -639,7 +639,7 @@ Sorted by: kind, then alphabetically.
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 9v / 3i / 1o | 118 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
-| [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 6 | 10v / 2i / 2o | 125 |
+| [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 6 | 11v / 2i / 2o | 138 |
 | [why-hud-and-the-survey-count-different-assisted-renters.yml](question/why-hud-and-the-survey-count-different-assisted-renters.yml) | question | Why do HUD's programme file and HUD's survey tables disagree about the county's assisted renters? | 4 | 1v / 3i / 1o | 77 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 2v / 4i / 3o | 83 |
 | [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 8v / 5i / 1o | 75 |

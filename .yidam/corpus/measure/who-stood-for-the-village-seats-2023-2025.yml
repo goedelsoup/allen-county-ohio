@@ -1,131 +1,142 @@
 class: measure
 label: Who stood for the county's village and township seats, 2023 and 2025
 description: |
-  **Across the two municipal elections that seated this county's present village and township
-  officers, 52 village seats drew 25 candidates and 55 township seats drew 71.** Villages field
-  0.48 candidates per seat and townships 1.29 — a difference of 2.7 times between two forms of
-  government sitting on the same ground, printed on the same ballot paper, on the same days.
-  [verified] — [the ballot display](../../catalog/allen-county-ballot-display.md), every precinct
-  ballot of 7 November 2023 and 4 November 2025, counted here.
+  **Across the two municipal elections that seated this county's present officers, 52 village seats
+  drew 24 candidates and 23 of those seats were filled. The other twenty-nine were not.** Twenty-one
+  of the candidates were printed on the ballot and three were write-ins. The county's 55 township
+  seats drew 71 candidates over the same two days. [verified] —
+  [the ballot display and the official canvass](../../catalog/allen-county-ballot-display.md),
+  7 November 2023 and 4 November 2025.
 
-  **The ballot says it in words, not by arithmetic.** Where nobody files, the printed ballot carries
-  the line **"No Valid Petition Filed"** under the office, once for each seat nobody sought. Seven
-  village contests carry it and four township ones. Harrod's ballot of November 2023 is the extreme:
-  under `VILLAGE OF HARROD` it reads *For Mayor — No Valid Petition Filed*, *For Member of Council —
-  James G. Pinks, No Valid Petition Filed*, *For Member of Board of Trustees of Public Affairs — No
-  Valid Petition Filed*. Four seats, one name. [verified] — the same source, precinct ballots.
+  **This node first read the ballots alone and got two things wrong, both at Bluffton.** A printed
+  ballot carries a blank line reading `Write-in` wherever a write-in candidate has filed a
+  declaration of intent, and that line was counted here as a candidate — so Bluffton's council was
+  published as drawing two candidates in 2023 and three in 2025 when the printed names were **none**
+  and **two**. The county total fell from 25 to 21 printed. [verified] — the precinct ballots,
+  re-read.
 
-  **In November 2025 not one of the seven villages fielded a full council.** Twenty-eight council
-  seats stood across the county and nine people sought them; Cairo and Spencerville drew nobody at
-  all, Harrod and Lafayette one each. In the same election every township's regular trustee contest
-  was filled or oversubscribed, Shawnee's by three to one. [verified] — the same source.
+  **And the canvass then supplies what no ballot can.** Bluffton's council was filled by write-in in
+  both years — Jospeh Sehlhorst on 161 votes and Benjamin Stahl on 134 took both seats in 2023, and
+  Thomas Downey on 99 took a third seat in 2025 beside two printed names. [verified] — the official
+  summary, both elections. So the village that appeared to stand least in fact stands by a route the
+  printed paper cannot show, and this node's original ranking of it was wrong twice over.
 
-  **It is the council and not the office of mayor.** All seven mayoralties on the 2023 ballot drew
+  **Where the ballot says nobody stood, the canvass agrees and adds the voters.** Seven village
+  contests recorded **zero votes cast**: Cairo's and Elida's councils and Harrod's mayoralty and
+  board of public affairs in 2023, Cairo's and Spencerville's councils and Harrod's board in 2025.
+  Behind those zeros are 1,080 unused votes at Spencerville and 216 at Cairo. [verified] — the same
+  summaries. People went, took a ballot, and found the office empty.
+
+  **Two ballot states mean two different things and this node conflated them.** `No Valid Petition
+  Filed` means nobody filed at all, not even a write-in; a blank `Write-in` line means somebody did.
+  Cairo's council in 2023 carries the first, twice, and drew no votes; Bluffton's carries the second,
+  twice, and elected two people. [verified] — the ballots and the canvass together.
+
+  **It is the council and not the office of mayor.** The seven mayoralties on the 2023 ballot drew
   seven candidates between them — one apiece but for Harrod, which drew none, and Elida, which drew
-  two. The 42 council seats across both years drew 18. [verified] — the same source. So the village
-  form is not uniformly unwanted; its **legislature** is.
+  two. The 45 council and public-affairs seats across both years drew 17. [verified] — the table.
 
-  **The ranking of who stands is the inverse of the ranking of who is appointed, village by
-  village.** Bluffton at 0.86 candidates per seat and Beaverdam at 0.71 are the two lightest users
-  of appointment; Cairo at 0.14 and Harrod at 0.20 are the heaviest. [verified] — this file against
-  [the seat count](allen-county-elected-seats-2026.yml). The corpus had the second ranking for a
-  year and could not explain it; it is the first ranking seen from the other end.
+  **Townships remain the comparison and are not affected by the correction.** No township contest in
+  either election carried a write-in line at all, so the 71 candidates for 55 seats stand as first
+  published. Four township contests drew nobody. A township is not more contested than a village; it
+  is more **filled**. [verified] — the precinct ballots.
 
-  **Townships are not immune and the difference is one of degree.** Four township contests drew
-  nobody — Auglaize's trustee in 2023 and its unexpired trustee in 2025, Monroe's trustee and
-  Perry's fiscal officer in 2023 — and most township races draw exactly one candidate for one seat.
-  A township is not more contested than a village; it is more **filled**. [verified] — the table.
 properties:
   parameter: >-
     Seats on the ballot and candidates filed for them, by jurisdiction and office, at the general
     elections of 7 November 2023 and 4 November 2025
   value: >-
-    Village 52 seats and 25 candidates, 0.48 per seat; township 55 seats and 71 candidates, 1.29
-    per seat
+    Village 52 seats, 21 printed candidates and 3 write-ins, and 23 seats filled; township 55
+    seats and 71 candidates
   as_of: "2025-11-04"
   unit: seats, candidates
   method: |
-    Every precinct ballot for both elections — 114 each — fetched as PDF from the county board of
-    elections' ballot display and read for text. A contest is counted only where its heading is
-    `VILLAGE OF x` or `TOWNSHIP OF x`, and only for offices belonging to that body: mayor, council
-    and board of trustees of public affairs for a village; trustee and fiscal officer for a
-    township. School, library and educational-service-centre contests appear on the same paper and
-    are a different jurisdiction; they are excluded, and the exclusion matters — the service centre's
-    heading is printed on two lines and a reader keying on the previous heading assigns its
-    contests to the township above it.
+    Two sources, and the second corrects the first. Every precinct ballot for both elections — 114
+    each — fetched as PDF and read for text; then the board's official summary of votes cast for the
+    same two elections, which is the only record that names a write-in candidate.
 
-    `seats` is the ballot's own "(Vote for not more than N)". `candidates` counts printed names and
-    excludes the line "No Valid Petition Filed", which appears once per seat nobody sought. The same
-    contest appears on every precinct ballot within the jurisdiction; each is taken once, at its
-    fullest reading. Write-in candidates are not on the printed ballot and are not counted here.
+    A contest is counted only for offices belonging to the body itself: mayor, council and board of
+    trustees of public affairs for a village; trustee and fiscal officer for a township. School,
+    library and educational-service-centre contests appear on the same paper and are excluded.
+
+    **`printed` counts names printed on the ballot. It excludes the line "No Valid Petition Filed",
+    which appears once per seat nobody sought, and it excludes the blank line reading "Write-in",
+    which is not a candidate but the mark of a seat where a write-in candidate has filed** — the
+    error this node was first published with. `write_in` counts write-in candidates the canvass names
+    with a vote total, excluding its "Write-In Totals", "Not Assigned" and invalid rows. `filled`
+    counts seats won by anyone, printed or written in, capped at the seats available.
+
+    Village rows are from the canvass, which carries both kinds of candidate. Township rows are from
+    the ballots: no township contest in either election carried a write-in line, so no township
+    figure is affected.
   table: |
-    contest body place office year seats candidates
-    amanda_fiscal_officer_2023 township AMANDA fiscal_officer 2023 1 1
-    amanda_trustee_2023 township AMANDA trustee 2023 1 1
-    amanda_trustee_2025 township AMANDA trustee 2025 2 3
-    amanda_trustee_unexpired_2025 township AMANDA trustee_unexpired 2025 1 1
-    american_fiscal_officer_2023 township AMERICAN fiscal_officer 2023 1 1
-    american_trustee_2023 township AMERICAN trustee 2023 1 2
-    american_trustee_2025 township AMERICAN trustee 2025 2 4
-    auglaize_fiscal_officer_2023 township AUGLAIZE fiscal_officer 2023 1 1
-    auglaize_trustee_2023 township AUGLAIZE trustee 2023 1 0
-    auglaize_trustee_2025 township AUGLAIZE trustee 2025 2 2
-    auglaize_trustee_unexpired_2025 township AUGLAIZE trustee_unexpired 2025 1 0
-    bath_fiscal_officer_2023 township BATH fiscal_officer 2023 1 1
-    bath_trustee_2023 township BATH trustee 2023 1 1
-    bath_fiscal_officer_unexpired_2025 township BATH fiscal_officer_unexpired 2025 1 1
-    bath_trustee_2025 township BATH trustee 2025 2 5
-    jackson_fiscal_officer_2023 township JACKSON fiscal_officer 2023 1 1
-    jackson_trustee_2023 township JACKSON trustee 2023 1 1
-    jackson_trustee_unexpired_2023 township JACKSON trustee_unexpired 2023 1 1
-    jackson_trustee_2025 township JACKSON trustee 2025 2 3
-    marion_fiscal_officer_2023 township MARION fiscal_officer 2023 1 1
-    marion_trustee_2023 township MARION trustee 2023 1 1
-    marion_trustee_2025 township MARION trustee 2025 2 2
-    monroe_fiscal_officer_2023 township MONROE fiscal_officer 2023 1 1
-    monroe_trustee_2023 township MONROE trustee 2023 1 0
-    monroe_trustee_2025 township MONROE trustee 2025 2 2
-    monroe_trustee_unexpired_2025 township MONROE trustee_unexpired 2025 1 2
-    perry_fiscal_officer_2023 township PERRY fiscal_officer 2023 1 0
-    perry_trustee_2023 township PERRY trustee 2023 1 1
-    perry_trustee_unexpired_2023 township PERRY trustee_unexpired 2023 1 1
-    perry_fiscal_officer_unexpired_2025 township PERRY fiscal_officer_unexpired 2025 1 1
-    perry_trustee_2025 township PERRY trustee 2025 2 5
-    richland_fiscal_officer_2023 township RICHLAND fiscal_officer 2023 1 1
-    richland_trustee_2023 township RICHLAND trustee 2023 1 1
-    richland_trustee_2025 township RICHLAND trustee 2025 2 2
-    shawnee_fiscal_officer_2023 township SHAWNEE fiscal_officer 2023 1 1
-    shawnee_trustee_2023 township SHAWNEE trustee 2023 1 3
-    shawnee_trustee_2025 township SHAWNEE trustee 2025 2 6
-    spencer_fiscal_officer_2023 township SPENCER fiscal_officer 2023 1 1
-    spencer_trustee_2023 township SPENCER trustee 2023 1 1
-    spencer_trustee_2025 township SPENCER trustee 2025 2 2
-    sugar_creek_fiscal_officer_2023 township SUGAR_CREEK fiscal_officer 2023 1 3
-    sugar_creek_trustee_2023 township SUGAR_CREEK trustee 2023 1 1
-    sugar_creek_trustee_2025 township SUGAR_CREEK trustee 2025 2 2
-    beaverdam_council_2023 village BEAVERDAM council 2023 2 2
-    beaverdam_mayor_2023 village BEAVERDAM mayor 2023 1 1
-    beaverdam_council_2025 village BEAVERDAM council 2025 4 2
-    bluffton_council_2023 village BLUFFTON council 2023 2 2
-    bluffton_mayor_2023 village BLUFFTON mayor 2023 1 1
-    bluffton_council_2025 village BLUFFTON council 2025 4 3
-    cairo_council_2023 village CAIRO council 2023 2 0
-    cairo_mayor_2023 village CAIRO mayor 2023 1 1
-    cairo_council_2025 village CAIRO council 2025 4 0
-    elida_council_2023 village ELIDA council 2023 2 0
-    elida_mayor_2023 village ELIDA mayor 2023 1 2
-    elida_council_2025 village ELIDA council 2025 4 2
-    harrod_council_2023 village HARROD council 2023 2 1
-    harrod_mayor_2023 village HARROD mayor 2023 1 0
-    harrod_public_affairs_2023 village HARROD public_affairs 2023 1 0
-    harrod_council_2025 village HARROD council 2025 4 1
-    harrod_public_affairs_2025 village HARROD public_affairs 2025 2 0
-    lafayette_council_2023 village LAFAYETTE council 2023 2 1
-    lafayette_mayor_2023 village LAFAYETTE mayor 2023 1 1
-    lafayette_council_2025 village LAFAYETTE council 2025 4 1
-    spencerville_council_2023 village SPENCERVILLE council 2023 2 3
-    spencerville_mayor_2023 village SPENCERVILLE mayor 2023 1 1
-    spencerville_council_2025 village SPENCERVILLE council 2025 4 0
+    contest body place office year seats printed write_in votes_cast undervotes filled
+    beaverdam_council_2023 village BEAVERDAM council 2023 2 2 0 110 78 2
+    beaverdam_mayor_2023 village BEAVERDAM mayor 2023 1 1 0 81 13 1
+    beaverdam_council_2025 village BEAVERDAM council 2025 4 2 0 50 94 2
+    bluffton_council_2023 village BLUFFTON council 2023 2 0 2 384 2502 2
+    bluffton_mayor_2023 village BLUFFTON mayor 2023 1 1 0 1195 248 1
+    bluffton_council_2025 village BLUFFTON council 2025 4 2 1 982 1410 3
+    cairo_council_2023 village CAIRO council 2023 2 0 0 0 306 0
+    cairo_mayor_2023 village CAIRO mayor 2023 1 1 0 137 16 1
+    cairo_council_2025 village CAIRO council 2025 4 0 0 0 216 0
+    elida_council_2023 village ELIDA council 2023 2 0 0 0 1692 0
+    elida_mayor_2023 village ELIDA mayor 2023 1 2 0 760 86 1
+    elida_council_2025 village ELIDA council 2025 4 2 0 629 1643 2
+    harrod_council_2023 village HARROD council 2023 2 1 0 103 153 1
+    harrod_mayor_2023 village HARROD mayor 2023 1 0 0 0 128 0
+    harrod_public_affairs_2023 village HARROD public_affairs 2023 1 0 0 0 128 0
+    harrod_council_2025 village HARROD council 2025 4 1 0 70 258 1
+    harrod_public_affairs_2025 village HARROD public_affairs 2025 2 0 0 0 164 0
+    lafayette_council_2023 village LAFAYETTE council 2023 2 1 0 97 135 1
+    lafayette_mayor_2023 village LAFAYETTE mayor 2023 1 1 0 98 18 1
+    lafayette_council_2025 village LAFAYETTE council 2025 4 1 0 75 261 1
+    spencerville_council_2023 village SPENCERVILLE council 2023 2 2 0 769 425 2
+    spencerville_mayor_2023 village SPENCERVILLE mayor 2023 1 1 0 485 112 1
+    spencerville_council_2025 village SPENCERVILLE council 2025 4 0 0 0 1080 0
+    amanda_fiscal_officer_2023 township AMANDA fiscal_officer 2023 1 1 0 NA NA NA
+    amanda_trustee_2023 township AMANDA trustee 2023 1 1 0 NA NA NA
+    amanda_trustee_2025 township AMANDA trustee 2025 2 3 0 NA NA NA
+    amanda_trustee_unexpired_2025 township AMANDA trustee_unexpired 2025 1 1 0 NA NA NA
+    american_fiscal_officer_2023 township AMERICAN fiscal_officer 2023 1 1 0 NA NA NA
+    american_trustee_2023 township AMERICAN trustee 2023 1 2 0 NA NA NA
+    american_trustee_2025 township AMERICAN trustee 2025 2 4 0 NA NA NA
+    auglaize_fiscal_officer_2023 township AUGLAIZE fiscal_officer 2023 1 1 0 NA NA NA
+    auglaize_trustee_2023 township AUGLAIZE trustee 2023 1 0 0 NA NA NA
+    auglaize_trustee_2025 township AUGLAIZE trustee 2025 2 2 0 NA NA NA
+    auglaize_trustee_unexpired_2025 township AUGLAIZE trustee_unexpired 2025 1 0 0 NA NA NA
+    bath_fiscal_officer_2023 township BATH fiscal_officer 2023 1 1 0 NA NA NA
+    bath_trustee_2023 township BATH trustee 2023 1 1 0 NA NA NA
+    bath_fiscal_officer_unexpired_2025 township BATH fiscal_officer_unexpired 2025 1 1 0 NA NA NA
+    bath_trustee_2025 township BATH trustee 2025 2 5 0 NA NA NA
+    jackson_fiscal_officer_2023 township JACKSON fiscal_officer 2023 1 1 0 NA NA NA
+    jackson_trustee_2023 township JACKSON trustee 2023 1 1 0 NA NA NA
+    jackson_trustee_unexpired_2023 township JACKSON trustee_unexpired 2023 1 1 0 NA NA NA
+    jackson_trustee_2025 township JACKSON trustee 2025 2 3 0 NA NA NA
+    marion_fiscal_officer_2023 township MARION fiscal_officer 2023 1 1 0 NA NA NA
+    marion_trustee_2023 township MARION trustee 2023 1 1 0 NA NA NA
+    marion_trustee_2025 township MARION trustee 2025 2 2 0 NA NA NA
+    monroe_fiscal_officer_2023 township MONROE fiscal_officer 2023 1 1 0 NA NA NA
+    monroe_trustee_2023 township MONROE trustee 2023 1 0 0 NA NA NA
+    monroe_trustee_2025 township MONROE trustee 2025 2 2 0 NA NA NA
+    monroe_trustee_unexpired_2025 township MONROE trustee_unexpired 2025 1 2 0 NA NA NA
+    perry_fiscal_officer_2023 township PERRY fiscal_officer 2023 1 0 0 NA NA NA
+    perry_trustee_2023 township PERRY trustee 2023 1 1 0 NA NA NA
+    perry_trustee_unexpired_2023 township PERRY trustee_unexpired 2023 1 1 0 NA NA NA
+    perry_fiscal_officer_unexpired_2025 township PERRY fiscal_officer_unexpired 2025 1 1 0 NA NA NA
+    perry_trustee_2025 township PERRY trustee 2025 2 5 0 NA NA NA
+    richland_fiscal_officer_2023 township RICHLAND fiscal_officer 2023 1 1 0 NA NA NA
+    richland_trustee_2023 township RICHLAND trustee 2023 1 1 0 NA NA NA
+    richland_trustee_2025 township RICHLAND trustee 2025 2 2 0 NA NA NA
+    shawnee_fiscal_officer_2023 township SHAWNEE fiscal_officer 2023 1 1 0 NA NA NA
+    shawnee_trustee_2023 township SHAWNEE trustee 2023 1 3 0 NA NA NA
+    shawnee_trustee_2025 township SHAWNEE trustee 2025 2 6 0 NA NA NA
+    spencer_fiscal_officer_2023 township SPENCER fiscal_officer 2023 1 1 0 NA NA NA
+    spencer_trustee_2023 township SPENCER trustee 2023 1 1 0 NA NA NA
+    spencer_trustee_2025 township SPENCER trustee 2025 2 2 0 NA NA NA
+    sugar_creek_fiscal_officer_2023 township SUGAR_CREEK fiscal_officer 2023 1 3 0 NA NA NA
+    sugar_creek_trustee_2023 township SUGAR_CREEK trustee 2023 1 1 0 NA NA NA
+    sugar_creek_trustee_2025 township SUGAR_CREEK trustee 2025 2 2 0 NA NA NA
 links:
   - target: ../place/allen-county.yml
     relationship: describes
