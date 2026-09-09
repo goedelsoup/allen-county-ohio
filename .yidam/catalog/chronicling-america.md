@@ -90,6 +90,31 @@ the working route is three calls: search with `fo=json`, resolve the issue with 
 take the ALTO XML from the tile host. Recorded here because the obvious route fails in a way that
 looks like the archive is gone, and it is not.
 
+**This archive stops at the end of 1963, and this county stops at the end of 1959.** Two walls, four
+years apart, and only the second one is about Allen County. The collection holds **84,966 pages
+dated 1962 and 84,477 dated 1963 — 7,333 in that December alone — and none at all from 1964, 1965,
+1972 or 1978.** Filtered to this county it holds 634 pages in 1957, 598 in 1958, **600 in 1959, and
+none in 1960, 1961, 1962 or 1963.** [verified] — the collection search, `dl=page` with `dates=`, run
+here for each year. Ohio as a state runs right up to the archive's wall — 1,631 pages in 1963,
+13,231 across 1960–1963 — so this county's four missing years are the county's and not the
+archive's. **For any Allen County question after 1959 this source is exhausted, whatever the
+national cutoff is**, which is a sharper limit than the one the corpus has been citing.
+
+**And there is no Lima paper here at all: not a page, and not a title.** `location_city:lima` with
+`location_state:ohio` returns zero title records and zero pages. The county's 953 records are one
+title and 952 issues, every one of them *The Bluffton News*. [verified] — the same search, run both
+ways. Several nodes say "no Lima newspaper is digitized in this archive"; that is now measured
+rather than assumed.
+
+**A year with no pages still answers with hundreds of items, because a title record is dated by when
+the paper started.** `dates=1965/1965` without `dl=page` returns **867 items** — the *Grant County
+Herald* dated 1850, the *Brownsville Herald* dated 1910, the *Afro-American Advance* dated 1899 —
+every one a title whose publication *run* covers 1965 and none of them a page from it. The same
+window with `dl=page` returns **0**. [verified] — the two queries, run here. A reader checking
+whether 1965 is reachable gets 867 and concludes it is. See
+[a filter that is ignored is worse than one that is refused](../decisions/a-filter-that-is-ignored-is-worse-than-one-that-is-refused.yml)
+— same source, same shape, a different parameter.
+
 **The date filter this entry documented for six phases does nothing.** `start_date=` and
 `end_date=` are accepted, return HTTP 200, and are ignored: the county facet with `q=tornado`
 answers **984** pages whether or not a 1950 window is attached, and `dates=1950/1950` answers

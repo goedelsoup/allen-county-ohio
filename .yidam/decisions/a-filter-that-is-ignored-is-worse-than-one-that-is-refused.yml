@@ -46,6 +46,20 @@ decision: |
     records only the rows it read cannot notice.
   - **This does not put unfiltered counts in doubt.** 952 issues, 9,576 pages, 527 matching `flood`,
     949 Thursdays — none passed through a date parameter and none is affected.
+
+  - **The same source has a second way of answering the wrong question, and the control is a
+    different one.** `dates=1965/1965` returns **867 items** and `dates=1965/1965&dl=page` returns
+    **0**. Nothing was ignored: the first query was answered correctly about *titles*, which are
+    dated by the year a paper began, so a title running 1850–1968 is a hit for 1965. [verified] —
+    the two queries, run here; see [the catalog](../catalog/chronicling-america.md). **Where a
+    filter's control is the same query without it, a unit's control is the same query at the other
+    unit** — and the reader who wants pages must ask for pages, because the collection will answer
+    about titles without saying so.
+
+  - **A count of the wrong unit fails in the same direction as an ignored filter, which is why both
+    are here.** Both inflate; both read as a vein; neither errors. 867 items for a year with no
+    pages sends a reader after a newspaper that was never scanned, exactly as 2,407 pages sent one
+    after stories that were never in this county.
 rationale: |
   **The corpus has a rule for a dead endpoint and needed one for a live one that answers wrongly.**
   [a live url is not a live file](a-live-url-is-not-a-live-file.yml) was written when a USGS service
