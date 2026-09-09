@@ -1,0 +1,206 @@
+class: measure
+label: Every village and township seat in the county, and how the person in it arrived
+description: |
+  **The county's hundred village and township seats reconcile exactly against the two elections
+  that filled them, and the join leaves one person over.** Of the 52 village seats, 22 are held by
+  someone who won them at an election, 25 by an appointee and 5 by nobody. Of the 48 township
+  seats, 47 are held by an election winner and one by an appointee. **Nowhere in either set does an
+  appointee sit in a seat that somebody won.** [verified] —
+  [the elected officials roster](../../catalog/ohio-boe-elected-officials-allen.md), all eighty-eight
+  precinct pages re-read on 9 September 2026, joined name by name to
+  [the official canvasses](../../catalog/allen-county-ballot-display.md) of 7 November 2023 and
+  4 November 2025.
+
+  **The person left over is James G. Pinks.** He was the only candidate for two Harrod council seats
+  in November 2023 and took 103 votes — every vote cast in that contest — for a term running to 31
+  December 2027. He appears on no page of the roster. One of Harrod's two council seats of that term
+  is held by an appointee and one is vacant; the roster does not distinguish seats within an office,
+  so it cannot say the vacant one is his. [verified] — both sources. Why he does not sit is in
+  neither. [open]
+
+  **A second winner also left, and the township form put his seat back on a ballot.** Josh Luke won
+  Bath Township's fiscal officership in 2023 with 2,362 votes and does not sit; Berlin Carroll won
+  the unexpired remainder in November 2025 with 1,188. [verified] — both sources. **That difference
+  is statutory and it is the mechanism the villages question was missing.** A village council fills
+  its own vacancy *"for the unexpired term"*, and the statute stops there; a township appointee
+  serves *"for the unexpired term or until a successor is elected"*, and a successor is chosen at the
+  next general election unless the term ends within a year of it. [verified] —
+  [ORC 731.43 and 503.24](../../catalog/ohio-revised-code.md). So an unfilled township seat is
+  offered to the voters again in two years and an unfilled village seat is not offered again for
+  four. **The 2025 ballot carried five unexpired-term contests and every one of them was a
+  township's.** [verified] — the canvass.
+
+  **And the second offer works.** Two township seats drew nobody in 2023 and were filled at the next
+  election: Monroe's trustee seat, which nobody would stand for, was contested in 2025 by two people
+  and won by Jon E. Basinger 172 to 152; Perry's fiscal officership went to Christina Stombaugh on
+  443. [verified] — the canvass. The one township seat that drew nobody twice, Auglaize's trustee
+  seat, is the county's only appointed township officer. **One seat in forty-eight, against
+  twenty-five in fifty-two.**
+
+  **`Commences: n/a` is not the data defect this corpus recorded it as.** Four township holders carry
+  it, and they are exactly the four who won an unexpired term in 2025 — Brad J. Core, Berlin Carroll,
+  Jon E. Basinger, Christina Stombaugh — with no fifth of either kind. [verified] — the roster and
+  the canvass, both directions. The field means the seat's term began before its holder did, and the
+  roster has no column for when a partial term was taken up. See
+  [the rule that came of it](../../decisions/a-blank-field-may-be-a-value.yml).
+
+  **Brad J. Core won the same seat twice.** He took Amanda Township's trustee seat in 2023 on 684
+  votes for a term to 31 December 2027, and in 2025 he won the unexpired remainder of that same term
+  on 316. A seat only returns to the ballot that way if it fell vacant. [verified] — the canvass and
+  the roster, which records him with no commencement date. What happened between is in neither.
+  [open]
+
+  **What this does not cover.** The county's other 66 elective seats — Lima and Delphos, the school
+  boards and the educational service centre, the county offices and the courts — are not joined here.
+  Their holders were elected across four cycles rather than two, and several of the school districts
+  cross the county line, so the canvass of this county's votes is not the whole record of how they
+  were filled. [verified] — [the seat count](allen-county-elected-seats-2026.yml).
+properties:
+  parameter: >-
+    Village and township seats in Allen County, with the sitting holder and whether that holder won
+    the seat at an election, was appointed to it, or the seat is empty
+  value: >-
+    100 seats: 69 held by an election winner, 26 by an appointee, 5 empty
+  unit: elective seats
+  as_of: "2026-09-09"
+  method: |
+    The roster's eighty-eight precinct pages fetched and parsed into 101 offices, 218 seats and 210
+    seated holders, of which the 15 village offices and 24 township offices are taken here. A row
+    reading `N Vacant Seats` is expanded into N seats. A holder is *appointed* if the roster prints
+    `*Appointed*` beside the name and elected otherwise; that is the roster's mark and not this
+    corpus's judgement.
+
+    Winners come from the two official canvasses: the candidates of a contest ordered by votes, the
+    top *N* taken where *N* is its `Vote For` number, and any with zero votes dropped. Write-in
+    winners count exactly as printed ones do. A winner is matched to a seat only where the body, the
+    place, the office **and the term's expiry date** agree, and then on surname plus a compatible
+    given name — the canvass prints `Rick Keller`, `Kathy Keller`, `Joe Recker` and once `Jospeh
+    Sehlhorst`, where the roster has Ricky W, Kathleen Ann, Arthur Joseph and Joseph W. Every one of
+    the 74 winners and 100 seats was resolved; the four winners with no seat are named in the prose
+    above or held terms that expired on 31 December 2025.
+
+    **The `seat` key numbers seats within a term cohort and means nothing.** The roster lists an
+    office's holders together and does not say which seat is which, so where a cohort holds both an
+    appointee and a vacancy — Harrod's council, Cairo's — the pairing of person to number is this
+    corpus's ordering and not a fact.
+  table: |
+    seat body place office term_end holder route won_year won_votes
+    beaverdam_council_2027_1 village beaverdam council 2027-12-31 carl_l_murray elected 2023 48
+    beaverdam_council_2027_2 village beaverdam council 2027-12-31 anthony_e_myers elected 2023 62
+    beaverdam_council_2029_1 village beaverdam council 2029-12-31 barbara_ann_gossard appointed NA NA
+    beaverdam_council_2029_2 village beaverdam council 2029-12-31 jerry_a_neuenschwander elected 2025 29
+    beaverdam_council_2029_3 village beaverdam council 2029-12-31 thomas_joe_nowlan elected 2025 21
+    beaverdam_council_2029_4 village beaverdam council 2029-12-31 tyler_james_powley appointed NA NA
+    beaverdam_mayor_2027_1 village beaverdam mayor 2027-12-31 todd_aaron_long elected 2023 81
+    bluffton_council_2027_1 village bluffton council 2027-12-31 joseph_w_sehlhorst elected 2023 161
+    bluffton_council_2027_2 village bluffton council 2027-12-31 benjamin_lawrence_stahl elected 2023 134
+    bluffton_council_2029_1 village bluffton council 2029-12-31 thomas_l_downey elected 2025 99
+    bluffton_council_2029_2 village bluffton council 2029-12-31 elizabeth_a_gordon_hancock elected 2025 436
+    bluffton_council_2029_3 village bluffton council 2029-12-31 robert_benjamin_hill appointed NA NA
+    bluffton_council_2029_4 village bluffton council 2029-12-31 phillip_a_talavinia elected 2025 433
+    bluffton_mayor_2027_1 village bluffton mayor 2027-12-31 richard_lee_johnson elected 2023 1195
+    cairo_council_2027_1 village cairo council 2027-12-31 gary_m_acheson appointed NA NA
+    cairo_council_2027_2 village cairo council 2027-12-31 bruce_jerome_painter appointed NA NA
+    cairo_council_2029_1 village cairo council 2029-12-31 vacant vacant NA NA
+    cairo_council_2029_2 village cairo council 2029-12-31 jack_alan_arnold appointed NA NA
+    cairo_council_2029_3 village cairo council 2029-12-31 miles_lowell_bicknell appointed NA NA
+    cairo_council_2029_4 village cairo council 2029-12-31 bradley_a_clark appointed NA NA
+    cairo_mayor_2027_1 village cairo mayor 2027-12-31 john_m_vandemark elected 2023 137
+    elida_council_2027_1 village elida council 2027-12-31 john_p_heltman appointed NA NA
+    elida_council_2027_2 village elida council 2027-12-31 jon_t_jenkins appointed NA NA
+    elida_council_2029_1 village elida council 2029-12-31 michael_w_campbell elected 2025 347
+    elida_council_2029_2 village elida council 2029-12-31 kenneth_ray_hall elected 2025 282
+    elida_council_2029_3 village elida council 2029-12-31 joseph_g_shehata appointed NA NA
+    elida_council_2029_4 village elida council 2029-12-31 burlin_l_sherrick appointed NA NA
+    elida_mayor_2027_1 village elida mayor 2027-12-31 darryl_j_nichols elected 2023 550
+    harrod_council_2027_1 village harrod council 2027-12-31 vacant vacant NA NA
+    harrod_council_2027_2 village harrod council 2027-12-31 cheryl_renee_rodriguez appointed NA NA
+    harrod_council_2029_1 village harrod council 2029-12-31 ritchie_d_frisby appointed NA NA
+    harrod_council_2029_2 village harrod council 2029-12-31 christine_jean_hennis_decker elected 2025 70
+    harrod_council_2029_3 village harrod council 2029-12-31 harry_p_romell appointed NA NA
+    harrod_council_2029_4 village harrod council 2029-12-31 zachary_joseph_voisin appointed NA NA
+    harrod_mayor_2027_1 village harrod mayor 2027-12-31 mark_anthony_blake appointed NA NA
+    harrod_public_affairs_2027_1 village harrod public_affairs 2027-12-31 vacant vacant NA NA
+    harrod_public_affairs_2029_1 village harrod public_affairs 2029-12-31 vacant vacant NA NA
+    harrod_public_affairs_2029_2 village harrod public_affairs 2029-12-31 vacant vacant NA NA
+    lafayette_council_2027_1 village lafayette council 2027-12-31 matthew_christophe_hager elected 2023 97
+    lafayette_council_2027_2 village lafayette council 2027-12-31 robert_lynn_hutchinson appointed NA NA
+    lafayette_council_2029_1 village lafayette council 2029-12-31 adam_w_hawk appointed NA NA
+    lafayette_council_2029_2 village lafayette council 2029-12-31 michael_h_hefner elected 2025 75
+    lafayette_council_2029_3 village lafayette council 2029-12-31 matthew_allan_mckinley appointed NA NA
+    lafayette_council_2029_4 village lafayette council 2029-12-31 james_alan_wireman appointed NA NA
+    lafayette_mayor_2027_1 village lafayette mayor 2027-12-31 jeffrey_s_mcvicker elected 2023 98
+    spencerville_council_2027_1 village spencerville council 2027-12-31 courtney_danielle_brown elected 2023 367
+    spencerville_council_2027_2 village spencerville council 2027-12-31 anthony_joseph_lammers elected 2023 402
+    spencerville_council_2029_1 village spencerville council 2029-12-31 katie_ruth_cotterman appointed NA NA
+    spencerville_council_2029_2 village spencerville council 2029-12-31 nicholas_richard_goergens appointed NA NA
+    spencerville_council_2029_3 village spencerville council 2029-12-31 nicole_l_lotz appointed NA NA
+    spencerville_council_2029_4 village spencerville council 2029-12-31 james_e_penix_jr appointed NA NA
+    spencerville_mayor_2027_1 village spencerville mayor 2027-12-31 darrell_edward_pugin elected 2023 485
+    amanda_fiscal_officer_2028_1 township amanda fiscal_officer 2028-03-31 brenda_l_core elected 2023 665
+    amanda_trustee_2027_1 township amanda trustee 2027-12-31 brad_j_core elected_unexpired 2025 316
+    amanda_trustee_2029_1 township amanda trustee 2029-12-31 robert_charles_barnt elected 2025 226
+    amanda_trustee_2029_2 township amanda trustee 2029-12-31 douglas_c_post elected 2025 235
+    american_fiscal_officer_2028_1 township american fiscal_officer 2028-03-31 brady_m_overholt elected 2023 4109
+    american_trustee_2027_1 township american trustee 2027-12-31 ross_michael_harmon elected 2023 3368
+    american_trustee_2029_1 township american trustee 2029-12-31 paul_michael_basinger elected 2025 1465
+    american_trustee_2029_2 township american trustee 2029-12-31 jody_m_long elected 2025 1479
+    auglaize_fiscal_officer_2028_1 township auglaize fiscal_officer 2028-03-31 melissa_renee_marshall elected 2023 782
+    auglaize_trustee_2027_1 township auglaize trustee 2027-12-31 russell_b_winegardner appointed NA NA
+    auglaize_trustee_2029_1 township auglaize trustee 2029-12-31 stephen_glen_ewing elected 2025 422
+    auglaize_trustee_2029_2 township auglaize trustee 2029-12-31 michael_d_stout elected 2025 402
+    bath_fiscal_officer_2028_1 township bath fiscal_officer 2028-03-31 berlin_ralph_carroll_ii elected_unexpired 2025 1188
+    bath_trustee_2027_1 township bath trustee 2027-12-31 lisa_r_fillhart elected 2023 2431
+    bath_trustee_2029_1 township bath trustee 2029-12-31 brad_a_baxter elected 2025 938
+    bath_trustee_2029_2 township bath trustee 2029-12-31 andrew_f_heffner elected 2025 950
+    jackson_fiscal_officer_2028_1 township jackson fiscal_officer 2028-03-31 brandt_c_miller elected 2023 957
+    jackson_trustee_2027_1 township jackson trustee 2027-12-31 james_i_shilling elected 2023 895
+    jackson_trustee_2029_1 township jackson trustee 2029-12-31 michael_wayne_bassitt elected 2025 376
+    jackson_trustee_2029_2 township jackson trustee 2029-12-31 christopher_l_shafer elected 2025 583
+    marion_fiscal_officer_2028_1 township marion fiscal_officer 2028-03-31 robert_c_kimmet elected 2023 1927
+    marion_trustee_2027_1 township marion trustee 2027-12-31 jerry_alan_gilden elected 2023 1978
+    marion_trustee_2029_1 township marion trustee 2029-12-31 gary_v_mack elected 2025 577
+    marion_trustee_2029_2 township marion trustee 2029-12-31 howard_g_violet elected 2025 612
+    monroe_fiscal_officer_2028_1 township monroe fiscal_officer 2028-03-31 amy_s_stechschulte elected 2023 698
+    monroe_trustee_2027_1 township monroe trustee 2027-12-31 jon_e_basinger elected_unexpired 2025 172
+    monroe_trustee_2029_1 township monroe trustee 2029-12-31 mark_e_diller elected 2025 249
+    monroe_trustee_2029_2 township monroe trustee 2029-12-31 aaron_patrick_vorst elected 2025 191
+    perry_fiscal_officer_2028_1 township perry fiscal_officer 2028-03-31 christina_rene_stombaugh elected_unexpired 2025 443
+    perry_trustee_2027_1 township perry trustee 2027-12-31 kevin_walter_cox elected 2023 791
+    perry_trustee_2029_1 township perry trustee 2029-12-31 frank_eugene_clementz elected 2025 202
+    perry_trustee_2029_2 township perry trustee 2029-12-31 scott_stombaugh elected 2025 275
+    richland_fiscal_officer_2028_1 township richland fiscal_officer 2028-03-31 lawrence_edward_hoffman elected 2023 1764
+    richland_trustee_2027_1 township richland trustee 2027-12-31 michael_david_zimmerly elected 2023 1797
+    richland_trustee_2029_1 township richland trustee 2029-12-31 seth_c_bixel elected 2025 610
+    richland_trustee_2029_2 township richland trustee 2029-12-31 alan_d_myers elected 2025 689
+    shawnee_fiscal_officer_2028_1 township shawnee fiscal_officer 2028-03-31 kevin_dean_cooley elected 2023 3624
+    shawnee_trustee_2027_1 township shawnee trustee 2027-12-31 arthur_joseph_recker_jr elected 2023 2315
+    shawnee_trustee_2029_1 township shawnee trustee 2029-12-31 kenneth_james_gross elected 2025 1426
+    shawnee_trustee_2029_2 township shawnee trustee 2029-12-31 paul_e_neff elected 2025 1190
+    spencer_fiscal_officer_2028_1 township spencer fiscal_officer 2028-03-31 kathleen_ann_keller elected 2023 772
+    spencer_trustee_2027_1 township spencer trustee 2027-12-31 ricky_w_keller elected 2023 792
+    spencer_trustee_2029_1 township spencer trustee 2029-12-31 ron_eugene_leffel elected 2025 286
+    spencer_trustee_2029_2 township spencer trustee 2029-12-31 allen_l_mcmichael elected 2025 304
+    sugar_creek_fiscal_officer_2028_1 township sugar_creek fiscal_officer 2028-03-31 jessica_lynn_cruikshank elected 2023 290
+    sugar_creek_trustee_2027_1 township sugar_creek trustee 2027-12-31 william_w_williams elected 2023 454
+    sugar_creek_trustee_2029_1 township sugar_creek trustee 2029-12-31 robert_brian_overholt elected 2025 234
+    sugar_creek_trustee_2029_2 township sugar_creek trustee 2029-12-31 willard_r_watkins elected 2025 214
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../measure/allen-county-elected-seats-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../measure/who-stood-for-the-village-seats-2023-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/allen-county-ballot-display.md
+  - target: ../question/why-allen-countys-villages-are-staffed-by-appointment.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ohio-boe-elected-officials-allen.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

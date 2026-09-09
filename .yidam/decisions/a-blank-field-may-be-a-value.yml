@@ -1,0 +1,68 @@
+id: a-blank-field-may-be-a-value
+summary: >-
+  This corpus recorded two things in a government roster as "wrong on their face". One was: a term
+  commencing in the year 2204. The other was five holders given `Commences: n/a` against a real
+  expiry, and it was not wrong at all — those five are exactly the people who won an unexpired term,
+  and the field is blank because the seat's term began before its holder did. A null that appears in
+  every case of a condition and no other case is not missing data. It is the schema's way of saying
+  something it has no column for.
+context: |
+  [The roster catalog](../catalog/ohio-boe-elected-officials-allen.md) said, from the first reading
+  on 30 August: *"Two things in it are wrong on their face and are recorded rather than repaired."*
+  It then listed the year 2204 and the five `n/a` commencement dates together, and said the corpus
+  quotes the expiry *"rather than inferring it from the office's usual term"* — a careful refusal to
+  guess, which is the right instinct applied to the wrong row.
+
+  Ten days later the same roster was joined seat by seat to the official canvasses. Four of the five
+  `n/a` holders are township officers, and they are **exactly** the four people who won an unexpired
+  term at the November 2025 election — Brad J. Core at Amanda, Berlin Carroll at Bath, Jon E.
+  Basinger at Monroe, Christina Stombaugh at Perry. There is no fifth unexpired-term winner and no
+  fifth township `n/a`. [verified] —
+  [the join](../corpus/measure/who-won-and-who-sits.yml). The fifth `n/a` is a justice of the Ohio
+  Supreme Court holding a two-year term in a six-year office, which is an unexpired term by
+  arithmetic before any other source is opened. [verified] — the roster's own dates.
+
+      Commences: n/a          5 rows
+      won an unexpired term   5 rows
+      the same 5 rows
+
+  The correspondence is perfect in both directions, which is the only kind of evidence that
+  distinguishes a semantic from a coincidence. And the year 2204 is still a typo: the test separated
+  the two, where reading them as a pair had joined them.
+decision: |
+  **Before recording a field as a data defect, ask whether it is empty in exactly the cases where the
+  publisher has nothing to put there. If the null and a condition line up in both directions, the
+  null is a value and the corpus should say what it means.**
+
+  - **The test is two-way and cheap.** Every row with the null has the condition, *and* every row
+    with the condition has the null. One direction alone is coincidence — four `n/a` township rows
+    that happen to be unexpired-term winners proves little until you also check that no other
+    unexpired-term winner has a date.
+  - **A defect and a semantic look identical from inside one file.** Both are values the schema did
+    not anticipate. What tells them apart is a second source that knows the condition — here, a
+    canvass that says which contests were for a partial term. Neither reading of the roster alone
+    could have settled it.
+  - **Recording a defect is not neutral.** The catalog's sentence was honest and it closed the
+    question: a reader who reaches "wrong on its face" stops looking, and this corpus did, for ten
+    days, while the field was answering a question two nodes away were asking.
+  - **Say what the null means, and keep the refusal to guess.** The corpus still does not print a
+    commencement date for those five holders, because it does not know when they took the seat. It
+    now says the blank marks a partial term, which is a fact about the record rather than an
+    inference about the person.
+rationale: |
+  **This is the same failure as [the roster one](a-roster-records-the-outcome-not-the-offer.yml),
+  turned inward.** That rule says a record of an outcome cannot explain the process that made it, and
+  to go find the process record. This one says the outcome record may be *carrying* the process, in a
+  field the reader dismissed. Both were caught by the same second file, ten days apart, and the
+  second catch was cheaper than the first because the file was already open.
+
+  **It generalises past nulls.** Sentinel values, repeated defaults, an implausible date that repeats,
+  a code the documentation does not list — anything a corpus is tempted to write down as *the
+  publisher's mistake* deserves the two-way check first, because a publisher's mistake is rarely
+  perfectly correlated with anything.
+
+  **What would change this rule.** A sixth `n/a` appearing on a holder who won a full term would
+  break the correspondence here, and the finding would revert to a defect. That is the test, and it
+  is worth naming that it is a test the corpus can rerun rather than a judgement it has to defend.
+status: accepted
+date: "2026-09-09"

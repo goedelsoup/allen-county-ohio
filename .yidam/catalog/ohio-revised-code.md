@@ -6,7 +6,7 @@ description: >-
   day, and what a holder must be.
 type: reference
 obtained: true
-retrieved: 2026-09-05
+retrieved: 2026-09-09
 ttl_days: 365
 location:
   - kind: url
@@ -80,7 +80,19 @@ location:
       the legislative authority for the unexpired term. If the legislative authority fails within
       thirty days to fill such vacancy, the mayor shall fill it by appointment." This is the statute
       that turns an unsought seat into an appointed one; see
-      [who stood](../corpus/measure/who-stood-for-the-village-seats-2023-2025.yml).
+      [who stood](../corpus/measure/who-stood-for-the-village-seats-2023-2025.yml). **It says
+      "for the unexpired term" and stops there** — no election is provided for, which is the whole
+      difference from §503.24 below.
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-503.24
+    description: >-
+      Vacancy in a township office, and the mirror of §731.43. An appointee holds "for the unexpired
+      term or until a successor is elected"; where the vacancy falls more than forty days before the
+      next general election for municipal and township officers, and the term does not expire within
+      a year of it, "a successor shall be chosen at that election to fill the unexpired term". So a
+      township appointment is temporary by statute and a village one is not, which is why the
+      November 2025 ballot carried five unexpired-term contests and every one of them was a
+      township's; see [the join](../corpus/measure/who-won-and-who-sits.yml).
   - kind: url
     value: https://codes.ohio.gov/ohio-revised-code/section-3.01
     description: >-
@@ -89,6 +101,7 @@ location:
       or laws of this state." One sentence, unamended since 1963, and the reason a seat nobody ran
       for does not simply stand empty.
 used-by:
+  - ../corpus/measure/who-won-and-who-sits.yml
   - ../corpus/question/why-allen-countys-villages-are-staffed-by-appointment.yml
   - ../corpus/measure/who-stood-for-the-village-seats-2023-2025.yml
   - ../corpus/jurisdiction/allen-county-educational-service-center.yml
@@ -161,3 +174,11 @@ in the National Bridge Inventory and not one of them is owned by a township — 
 commissioners and the engineer, and leave townships the roads. A statute this corpus already held
 for its licensing clause turns out to be visible in a count. See
 [the bridges](../corpus/measure/allen-county-bridges-2025.yml).
+
+**And two of its sections are a pair that explains a difference this corpus had already measured.**
+§731.43 fills a village council vacancy by the council, *for the unexpired term*; §503.24 fills a
+township vacancy by appointment only *until a successor is elected*. Read separately each is a
+procedure; read together they are the reason twenty-five of forty-seven seated village officers here
+are appointees and one of forty-eight township officers is. The corpus held §731.43 for ten days
+before fetching its counterpart, and the counterpart is where the contrast lives. See
+[the join](../corpus/measure/who-won-and-who-sits.yml).

@@ -59,6 +59,7 @@ location:
       inconsistent between elections — `G23_SUMMARY_OFFICIAL.pdf` in 2023 against
       `2025_General_Offical_Summary.pdf` in 2025, the second carrying a typo the board has kept.
 used-by:
+  - ../corpus/measure/who-won-and-who-sits.yml
   - ../corpus/measure/who-stood-for-the-village-seats-2023-2025.yml
   - ../corpus/question/why-allen-countys-villages-are-staffed-by-appointment.yml
 ---

@@ -695,7 +695,10 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "Every one of the twenty-two county offices and judgeships is filled, and every one of them by election."
             ),
         ],
-        answers: &["does not establish that these seats go unfilled"],
+        // The refusal these answered was withdrawn on 9 September, when the county's own
+        // canvass established that the seats go unfilled because nobody stands for them.
+        // See `measure/who-won-and-who-sits.yml`.
+        answers: &[],
         figures: &[],
     },
     Assertion {
@@ -1464,7 +1467,10 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "Twenty-five of the forty-seven seated village officers were appointed and five village seats stand empty, against one appointment and no vacancy across all forty-eight township seats."
             ),
         ],
-        answers: &["This does not establish that these seats go unfilled because nobody stands for them"],
+        // The refusal these answered was withdrawn on 9 September, when the county's own
+        // canvass established that the seats go unfilled because nobody stands for them.
+        // See `measure/who-won-and-who-sits.yml`.
+        answers: &[],
         figures: &[],
     },
     Assertion {
@@ -2300,7 +2306,11 @@ pub const ASSERTIONS: &[Assertion] = &[
                 "**This counts the ballot and not the register, and the roster answers both ways.**"
             ),
         ],
-        answers: &["This does not establish that these seats go unfilled because nobody stands for them"],
+        // The refusal this used to answer — "This does not establish that these seats go
+        // unfilled because nobody stands for them" — was withdrawn on 9 September when the
+        // county's own canvass established it. See `one-marker-is-doing-three-jobs`, whose
+        // canonical example of an unclosable refusal that was.
+        answers: &[],
         figures: &[],
     },
     Assertion {

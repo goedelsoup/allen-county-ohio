@@ -92,7 +92,7 @@ Sorted by: kind, then alphabetically.
 | [the-wood-party-reaches-sugar-creek-1824.yml](event/the-wood-party-reaches-sugar-creek-1824.yml) | event | The Wood party reaches Sugar Creek, April 1824 | 5 | 6v / 6i / 1o | 81 |
 | [treaty-of-st-marys.yml](event/treaty-of-st-marys.yml) | event | Treaty of St. Marys | 2 | 0v / 3i / 1o | 30 |
 | [allen-county-court-of-common-pleas.yml](jurisdiction/allen-county-court-of-common-pleas.yml) | jurisdiction | Allen County Court of Common Pleas | 2 | 5v / 3i / 2o | 48 |
-| [allen-county-educational-service-center.yml](jurisdiction/allen-county-educational-service-center.yml) | jurisdiction | Allen County Educational Service Center | 2 | 5v / 0i / 2o | 44 |
+| [allen-county-educational-service-center.yml](jurisdiction/allen-county-educational-service-center.yml) | jurisdiction | Allen County Educational Service Center | 2 | 6v / 0i / 3o | 46 |
 | [allen-county-government.yml](jurisdiction/allen-county-government.yml) | jurisdiction | Allen County (government) | 3 | 6v / 3i / 2o | 82 |
 | [allen-east-local-school-district.yml](jurisdiction/allen-east-local-school-district.yml) | jurisdiction | Allen East Local School District | 8 | 6v / 0i / 0o | 68 |
 | [amanda-township.yml](jurisdiction/amanda-township.yml) | jurisdiction | Amanda Township (government) | 2 | 7v / 0i / 0o | 48 |
@@ -182,7 +182,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-dual-enrollment-2017-2021.yml](measure/allen-county-dual-enrollment-2017-2021.yml) | measure | College Credit Plus in Allen County, 2017 and 2021 | 6 | 11v / 3i / 1o | 108 |
 | [allen-county-early-deaths-by-cause-2020-2022.yml](measure/allen-county-early-deaths-by-cause-2020-2022.yml) | measure | What Allen County dies of early, 2016–2022 | 3 | 10v / 6i / 1o | 100 |
 | [allen-county-educational-attainment-2009-2023.yml](measure/allen-county-educational-attainment-2009-2023.yml) | measure | Educational attainment in Allen County, 2005–2009 and 2019–2023 | 5 | 14v / 1i / 1o | 150 |
-| [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 2 | 9v / 1i / 0o | 70 |
+| [allen-county-elected-seats-2026.yml](measure/allen-county-elected-seats-2026.yml) | measure | Allen County elective seats and how their holders arrived, 2026 | 3 | 11v / 1i / 0o | 84 |
 | [allen-county-elevation-2026.yml](measure/allen-county-elevation-2026.yml) | measure | How high Allen County is, 2026 | 6 | 12v / 2i / 1o | 108 |
 | [allen-county-employment-by-sector-1986-2022.yml](measure/allen-county-employment-by-sector-1986-2022.yml) | measure | Allen County employment by sector, 1986 and 2022 | 2 | 6v / 2i / 1o | 68 |
 | [allen-county-evictions-2001-2018.yml](measure/allen-county-evictions-2001-2018.yml) | measure | Eviction filings in Allen County, 2002–2018 | 6 | 8v / 5i / 0o | 109 |
@@ -424,6 +424,7 @@ Sorted by: kind, then alphabetically.
 | [the-four-files-that-can-see-a-flood.yml](measure/the-four-files-that-can-see-a-flood.yml) | measure | The four files that can see a flood here, and what each alone would report | 6 | 5v / 0i / 1o | 106 |
 | [the-twenty-wettest-days-against-the-river.yml](measure/the-twenty-wettest-days-against-the-river.yml) | measure | The twenty wettest days, read against the county's own rivers | 5 | 8v / 1i / 0o | 111 |
 | [who-stood-for-the-village-seats-2023-2025.yml](measure/who-stood-for-the-village-seats-2023-2025.yml) | measure | Who stood for the county's village and township seats, 2023 and 2025 | 4 | 7v / 0i / 0o | 154 |
+| [who-won-and-who-sits.yml](measure/who-won-and-who-sits.yml) | measure | Every village and township seat in the county, and how the person in it arrived | 5 | 9v / 0i / 2o | 206 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 9v / 6i / 1o | 117 |
@@ -639,7 +640,7 @@ Sorted by: kind, then alphabetically.
 | [where-the-auglaize-rises.yml](question/where-the-auglaize-rises.yml) | question | Does the Auglaize River rise in Allen County? | 3 | 2v / 1i / 0o | 38 |
 | [who-lives-in-the-county-without-housing.yml](question/who-lives-in-the-county-without-housing.yml) | question | Who are the 1,360 people in a Lima block with no housing units? | 8 | 9v / 3i / 1o | 118 |
 | [why-allen-countys-lending-outcomes-differ.yml](question/why-allen-countys-lending-outcomes-differ.yml) | question | Why do Allen County's mortgage outcomes differ by race and by purpose? | 4 | 4v / 1i / 2o | 54 |
-| [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 6 | 11v / 2i / 2o | 138 |
+| [why-allen-countys-villages-are-staffed-by-appointment.yml](question/why-allen-countys-villages-are-staffed-by-appointment.yml) | question | Why are Allen County's village seats filled by appointment where its township seats are not? | 7 | 12v / 2i / 3o | 150 |
 | [why-hud-and-the-survey-count-different-assisted-renters.yml](question/why-hud-and-the-survey-count-different-assisted-renters.yml) | question | Why do HUD's programme file and HUD's survey tables disagree about the county's assisted renters? | 4 | 1v / 3i / 1o | 77 |
 | [why-one-child-in-five-is-not-in-these-districts.yml](question/why-one-child-in-five-is-not-in-these-districts.yml) | question | Where are the children who live in these districts and are not enrolled in them? | 4 | 2v / 4i / 3o | 83 |
 | [allen-correctional-institution.yml](site/allen-correctional-institution.yml) | site | Allen Correctional Institution | 2 | 8v / 5i / 1o | 75 |
