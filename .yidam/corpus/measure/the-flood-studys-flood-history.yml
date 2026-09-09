@@ -1,0 +1,119 @@
+class: measure
+label: The flood study's flood history, read against the instruments
+description: |
+  **The county's flood insurance study names sixteen floods and this corpus had read eight of
+  them.** Its §2.3 is the only enumerated flood history in any source the corpus has found, and the
+  catalog entry had quoted the one sentence that lists eight — missing the paragraphs around it,
+  which name March 1913, a *major* flood at Fort Shawnee dated to 14 March 1978, another there in
+  2003, minor flooding in 1993, 1994 and 1995, and the 2007 flood the corpus already holds.
+  [verified] — [the study](../../catalog/fema-flood-insurance-study.md), §2.3, read in full here.
+
+  **The best-documented flood in the section was outside the list sentence.** 14 March 1978 is the
+  only flood the study gives to the day, and it names the village, the rainfall and the mechanism:
+  "0.7 inches of rain fell on the frozen snow cover of the area". It now has
+  [a node](../event/the-flood-of-14-march-1978.yml), and it carries the first two
+  insurance claims ever paid in this county. [verified] — the same section and
+  [the claims file](../../catalog/openfema-nfip.md).
+
+  **Three of the eight in the list sentence are now events and three cannot be reached.** June 1957
+  and April 1964 are dated by the gauge to 29 June and 21 April, at the 99.9th and 100th percentiles
+  of its record; March 1939, May 1943 and February 1959 the corpus already held. April 1904,
+  December 1916 and January 1937 fall where no stream gauge was running — before 1 October 1923 for
+  the first two, inside the 1936–1943 hiatus for the third. [verified] —
+  [USGS](../../catalog/usgs-nwis.md), site 04187500, daily values.
+
+  **December 1916 does not look like a rain flood and the study does not say it was one.** That
+  month took 3.20 inches in total at the Lima station with no day above 0.45, against 7.42 inches in
+  January 1937 and 5.99 in April 1904. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. On this river a flood from
+  almost no rain has a known cause — [January 1959](../event/the-ottawa-river-flood-of-1959.yml),
+  [February 2011](../event/the-flood-of-28-february-2011.yml) and
+  [March 1978](../event/the-flood-of-14-march-1978.yml) were all snow or frozen ground
+  — and the station's snow columns for December 1916 would test it. [inference]
+
+  **Its four most recent floods are a paraphrase of a database this corpus already holds.** The
+  2007, 2003 and 1993–1995 sentences all cite Reference 8, the NCDC Storm Events Database as
+  retrieved 18 November 2010 — so where the study looks like a second record it is the same record.
+  The 2003 sentence can be matched to its row phrase by phrase: the database has one Allen County
+  flood in 2003, a flash flood at 22:00 on **2 August** reported by law enforcement, reading "Water
+  was reported over several county roads, with some areas seeing flowing water up to a foot deep.
+  2 to 3 inches of rain fell mainly from Lima southwest to between Spencerville and Fort Shawnee."
+  [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), 2003 detail file.
+  The study made that "3 inches of rain… causing water to flow up to about a foot deep" at Fort
+  Shawnee: a range became its upper bound and a corridor became a village. **The gain is still real
+  — the flood now has a date.** [inference]
+
+  **And for three of those years the citation does not hold at all.** The database as compiled today
+  has **no Allen County row of any kind for 1993** and no flood-class row for 1994 or 1995, against
+  the study's "minor flooding events have occurred in 1993, 1994, and 1995 with minor flooding and
+  road closures reported (Reference 8)". [verified] — the same source, those three detail files.
+  Whatever those three years rest on, it is not the file the sentence names.
+
+  **The study is a witness and not an index, and the fourteen years it skips prove it.** Between
+  April 1964 and March 1978 it names no flood at all, while the Allentown gauge records **twenty-six
+  separate rises above its 99th percentile** — and three of them are larger than the June 1957 flood
+  the study does name. February 1975 reached 4,070 cubic feet a second, January 1974 3,900 and
+  May 1969 3,690, against 3,660 for 1957. [verified] — [USGS](../../catalog/usgs-nwis.md), site
+  04187500, daily means above 1,520 cubic feet a second grouped into rises here. Its authority for
+  most of this section is Reference 5, the City of Lima study of August 1978; a flood history written to justify a
+  hydraulic model records what the modeller needed, and a bigger flow is not a bigger flood if
+  nothing was standing where the water went. [inference]
+properties:
+  parameter: >-
+    Every flood named in §2.3 of the Allen County flood insurance study, against the stream gauge,
+    the precipitation record and the flood insurance claims file
+  value: >-
+    Sixteen floods named. Eight now carry an event node, three of them written in this phase; of
+    the eight that do not, four predate the gauges or fall inside their outage, three are undated
+    minor-flood years, and one is datable to 2 August 2003
+  as_of: "2026-09-09"
+  unit: named flood events
+  method: |
+    §2.3 of study 39003CV000A extracted from the PDF and read in full, rather than from the
+    eight-flood list sentence alone. Each named flood carried to the Ottawa at Allentown
+    (04187500, daily means 1923–1982) or the Ottawa at Lima (04187100, 1988–2026), to GHCN-Daily
+    station USC00334551, and to the NFIP claims file filtered on `countyCode` 39003.
+
+    `record` says what kind of gauge figure `cfs` is and the three are not comparable. `daily` is a
+    daily mean and carries a percentile against every day that gauge recorded. `peak_only` is an
+    instantaneous annual peak for a year with no daily series — both such rows fall inside the
+    1936–1943 outage and carry `peak_cd` 7, a historic peak, so they are reconstructions and get no
+    percentile. `none` is no gauge in service. Where the study gives only a month or a year, `date`
+    is the gauge's largest day inside it and `rain_in` the wettest day within two of that crest.
+  table: |
+    study_names date cfs record pct rain_in claims corpus_node
+    April_1904 1904-04-01 NA none NA 3.40 NA no
+    March_1913 1913-03-25 NA none NA 3.35 NA no
+    December_1916 1916-12 NA none NA 0.45 NA no
+    January_1937 1937-01-14 NA none NA 2.48 NA no
+    March_1939 1939-03-15 6160 peak_only NA 2.53 NA yes
+    May_1943 1943-05 6000 peak_only NA 1.50 NA yes
+    June_1957 1957-06-29 3660 daily 99.9 1.56 NA new
+    January_1959 1959-01-22 5870 daily 100.0 1.84 NA yes
+    February_1959 1959-02-10 3730 daily 100.0 2.34 NA yes
+    April_1964 1964-04-21 4520 daily 100.0 1.53 NA new
+    March_14_1978 1978-03-15 2470 daily 99.7 0.84 2 new
+    minor_1993 1993-07-03 2050 daily 99.4 1.30 0 no
+    minor_1994 1994-01-28 1810 daily 99.2 0.44 0 no
+    minor_1995 1995-03-08 1640 daily 99.0 1.77 0 no
+    Fort_Shawnee_2003 2003-08-02 NA none NA 1.33 0 no
+    August_2007 2007-08-21 NA none NA 5.08 25 yes
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../event/the-flood-of-14-march-1978.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../measure/ottawa-river-peak-flows-1924-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

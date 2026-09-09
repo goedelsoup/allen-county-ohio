@@ -1,0 +1,47 @@
+class: event
+label: The flood of 21 April 1964
+description: |
+  **The county's flood study names an April 1964 flood on the Ottawa River and the gauge dates it to
+  the day.** The Ottawa at Allentown ran 4,520 cubic feet a second on 21 April 1964 — its water
+  year's largest daily mean and the **100th percentile** of the gauge's 18,545 days, the third
+  largest daily mean it ever recorded. [verified] —
+  [the flood insurance study](../../catalog/fema-flood-insurance-study.md), §2.3, and
+  [USGS](../../catalog/usgs-nwis.md), site 04187500. Its instantaneous peak, 4,920 cubic feet a
+  second at a stage of 9.41 feet, is sixth of fifty-two water years. [verified] — the same source's
+  annual peaks.
+
+  **It is the last flood the study's list names, and the study was written nineteen years later.**
+  The eight floods "of lesser intensity" run from April 1904 to this one, and the account then jumps
+  to March 1978 and 2007. [verified] — the same section. So this node closes the older half of that
+  list rather than the list.
+
+  **The rain was ordinary and the month was not.** 1.70 inches fell on 20 April and 1.53 on the
+  21st, ranking 187th and 280th of the station's 45,272 days — inside a April of **8.63 inches**.
+  [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. A river that
+  has already taken eight inches in three weeks answers the ninth differently, which is why the
+  county's floods do not sort by their own day's rain. [inference] — see
+  [a flood is not found by ranking rain](../../decisions/a-flood-is-not-found-by-ranking-rain.yml).
+
+  [open] What this flood did. As with [June 1957](the-flood-of-29-june-1957.yml), the study gives it
+  four words in a list and no other record this corpus can reach covers 1964: the storm record has
+  no Allen County flood row before 1996, the insurance record begins in 1978, and no digitized local
+  newspaper survives. [verified] — the same three sources named there. The study's authority for both is its
+  Reference 5, the City of Lima study of August 1978.
+properties:
+  occurred: 1964-04-21
+  event_type: flood
+  location_description: |
+    The Ottawa River at Allentown, gauged at site 04187500 draining 160 square miles. The study
+    places the flood on the Ottawa River and no more finely than that. [verified] —
+    [the study](../../catalog/fema-flood-insurance-study.md) and [USGS](../../catalog/usgs-nwis.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../event.ont.yml
+    relationship: instance-of

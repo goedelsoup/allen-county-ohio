@@ -1,0 +1,64 @@
+class: event
+label: The flood of 14 March 1978
+description: |
+  **The county's own flood study calls this a major flooding event and says it took seven tenths of
+  an inch of rain.** Verbatim: "on March 14, 1978 the Village of Fort Shawnee recorded a major
+  flooding event when 0.7 inches of rain fell on the frozen snow cover of the area". [verified] —
+  [the flood insurance study](../../catalog/fema-flood-insurance-study.md), §2.3. It is the only
+  flood in that section given to the day, and the only one the section calls major outside 1959
+  and 2007.
+
+  **The county's own instrument says the same thing in four columns.** Snow lay 17.01 inches deep at
+  the Lima station on 8 March and 9.02 inches on the 13th; on the 14th 0.84 inches of rain fell, the
+  maximum reached 45 °F, the minimum stayed above freezing at 34, and the depth fell to 5.98 inches.
+  [verified] — [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. The water that
+  made this flood was mostly the snow, and the study's 0.7 inches against the gauge's 0.84 is the
+  difference between a report and a reading.
+
+  **The Ottawa River at Allentown ran 2,470 cubic feet a second on 15 March — the 99.7th percentile
+  of that gauge's 18,545 days and the second-largest daily mean of its water year.** Only 15 December
+  1977 was larger. [verified] — [USGS](../../catalog/usgs-nwis.md), site 04187500, daily values.
+
+  **Two flood insurance claims are dated 14 March 1978 and they are the first ever paid in this
+  county** — the National Flood Insurance Program's Allen County record opens on this flood. One is
+  in Elida's postal area and paid $380.87, all of it contents; one is in Delphos's and paid nothing.
+  Both are single-family homes and both carry the cause code that now reads "tidal water overflow".
+  [verified] — [the NFIP claims file](../../catalog/openfema-nfip.md), sorted by date of loss here;
+  see [a code list is dated](../../decisions/a-code-list-is-dated-and-the-rows-are-older.yml).
+
+  **So the claims do not corroborate the study's village and could not.** Fort Shawnee has never
+  joined the insurance programme and appears nowhere in the community status book, so no claim from
+  it can exist; Elida and Delphos are twelve and twenty-five kilometres away on different water.
+  [verified] — [OpenFEMA](../../catalog/openfema-nfip.md); see
+  [a flood needs two records](../../decisions/a-flood-needs-two-records.yml). What the three records
+  agree on is the **day and the county**, and the study alone places it in a village.
+
+  [open] What the water reached. The study names Fort Shawnee and no street, and attributes the
+  sentence to its Reference 3 — the Delphos flood insurance study of August 1991 — though its
+  Reference 4 is the Fort Shawnee study of February 1984. One of the two holds the account, and
+  neither has been retrieved. [inference]
+properties:
+  occurred: 1978-03-14
+  event_type: flood
+  location_description: |
+    The Village of Fort Shawnee, where the study places it; two insured buildings in the Elida and
+    Delphos postal areas, which is where the claims are; and the Ottawa River at Allentown, gauged
+    at site 04187500 below Fort Shawnee and above neither of the others. No source puts all three
+    in the same water. [verified] —
+    [the study](../../catalog/fema-flood-insurance-study.md),
+    [the claims file](../../catalog/openfema-nfip.md) and [USGS](../../catalog/usgs-nwis.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../place/fort-shawnee.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event.ont.yml
+    relationship: instance-of
