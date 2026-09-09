@@ -1,0 +1,110 @@
+class: measure
+label: How this county floods — twenty floods by mechanism
+description: |
+  **Six of the twenty floods this corpus holds were not made by rain alone, and rain cannot tell you
+  which six.** Read against the Lima station's own columns, fourteen are warm rain on ordinary
+  ground; three are rain onto lying snow; two are rain onto ground frozen by the week before it; one
+  is a February rain the columns cannot resolve further. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551, classified here by the rule
+  in `method`.
+
+  **The rain totals overlap almost completely, which is the finding.** Cold-mechanism floods run
+  0.45 to 2.48 inches with a median of 2.00; plain-rain floods run 1.35 to 5.08 with a median of
+  2.27. Only the tails separate: **below 1.35 inches every flood here is a cold one, above 2.48
+  every flood is plain rain, and between those two figures the mechanisms are mixed.** [verified] —
+  the table below. This is the quantity behind
+  [a flood is not found by ranking rain](../../decisions/a-flood-is-not-found-by-ranking-rain.yml):
+  the ranking does not fail because cold floods are small, it fails because in the middle of the
+  range the two are indistinguishable by rain.
+
+  **The two smallest floods in the record are both rain on snow.** December 1916 took 0.45 inches
+  onto twelve inches of lying snow during a thaw that held the overnight minimum at 37 °F; March
+  1978 took 0.84 onto a pack that had fallen from 17.01 inches to 9.02 in five days, and the county's
+  own study calls it major. [verified] — the same station; see
+  [that flood](../event/the-flood-of-14-march-1978.yml).
+
+  **Where the snow columns are dead the temperature columns still work, and the county's largest
+  flood is the proof.** January 1959's snowfall and snow-depth entries are blank on every day of the
+  flood and read zero on all 242 days of the season around it — a defect
+  [this corpus already recorded](../../decisions/a-zero-is-not-a-blank.yml). The maxima do not:
+  15 °F on 17 and 18 January, then **56 °F with 1.84 inches of rain on the 21st**, and the largest
+  flow ever measured on this river on the 22nd. [verified] — the same station and
+  [USGS](../../catalog/usgs-nwis.md), site 04187500. A forty-one degree swing in four days
+  establishes frozen ground without a snow column, and the flood study says the same thing in prose.
+
+  **The four floods no gauge saw do not share a mechanism**, which is why they had to be read one at
+  a time. April 1904 and March 1913 are plain rain — 71 °F two days before 1904's 3.40 inches, and
+  no snow and 47 to 62 °F through 1913's five-day 7.91. December 1916 is rain on snow. January 1937
+  is rain onto ground frozen by three sub-freezing days, with the snowpack already gone. [verified]
+  — the same station.
+
+  [open] Whether the county stopped having cold-season floods for thirty-three years. The corpus
+  holds none between March 1978 and February 2011, and the snow-depth column is unusable for
+  twenty-eight of those seasons. The gap is at least partly a gap in looking.
+properties:
+  parameter: >-
+    Every flood this corpus holds, classified by the mechanism its own weather station records —
+    plain rain, rain onto lying snow, or rain onto frozen ground
+  value: >-
+    Of twenty floods, fourteen are plain rain, three are rain on snow, two are rain on frozen
+    ground, and one February flood the columns cannot resolve
+  as_of: "2026-09-09"
+  unit: floods, inches of rain, degrees Fahrenheit
+  method: |
+    For each flood the wettest day within one of the node's date is taken as the rain that made it.
+    `frozen7` counts days in the preceding week whose maximum did not reach 32 °F; `snow_in` is the
+    greatest snow depth in the four days ending on the rain day. Classification: **rain_on_snow**
+    where the season's snow column is usable and a pack of an inch or more lay within four days;
+    **rain_on_frozen** where three or more of the preceding seven days stayed at or below freezing
+    and the rain day reached 40 °F; **winter_rain** where the month is December to March and two
+    such days precede it; **rain** otherwise.
+
+    The rule is this corpus's own and the boundaries are arbitrary at the edges — February 1950 at
+    35 °F and February 1959 at two frozen days are both marginal, and both are marked. It is a
+    reading of four columns, not a hydrological finding.
+
+    **A season's snow column is usable only if its nonzero days are a reasonable share of its cold
+    days, not merely if one exists.** Season 1991–92 carries 313 snow-depth rows of which **two** are
+    nonzero, both in January 1992; a `max > 0` test passes it and it is as dead as the twenty-seven
+    seasons around it.
+  table: |
+    flood rain_in tmax_f frozen7 snow_in snow_col mechanism
+    April_1904 3.40 53 1 NA live rain
+    March_1913 3.35 54 0 0.0 live rain
+    December_1916 0.45 46 4 12.0 live rain_on_snow
+    January_1937 2.48 58 3 1.0 live rain_on_frozen
+    March_1939 2.53 40 0 0.0 live rain
+    May_1943 1.35 78 0 0.0 live rain
+    June_1946 1.88 87 0 0.0 live rain
+    June_1947 1.68 80 0 0.0 live rain
+    February_1950 1.41 35 0 0.0 live rain_marginal
+    June_1957 2.00 75 0 0.0 live rain
+    January_1959 1.84 56 3 NA dead rain_on_frozen
+    February_1959 2.34 55 2 NA dead winter_rain_marginal
+    April_1964 1.70 54 0 0.0 live rain
+    March_1978 0.84 45 2 13.0 live rain_on_snow
+    June_1981 4.38 84 0 NA dead rain
+    August_2007 5.08 78 0 0.0 live rain
+    February_2011 2.15 57 2 6.0 live rain_on_snow
+    May_2014 2.01 82 0 0.0 live rain
+    June_2015 4.93 85 0 0.0 live rain
+    April_2019 3.26 58 0 0.0 live rain
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ghcn-daily-lima.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/ghcn-daily-lima.md
+  - target: ../measure/the-flood-studys-flood-history.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/fema-flood-insurance-study.md
+  - target: ../event/the-flood-of-14-march-1978.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/ghcn-daily-lima.md
+  - target: ../measure.ont.yml
+    relationship: instance-of
