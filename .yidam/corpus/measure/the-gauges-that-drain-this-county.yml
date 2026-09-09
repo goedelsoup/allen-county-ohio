@@ -1,0 +1,98 @@
+class: measure
+label: Every stream gauge whose basin holds Allen County ground, and how much of the county each sees
+description: |
+  **This county has never been ungauged. Two gauges downstream of it have measured its water every
+  day since 1915 and 1921, and this corpus had cited neither.** The Auglaize River near Defiance
+  drains 403 of the county's 406 square miles — every one of its nine settlements stands inside that
+  basin — and has 40,518 days of daily discharge. The Auglaize near Fort Jennings drains 134 square
+  miles of it, a third of the county, and has 36,624. [verified] —
+  [USGS](../../catalog/usgs-nwis.md), the network-linked basin service against
+  [the county boundary](../place/allen-county.yml).
+
+  **The corpus had said the opposite, in a rule, twice.** It held that the county's gauge record
+  "covers three of the county's twenty-nine stream sites, has two multi-year holes, and carries no
+  flood stage", and it filled a column with `NA` for 1986, 2003, 2004, 2008 and 2009 on the ground
+  that no county gauge was in service. Each of those days is in both long records above.
+  [verified] — [the four files](the-four-files-that-can-see-a-flood.yml), corrected with this node.
+
+  **The test that excludes the Blanchard at Findlay is the test that admits these.**
+  [A neighbour's gauge](../../decisions/a-neighbours-gauge-is-not-this-countys-record.yml) says a
+  gauge speaks for the ground above it. Measured rather than argued, the Findlay gauge's basin holds
+  **0.0 square miles** of Allen County and contains none of its nine settlements — the rule was
+  right. The same computation over every gauge in the four basins around this county finds eleven
+  that do hold its ground, and the corpus was reading two of them. [verified] — the table.
+
+  **A gauge is not one witness at every distance.** The three that see 99 per cent of the county see
+  it as 6 to 17 per cent of their own basin, so they register a county-wide flood and cannot see a
+  creek. The Ottawa near Kalida is the inverse — 61 per cent of its basin is this county — and it
+  began recording in 2014. **Only one gauge is both large in the county and long in the record**,
+  and it is Fort Jennings at 40 per cent and 105 years. [verified] — the table.
+
+  **The county's settlements are partitioned by the two rivers and the corpus can now say which.**
+  Lima, Elida, Cairo and Lafayette stand in the Ottawa's basin; Delphos, Spencerville and Harrod in
+  the Auglaize's above Fort Jennings; Bluffton and Beaverdam in Riley Creek's, which reaches the
+  Blanchard **below** Findlay and not above it. [verified] — the basin polygons against each place.
+  So a claim paid at Bluffton and a crest at Lima are not the same water, and neither is a claim at
+  Delphos and a crest on the Ottawa.
+
+  **What this does not give the county.** A flood stage. None of these gauges has one for Allen
+  County ground, and a discharge in the 99th percentile is a statement about the gauge's own record
+  and not about anybody's floor. [verified] —
+  [the National Water Prediction Service](../../catalog/noaa-nwps-gauges.md). The rule that a flood
+  needs [two records](../../decisions/a-flood-needs-two-records.yml) is unchanged by this node; what
+  changes is that the river is now a record that exists on days the corpus had written off.
+properties:
+  parameter: >-
+    Drainage basin of each USGS stream gauge in and around Allen County, intersected with the county
+    boundary, with the period of daily discharge record
+  value: >-
+    Eleven gauges hold county ground; three drain 99 per cent of it and have run since 1898, 1915
+    and 1924
+  unit: square miles of Allen County drained
+  as_of: "2026-09-09"
+  method: |
+    Each gauge's basin polygon from the USGS network-linked data index
+    (`nldi/linked-data/nwissite/USGS-<site>/basin`), intersected with this county's TIGER boundary.
+    Areas are computed in a sinusoidal projection about each polygon's own centroid, which
+    reproduces the published drainage areas to within two per cent on the four largest and within
+    five on the smallest — 350 against 350 at Kalida, 332 against 332 at Fort Jennings, 2,316
+    against 2,318 at Defiance. That agreement is the check that the polygons are the right ones.
+
+    `settlements` counts how many of the county's nine incorporated places fall inside the basin,
+    tested as points: Lima, Delphos, Spencerville, Bluffton, Elida, Cairo, Beaverdam, Harrod,
+    Lafayette. It is a coarser test than the area and it is the one a reader wants.
+
+    Candidate gauges are every site with a daily discharge series in hydrologic units 04100006
+    through 04100009 — the Auglaize, the Blanchard, the Tiffin and the lower Maumee — filtered to
+    those whose basin intersects the county at all. `first`, `last` and `days` are the series
+    catalogue's own, and `days` is a count of days recorded rather than the span: the Blanchard near
+    Dupont spans ninety-eight years and holds 7,199 days.
+  table: |
+    gauge river gauge_at basin_sqmi allen_sqmi pct_of_basin pct_of_county settlements first last days
+    04192500 maumee defiance 5491 403 7 99 9 1924-10-01 2026-09-08 34545
+    04193500 maumee waterville 6275 403 6 99 9 1898-11-20 2026-09-08 38217
+    04191500 auglaize defiance 2316 403 17 99 9 1915-10-01 2026-09-08 40518
+    04188100 ottawa kalida 350 213 61 52 4 2014-03-05 2026-09-08 4557
+    04186500 auglaize fort_jennings 332 134 40 33 3 1921-09-01 2026-09-08 36624
+    04187500 ottawa allentown 162 91 56 22 2 1923-10-01 1982-03-23 18545
+    04187100 ottawa lima 135 67 50 17 2 1988-09-30 2026-09-08 10340
+    04190000 blanchard dupont 772 55 7 14 2 1928-07-24 2026-09-08 7199
+    04185935 auglaize kossuth 201 55 27 13 1 2017-03-01 2025-11-16 3183
+    04189260 blanchard ottawa_village 626 35 6 9 2 2009-10-01 2026-09-08 6185
+    04189174 riley_creek pandora 71 26 37 6 2 2009-10-01 2026-09-08 6185
+    04189000 blanchard findlay 344 0 0 0 0 1923-10-01 2026-09-08 35864
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/the-four-files-that-can-see-a-flood.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

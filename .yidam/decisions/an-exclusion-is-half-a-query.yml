@@ -1,0 +1,62 @@
+id: an-exclusion-is-half-a-query
+summary: >-
+  To prove that a neighbouring gauge does not drain this county, the corpus asked the USGS network
+  which sites lie downstream of it and checked that the Blanchard was not among them. Thirty-seven
+  sites were. Four of them are gauges with daily records reaching back to 1898, 1915, 1921 and 1924,
+  and the corpus read the answer as a no and never read the list. A query run to exclude one thing
+  has enumerated everything else, and the enumeration is the more valuable half.
+context: |
+  [a neighbour's gauge is not this county's record](a-neighbours-gauge-is-not-this-countys-record.yml)
+  was written to establish that site 04189000, the Blanchard near Findlay, is no witness to this
+  county. Its evidence is exact and it holds: measured against the county boundary rather than
+  argued from hydrologic unit codes, that basin contains **0.0 square miles** of Allen County and
+  none of its nine settlements. [verified] —
+  [the gauges](../corpus/measure/the-gauges-that-drain-this-county.yml).
+
+  One of its three arguments was a downstream navigation: *"of the thirty-seven sites the USGS
+  network places below the Ottawa at Allentown — down the Auglaize to Defiance and the Maumee to
+  Toledo — the Blanchard gauge is not among them."* The sentence is true, the count is right, and
+  the thirty-seven were fetched, parsed and counted to write it.
+
+  **Among them are 04191500 and 04192500 at Defiance, 04193500 at Waterville and 04188100 near
+  Kalida.** The first has 40,518 days of daily discharge and drains 403 of this county's 406 square
+  miles. In the eight days after that rule was accepted, four nodes were written on the premise that
+  this county had no gauge in service in 1986, 2003, 2004, 2008 or 2009, and one of them recorded a
+  $345,988 flood day as unwriteable for want of a second witness. Every one of those days is in that
+  list's longest record. [verified] —
+  [the largest river days](../corpus/measure/the-largest-river-days-in-a-hundred-years.yml).
+decision: |
+  **When a query is run to rule something out, read what it ruled in. The negative answer is one row
+  of a result the corpus paid for in full, and the rest of it is evidence nobody has looked at.**
+
+  - **Say what the query returned, not only what it did not.** "The Blanchard is not among the
+    thirty-seven" records an absence and hides a census. Had the rule listed the four gauged sites
+    among the thirty-seven — it had them in hand — the gap would have closed the same day it opened.
+  - **A test that excludes is a test that admits.** The rule was *a gauge speaks for the ground above
+    it*, and it was applied once, to reject. Applied to every candidate it accepts eleven, ranks them
+    by how much of the county each drains, and separates the county's settlements into three basins.
+    A rule stated as a rejection is half-built.
+  - **The cost falls after the phase, not during it.** Nothing published in the phase that ran the
+    navigation was wrong. The loss is in the four later nodes that reasoned from "no gauge was in
+    service", each of which was careful, cited, and starting from a premise the corpus had already
+    disproved and not noticed.
+  - **This is checkable rather than a habit of mind.** Any navigation, filter or set difference run
+    to justify an exclusion leaves a result set on disk. Keep it and look at it.
+rationale: |
+  **The corpus keeps finding that its answer was already downloaded.** [The roster and the
+  ballot](a-roster-records-the-outcome-not-the-offer.yml) was one office apart;
+  [three school boards](one-marker-is-doing-three-jobs.yml) were in a source already held under a
+  different query; [a blank field](a-blank-field-may-be-a-value.yml) was a value in a file read ten
+  days earlier. This one is sharper than all three, because the answer was not in another file or
+  another query — **it was in the response to the query that was run**, in the same session, parsed
+  by the same script, and discarded because only one bit of it was wanted.
+
+  **What makes it a rule and not an anecdote.** Exclusion queries are how a careful corpus defends
+  its claims, so this failure mode scales with rigour: the more a corpus proves that something does
+  *not* apply, the more enumerations it throws away. The remedy costs nothing — the data is already
+  in memory when the exclusion is checked.
+
+  **What would change this rule.** Nothing. It is about what to do with a result already obtained,
+  and it applies to any query whose answer is a set and whose use is a membership test.
+status: accepted
+date: "2026-09-09"
