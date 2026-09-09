@@ -37,6 +37,10 @@ location:
       descriptions, and it is the only place the numeric code lists are written down — the cause of
       damage, the occupancy type, and what each letter of a flood zone means.
 used-by:
+  - ../corpus/measure/the-four-files-that-can-see-a-flood.yml
+  - ../corpus/event/the-flood-of-27-february-1997.yml
+  - ../corpus/event/the-flood-of-17-may-2019.yml
+  - ../corpus/event/the-flood-of-14-april-1979.yml
   - ../corpus/measure/the-flood-studys-flood-history.yml
   - ../corpus/event/the-flood-of-14-march-1978.yml
   - ../corpus/measure/the-twenty-wettest-days-against-the-river.yml

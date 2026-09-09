@@ -1,0 +1,66 @@
+class: event
+label: The flood of 27 February 1997
+description: |
+  **Three independent federal records name this day and the corpus had none of them.** The National
+  Weather Service filed a row of event type **Flood** dated 27 February 1997; seven flood insurance
+  claims are dated the 26th and 27th, paying **$43,151**; and the Ottawa River at Lima ran 3,470
+  cubic feet a second, the 99.9th percentile of that gauge's 10,340 days and the second-largest
+  daily mean of its water year. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), 1997 detail file;
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003; and
+  [USGS](../../catalog/usgs-nwis.md), site 04187100. Three files that count different things agree
+  on one date, which is more than [the county's largest measured flood](the-flood-of-22-august-2007.yml)
+  can say about its own gauge.
+
+  **The river went from 223 cubic feet a second to 3,470 in a day and did not come back down.** It
+  was still at 1,130 on 2 March and 781 on the 3rd, and the storm record filed a **second** flood row
+  for 1 March. [verified] — the same two sources. This is a flood with a shoulder, not a crest.
+
+  **It was plain rain and there was no snow in it.** The snow depth read zero every day of February,
+  no day of the preceding week stayed at or below freezing, and 1.72 inches fell on the 26th at
+  48 °F with 0.77 more on the 27th at 60 °F. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. So this is a winter flood
+  that owes nothing to the winter mechanisms; see
+  [how this county floods](../measure/how-this-county-floods.yml).
+
+  **What it owes to is the season, and the comparison is exact.** 2.49 inches over two days in
+  February put the Ottawa at Lima into the 99.9th percentile. **4.40 inches on one day in September
+  2021 put the same gauge at the fourteenth flow of its own water year.** [verified] — the same
+  gauge, both dates. Neither of these days is in the station's twenty wettest, and two phases of
+  ranking rain found neither flood; see
+  [a flood is not found by ranking rain](../../decisions/a-flood-is-not-found-by-ranking-rain.yml).
+
+  **1997 is the county's most-recorded unwritten flood year.** Three of the thirteen flood-class
+  rows in the county's entire federal storm record fall in it — 27 February, 1 March and 25 May —
+  and the last of them reads "Riley creek in Bluffton rose out of its banks causing 6 residents to be
+  evacuated. Several roads flooded across the county", at $10,000. [verified] — the same 1997 file.
+  The corpus had written none of the three.
+
+  [open] What the water reached on this date. The storm row carries no narrative and no damage
+  figure — both are blank, which the corpus has seen before in rows filed before the database began
+  writing episode text — and the claims file gives no address. Five of the seven claims are in
+  Bluffton's postal area, one in Elida's and one in Lima's. [verified] — the same two sources.
+properties:
+  occurred: 1997-02-27
+  event_type: flood
+  location_description: |
+    The Ottawa River at Lima, gauged at site 04187100 draining 128 square miles; and seven insured
+    buildings, five of them in Bluffton's postal area — which is not on the Ottawa but on Riley
+    Creek, ungauged in 1997. The gauge and the buildings are not established to be the same water.
+    [verified] — [USGS](../../catalog/usgs-nwis.md) and
+    [the claims file](../../catalog/openfema-nfip.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/allen-county-storm-events-1950-2026.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/noaa-storm-events.md
+  - target: ../event.ont.yml
+    relationship: instance-of
