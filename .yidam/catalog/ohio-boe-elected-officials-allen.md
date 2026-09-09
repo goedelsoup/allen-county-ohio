@@ -8,7 +8,7 @@ description: >-
   and the county's whole roster is the union of its eighty-eight precinct pages.
 type: dataset
 obtained: true
-retrieved: 2026-08-30
+retrieved: 2026-09-09
 ttl_days: 180
 location:
   - kind: url
@@ -35,6 +35,7 @@ location:
       an "Ohio Secretary of State's Office Website Maintenance" page that is not maintenance; the
       same URL with an ordinary browser user-agent string returns the roster.
 used-by:
+  - ../corpus/measure/who-won-and-who-sits.yml
   - ../corpus/division/ohio-house-district-4-2020.yml
   - ../corpus/division/ohio-house-district-78-2023.yml
   - ../corpus/division/ohio-senate-district-12-2020.yml
@@ -283,8 +284,22 @@ the hidden `hid_office` code the page carries gives:
 Seats` with the term the seat would run — so a seat nobody holds is a row and not an absence, which
 is the only reason the vacancies above can be counted at all.
 
-**Two things in it are wrong on their face and are recorded rather than repaired.** Delphos's
-president of council is given a term commencing `1/1/2204`, and five holders — an Amanda trustee, a
-Monroe trustee, the Bath and Perry fiscal officers and one Supreme Court justice — are given
-`Commences: n/a` against a real expiry. [verified] The corpus quotes the expiry and says the start
-is not given, rather than inferring it from the office's usual term.
+**One thing in it is wrong on its face and one thing that looked wrong is a value.** Delphos's
+president of council is given a term commencing `1/1/2204`, which is a typo and is recorded rather
+than repaired. [verified] Five holders — an Amanda trustee, a Monroe trustee, the Bath and Perry
+fiscal officers and one Supreme Court justice — are given `Commences: n/a` against a real expiry,
+and **that field is not missing: it marks a holder who won an unexpired term.** The four township
+ones are exactly the four people who won an unexpired term at the November 2025 election, with no
+fifth of either kind, and the justice holds a two-year term in a six-year office. [verified] —
+[the seat-by-seat join](../corpus/measure/who-won-and-who-sits.yml). The corpus still prints no
+commencement date for those five, because the roster does not know when a partial term was taken
+up; it now says what the blank means. See
+[a blank field may be a value](../decisions/a-blank-field-may-be-a-value.yml).
+
+**Read twice, ten days apart, and one seat moved.** On 30 August the roster showed 211 of 218 seats
+held and 40 holders appointed; on 9 September it shows 210 held and 39 appointed. The difference is
+one seat on the governing board of the educational service centre, which Walter W. Paxson held by
+appointment to a term running to 31 December 2027 and which now reads `1 Vacant Seat`. [verified] —
+the two readings. Nothing in the roster says why, and no other seat in the county changed. **The
+source is dated to the minute** — `The Elected Official Information was last updated:` at the head
+of every page — so a reading of it is a reading of a day and not of a term.
