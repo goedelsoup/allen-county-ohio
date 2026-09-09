@@ -4,8 +4,10 @@ description: |
   Twenty-five of the forty-seven seated village officers in this county were appointed to the seat
   rather than elected to it, and five village seats stand empty. Across all forty-eight township
   seats there is one appointment and no vacancy. [verified] —
-  [the seat count](../measure/allen-county-elected-seats-2026.yml). The corpus does not know why,
-  and will not guess. [open]
+  [the seat count](../measure/allen-county-elected-seats-2026.yml). For ten days the corpus did not
+  know why and would not guess. **It is now read from the ballots themselves — nobody stood** — and
+  the paragraphs below are kept in the order they were written, the reasoning that failed before the
+  answer that came.
 
   **It is not size.** The two forms sit on the same ground and are staffed opposite ways.
   [Spencer Township](../jurisdiction/spencer-township.yml) elected all four of its officers while
@@ -43,17 +45,74 @@ description: |
   for every one of the twelve townships and for no village at all, though it lists village mayors,
   councils and one board of public affairs. [verified] Whether that office is absent, filled some
   other way, or simply outside what this file carries is not established. [open]
+
+  **The ballots answer half of that too, and it is not a gap in the roster.** Across both
+  elections the only offices printed under a `VILLAGE OF` heading anywhere in this county are mayor,
+  member of council, and Harrod's board of trustees of public affairs; every township's fiscal
+  officer is printed under its own heading. [verified] —
+  [the ballot display](../../catalog/allen-county-ballot-display.md), 228 precinct ballots. So a
+  village fiscal officer is **not an elected office here**, and the roster is silent because there
+  is nothing to list. Whether the villages have one by appointment is still unestablished. [open]
+
+  **Nobody stood.** Across the two municipal elections that seated these officers, this county's
+  villages put 52 seats on the ballot and 25 people sought them; its townships put 55 and 71 people
+  sought those. In November 2025 not one of the seven villages fielded a full council: 28 council
+  seats, nine candidates, and Cairo and Spencerville drew nobody at all. [verified] —
+  [who stood](../measure/who-stood-for-the-village-seats-2023-2025.yml), from
+  [the ballot display](../../catalog/allen-county-ballot-display.md). The printed ballot states it
+  in words rather than by arithmetic: under each such office it carries the line **"No Valid
+  Petition Filed"**, once for every seat nobody sought.
+
+  **The ranking this node could not explain is the same ranking, seen from the other end.** It
+  observed that Bluffton and Beaverdam use appointment least and Cairo and Harrod most, and that
+  this does not run with population. It does run with candidacy: Bluffton draws 0.86 candidates per
+  seat and Beaverdam 0.71, against Cairo's 0.14 and Harrod's 0.20. [verified] — the same measure
+  against [the seat count](../measure/allen-county-elected-seats-2026.yml). A village appoints in
+  proportion to how few of its residents will stand.
+
+  **And it is the council, not the village.** All seven mayoralties on the 2023 ballot drew a
+  candidate but Harrod's, and Elida's drew two; the 42 council seats across both years drew 18.
+  [verified] — the same measure. So the question's own framing was one word too wide: the office of
+  mayor is sought and the legislature is not.
+
+  **What the law then does is not discretionary.** A village council vacancy "shall be filled by
+  election by the legislative authority for the unexpired term", and if the council fails within
+  thirty days "the mayor shall fill it by appointment". [verified] —
+  [Ohio Revised Code](../../catalog/ohio-revised-code.md) §731.43(A)(1); an incumbent meanwhile
+  "shall continue therein until his successor is elected or appointed and qualified", §3.01. **So a
+  council that no one runs for appoints itself**, and the twenty-five appointees this node opened on
+  are that statute working exactly as written on an electorate that did not file.
 properties:
-  claim_tag: open
+  claim_tag: verified
   opened: "2026-08-30"
+  closed: "2026-09-09"
+  resolution: |
+    Because nobody stands for them. Over the elections of November 2023 and November 2025 the
+    county's villages offered 52 seats and drew 25 candidates, against 55 seats and 71 candidates in
+    its townships — 0.48 per seat against 1.29. Seven village contests and four township ones drew
+    no one at all, and the printed ballot says so in words: "No Valid Petition Filed".
+
+    The mechanism is then statutory rather than chosen. Under ORC 731.43 a village council fills its
+    own vacancies, and the mayor fills them if the council does not within thirty days.
+
+    Two refinements the question had not anticipated. It is the **council** and not the village
+    form: every mayoralty but Harrod's drew a candidate. And **townships are not immune** — four of
+    their contests drew nobody either, and most draw exactly one candidate for one seat. A township
+    is not more contested than a village; it is more filled.
   would_close_this: |
-    Candidate filings or the official canvass for a village race in this county — either would say
-    whether a seat drew anyone, which is the fact that separates "nobody stood" from "someone left".
-    The village council minutes recording an appointment would give the date and the vacancy it
-    filled. Neither is the state-level election file this corpus already holds:
-    [the returns](../../catalog/openelections-ohio.md) are precinct-level for federal and state
-    offices and have never been checked for a village line.
+    Closed. What remains open is narrower: the ballots establish that a village fiscal officer is
+    not an *elected* office in this county, which is why no roster carries one; whether the villages
+    appoint one is unestablished, and a village's own council minutes or its annual financial report
+    to the Auditor of State would name whoever signs for it.
+
+    Two things this route cannot see. A ballot is not a canvass — it says who was printed, not who
+    won — and **a write-in candidate never appears on a printed ballot**, so a seat marked "No Valid
+    Petition Filed" may still have been filled by election. Reconciling the two elections read here
+    against the seated roster, name by name, would settle how many of the twenty-five appointees are
+    appointees rather than write-in winners.
 links:
+  - target: ../measure/who-stood-for-the-village-seats-2023-2025.yml
+    relationship: concerns
   - target: ../measure/allen-county-elected-seats-2026.yml
     relationship: concerns
   - target: ../jurisdiction/village-of-cairo.yml

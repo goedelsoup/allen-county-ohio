@@ -72,7 +72,25 @@ location:
       for textbooks, and the college shall waive payment of all other fees related to participation
       in the program" — so a family pays nothing to enrol its child in a college course under the
       chapter.
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-731.43
+    description: >-
+      Vacancy in a city or village legislative authority. "When the office of a member of the
+      legislative authority of a village becomes vacant, the vacancy shall be filled by election by
+      the legislative authority for the unexpired term. If the legislative authority fails within
+      thirty days to fill such vacancy, the mayor shall fill it by appointment." This is the statute
+      that turns an unsought seat into an appointed one; see
+      [who stood](../corpus/measure/who-stood-for-the-village-seats-2023-2025.yml).
+  - kind: url
+    value: https://codes.ohio.gov/ohio-revised-code/section-3.01
+    description: >-
+      Holding over. "A person holding an office of public trust shall continue therein until his
+      successor is elected or appointed and qualified, unless otherwise provided in the constitution
+      or laws of this state." One sentence, unamended since 1963, and the reason a seat nobody ran
+      for does not simply stand empty.
 used-by:
+  - ../corpus/question/why-allen-countys-villages-are-staffed-by-appointment.yml
+  - ../corpus/measure/who-stood-for-the-village-seats-2023-2025.yml
   - ../corpus/jurisdiction/allen-county-educational-service-center.yml
   - ../corpus/measure/allen-county-dual-enrollment-2017-2021.yml
   - ../corpus/jurisdiction/lima-city-school-district.yml
