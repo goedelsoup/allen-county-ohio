@@ -41,6 +41,9 @@ location:
       observation hour — which the `.dly` file does not carry. Its element records for this station
       begin in December 2022; everything earlier survives only as undated free-text remarks.
 used-by:
+  - ../corpus/event/the-flood-of-27-february-1997.yml
+  - ../corpus/event/the-flood-of-17-may-2019.yml
+  - ../corpus/event/the-flood-of-14-april-1979.yml
   - ../corpus/measure/how-this-county-floods.yml
   - ../corpus/measure/the-flood-studys-flood-history.yml
   - ../corpus/event/the-flood-of-29-june-1957.yml

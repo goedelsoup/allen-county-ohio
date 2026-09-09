@@ -42,6 +42,9 @@ location:
       longitude. Fetched for 1972 and for every year 1996 through 2026 — the whole of its non-empty
       run — and joined to this county's rows. What that found is below.
 used-by:
+  - ../corpus/measure/the-four-files-that-can-see-a-flood.yml
+  - ../corpus/event/the-flood-of-27-february-1997.yml
+  - ../corpus/event/the-flood-of-14-april-1979.yml
   - ../corpus/measure/the-flood-studys-flood-history.yml
   - ../corpus/measure/the-twenty-wettest-days-against-the-river.yml
   - ../corpus/event/the-flood-of-13-14-june-1981.yml
