@@ -1,0 +1,66 @@
+class: event
+label: The flood of 5–7 February 2008
+description: |
+  **This is the fourth-largest flood insurance day in this county's forty-eight-year record and the
+  corpus had it filed as a day with one witness.** Ten claims dated 5 to 7 February 2008 paid
+  **$390,087**, eight of them on the 6th alone for $345,989 — behind only August 2007, June 2015 and
+  February 2011, each of which has had a node for weeks. [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003.
+
+  **The river was in flood and two gauges recorded it.** The Auglaize near Fort Jennings ran 11,400
+  cubic feet a second on the 7th, **the second-highest of its 36,624 days since 1921**; near Defiance
+  it ran 47,100 on the 8th, the fourth of 40,518 since 1915. [verified] —
+  [USGS](../../catalog/usgs-nwis.md), sites 04186500 and 04191500. Neither gauge stands in this
+  county and both drain it — Defiance takes water from 403 of its 406 square miles. [verified] —
+  [the gauges](../measure/the-gauges-that-drain-this-county.yml).
+
+  **The rain fell on ground that had been frozen a week and had just thawed.** Lima recorded 1.03
+  inches on the 5th and **1.78 on the 6th**, 3.75 inches over four days, at 58 °F and 54 °F after a
+  maximum of 19 °F on 31 January. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. That is the third of the three
+  mechanisms this corpus has separated — rain on ground still sealed by frost — and not the plain
+  rain of [February 1997](the-flood-of-27-february-1997.yml). See
+  [how this county floods](../measure/how-this-county-floods.yml).
+
+  **The storm database says nothing at all.** Its eleven Allen County rows for 2008 are four winter
+  storms, five thunderstorm winds, a high wind and an ice storm, and the nearest to this flood is a
+  winter storm dated 1 February. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), 2008 detail file. A slow February
+  flood generates no telephone call to a forecast office, which is the blindness this corpus already
+  named and can now show costing $390,087.
+
+  **The damage was spread across the county and mostly outside a village.** Six claims are in Lima's
+  south-western postal area and one each at Elida, Bluffton, Delphos and Lima proper — the Ottawa's
+  basin, Riley Creek's and the Auglaize's, three separate waters on one day. The largest single
+  payment is **$153,873**, the sixth-largest this county has ever had on one building. [verified] —
+  the claims file.
+
+  [open] What the water reached. No storm narrative exists, the claims file gives no address, and
+  the county's own gauge on the Ottawa was out of service from 23 November 1999 to 30 June 2009 — so
+  the river that runs through Lima has no reading for the day the buildings beside it were paid for.
+  [verified] — [USGS](../../catalog/usgs-nwis.md), site 04187100.
+properties:
+  occurred: 2008-02-06
+  occurred_through: 2008-02-07
+  event_type: flood
+  location_description: |
+    Ten insured buildings across the county — six in Lima's 45805 postal area, one each at Elida,
+    Bluffton, Delphos and central Lima — and the Auglaize River measured below the county at Fort
+    Jennings and Defiance. The Ottawa at Lima, which drains the ground six of the ten stand on, was
+    not recording. [verified] — [the claims file](../../catalog/openfema-nfip.md) and
+    [USGS](../../catalog/usgs-nwis.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../natural-feature/auglaize-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/the-largest-river-days-in-a-hundred-years.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event.ont.yml
+    relationship: instance-of

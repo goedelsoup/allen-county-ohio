@@ -1,0 +1,66 @@
+class: event
+label: The flood of 13–15 July 1992
+description: |
+  **This is the largest day the Auglaize River has recorded in a hundred and five years of measuring
+  and no source in this corpus had ever mentioned it.** On 15 July 1992 the gauge near Fort Jennings
+  ran **12,000 cubic feet a second, first of its 36,624 days** since 1 September 1921 — ahead of
+  February 2008, ahead of January 1959, ahead of June 2015. [verified] —
+  [USGS](../../catalog/usgs-nwis.md), site 04186500. That gauge drains 134 square miles of this
+  county, a third of it. [verified] —
+  [the gauges](../measure/the-gauges-that-drain-this-county.yml).
+
+  **The county's own river rose first and the corpus was reading it.** The Ottawa at Lima went from
+  8 cubic feet a second on the 11th to 173 on the 12th and **2,150 on the 13th**, the 54th of that
+  gauge's 10,340 days, and stayed above 1,100 for a week. [verified] — the same source, site
+  04187100. This is not a day the corpus lacked an instrument for. It is a day nobody ranked.
+
+  **2.97 inches fell on 12 July and 6.88 over the six days that followed.** [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. It is high summer: no snow,
+  no frost, no thaw. Plain convective rain on ground that had had none for three days.
+
+  **Three insurance claims are dated the 12th and 13th, for $15,549** — two in the county outside a
+  village and one in Lima, in Elida's and east Lima's postal areas, which are the Ottawa's ground and
+  not the Auglaize's. [verified] — [the claims file](../../catalog/openfema-nfip.md). So the claims
+  and the record crest are two different waters on one storm: the buildings were paid on the river
+  that rose on the 13th, and the Auglaize took its century's largest day two days later, downstream
+  and to the south-west.
+
+  **The storm database cannot see it, because in July 1992 it was not yet writing floods.** Its
+  Allen County rows for that year are thunderstorm winds and hail; flood as an event type enters the
+  file in 1996. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md). Three of the county's four
+  flood-registering federal records were watching this day and the fourth did not exist yet; see
+  [the four files](../measure/the-four-files-that-can-see-a-flood.yml).
+
+  [open] What the water reached, and whether Delphos or Spencerville flooded. The record crest is on
+  their river and no claim of that week is in either place — which may mean the water stayed in the
+  channel below the county, or may mean the two towns most exposed to the Auglaize had almost no
+  flood insurance in 1992. The claims file cannot tell those apart. [verified] — the same file.
+properties:
+  occurred: 1992-07-13
+  occurred_through: 1992-07-15
+  event_type: flood
+  location_description: |
+    The Ottawa River through Lima, gauged at 04187100, and the Auglaize River below the county at
+    Fort Jennings, gauged at 04186500; and three insured buildings in the postal areas of Elida and
+    east Lima. The crest and the claims are on different rivers. [verified] —
+    [USGS](../../catalog/usgs-nwis.md) and [the claims file](../../catalog/openfema-nfip.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../natural-feature/auglaize-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../natural-feature/ottawa-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/the-largest-river-days-in-a-hundred-years.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event.ont.yml
+    relationship: instance-of
