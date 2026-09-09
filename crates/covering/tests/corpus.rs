@@ -53,30 +53,46 @@ fn asking_what_governed_lima_in_1900_separates_what_the_corpus_dates_from_what_i
          here to refuse"
     );
 
-    // Every division is set aside rather than dropped: the query considered it. Six now — the
-    // three districts of the 2020 map, the two of the 2023 map, and the precinct that covers
-    // part of the city. The 2023 pair are excluded on their own `effective_from`, which is the
-    // check working: a district adopted in September 2023 governed nothing in 1900.
-    assert_eq!(c.excluded.len(), 6);
+    // Every division is set aside rather than dropped: the query considered it. Seven now — the
+    // three districts of the 2020 map, the two of the 2023 map, the congressional district of
+    // the 2025 map, and the precinct that covers part of the city. The 2023 and 2025 ones are
+    // excluded on their own `effective_from`, which is the check working: a district adopted in
+    // September 2023, or October 2025, governed nothing in 1900.
+    assert_eq!(c.excluded.len(), 7);
     assert!(c.excluded.iter().all(|m| m.class == "division"));
 }
 
 #[test]
 fn the_2020_districts_are_open_ended_and_are_not_read_as_current() {
-    // `effective_to` is absent on all three because the corpus does not know when Ohio's
-    // post-2020 maps superseded them — see the open question on the congressional district.
-    // Warrant::Open says exactly that; Warrant::Bounded would claim an end the corpus lacks,
-    // and treating the absence as "still in force" would claim a currency it disclaims.
+    // `effective_to` is absent on the two legislative districts because the corpus does not
+    // know when Ohio's 2023 map superseded them. Warrant::Open says exactly that; Bounded
+    // would claim an end the corpus lacks, and treating the absence as "still in force" would
+    // claim a currency it disclaims.
+    //
+    // The congressional district of the same map used to be the third case here and is not
+    // any more: the plan that superseded it was read in September 2026 and gave the date,
+    // 31 October 2025. That is the state this reading is *for* — an absent end is a gap to be
+    // closed by a source, and closing one is not a regression in the calculator.
     let g = graph();
     let c = covering(&g, "place/lima.yml", None).unwrap();
     for id in [
-        "division/ohio-congressional-district-4-2020.yml",
         "division/ohio-house-district-4-2020.yml",
         "division/ohio-senate-district-12-2020.yml",
     ] {
         let m = c.member(id).unwrap_or_else(|| panic!("{id} covers Lima"));
         assert_eq!(m.warrant, Warrant::Open { from: 2020 }, "{id}");
     }
+    let cd = c
+        .member("division/ohio-congressional-district-4-2020.yml")
+        .expect("the 2020 congressional district covers Lima");
+    assert_eq!(
+        cd.warrant,
+        Warrant::Bounded {
+            from: 2020,
+            to: 2025
+        },
+        "it has an end now and the warrant carries it"
+    );
 }
 
 #[test]

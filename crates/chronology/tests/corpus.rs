@@ -230,12 +230,15 @@ fn the_fourth_reading_keeps_a_one_night_event_out_of_the_next_year() {
 
 #[test]
 fn a_division_is_admitted_after_its_start_and_vouched_only_at_it() {
-    // `covering`'s reading, checked against the node its module docs argue from.
+    // `covering`'s reading, checked against a node that still has the shape it argues from.
+    // The congressional district of the same map was this test's subject until the plan that
+    // superseded it was read and gave 31 October 2025; an absent end is a gap for a source to
+    // close, so a node leaving this state is the reading working rather than failing.
     let nodes = corpus();
     let district = nodes
         .iter()
-        .find(|n| n.id == "division/ohio-congressional-district-4-2020.yml")
-        .expect("the 2020 district is in the corpus");
+        .find(|n| n.id == "division/ohio-house-district-4-2020.yml")
+        .expect("the 2020 House district is in the corpus");
     let span = district.span.as_ref().expect("it is dated");
     assert!(span.admits(2024), "it may still stand");
     assert!(!span.vouched(2024), "and the corpus does not say it does");

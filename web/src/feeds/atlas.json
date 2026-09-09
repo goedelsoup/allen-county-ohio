@@ -68,8 +68,39 @@
       "label": "Ohio's 4th congressional district (2020 geography)",
       "tier": "verified",
       "from": 2020,
-      "to": null,
+      "to": 2025,
       "precision": "year",
+      "open_end": null,
+      "undated": null,
+      "treatment": "polygon",
+      "hops": 1,
+      "route_tier": "verified",
+      "anchors": [
+        {
+          "node": "place/allen-county.yml",
+          "lat": 40.771627,
+          "lon": -84.106103,
+          "points": [],
+          "geoid": null,
+          "level": null,
+          "via": [
+            {
+              "relationship": "covers",
+              "to": "place/allen-county.yml",
+              "tier": "verified"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "node": "division/ohio-congressional-district-4-2025.yml",
+      "class": "division",
+      "label": "Ohio's 4th congressional district (2025 map)",
+      "tier": "inference",
+      "from": 2025,
+      "to": null,
+      "precision": "day",
       "open_end": "unvouched",
       "undated": null,
       "treatment": "polygon",
@@ -19918,11 +19949,11 @@
       "node": "question/allen-county-current-congressional-district.yml",
       "class": "question",
       "label": "Which congressional district is Allen County in now?",
-      "tier": "verified",
+      "tier": "inference",
       "from": 2026,
-      "to": null,
+      "to": 2026,
       "precision": "day",
-      "open_end": "running",
+      "open_end": null,
       "undated": null,
       "treatment": "count",
       "hops": 1,

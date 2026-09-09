@@ -22,10 +22,14 @@
 //!
 //! In `succession` a tenure with no `ended` is read as running to the present, because the
 //! last entry in a sheriff's roster is the sitting sheriff. The same shape means the opposite
-//! here. The corpus node `division/ohio-congressional-district-4-2020.yml` carries
-//! `effective_from: 2020` and no `effective_to`, and its own text says why: `effective_to` is
-//! absent because the corpus does not know the date the map was superseded, not because the
-//! district still stands as drawn. Ohio redistricted after 2020.
+//! here. The corpus node `division/ohio-house-district-4-2020.yml` carries `effective_from:
+//! 2020` and no `effective_to`, and its own text says why: it is superseded, and the date it
+//! was superseded on is what the corpus lacks — not evidence that the district still stands.
+//!
+//! The congressional district of the same map made this argument until September 2026, when
+//! the plan that replaced it was read and supplied 31 October 2025. That is the state this
+//! reading exists to hold open: an absent end is a gap a source may close, and one closing is
+//! the reading working. Ohio redistricted after 2020 and again in 2025.
 //!
 //! A missing end is therefore [`Warrant::Open`] — it admits years at or after the start and
 //! vouches for nothing beyond the last date the corpus can actually support. Two calculators,

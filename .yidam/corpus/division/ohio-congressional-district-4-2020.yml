@@ -7,20 +7,19 @@ description: |
   to 4,665.374 square miles of land with an internal point at 40.387175, -83.935703.
   [verified] — [2020 Census Gazetteer](../../catalog/census-gazetteer-2020.md).
 
-  **This is the map in force through the 2022 election, not the map in force now.** Ohio
-  redistricted after the 2020 census, and no Block Assignment File exists for any later year —
-  `baf2022`, `baf2024`, `baf2025` and `baf2026` all return 404, so the county-to-district
-  relationship that this node rests on cannot be recomputed for the current map from the same
-  source. The corpus therefore holds the 2020 assignment as a dated fact and does not claim it
-  is current. See
-  [which congressional district Allen County is in now](../question/allen-county-current-congressional-district.yml).
-
-  `effective_to` is absent because the corpus does not know the date the map was superseded,
-  not because the district still stands as drawn. [open]
+  **This is the map in force through the 2022 election, and it was superseded on 31 October 2025.**
+  Ohio redistricted after the 2020 census and again in 2025; the Census Bureau published no Block
+  Assignment File for any later year — `baf2022`, `baf2024`, `baf2025` and `baf2026` all return 404 —
+  so the relationship this node rests on could not be recomputed from the same source. It was
+  recomputed from a different one: the commission that drew the current map publishes its own block
+  assignment file, and it puts the same 3,552 blocks in the same district. See
+  [the 2025 map](ohio-congressional-district-4-2025.yml) and
+  [the question](../question/allen-county-current-congressional-district.yml).
 properties:
   division_type: congressional district
   identifier: "3904"
   effective_from: "2020"
+  effective_to: "2025-10-31"
   drawn_by: State of Ohio
   area_sq_mi: "4665.374 land, 47.235 water (2020 geography)"
 links:
