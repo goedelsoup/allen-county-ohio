@@ -41,6 +41,24 @@ decision: |
 
   A period that fails is dropped and listed. It is not filled from a neighbouring station, not
   interpolated, and not silently folded into a mean.
+
+  **One nonzero value does not revive a column.** Snow *depth* has the same blackout as snowfall —
+  twenty-eight consecutive seasons, 1978–79 to 2005–06 — and inside it season 1991–92 carries 313
+  depth rows of which exactly **two** are nonzero, 14 and 15 January 1992 at six and eight inches.
+  [verified] — the same station, counted here. A usability test of `max > 0` passes that season and
+  it is as dead as the twenty-seven around it. **The test is the share of nonzero days among the
+  days that should have them, never the existence of one.**
+
+  **And when the column is dead, name the column that is not.** Excluding a period is the rule for
+  a *total*; for a *single day* the question is usually answerable from a different column
+  altogether. January 1959 is the case: the county's largest measured flow, snowfall and snow depth
+  blank on every day of the flood and zero on all 242 days of the season, and the maxima answering
+  anyway — 15 °F on the 17th and 18th, **56 °F with 1.84 inches of rain on the 21st**, the flow on
+  the 22nd. [verified] — the same station and [USGS](../catalog/usgs-nwis.md), site 04187500. A
+  forty-one degree swing in four days establishes frozen ground without a snow column, and the
+  county's flood study says the same thing in prose. See
+  [how this county floods](../corpus/measure/how-this-county-floods.yml), which classifies twenty
+  floods this way and marks the three whose snow column is dead.
 rationale: |
   **What it cost, immediately.** Sixty-nine of the Lima station's hundred and twenty-five snow
   seasons survive this rule and the rest are named. Twenty-six of the excluded seasons are one

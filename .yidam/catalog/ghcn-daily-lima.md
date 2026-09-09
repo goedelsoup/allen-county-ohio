@@ -41,6 +41,7 @@ location:
       observation hour — which the `.dly` file does not carry. Its element records for this station
       begin in December 2022; everything earlier survives only as undated free-text remarks.
 used-by:
+  - ../corpus/measure/how-this-county-floods.yml
   - ../corpus/measure/the-flood-studys-flood-history.yml
   - ../corpus/event/the-flood-of-29-june-1957.yml
   - ../corpus/event/the-flood-of-21-april-1964.yml
@@ -70,6 +71,20 @@ a bounds check. That last is 6 March 1930, where the snowfall column reads 4,079
 hundred and sixty inches in a day. Read without the flag it makes the winter of 1929–30 the
 snowiest in the county's history by a factor of three. [verified] — the file's own `QFLAG` column,
 2 September 2026.
+
+**Its four columns fail independently, and the temperature ones are the reliable pair.** `PRCP`,
+`TMAX` and `TMIN` run the length of the record; `SNOW` and `SNWD` are dead for twenty-eight
+consecutive seasons, 1978–79 to 2005–06, and blank or all-zero in isolated earlier ones — 1918–19,
+1943–44, and 1958–59, the season of the county's largest measured flood. [verified] — counted here
+by season. **A mechanism question that looks like a snow question is usually answerable from the
+maxima**: fifteen degrees on 17 January 1959 and fifty-six with 1.84 inches of rain on the 21st say
+what the snow columns cannot. See
+[a zero is not a blank](../decisions/a-zero-is-not-a-blank.yml) and
+[how this county floods](../corpus/measure/how-this-county-floods.yml).
+
+**Season 1991–92 is the trap inside the blackout.** It carries 313 snow-depth rows of which two are
+nonzero, both in January 1992, so any usability test written as `max > 0` admits it. [verified] —
+the same file.
 
 **The station agrees with the divisional record this corpus already holds, on five figures that
 were computed from different data.** Its 1991–2020 annual mean is 51.37 °F against the county
