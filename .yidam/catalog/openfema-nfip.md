@@ -37,6 +37,8 @@ location:
       descriptions, and it is the only place the numeric code lists are written down — the cause of
       damage, the occupancy type, and what each letter of a flood zone means.
 used-by:
+  - ../corpus/measure/the-twenty-wettest-days-against-the-river.yml
+  - ../corpus/event/the-flood-of-13-14-june-1981.yml
   - ../corpus/measure/allen-county-flood-insurance-1978-2023.yml
   - ../corpus/measure/allen-county-flood-hazard-2026.yml
 ---
@@ -59,6 +61,23 @@ individual county the property is located", and three of Allen County's 259 rows
 in Hancock, Auglaize and Fairfield. [verified] — the same file and its dictionary. Three in 259 is
 1.2 per cent, and it is reported rather than corrected because there is no rule here that would fix
 one row without moving another.
+
+**Its cause-of-loss codes are not contemporary with its rows.** The dictionary served today reads
+code `1` as *tidal water overflow*; in this landlocked county it is on twelve of thirteen claims
+filed in the 1970s, fourteen in the 1980s, and one in the thirty-six years since — while `2`, stream
+or river overflow, does not appear at all until 1980 and then never stops. [verified] — the claims
+file, `countyCode` 39003, tabulated by decade here. A meaning does not migrate that way and a code
+list does, so the early rows were coded under a scheme this API no longer serves. Counts and dollar
+sums are unaffected; only the glosses are. `occupancyType` has the same shape declared openly — a
+second, two-digit scheme for Risk Rating 2.0 sitting beside the first. See
+[a code list is dated](../decisions/a-code-list-is-dated-and-the-rows-are-older.yml).
+
+**`reportedZipCode` is populated where `reportedCity` is not**, and it is the finest geography this
+file gives Allen County. Every one of the 259 rows reads "Currently Unavailable" for the city; every
+one carries a postal code. Cut against
+[the county's postal areas](../corpus/measure/allen-county-zip-codes-2020.yml) it located the flood
+of June 1981 to Delphos and Bluffton — the county's two ends — where the node written from this file
+in an earlier phase had reported that it gave no location at all. [verified] — the same file.
 
 **The v2 endpoints are deprecated and answer anyway.** `FimaNfipClaims` and `FimaNfipPolicies`
 return data, frozen as of 1 June 2026, and will be withdrawn on 15 October 2026; the deprecation
