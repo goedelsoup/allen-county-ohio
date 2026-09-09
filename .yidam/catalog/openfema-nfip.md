@@ -37,6 +37,10 @@ location:
       descriptions, and it is the only place the numeric code lists are written down — the cause of
       damage, the occupancy type, and what each letter of a flood zone means.
 used-by:
+  - ../corpus/event/the-flood-of-5-7-february-2008.yml
+  - ../corpus/event/the-flood-of-8-11-march-2009.yml
+  - ../corpus/event/the-flood-of-13-15-july-1992.yml
+  - ../corpus/measure/the-largest-river-days-in-a-hundred-years.yml
   - ../corpus/measure/the-four-files-that-can-see-a-flood.yml
   - ../corpus/event/the-flood-of-27-february-1997.yml
   - ../corpus/event/the-flood-of-17-may-2019.yml
@@ -89,3 +93,15 @@ in an earlier phase had reported that it gave no location at all. [verified] —
 return data, frozen as of 1 June 2026, and will be withdrawn on 15 October 2026; the deprecation
 notice arrives inside the response's own metadata rather than as a status code. [verified] — the
 v2 metadata block. Everything here is taken from v3 or v1 as listed above.
+
+**`nfipCommunityName` is the community a claim was rated in when it was filed, and the community
+status book is a register of who participates now.** The two disagree, and the disagreement is
+informative rather than a defect: this county's 259 claims name one paid at **Fort Shawnee** on
+11 March 1982 under community number 390611, and Fort Shawnee is in no current register because its
+electors abolished the village in 2012. A corpus that reads the status book as a history will
+conclude that a place never joined the programme when it did. See
+[a blank field may be a value](../decisions/a-blank-field-may-be-a-value.yml).
+
+**Four of the 259 rows name a community outside this county** — Findlay, Fairfield County, Auglaize
+County and Shawnee — while carrying `countyCode` 39003. The rating community is not the location.
+[verified] — the file itself.
