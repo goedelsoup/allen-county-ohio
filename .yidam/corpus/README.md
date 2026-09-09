@@ -24,7 +24,8 @@ Sorted by: kind, then alphabetically.
 | Instance | Class | Label | Links out | Claims | Lines |
 |---|---|---|---|---|---|
 | [census-tract-39003010300.yml](division/census-tract-39003010300.yml) | division | Census Tract 39003010300 | 4 | 3v / 1i / 0o | 43 |
-| [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 1o | 32 |
+| [ohio-congressional-district-4-2020.yml](division/ohio-congressional-district-4-2020.yml) | division | Ohio's 4th congressional district (2020 geography) | 2 | 2v / 0i / 0o | 31 |
+| [ohio-congressional-district-4-2025.yml](division/ohio-congressional-district-4-2025.yml) | division | Ohio's 4th congressional district (2025 map) | 2 | 4v / 1i / 0o | 34 |
 | [ohio-house-district-4-2020.yml](division/ohio-house-district-4-2020.yml) | division | Ohio House District 4 (2020 geography) | 3 | 3v / 0i / 1o | 50 |
 | [ohio-house-district-78-2023.yml](division/ohio-house-district-78-2023.yml) | division | Ohio House District 78 (2023 map) | 2 | 2v / 1i / 1o | 32 |
 | [ohio-senate-district-12-2020.yml](division/ohio-senate-district-12-2020.yml) | division | Ohio Senate District 12 (2020 geography) | 2 | 3v / 1i / 1o | 34 |
@@ -612,7 +613,7 @@ Sorted by: kind, then alphabetically.
 | [spencerville.yml](place/spencerville.yml) | place | Spencerville | 4 | 9v / 0i / 1o | 67 |
 | [sugar-creek-township.yml](place/sugar-creek-township.yml) | place | Sugar Creek Township | 3 | 8v / 2i / 0o | 65 |
 | [westminster.yml](place/westminster.yml) | place | Westminster | 3 | 3v / 0i / 0o | 46 |
-| [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 4 | 5v / 1i / 2o | 72 |
+| [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 5 | 7v / 1i / 0o | 98 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 7v / 5i / 1o | 80 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
 | [the-wettest-days-with-no-event.yml](question/the-wettest-days-with-no-event.yml) | question | ? Fifteen of the twenty wettest days in the county's record have no event | 4 | 5v / 0i / 1o | 88 |

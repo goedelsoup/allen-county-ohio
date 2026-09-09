@@ -40,6 +40,7 @@
         "division_type": "congressional district",
         "drawn_by": "State of Ohio",
         "effective_from": "2020",
+        "effective_to": "2025-10-31",
         "identifier": "3904"
       },
       "blocks": [
@@ -48,10 +49,36 @@
           "tier": "verified"
         }
       ],
-      "refusals": [
-        "`effective_to` is absent because the corpus does not know the date the map was superseded, not because the district still stands as drawn."
+      "refusals": [],
+      "withheld": 1
+    },
+    {
+      "id": "division/ohio-congressional-district-4-2025.yml",
+      "class": "division",
+      "label": "Ohio's 4th congressional district (2025 map)",
+      "tier": "inference",
+      "properties": {
+        "division_type": "congressional district",
+        "drawn_by": "Ohio Redistricting Commission",
+        "effective_from": "2025-10-31",
+        "identifier": "3904"
+      },
+      "blocks": [
+        {
+          "text": "**The congressional district Allen County is in now.** Under the plan the Ohio Redistricting Commission adopted on 31 October 2025, all **3,552** of the county's census blocks are assigned to district 4 — the whole county, unsplit. [verified] — [the commission's file](../../catalog/ohio-redistricting-commission.md), adopted plan 430, block assignment file, aggregated here.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is fourteen counties, eleven of them whole.** Allen, Auglaize, Champaign, Hardin, Logan, Marion, Mercer, Morrow, Shelby, Union and Van Wert entire; parts of Clark, Delaware and Richland. [verified] — the same file, by county FIPS against [the Census county codes](https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt). Its population is 786,630, exactly the state quota, at a deviation of zero. [verified] — the plan's statistics page.",
+          "tier": "verified"
+        },
+        {
+          "text": "**Allen County's district did not change, and that is a finding rather than an assumption.** The 2020 map put all 3,552 blocks in district 4 and this one does the same, so the county's twenty-five-year run in the 4th is unbroken. [verified] — this file against [the 2020 geography](ohio-congressional-district-4-2020.yml). The corpus could not have known that without reading the plan: three of the district's fourteen counties *are* split, and the map was redrawn around this one rather than over it. [inference]",
+          "tier": "inference"
+        }
       ],
-      "withheld": 2
+      "refusals": [],
+      "withheld": 0
     },
     {
       "id": "division/ohio-house-district-4-2020.yml",
@@ -25831,10 +25858,12 @@
       "id": "question/allen-county-current-congressional-district.yml",
       "class": "question",
       "label": "Which congressional district is Allen County in now?",
-      "tier": "verified",
+      "tier": "inference",
       "properties": {
-        "claim_tag": "open",
+        "claim_tag": "verified",
+        "closed": "2026-09-09",
         "opened": "2026-08-28",
+        "resolution": "Allen County is in Ohio's 4th congressional district under the plan adopted 31 October 2025, as it was under the 2020 map — all 3,552 blocks, unsplit. The district is fourteen counties, eleven entire and three divided, at a population of 786,630 and a deviation of zero. None of the four routes this question named is what closed it. The answer came from the Ohio Redistricting Commission's own submissions API, which publishes every map put before it with the adopted one flagged, and attaches to each a block assignment file of all 276,428 Ohio blocks — the file the Census Bureau has not published since 2020. The API is not linked from the site; it was found by reading the page application's JavaScript bundle.",
         "would_close_this": "A county-to-congressional-district relationship file from the Census Bureau reflecting the plan adopted 31 October 2025, if one is published under a path this corpus has not found; the Ohio Secretary of State's district map, retrieved by hand rather than by an automated client; or the enacted plan itself, which names its constituent counties. An elections roster will not do it, and now the corpus knows why: a roster names the sitting member, and a sitting member is evidence about the map that elected him."
       },
       "blocks": [
@@ -25843,7 +25872,23 @@
           "tier": "verified"
         },
         {
+          "text": "Ohio redistricted after the 2020 census, so that describes the map in force through the 2022 election and says nothing about the map in force now. [inference] For a year this node declined to name the county's current district, because the sources it could reach did not contain it and a remembered answer is not a sourced one. It is now read from the plan, and the paragraphs below are kept in the order they were written.",
+          "tier": "inference"
+        },
+        {
           "text": "**Half of it is now answered, and the half that is answered is not the half that was asked.** Allen County's sitting member of Congress is [James D. Jordan](../person/james-d-jordan.yml) of Ohio's 4th District, serving 3 January 2025 to 2 January 2027. [verified] — [Ohio county elected officials lookup](../../catalog/ohio-boe-elected-officials-allen.md), an elections roster that names officeholders by county and was reachable where the geography files were not.",
+          "tier": "verified"
+        },
+        {
+          "text": "**He was elected under a map that has since been replaced.** The November 2024 election ran on Ohio's congressional plan of March 2022; a new plan was adopted 31 October 2025 and is valid for the rest of the decade. [verified] — [All About Redistricting — Ohio](../../catalog/all-about-redistricting-ohio.md). So the roster establishes *who represents this county* and not *which district this county is in*, and those came apart ten months ago.",
+          "tier": "verified"
+        },
+        {
+          "text": "**It is the 4th, and the plan says so itself.** All 3,552 of the county's blocks are assigned to district 4 in the block assignment file of the plan adopted 31 October 2025 — the whole county, unsplit, in a district of fourteen counties three of which *are* split. [verified] — [the Ohio Redistricting Commission](../../catalog/ohio-redistricting-commission.md), adopted plan 430; see [the district](../division/ohio-congressional-district-4-2025.yml).",
+          "tier": "verified"
+        },
+        {
+          "text": "**The route was the commission's own working file, not a map or a gazetteer.** The Census Bureau publishes no block assignment file after 2020 and the Secretary of State refuses automated clients, both of which this node had already established. What it had not tried was the body that drew the map: it publishes every submission it received, adopted or not, each carrying the block assignment file the Bureau stopped making. [verified] — the same source.",
           "tier": "verified"
         },
         {
@@ -25851,10 +25896,8 @@
           "tier": "verified"
         }
       ],
-      "refusals": [
-        "The corpus does not know the county's current district and does not guess it."
-      ],
-      "withheld": 4
+      "refusals": [],
+      "withheld": 2
     },
     {
       "id": "question/namesake-of-allen-county.yml",
@@ -29299,6 +29342,13 @@
       "relationship": "covers",
       "tier": "verified",
       "source": "catalog/census-block-assignment-2020.md"
+    },
+    {
+      "from": "division/ohio-congressional-district-4-2025.yml",
+      "to": "place/allen-county.yml",
+      "relationship": "covers",
+      "tier": "verified",
+      "source": "catalog/ohio-redistricting-commission.md"
     },
     {
       "from": "division/ohio-house-district-4-2020.yml",
