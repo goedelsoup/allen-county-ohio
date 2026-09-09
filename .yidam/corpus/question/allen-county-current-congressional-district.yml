@@ -6,8 +6,10 @@ description: |
   [verified] — [2020 Census Block Assignment Files](../../catalog/census-block-assignment-2020.md).
 
   Ohio redistricted after the 2020 census, so that describes the map in force through the 2022
-  election and says nothing about the map in force now. [inference] The corpus does not know
-  the county's current district and does not guess it. [open]
+  election and says nothing about the map in force now. [inference] For a year this node declined to
+  name the county's current district, because the sources it could reach did not contain it and a
+  remembered answer is not a sourced one. It is now read from the plan, and the paragraphs below are
+  kept in the order they were written.
 
   **Why the obvious routes do not close it.** The Census Bureau publishes a 2023 gazetteer for
   the 118th Congress districts, and it was retrieved — but a gazetteer gives a district's area
@@ -35,8 +37,19 @@ description: |
   the rest of the decade. [verified] —
   [All About Redistricting — Ohio](../../catalog/all-about-redistricting-ohio.md). So the roster
   establishes *who represents this county* and not *which district this county is in*, and those
-  came apart ten months ago. The question stays open on the second, narrowed to it, and the four
-  routes below are still the routes. [open]
+  came apart ten months ago.
+
+  **It is the 4th, and the plan says so itself.** All 3,552 of the county's blocks are assigned to
+  district 4 in the block assignment file of the plan adopted 31 October 2025 — the whole county,
+  unsplit, in a district of fourteen counties three of which *are* split. [verified] —
+  [the Ohio Redistricting Commission](../../catalog/ohio-redistricting-commission.md), adopted plan
+  430; see [the district](../division/ohio-congressional-district-4-2025.yml).
+
+  **The route was the commission's own working file, not a map or a gazetteer.** The Census Bureau
+  publishes no block assignment file after 2020 and the Secretary of State refuses automated
+  clients, both of which this node had already established. What it had not tried was the body that
+  drew the map: it publishes every submission it received, adopted or not, each carrying the block
+  assignment file the Bureau stopped making. [verified] — the same source.
 
   **The county's state legislative districts did close**, because the legislative map adopted
   29 September 2023 is the map still in force and is the one the same election ran on. The county is
@@ -50,8 +63,19 @@ description: |
   [the congressional returns](../measure/allen-county-in-congress-2000-2020.yml).
 
 properties:
-  claim_tag: open
+  claim_tag: verified
   opened: "2026-08-28"
+  closed: "2026-09-09"
+  resolution: |
+    Allen County is in Ohio's 4th congressional district under the plan adopted 31 October 2025, as
+    it was under the 2020 map — all 3,552 blocks, unsplit. The district is fourteen counties, eleven
+    entire and three divided, at a population of 786,630 and a deviation of zero.
+
+    None of the four routes this question named is what closed it. The answer came from the Ohio
+    Redistricting Commission's own submissions API, which publishes every map put before it with the
+    adopted one flagged, and attaches to each a block assignment file of all 276,428 Ohio blocks —
+    the file the Census Bureau has not published since 2020. The API is not linked from the site; it
+    was found by reading the page application's JavaScript bundle.
   would_close_this: |
     A county-to-congressional-district relationship file from the Census Bureau reflecting the plan
     adopted 31 October 2025, if one is published under a path this corpus has not found; the Ohio
@@ -60,6 +84,8 @@ properties:
     and now the corpus knows why: a roster names the sitting member, and a sitting member is
     evidence about the map that elected him.
 links:
+  - target: ../division/ohio-congressional-district-4-2025.yml
+    relationship: concerns
   - target: ../division/ohio-congressional-district-4-2020.yml
     relationship: concerns
   - target: ../place/allen-county.yml
