@@ -37,6 +37,8 @@ location:
       descriptions, and it is the only place the numeric code lists are written down — the cause of
       damage, the occupancy type, and what each letter of a flood zone means.
 used-by:
+  - ../corpus/measure/the-flood-studys-flood-history.yml
+  - ../corpus/event/the-flood-of-14-march-1978.yml
   - ../corpus/measure/the-twenty-wettest-days-against-the-river.yml
   - ../corpus/event/the-flood-of-13-14-june-1981.yml
   - ../corpus/measure/allen-county-flood-insurance-1978-2023.yml
