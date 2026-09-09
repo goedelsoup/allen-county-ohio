@@ -60,6 +60,7 @@ Sorted by: kind, then alphabetically.
 | [the-flash-flood-at-cairo-28-may-2014.yml](event/the-flash-flood-at-cairo-28-may-2014.yml) | event | The flash flood at Cairo and Beaverdam, 28 May 2014 | 4 | 14v / 2i / 1o | 92 |
 | [the-flood-at-bluffton-26-april-2019.yml](event/the-flood-at-bluffton-26-april-2019.yml) | event | The flood at Bluffton, 26 April 2019 | 6 | 12v / 3i / 1o | 100 |
 | [the-flood-of-12-march-1939.yml](event/the-flood-of-12-march-1939.yml) | event | The flood of 12 March 1939 | 7 | 10v / 1i / 1o | 108 |
+| [the-flood-of-13-14-june-1981.yml](event/the-flood-of-13-14-june-1981.yml) | event | The flood of 13–14 June 1981 | 4 | 8v / 1i / 1o | 80 |
 | [the-flood-of-13-february-1950.yml](event/the-flood-of-13-february-1950.yml) | event | The flood of 13–14 February 1950 | 7 | 10v / 1i / 1o | 90 |
 | [the-flood-of-16-july-1915.yml](event/the-flood-of-16-july-1915.yml) | event | The flood of 16 July 1915 | 5 | 10v / 1i / 1o | 87 |
 | [the-flood-of-16-june-1946.yml](event/the-flood-of-16-june-1946.yml) | event | The flood of 16–19 June 1946 | 6 | 8v / 1i / 0o | 89 |
@@ -412,6 +413,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-tornadoes-of-11-april-1965.yml](measure/ohio-tornadoes-of-11-april-1965.yml) | measure | The Ohio tornadoes of 11 April 1965 | 3 | 6v / 3i / 0o | 101 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 15v / 7i / 1o | 135 |
 | [spencerville-annexations-1997-2023.yml](measure/spencerville-annexations-1997-2023.yml) | measure | Spencerville annexations, 1997–2023 | 4 | 3v / 2i / 0o | 54 |
+| [the-twenty-wettest-days-against-the-river.yml](measure/the-twenty-wettest-days-against-the-river.yml) | measure | The twenty wettest days, read against the county's own rivers | 5 | 8v / 1i / 0o | 111 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |
 | [great-black-swamp.yml](natural-feature/great-black-swamp.yml) | natural-feature | Great Black Swamp | 5 | 9v / 6i / 1o | 117 |
@@ -616,7 +618,7 @@ Sorted by: kind, then alphabetically.
 | [allen-county-current-congressional-district.yml](question/allen-county-current-congressional-district.yml) | question | Which congressional district is Allen County in now? | 5 | 7v / 1i / 0o | 98 |
 | [namesake-of-allen-county.yml](question/namesake-of-allen-county.yml) | question | Who is Allen County named for? | 3 | 7v / 5i / 1o | 80 |
 | [pre-1970-population-series.yml](question/pre-1970-population-series.yml) | question | What was Allen County's population before 1970, and when did Lima peak? | 5 | 8v / 5i / 1o | 140 |
-| [the-wettest-days-with-no-event.yml](question/the-wettest-days-with-no-event.yml) | question | ? Fifteen of the twenty wettest days in the county's record have no event | 4 | 5v / 0i / 1o | 88 |
+| [the-wettest-days-with-no-event.yml](question/the-wettest-days-with-no-event.yml) | question | ? Fifteen of the twenty wettest days in the county's record have no event | 6 | 9v / 0i / 1o | 111 |
 | [two-irregular-sheriff-transitions.yml](question/two-irregular-sheriff-transitions.yml) | question | What happened at the two irregular sheriff transitions? | 4 | 3v / 0i / 1o | 56 |
 | [what-became-of-german-and-ottawa-townships.yml](question/what-became-of-german-and-ottawa-townships.yml) | question | What became of German and Ottawa townships? | 5 | 11v / 6i / 1o | 118 |
 | [what-happened-to-the-village-of-fort-shawnee.yml](question/what-happened-to-the-village-of-fort-shawnee.yml) | question | What happened to the Village of Fort Shawnee? | 5 | 8v / 7i / 2o | 163 |

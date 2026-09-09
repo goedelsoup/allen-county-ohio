@@ -1,0 +1,111 @@
+class: measure
+label: The twenty wettest days, read against the county's own rivers
+description: |
+  **[The list of fifteen unexplained wet days](../question/the-wettest-days-with-no-event.yml) was a
+  rain gauge talking to itself. Carried to the rivers, five settle outright, four stand as a flow no
+  loss record answers, and six cannot be settled at all.** One was a flood and four were not; the
+  six that remain are not unanswered questions but days with no instrument to answer them.
+  [verified] — the table below.
+
+  **The discriminator is the county's own gauge, and the corpus calibrated it against its own
+  decisions.** The flood of 16 June 2015 crested at 4,960 cubic feet a second, the flood at Bluffton
+  of 26 April 2019 at 3,570 — both the highest daily mean of their water year, both above the 99.9th
+  percentile of every day the gauge has recorded. The cloudburst of 1 September 1959, which this
+  corpus deliberately wrote as *not* a flood, crested at 191 — 65th of its water year, 86th
+  percentile. [verified] — [USGS daily values](../../catalog/usgs-nwis.md), sites 04187500, 04187100
+  and 04185935. The gap between rank 1 and rank 65 is wide enough to read the rest through.
+
+  **The wettest day of the last decade did not flood, and the file that should hold it is not
+  broken.** 22 September 2021 put 4.40 inches on the gauge, third-largest in a hundred and
+  twenty-five years, and the Ottawa at Lima rose from 4 cubic feet a second to 704 — fourteenth of
+  its own water year. The Auglaize at Kossuth reached the 95th percentile and no higher. No flood
+  insurance claim was filed in this county on that date or within three days of it. [verified] —
+  the same gauges and [the claims file](../../catalog/openfema-nfip.md). The storm record's silence
+  is correct, and it was not asleep: it holds nine Allen County rows for 2021, including a tornado.
+  [verified] — [the Storm Events Database](../../catalog/noaa-storm-events.md), 2021 detail file.
+
+  **One of the fifteen is a flood the corpus did not have, and it is the largest one missing.**
+  13–14 June 1981 is [a flood](../event/the-flood-of-13-14-june-1981.yml) — 26 insurance claims and
+  the second-largest daily mean ever measured at Allentown. [verified] — see that node.
+
+  **Six cannot be settled, and the reason divides them in two.** Four — 1904, 1912, 1913 and 1922 —
+  are older than any gauge on these rivers, which begin on 1 October 1923. The other two fall in
+  holes: 5 September 1937 in the seven-year hiatus that stopped both gauges from 1 January 1936, and
+  31 August 2005 in the nine-and-a-half-year hole at Lima, 23 November 1999 to 30 June 2009.
+  [verified] — the daily values, gaps counted here. **The same hole swallows the county's largest
+  flood**: 21 August 2007 is the wettest day in the record and no Allen County gauge was running.
+  [verified] — the same file; the county's own flood study says so too.
+
+  **The four left standing are the honest residue.** 11 July 2017 and 18 July 2022 put both county
+  gauges past the 99th percentile and drew two insurance claims and one; 13 July 1935 and
+  27 September 1933 took the fourth and first flow of their water years with no loss record in
+  existence to match them. A high flow is not a flood until something says water reached something,
+  and for these four nothing does. [inference] — see
+  [a flood needs two records](../../decisions/a-flood-needs-two-records.yml).
+
+  **1913 is understated by this list and it is the list's fault.** 25 March 1913 ranks tenth by the
+  day; the storm it belongs to — the 23rd through the 27th — put 7.91 inches down and ranks
+  **second of 8,176 storms** in the whole record, ahead of August 2007. [verified] — the same
+  station, consecutive wet days summed here. A day is not a storm, and the county's most famous
+  flood is the case that proves it.
+properties:
+  parameter: >-
+    The twenty largest daily precipitation totals in the county's record, each with the crest its
+    rivers reached and the flood insurance losses dated to it
+  value: >-
+    Of the fifteen with no event node, one was a flood, four were not, four are a high flow no loss
+    record answers, and six have no gauge to answer them
+  as_of: "2026-09-09"
+  unit: inches of precipitation; cubic feet per second
+  method: |
+    The twenty largest daily precipitation totals at GHCN-Daily station USC00334551, taken from the
+    `.dly` file and converted from tenths of a millimetre, quality-flagged values discarded — 45,272
+    days, 1 April 1901 to 3 September 2026. Each is carried to every USGS daily-discharge series
+    inside Allen County: 04187500 at Allentown (1923–1982), 04187100 at Lima (1988–2026) and
+    04185935 at Kossuth (2017–2025). `crest` is the **first** crest — the peak of the rise beginning
+    on the day itself, stopped where the series first turns down, because a ten-day window around
+    11 July 2017 contains three separate rises and its maximum belongs to the last of them.
+    `wy` is that crest's rank among daily means of its water year; `pct` its percentile among all
+    days the gauge has recorded. `claims` counts NFIP claims dated within three days, and is `NA`
+    before the insurance record opens in 1978.
+  table: |
+    rank date inches storm_in storm_span crest_cfs gauge pct wy claims verdict
+    1 2007-08-21 5.08 7.57 4d NA none NA NA 25 flood_no_county_gauge
+    2 2015-06-16 4.93 11.01 9d 4960 lima 100.0 1 43 flood
+    3 2021-09-22 4.40 6.55 4d 704 lima 95.4 14 0 not_a_flood
+    4 1981-06-14 4.38 4.38 1d 5450 allentown 100.0 1 26 flood
+    5 1915-07-16 4.02 5.67 3d NA none NA NA NA flood_no_gauge_yet
+    6 1937-09-05 3.86 3.86 1d NA gap NA NA NA unsettleable_gauge_gap
+    7 2017-07-11 3.66 3.89 2d 1920 lima 99.3 5 2 high_flow_thin_loss
+    8 1969-09-17 3.65 4.55 2d 734 allentown 96.3 15 NA not_a_flood
+    9 1904-04-01 3.40 3.40 1d NA none NA NA NA unsettleable_no_gauge
+    10 1913-03-25 3.35 7.91 5d NA none NA NA NA unsettleable_no_gauge
+    11 1935-07-13 3.35 3.35 1d 934 allentown 97.3 4 NA high_flow_no_second_record
+    12 1933-08-10 3.33 3.65 4d 783 allentown 96.6 19 NA not_a_flood
+    13 2019-04-26 3.26 3.99 4d 3570 lima 99.9 1 12 flood
+    14 2005-08-31 3.25 3.25 1d NA gap NA NA 0 unsettleable_gauge_gap
+    15 1922-07-08 3.22 3.22 1d NA none NA NA NA unsettleable_no_gauge
+    16 2022-07-18 3.20 4.53 3d 1860 lima 99.2 2 1 high_flow_thin_loss
+    17 1912-07-16 3.15 3.15 1d NA none NA NA NA unsettleable_no_gauge
+    18 1933-09-27 3.10 3.19 2d 2320 allentown 99.6 1 NA high_flow_no_second_record
+    19 1959-09-02 3.04 3.04 1d 191 allentown 86.2 65 NA not_a_flood
+    20 1995-10-05 3.03 3.04 2d 328 lima 90.7 36 0 not_a_flood
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../question/the-wettest-days-with-no-event.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event/the-flood-of-13-14-june-1981.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../measure/ottawa-river-peak-flows-1924-2025.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

@@ -44,7 +44,20 @@ location:
     value: https://waterservices.usgs.gov/nwis/site/?format=rdb&countyCd=39003&seriesCatalogOutput=true&outputDataTypeCd=dv&parameterCd=00060&siteStatus=all
     description: >-
       Which sites carry a daily discharge series and between which dates, one row per series. Ask
-      this before assuming a gauge has only annual peaks.
+      this before assuming a gauge has only annual peaks, and before assuming this county's rivers
+      are the sites already cited: it is what found the Auglaize near Kossuth, which no node of this
+      corpus had read.
+  - kind: url
+    value: https://api.water.usgs.gov/nldi/linked-data/nwissite/USGS-04189000/basin
+    description: >-
+      The drainage basin above a gauge, as GeoJSON, in one request and with no site list first. This
+      is the check that a gauge measures the ground a claim is about: the Blanchard-at-Findlay basin
+      runs longitude −83.7533 to −83.3640 and this county's easternmost monitoring site is −83.8858,
+      so the basin holds no part of Allen County. Swapping `basin` for
+      `navigation/DM/nwissite?distance=500` lists what lies downstream — thirty-seven sites below
+      the Ottawa at Allentown, down the Auglaize and the Maumee to Toledo, and the Blanchard is not
+      one of them. See
+      [a neighbour's gauge](../decisions/a-neighbours-gauge-is-not-this-countys-record.yml).
 used-by:
   - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
@@ -62,6 +75,8 @@ used-by:
   - ../corpus/measure/allen-county-water-gauges-2026.yml
   - ../corpus/measure/allen-county-water-systems-2026.yml
   - ../corpus/measure/ottawa-river-peak-flows-1924-2025.yml
+  - ../corpus/event/the-flood-of-13-14-june-1981.yml
+  - ../corpus/measure/the-twenty-wettest-days-against-the-river.yml
 ---
 
 **What a site is and what a record is.** The two are not the same thing and the difference is the
@@ -152,6 +167,17 @@ parameter `72019` as depth to water below land surface, `62610` as the level abo
 `62611` above NAVD88 — so a naive count of rows triples the number of measurements. This corpus
 counts visits by `72019` and takes elevations from `62611`. [verified] — the collection, read for
 this county.
+
+**A site's county code is a location and not a catchment, and the network service knows the
+difference.** Site 04189000 is `county_cd` 063 — Hancock — and HUC 04100008, where this county's
+gauges are 04100007. Its basin polygon, one request to the network-linked service, runs west only to
+longitude −83.7533 against this county's easternmost site at −83.8858, and downstream-main navigation
+from the Ottawa at Allentown returns thirty-seven sites without it among them. **The Blanchard and
+the Ottawa are sibling tributaries of the Auglaize and neither carries the other's water.**
+[verified] — the basin and navigation services, run here. Four nodes of this corpus cite 04189000 and
+every one names Findlay in the same sentence, so none is in error; what the basin service settles is
+that a gauge's county code cannot stand in for the ground it measures. See
+[a neighbour's gauge](../decisions/a-neighbours-gauge-is-not-this-countys-record.yml).
 
 **What it will not answer.** Anything about water quality, which is a different service; anything
 about flood stage or the elevation at which a river leaves its banks, which is the National Weather

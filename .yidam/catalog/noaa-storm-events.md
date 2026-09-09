@@ -42,6 +42,8 @@ location:
       longitude. Fetched for 1972 and for every year 1996 through 2026 — the whole of its non-empty
       run — and joined to this county's rows. What that found is below.
 used-by:
+  - ../corpus/measure/the-twenty-wettest-days-against-the-river.yml
+  - ../corpus/event/the-flood-of-13-14-june-1981.yml
   - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
   - ../corpus/event/the-flood-of-16-june-2015.yml

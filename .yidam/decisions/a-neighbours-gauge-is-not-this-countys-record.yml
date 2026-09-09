@@ -1,0 +1,72 @@
+id: a-neighbours-gauge-is-not-this-countys-record
+summary: >-
+  The corpus has called sites 04187500 and 04189000 "the two gauged rivers" of Allen County. The
+  second is in Hancock County, in a different eight-digit basin, and the drainage it measures lies
+  entirely east of this county — its western edge is longitude −83.7533 and the county's easternmost
+  monitoring site is −83.8858. It is a good witness to a regional storm and no witness at all to
+  what happened here. A gauge speaks for the ground above it, and the corpus names whose ground.
+context: |
+  Settling [the fifteen wet days](../corpus/question/the-wettest-days-with-no-event.yml) meant
+  ranking each against a river, and the question named two sites to rank them against. One of them
+  does not drain this county.
+
+  **04189000 is the Blanchard River near Findlay: `county_cd` 063, HUC 04100008, 346 square miles.**
+  Allen County's gauges are HUC 04100007 — the Auglaize, which the Ottawa joins. [verified] —
+  [the site service](../catalog/usgs-nwis.md), expanded output. Its basin polygon runs longitude
+  −83.7533 to −83.3640; the easternmost of this county's 185 monitoring sites is −83.8858.
+  [verified] — the USGS network-linked basin service and the county site list, both read here.
+  **And it is not downstream of this county either**: of the thirty-seven sites the USGS network
+  places below the Ottawa at Allentown — down the Auglaize to Defiance and the Maumee to Toledo —
+  the Blanchard gauge is not among them. [verified] — the same service, downstream-main navigation.
+  The two rivers are sibling tributaries of the Auglaize, and neither carries the other's water.
+
+  **Used as a witness it is often right, which is why this went unnoticed.** On 14 June 1981 it ran
+  12,000 cubic feet a second while the Ottawa ran 5,450; on 16 June 2015 both took their water
+  year's peak. A broad storm crosses both basins and both gauges rise, so the Blanchard agrees with
+  this county whenever the weather is large — and disagrees exactly when it matters. On 13 July 1935
+  the Ottawa at Allentown reached the 97th percentile of its record and the Blanchard sat at the
+  23rd, 159th of its own water year. [verified] — the daily values, both sites. Had the corpus read
+  the Blanchard that day it would have written that nothing happened.
+
+  **A third Allen County gauge was in the file the whole time.** 04185935, the Auglaize near
+  Kossuth, 201 square miles, daily discharge since 1 March 2017 — never cited by this corpus, and it
+  covers three of the days in question. [verified] — the same site service, series catalogue.
+decision: |
+  **A discharge figure is attributed to the ground it drains, not to the county the corpus is
+  writing about. Before a gauge is read as evidence for this county, its `county_cd` and its
+  hydrologic unit are checked, and a node citing an out-of-county gauge says what it is a witness
+  to.**
+
+  - **Name the basin in the sentence.** The existing flood nodes do this and are not in error —
+    "the Blanchard near Findlay", "at Findlay", "the county's own river answered smaller". The
+    defect is in prose that collects gauges into "the county's rivers" and in a
+    `would_close_this` that promises a neighbour's gauge will settle a local question.
+  - **A neighbouring basin can corroborate and cannot establish.** It is evidence that a storm was
+    broad. It is not evidence that water rose here, and its silence is not evidence that water did
+    not.
+  - **Ask the series catalogue before assuming a county's gauges are the ones already cited.**
+    `outputDataTypeCd=dv` over `countyCd` lists every daily series and its dates in one request.
+    Three of this county's four are not the two the corpus had been naming.
+  - **A gauge with no record is not a gauge that recorded nothing.** Each of these series has holes
+    — 2,800 days at Allentown, 3,508 at Lima — and a missing day reads as a quiet river to anything
+    that joins on date. This is [a zero is not a blank](a-zero-is-not-a-blank.yml) one instrument
+    over, and at the same station's county.
+rationale: |
+  **This is the geographic form of a mistake this corpus keeps making about time.**
+  [a filter that is ignored is worse than one that is refused](a-filter-that-is-ignored-is-worse-than-one-that-is-refused.yml)
+  is about a query that answers the wrong question and returns plausible numbers. So is this: the
+  Blanchard returns real discharge, correctly measured, from the wrong watershed, and it agrees with
+  the right answer most of the time. Nothing errors, nothing is empty, and the check is not "did I
+  get data" but "data about where".
+
+  **The cost was bounded and the reason is worth keeping.** No published figure in this corpus was
+  wrong — every node that cites 04189000 names Findlay in the same sentence, because the phase that
+  wrote them was reading a flood on a named river rather than surveying a county. The framing failed
+  later, when a question generalised those citations into "the two gauged rivers" and a reader could
+  have settled six days against a basin sixteen kilometres east of the county line.
+
+  **What would change this rule.** Nothing about these sites. It applies to any measurement whose
+  support is an area rather than a point — a gauge, a radar cell, a soil station, a modelled grid —
+  and the check is one field in metadata the corpus already downloads.
+status: accepted
+date: "2026-09-09"
