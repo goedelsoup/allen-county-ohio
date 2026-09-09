@@ -386,6 +386,7 @@ Sorted by: kind, then alphabetically.
 | [federal-contracts-in-allen-county-2008-2025.yml](measure/federal-contracts-in-allen-county-2008-2025.yml) | measure | Federal contracts performed in Allen County, 2008–2025 | 5 | 10v / 5i / 1o | 101 |
 | [federal-money-in-allen-county-2008-2025.yml](measure/federal-money-in-allen-county-2008-2025.yml) | measure | Federal money in Allen County, 2008–2025 | 6 | 11v / 5i / 1o | 127 |
 | [fort-amanda-graves-and-boats.yml](measure/fort-amanda-graves-and-boats.yml) | measure | Fort Amanda's two seventy-fives | 2 | 7v / 2i / 1o | 69 |
+| [how-this-county-floods.yml](measure/how-this-county-floods.yml) | measure | How this county floods — twenty floods by mechanism | 5 | 5v / 0i / 1o | 110 |
 | [lima-annexations-1990-2017.yml](measure/lima-annexations-1990-2017.yml) | measure | Lima annexations, 1990–2017 | 4 | 5v / 2i / 0o | 88 |
 | [lima-city-government-2026.yml](measure/lima-city-government-2026.yml) | measure | The elective government of Lima, 2026 | 2 | 8v / 1i / 1o | 68 |
 | [lima-crime-2015-2024.yml](measure/lima-crime-2015-2024.yml) | measure | Crime reported in Lima, 2015–2024 | 2 | 6v / 4i / 1o | 55 |
