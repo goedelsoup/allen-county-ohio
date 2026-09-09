@@ -1,0 +1,75 @@
+id: a-code-list-is-dated-and-the-rows-are-older
+summary: >-
+  FEMA's claims dictionary says cause-of-loss code 1 means "tidal water overflow". In Allen County,
+  Ohio — four hundred kilometres from tidewater — code 1 is on twenty-six of the thirty-nine claims
+  filed before 1990 and on one of the hundred and thirty-three filed since. It is not a coastal
+  claim and it is not an error in the row; it is a code list that changed under rows that did not.
+  A dictionary fetched today describes today's rows, and the corpus says which vintage it read.
+context: |
+  The flood of 13–14 June 1981 was established from twenty-six insurance claims and a gauge, and
+  the claims carry two cause-of-loss codes: fifteen read `4`, accumulation of rainfall or snowmelt,
+  and eleven read `1`. [The data dictionary](../catalog/openfema-nfip.md) — which this corpus
+  already praises as the only place the numeric code lists are written down — gives `1` as **tidal
+  water overflow**, and offers `2` for stream, river or lake overflow.
+
+  Read literally, eleven buildings in a landlocked Ohio county were flooded by the tide. Read as an
+  error, eleven adjusters each made the same mistake. Neither survives the distribution:
+
+      decade   code 1   code 2   code 4   other
+      1970s        12        0        1       0
+      1980s        14        3       22       0
+      1990s         0       12        8       1
+      2000s         0       18       25       6
+      2010s         1       68       48      13
+      2020s         0        2        5       0
+
+  [verified] — [the claims file](../catalog/openfema-nfip.md), `countyCode` 39003, 259 claims
+  tabulated here. **Code 1 is twelve of thirteen claims in the 1970s and vanishes after 1989; code
+  2, the river code, does not appear at all until 1980 and then never stops.** A meaning does not
+  migrate like that. A code list does.
+
+  So the eleven rows were written under a scheme in which `1` meant something a Lima basement could
+  plausibly suffer, and the dictionary the API serves today has been laid over them. The row is
+  intact and its label is anachronistic — which is the opposite of the failure this corpus usually
+  catches, where the label is right and the value is stale.
+decision: |
+  **Where a coded column is read, the corpus records the vintage of the code list it read, and
+  checks the code's distribution over time before quoting its meaning.** One tabulation by decade,
+  and it is cheap: the file is already in hand when the codes are.
+
+  - **A code that appears and disappears is a code that was redefined.** The check is not "is this
+    value legal" — `1` is legal, it is in the dictionary, it parses. The check is whether its share
+    moves in a way a real-world cause could not. Tidal flooding in Allen County did not run at 92
+    per cent in the 1970s and 0 per cent in the 1990s.
+  - **Quote the code, not only the gloss.** A node that says "eleven claims were tidal" has
+    published a fiction. A node that says "eleven claims carry code 1, which the current dictionary
+    glosses as tidal water overflow" has published the record and its own uncertainty, and the next
+    reader can act on it.
+  - **This does not put the counts in doubt.** Twenty-six claims on 13 June 1981 and $121,705 paid
+    are counts of rows and sums of a money column; nothing about them passes through the code list.
+    The rule bites on the *meaning* columns only.
+  - **Where the historical list is not recoverable, say so and stop.** This corpus has not found
+    FEMA's pre-1990 cause-of-loss list. The honest end of this entry is that eleven claims of June
+    1981 have a cause the corpus cannot name, in a flood whose cause the gauge and the rain gauge
+    both describe anyway.
+rationale: |
+  **The corpus already knows that a value can be stale and had no rule for a label that is.**
+  [a live url is not a live file](a-live-url-is-not-a-live-file.yml) covers an endpoint that moved;
+  [a flag column is part of the figure](a-flag-column-is-part-of-the-figure.yml) covers a number
+  published without the letter that qualifies it. Both are about the *cell*. This is about the
+  *legend*, fetched fresh and therefore trusted, describing rows written decades before it.
+
+  **It generalises past FEMA and past this county.** Every long federal file in this catalog is a
+  file whose coding scheme outlived a revision: the storm database's event types were fixed by a
+  1605 directive that postdates two-thirds of its rows; the census finance survey's item codes have
+  been renumbered; occupancy codes in this same claims file grew a second, two-digit scheme for
+  Risk Rating 2.0 that sits beside the first without replacing it — the dictionary lists both, and
+  says so in one clause a reader can miss. A dictionary is a document with a date, and the API that
+  serves it does not carry one.
+
+  **What would change this rule.** A dated code list — a dictionary that says which values were
+  legal in which years. FEMA publishes its fields as data and not its history; if that changes, the
+  check becomes a lookup instead of a tabulation, and the rule becomes cite the version rather than
+  prove it.
+status: accepted
+date: "2026-09-09"
