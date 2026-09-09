@@ -31,6 +31,10 @@ location:
       Center serves it under a path keyed to the state and study number; it is not a stable citation
       across map revisions, and the effective date in the document is what dates it.
 used-by:
+  - ../corpus/measure/the-flood-studys-flood-history.yml
+  - ../corpus/event/the-flood-of-21-april-1964.yml
+  - ../corpus/event/the-flood-of-29-june-1957.yml
+  - ../corpus/event/the-flood-of-14-march-1978.yml
   - ../corpus/question/the-wettest-days-with-no-event.yml
   - ../corpus/event/the-ottawa-river-flood-of-1959.yml
   - ../corpus/event/the-flood-of-22-august-2007.yml
@@ -63,7 +67,26 @@ a lower bound on the water that reached Lima.
 the Ottawa River in April 1904, December 1916, January 1937, March 1939, May 1943, June 1957,
 February 1959 and April 1964. Smaller floods have occurred at more frequent intervals, with minor
 flooding in lower areas occurring almost annually." Three of those eight — 1904, 1916 and 1937 —
-lie outside every instrument record this corpus can reach.
+lie outside every stream-gauge record this corpus can reach, though the rain gauge reaches all
+three.
+
+**That sentence is not the section, and this entry read it as though it were.** §2.3 names sixteen
+floods; the list sentence names eight. The paragraphs around it add March 1913, "the result of one
+of the most intense rainstorms ever recorded in northwestern Ohio"; minor flooding in 1993, 1994
+and 1995; a 2003 flood at Fort Shawnee where "3 inches of rain fell across the area causing water
+to flow up to about a foot deep"; and the one flood in the whole section given to the day —
+**"on March 14, 1978 the Village of Fort Shawnee recorded a major flooding event when 0.7 inches of
+rain fell on the frozen snow cover of the area"**. [verified] — §2.3, read in full. It is the
+best-documented flood the study describes, it carries the first two insurance claims ever paid in
+this county, and an enumerated list was quoted past it for two phases. See
+[the study's flood history](../corpus/measure/the-flood-studys-flood-history.yml) and
+[a flood is not found by ranking rain](../decisions/a-flood-is-not-found-by-ranking-rain.yml).
+
+**It skips fourteen years and the gauge does not.** The study dates no flood between April 1964 and
+March 1978; the Ottawa at Allentown records twenty-six separate rises above its 99th percentile in
+that span, three of them larger than the June 1957 flood the study names. [verified] —
+[USGS](usgs-nwis.md), site 04187500. Read this section as testimony about which floods
+mattered to a hydraulic model, not as a census.
 
 **It names the county's largest flood and it is not the one the gauges rank first.** "The greatest
 flood event on record in the City of Lima occurred in 2007 due to several rounds of heavy rainfall."

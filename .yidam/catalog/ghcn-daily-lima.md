@@ -41,6 +41,10 @@ location:
       observation hour — which the `.dly` file does not carry. Its element records for this station
       begin in December 2022; everything earlier survives only as undated free-text remarks.
 used-by:
+  - ../corpus/measure/the-flood-studys-flood-history.yml
+  - ../corpus/event/the-flood-of-29-june-1957.yml
+  - ../corpus/event/the-flood-of-21-april-1964.yml
+  - ../corpus/event/the-flood-of-14-march-1978.yml
   - ../corpus/question/the-wettest-days-with-no-event.yml
   - ../corpus/event/the-flood-of-13-14-june-1981.yml
   - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml

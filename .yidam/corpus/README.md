@@ -62,11 +62,14 @@ Sorted by: kind, then alphabetically.
 | [the-flood-of-12-march-1939.yml](event/the-flood-of-12-march-1939.yml) | event | The flood of 12 March 1939 | 7 | 10v / 1i / 1o | 108 |
 | [the-flood-of-13-14-june-1981.yml](event/the-flood-of-13-14-june-1981.yml) | event | The flood of 13–14 June 1981 | 4 | 8v / 1i / 1o | 80 |
 | [the-flood-of-13-february-1950.yml](event/the-flood-of-13-february-1950.yml) | event | The flood of 13–14 February 1950 | 7 | 10v / 1i / 1o | 90 |
+| [the-flood-of-14-march-1978.yml](event/the-flood-of-14-march-1978.yml) | event | The flood of 14 March 1978 | 4 | 6v / 1i / 1o | 64 |
 | [the-flood-of-16-july-1915.yml](event/the-flood-of-16-july-1915.yml) | event | The flood of 16 July 1915 | 5 | 10v / 1i / 1o | 87 |
 | [the-flood-of-16-june-1946.yml](event/the-flood-of-16-june-1946.yml) | event | The flood of 16–19 June 1946 | 6 | 8v / 1i / 0o | 89 |
 | [the-flood-of-16-june-2015.yml](event/the-flood-of-16-june-2015.yml) | event | The flood of 16 June 2015 | 3 | 11v / 3i / 1o | 86 |
+| [the-flood-of-21-april-1964.yml](event/the-flood-of-21-april-1964.yml) | event | The flood of 21 April 1964 | 3 | 6v / 1i / 1o | 47 |
 | [the-flood-of-22-august-2007.yml](event/the-flood-of-22-august-2007.yml) | event | The flood of 21–22 August 2007 | 5 | 13v / 2i / 1o | 94 |
 | [the-flood-of-28-february-2011.yml](event/the-flood-of-28-february-2011.yml) | event | The flood of 28 February 2011 | 4 | 10v / 3i / 1o | 86 |
+| [the-flood-of-29-june-1957.yml](event/the-flood-of-29-june-1957.yml) | event | The flood of 29 June 1957 | 3 | 5v / 1i / 1o | 52 |
 | [the-flood-of-6-june-1947.yml](event/the-flood-of-6-june-1947.yml) | event | The flood of 6 June 1947 | 6 | 11v / 1i / 0o | 95 |
 | [the-flood-of-9-february-1959.yml](event/the-flood-of-9-february-1959.yml) | event | The flood of 9–10 February 1959 | 9 | 11v / 1i / 1o | 105 |
 | [the-incorporation-of-delphos-1851.yml](event/the-incorporation-of-delphos-1851.yml) | event | The incorporation of Delphos, 1851 | 4 | 6v / 2i / 1o | 61 |
@@ -413,6 +416,7 @@ Sorted by: kind, then alphabetically.
 | [ohio-tornadoes-of-11-april-1965.yml](measure/ohio-tornadoes-of-11-april-1965.yml) | measure | The Ohio tornadoes of 11 April 1965 | 3 | 6v / 3i / 0o | 101 |
 | [ottawa-river-peak-flows-1924-2025.yml](measure/ottawa-river-peak-flows-1924-2025.yml) | measure | Peak flows on the Ottawa River, 1924–2025 | 2 | 15v / 7i / 1o | 135 |
 | [spencerville-annexations-1997-2023.yml](measure/spencerville-annexations-1997-2023.yml) | measure | Spencerville annexations, 1997–2023 | 4 | 3v / 2i / 0o | 54 |
+| [the-flood-studys-flood-history.yml](measure/the-flood-studys-flood-history.yml) | measure | The flood study's flood history, read against the instruments | 5 | 7v / 3i / 0o | 119 |
 | [the-twenty-wettest-days-against-the-river.yml](measure/the-twenty-wettest-days-against-the-river.yml) | measure | The twenty wettest days, read against the county's own rivers | 5 | 8v / 1i / 0o | 111 |
 | [auglaize-river.yml](natural-feature/auglaize-river.yml) | natural-feature | Auglaize River | 3 | 13v / 7i / 0o | 97 |
 | [blanchard-river.yml](natural-feature/blanchard-river.yml) | natural-feature | Blanchard River | 3 | 5v / 2i / 0o | 49 |

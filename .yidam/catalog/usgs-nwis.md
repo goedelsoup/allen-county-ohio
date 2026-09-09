@@ -59,6 +59,10 @@ location:
       one of them. See
       [a neighbour's gauge](../decisions/a-neighbours-gauge-is-not-this-countys-record.yml).
 used-by:
+  - ../corpus/measure/the-flood-studys-flood-history.yml
+  - ../corpus/event/the-flood-of-29-june-1957.yml
+  - ../corpus/event/the-flood-of-21-april-1964.yml
+  - ../corpus/event/the-flood-of-14-march-1978.yml
   - ../corpus/event/the-flash-flood-at-cairo-28-may-2014.yml
   - ../corpus/event/the-flood-at-bluffton-26-april-2019.yml
   - ../corpus/event/the-flood-of-12-march-1939.yml
