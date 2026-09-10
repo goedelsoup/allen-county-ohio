@@ -1,0 +1,61 @@
+class: event
+label: The flood of 8–11 March 2009
+description: |
+  **Six insurance claims and the twelfth-highest day in a hundred and eleven years, and the corpus
+  had this filed as a day with one record.** Claims dated 8 to 11 March 2009 paid **$39,908** —
+  three at Delphos, two at Bluffton, one in Elida's postal area. [verified] —
+  [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003. The Auglaize near
+  Defiance ran 41,000 cubic feet a second on the 11th, **12th of its 40,518 days since 1915**, and
+  the same river at Fort Jennings ran 5,220 on the 9th, 117th of 36,624. [verified] —
+  [USGS](../../catalog/usgs-nwis.md), sites 04191500 and 04186500.
+
+  **Two and a half inches of rain on ground four days out of a hard freeze.** The Lima maximum was
+  28 °F on the 4th and 71 °F on the 8th; 0.70 inches fell that day, 1.57 on the 9th and 0.33 on the
+  11th, with no snowfall in the week. [verified] —
+  [GHCN-Daily](../../catalog/ghcn-daily-lima.md), station USC00334551. A thirty-degree thaw and then
+  rain, which is the second of this county's three flood mechanisms and not the third — there was no
+  snow left to melt. See [how this county floods](../measure/how-this-county-floods.yml).
+
+  **The claims are on two rivers and the gauges see only one of them.** Delphos stands on the
+  Auglaize above Fort Jennings; Bluffton stands on Riley Creek, which reaches the Blanchard below
+  Findlay and is ungauged until October 2009 — seven months after this. [verified] —
+  [the gauges](../measure/the-gauges-that-drain-this-county.yml). So the river record establishes the
+  Delphos claims and says nothing about the Bluffton ones, of which the larger paid **$27,500**.
+
+  **The Ottawa at Lima was out of service, as it was for the whole of this county's 2000s.** Its
+  record has a hole from 23 November 1999 to 30 June 2009, and this flood falls inside it by
+  sixteen weeks. [verified] — the same source, site 04187100. The gauge nearest the county's
+  population was dark for the two largest uninsured-side floods of the decade; the gauge fifty miles
+  downstream was not.
+
+  **The storm database has nothing.** Its six Allen County rows for 2009 are heavy snow, high wind
+  and thunderstorm wind, none in March. [verified] —
+  [the Storm Events Database](../../catalog/noaa-storm-events.md), 2009 detail file.
+
+  [open] Whether the water at Bluffton and the water at Delphos were one event. They are forty
+  kilometres apart on unconnected creeks, three days apart in date of loss, and the only record that
+  joins them is the rainfall at a single station between them. [verified] — the three sources.
+properties:
+  occurred: 2009-03-08
+  occurred_through: 2009-03-11
+  event_type: flood
+  location_description: |
+    Six insured buildings — three at Delphos on the Auglaize, two at Bluffton on Riley Creek, one in
+    Elida's postal area on the Ottawa — and the Auglaize River gauged below the county at Fort
+    Jennings and Defiance. No gauge was recording on the Ottawa or on Riley Creek. [verified] —
+    [the claims file](../../catalog/openfema-nfip.md) and [USGS](../../catalog/usgs-nwis.md).
+links:
+  - target: ../place/allen-county.yml
+    relationship: occurred-in
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../natural-feature/auglaize-river.yml
+    relationship: affected
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/the-largest-river-days-in-a-hundred-years.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event.ont.yml
+    relationship: instance-of

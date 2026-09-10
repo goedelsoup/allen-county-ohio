@@ -1,0 +1,130 @@
+class: measure
+label: The forty largest river days in a hundred and eleven years, and which the corpus had written
+description: |
+  **Twenty-nine of the forty largest rises on the rivers that drain this county have no event node,
+  and the six with insurance claims beside them include the biggest unwritten flood in the record.**
+  Taking the twenty-five largest daily means at each of the two long gauges and merging rises within
+  six days gives forty days; eleven carry an event node and twenty-nine do not. [verified] —
+  [USGS](../../catalog/usgs-nwis.md), sites 04186500 and 04191500, against this corpus's flood
+  events.
+
+  **The strongest of them is 5–7 February 2008**, which was the 2nd-highest day in 105 years at Fort
+  Jennings and the 4th in 111 at Defiance, with **ten insurance claims paying $390,087** and 3.75
+  inches of rain in four days. The corpus had it in a table as a day with one record, "no gauge and
+  no storm row", and said it stayed unwritten for want of a witness.
+  [It now has a node](../event/the-flood-of-5-7-february-2008.yml). [verified] — the three sources.
+
+  **The next is 13–15 July 1992, and it is the largest day the Fort Jennings gauge has ever
+  recorded** — 12,000 cubic feet a second, first of 36,624 days. The Ottawa at Lima ran 2,150 on the
+  13th, 54th of its own 10,340. Three claims are dated the 12th and 13th and 5.81 inches fell in five
+  days. [verified] — the same three.
+  [Its node is written here](../event/the-flood-of-13-15-july-1992.yml).
+
+  **Four more unwritten days carry three or more claims and are named rather than written**: 8–11
+  March 2009, six claims paying $39,908 with the Auglaize at Defiance 12th of 40,518; 8 July 2013,
+  four claims and $125,491 with the Ottawa at Lima at its 165th but Fort Jennings at its 1,130th —
+  one basin and not the other; 10–12 July 2017, three claims; and 1 July 1986, three claims on a day
+  when **every gauge here was ordinary** — Fort Jennings 1,889th, Defiance 2,511th — after 5.29
+  inches of rain. [open] Each needs a record this corpus has not reached.
+
+  **The largest day in the whole 111-year record belongs to a flood nobody here wrote down.** On 14
+  March 1982 the Auglaize at Defiance ran 52,300 cubic feet a second, first of 40,518 days; the
+  county's own gauge at Allentown ran 3,310 on the 12th, 15th of its 18,545 days, **nine days before
+  it closed forever**; and one insurance claim was paid, at Fort Shawnee. [verified] — the three
+  sources. It is one witness read at three points on one river and one claim, and the corpus states
+  it rather than writing it. [open]
+
+  **Twenty-three of the twenty-nine unwritten days have no claim at all**, and eleven of those fall
+  before 1978, when this county's first flood insurance claim was paid. A river that rose before the
+  programme existed leaves no insured building behind it, which is a property of the record and not
+  of the water. [verified] — [the claims file](../../catalog/openfema-nfip.md), earliest loss date
+  14 March 1978.
+properties:
+  parameter: >-
+    The largest daily mean discharges on the Auglaize near Fort Jennings and near Defiance, with the
+    insurance claims, rainfall and event node of each
+  value: >-
+    Forty distinct rises; eleven carry an event node and twenty-nine do not
+  unit: cubic feet per second
+  as_of: "2026-09-09"
+  method: |
+    The twenty-five largest daily means at each of 04186500 (36,624 days from 1 September 1921) and
+    04191500 (40,518 days from 1 October 1915), taking only one day per rise by discarding any day
+    within five of a larger one, then merging the two lists on a six-day window. The four days this
+    corpus had already named as having a single record are added whether or not they rank.
+
+    Ranks are over every day the gauge has recorded and are tie-aware: 1 is the largest. `lima_cfs`
+    and its rank are the highest daily mean at 04187100 in the window from two days before to four
+    days after, which is where that gauge's own crest falls relative to the downstream ones — the
+    Ottawa at Lima crests first and Defiance last, by two to three days.
+
+    `claims` and `paid_usd` count every Allen County flood insurance claim whose date of loss falls
+    within four days either side, net of building and contents payments; `rain_in` is the total at
+    the Lima station over the four days ending the day after the crest. `node` is the date of this
+    corpus's event node for the rise, or `none`.
+
+    **A gauge downstream of another is not a second witness.** Fort Jennings, Defiance and Waterville
+    measure the same water at three distances, so the three columns are one record read three times.
+    What makes a day in this table a candidate for an event node is a claim, a storm row or a rain
+    total beside them, per [a flood needs two records](../../decisions/a-flood-needs-two-records.yml).
+  table: |
+    crest lima_cfs lima_rank ftj_cfs ftj_rank def_cfs def_rank claims paid_usd rain_in node
+    1919-03-18 NA NA NA NA 36100 35 0 0 3.27 none
+    1927-03-21 NA NA 7400 23 32400 65 0 0 2.93 none
+    1930-01-15 NA NA 7860 20 38700 22 0 0 2.45 none
+    1937-01-16 NA NA NA NA 34800 44 0 0 2.8 none
+    1943-05-19 NA NA 6710 38 46000 5 0 0 3.91 1943-05-16
+    1944-04-13 NA NA 6190 53 36400 33 0 0 2.69 none
+    1950-02-15 NA NA 9130 9 50000 2 0 0 3.22 1950-02-13
+    1950-12-04 NA NA 6870 32 29100 114 0 0 0.57 none
+    1959-01-23 NA NA 11000 3 27800 141 0 0 3.38 1959-01-21
+    1959-02-12 NA NA 5500 94 49500 3 0 0 2.49 1959-02-09
+    1963-03-06 NA NA 7100 28 21200 339 0 0 2.26 none
+    1966-12-11 NA NA 4740 151 36500 31 0 0 3.53 none
+    1975-02-25 NA NA 6220 52 38000 26 0 0 1.91 none
+    1978-03-17 NA NA 7940 18 31800 77 2 381 0.84 1978-03-14
+    1980-06-04 NA NA 8780 12 28100 134 2 5067 4.05 none
+    1981-06-14 NA NA 7040 31 35000 43 26 121705 4.55 1981-06-13
+    1982-03-14 NA NA 5540 91 52300 1 1 4114 0.94 none
+    1985-02-24 NA NA 7930 19 44000 7 0 0 0.69 none
+    1986-07-01 NA NA 1400 1889 8180 2511 3 15850 5.29 none
+    1990-12-31 3860 4 9720 6 43500 9 0 0 2.4 none
+    1992-07-15 2150 54 12000 1 22600 281 3 15549 5.81 none
+    1993-07-04 2050 63 6770 35 20700 366 0 0 2.89 none
+    1996-01-19 2710 24 8100 17 28300 131 0 0 0.85 none
+    1997-06-03 3650 5 6770 35 35200 40 0 0 3.04 none
+    1999-01-24 2500 35 6110 57 35300 38 0 0 0.71 none
+    2003-07-09 NA NA 6700 39 29300 108 0 0 3.74 none
+    2005-01-13 NA NA 8120 15 45600 6 1 415 3.0 none
+    2007-08-23 NA NA 3220 485 37900 28 25 872323 7.57 2007-08-21
+    2008-02-06 NA NA 11400 2 47100 4 10 390087 3.75 none
+    2009-02-13 NA NA 4400 205 35300 38 0 0 1.51 none
+    2009-03-08 NA NA 5220 117 41000 12 6 39908 2.27 none
+    2011-03-01 4340 2 9700 7 38000 26 31 512924 2.87 2011-02-28
+    2011-12-01 2900 19 5050 126 36500 31 0 0 2.99 none
+    2013-07-08 1290 165 2070 1130 8180 2511 4 125491 4.41 none
+    2013-12-23 3930 3 7310 25 34800 44 1 3049 2.98 none
+    2015-06-17 4960 1 10800 4 40300 15 43 1243724 10.15 2015-06-16
+    2015-06-29 1250 178 5670 81 40600 14 1 0 3.51 none
+    2017-07-12 2210 50 6690 40 26900 157 3 10343 5.37 none
+    2019-04-27 3570 6 7060 30 28700 125 12 318149 4.01 2019-04-26
+    2019-05-18 1730 93 9800 5 31900 73 11 185318 2.43 2019-05-17
+links:
+  - target: ../place/allen-county.yml
+    relationship: describes
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure/the-gauges-that-drain-this-county.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../event/the-flood-of-5-7-february-2008.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../event/the-flood-of-13-15-july-1992.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
+  - target: ../measure.ont.yml
+    relationship: instance-of

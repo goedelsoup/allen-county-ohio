@@ -10,7 +10,8 @@ description: |
   14 April 1979, 1 July 1986, 27 February 1997, 6 February 2008, 8 March 2009, 8 July 2013 and
   17 May 2019 — and three of the ten largest claim days in the whole forty-six-year record are among
   them. [verified] — [the NFIP claims file](../../catalog/openfema-nfip.md), `countyCode` 39003.
-  Three now have nodes; the other four have one record each and stay unwritten.
+  Five now have nodes. The other two are 1 July 1986 and 8 July 2013, and the paragraph below says
+  what the rivers say about each.
 
   **Read from the storm database, nine of its thirteen Allen County flood rows had no event node.**
   18 July 1996, 27 February and 1 March and 25 May 1997, 2 August 2003, 3 September 2004, 11 and
@@ -33,17 +34,34 @@ description: |
   date. [verified] — the three sources above; see [the node](../event/the-flood-of-27-february-1997.yml).
   For comparison the county's largest flood, August 2007, has no county stream gauge at all.
 
-  [open] The four days with one record each. 1 July 1986 and 8 March 2009 fall in stream-gauge
-  holes; 6 February 2008 has eight claims and $345,988 and no gauge and no storm row; 8 July 2013
-  has three claims, $92,672, and a gauge at only its 94.5th percentile. Each needs a witness this
-  corpus has not reached, and for 1986 and 2008 that is likely a newspaper.
+  **The four days with one record each had two, and the missing witness was a gauge this corpus had
+  never cited.** There is no stream-gauge hole over this county: the Auglaize near Fort Jennings has
+  recorded every day since 1921 and near Defiance since 1915, and both drain it. [verified] —
+  [the gauges](the-gauges-that-drain-this-county.yml). Filling the column changes three of the four:
+
+  - **6 February 2008** — 11,400 cubic feet a second at Fort Jennings, 2nd of 36,624 days, beside
+    ten claims paying $390,087. It is the county's fourth-largest insurance day and now
+    [an event](../event/the-flood-of-5-7-february-2008.yml). [verified]
+  - **8 March 2009** — 41,000 near Defiance, 12th of 40,518, beside six claims. Now
+    [an event](../event/the-flood-of-8-11-march-2009.yml). [verified]
+  - **8 July 2013** — the Ottawa at Lima reached its 94.5th percentile and the Auglaize its 96.9th,
+    neither above the line. One record still. [open]
+  - **1 July 1986** — every gauge draining this county was ordinary, Fort Jennings at its 94.8th
+    percentile after 5.29 inches of rain in five days. The rivers say this was not a river flood, and
+    what put water in three insured buildings is unestablished. [open]
+
+  **And filling the column moves four storm-database days to two records as well** — 1 March and
+  25 May 1997 and 2 August 2003 each pair their storm row with a downstream gauge above its 99th
+  percentile. They carry no insurance claim and no narrative this corpus has read, and they are named
+  here with their figures rather than written. [open] —
+  [the largest river days](the-largest-river-days-in-a-hundred-years.yml).
 properties:
   parameter: >-
     Every day on which one of this county's four flood-registering federal records reports a flood,
     against the days the corpus holds an event for
   value: >-
     Seven claim days of three or more and nine of thirteen storm-database flood rows had no event
-    node; three are written in this phase and the rest are named
+    node; five now have one and the rest are named with their figures
   as_of: "2026-09-09"
   unit: flood days
   method: |
@@ -64,23 +82,31 @@ properties:
     `records` counts how many of the four register that day, and it is the count that decides
     whether a node may be written at all, per
     [a flood needs two records](../../decisions/a-flood-needs-two-records.yml).
+
+    **`down_gauge` is the correction this node needed.** `county_cfs` and `county_pct` remain the
+    daily mean at a gauge standing inside the county, and are `NA` where none was in service.
+    `down_cfs` and `down_pct` are the largest daily mean from the day before to three days after at
+    whichever of Fort Jennings or Defiance ranks higher, both of which drain this county from
+    outside it. A river counts toward `records` when either column reaches the 99th percentile of
+    its own gauge's whole record. The two gauges are one river measured twice and never count as
+    two.
   table: |
-    date claims paid_usd gauge_cfs gauge_pct storm_row records node
-    1979-04-14 5 2498 3200 99.9 no 2 new
-    1986-07-01 3 16384 NA NA no 1 no
-    1996-07-18 0 0 NA NA yes 1 no
-    1997-02-27 7 43151 3470 99.9 yes 3 new
-    1997-03-01 0 0 934 97.1 yes 1 no
-    1997-05-25 0 0 NA NA yes 1 no
-    2003-08-02 0 0 NA NA yes 1 no
-    2004-09-03 0 0 NA NA yes 1 no
-    2008-02-06 8 345988 NA NA no 1 no
-    2009-03-08 4 11229 NA NA no 1 no
-    2011-05-11 0 0 NA NA yes 1 no
-    2011-05-14 0 0 NA NA yes 1 no
-    2013-07-08 3 92672 602 94.5 no 1 no
-    2019-05-17 11 185317 5000 100.0 no 2 new
-    2020-07-09 0 0 NA NA yes 1 no
+    date claims paid_usd county_cfs county_pct down_gauge down_cfs down_pct storm_row records node
+    1979-04-14 5 2498 3200 99.9 ftjennings 4270 99.36 no 2 new
+    1986-07-01 3 16384 NA NA ftjennings 1400 94.77 no 1 no
+    1996-07-18 0 0 NA NA ftjennings 3550 98.96 yes 1 no
+    1997-02-27 7 43151 3470 99.9 defiance 33300 99.86 yes 3 new
+    1997-03-01 0 0 934 97.1 defiance 33300 99.86 yes 2 no
+    1997-05-25 0 0 NA NA defiance 24700 99.46 yes 2 no
+    2003-08-02 0 0 NA NA ftjennings 4390 99.43 yes 2 no
+    2004-09-03 0 0 NA NA ftjennings 3000 98.40 yes 1 no
+    2008-02-06 8 345988 NA NA ftjennings 11400 99.99 no 2 new
+    2009-03-08 4 11229 NA NA defiance 41000 99.97 no 2 new
+    2011-05-11 0 0 NA NA ftjennings 711 89.62 yes 1 no
+    2011-05-14 0 0 NA NA defiance 13100 97.18 yes 1 no
+    2013-07-08 3 92672 602 94.5 ftjennings 2070 96.90 no 1 no
+    2019-05-17 11 185317 5000 100.0 ftjennings 9800 99.99 no 2 new
+    2020-07-09 0 0 NA NA ftjennings 146 65.56 yes 1 no
 links:
   - target: ../place/allen-county.yml
     relationship: describes
@@ -102,5 +128,17 @@ links:
     relationship: relates-to
     claim_tag: verified
     source: ../../catalog/noaa-storm-events.md
+  - target: ../event/the-flood-of-5-7-february-2008.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../event/the-flood-of-8-11-march-2009.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/openfema-nfip.md
+  - target: ../measure/the-gauges-that-drain-this-county.yml
+    relationship: relates-to
+    claim_tag: verified
+    source: ../../catalog/usgs-nwis.md
   - target: ../measure.ont.yml
     relationship: instance-of

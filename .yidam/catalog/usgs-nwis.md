@@ -59,6 +59,11 @@ location:
       one of them. See
       [a neighbour's gauge](../decisions/a-neighbours-gauge-is-not-this-countys-record.yml).
 used-by:
+  - ../corpus/measure/the-gauges-that-drain-this-county.yml
+  - ../corpus/measure/the-largest-river-days-in-a-hundred-years.yml
+  - ../corpus/event/the-flood-of-5-7-february-2008.yml
+  - ../corpus/event/the-flood-of-13-15-july-1992.yml
+  - ../corpus/event/the-flood-of-8-11-march-2009.yml
   - ../corpus/measure/the-four-files-that-can-see-a-flood.yml
   - ../corpus/event/the-flood-of-27-february-1997.yml
   - ../corpus/event/the-flood-of-17-may-2019.yml
@@ -194,3 +199,19 @@ Service's; and how much water flows in an ordinary year, which is the daily-valu
 not fetched. Peak flow is the highest instant of each year and nothing else. Nor does it say *why*
 a well was drilled or a reading taken: it carries an observing procedure and a measuring agency and
 no project.
+
+**The gauges that see this county are not the gauges standing in it.** The network-linked basin
+service returns a polygon for any site (`nldi/linked-data/nwissite/USGS-<site>/basin`), and
+intersecting each with the county boundary ranks eleven gauges by how much of Allen County they
+drain. Three of them take water from 403 of its 406 square miles — the Auglaize near Defiance
+(04191500, daily discharge since 1 October 1915), the Maumee near Defiance (04192500, since 1924)
+and the Maumee at Waterville (04193500, since 1898) — and a fourth, the Auglaize near Fort Jennings
+(04186500, since 1 September 1921), drains a third of it. **None of the four had ever been cited
+here**, and between them they cover every gap in the county's own gauges: the six years between
+Allentown closing in 1982 and Lima opening in 1988, and the Lima gauge's hole of 23 November 1999 to
+30 June 2009. See [the gauges](../corpus/measure/the-gauges-that-drain-this-county.yml).
+
+**The same service answers the negative case exactly.** The Blanchard near Findlay's basin holds
+**0.0 square miles** of this county — the polygon and the boundary do not touch — which is the
+measured form of a rule this corpus had argued from hydrologic unit codes. See
+[a neighbour's gauge](../decisions/a-neighbours-gauge-is-not-this-countys-record.yml).
