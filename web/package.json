@@ -10,6 +10,7 @@
     "preview": "astro preview",
     "lint": "oxlint",
     "test": "vitest run",
+    "test:e2e": "playwright test",
     "outline": "node scripts/check-outline.mjs",
     "fonts": "node scripts/fetch-fonts.mjs",
     "boundaries": "node scripts/fetch-boundaries.mjs"
@@ -21,6 +22,8 @@
     "plotly.js-basic-dist-min": "^4.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/geojson": "^7946.0.16",
     "oxlint": "^1.0.0",
     "typescript": "^5.8.0",
     "vitest": "^3.1.0"

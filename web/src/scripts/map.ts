@@ -31,6 +31,7 @@
 //   undated        the missing-status ink, which belongs to no era on purpose.
 
 import { Deck, WebMercatorViewport } from '@deck.gl/core'
+import type { FeatureCollection, Geometry } from 'geojson'
 // `PathLayer` and nothing from `@deck.gl/geo-layers`. `TripsLayer` lives there, its whole
 // purpose is to animate a position along a path over time, and that is exactly the tween
 // `an-animation-asserts-continuity` refuses — it would draw the storm at a position, at a
@@ -74,6 +75,7 @@ import {
 import { lines, type Line } from '../lib/edges'
 import { courses, type Course, type End } from '../lib/water'
 import { entryPath } from '../lib/entry'
+import { parseMapState, serializeMapState, type MapCamera } from '../lib/map-state'
 import { column, tableFor, type AtlasRecord } from '../lib/feeds'
 
 type RGBA = [number, number, number, number]
@@ -87,9 +89,10 @@ interface FeatureProps {
   POP100?: string
   HU100?: string
   AREALAND?: string
+  MTFCC?: string
 }
 
-type Collection = { type: 'FeatureCollection'; features: { properties: FeatureProps }[] }
+type Collection = FeatureCollection<Geometry, FeatureProps>
 
 /**
  * How a vendored shape is addressed: its summary level, then its key.
@@ -249,17 +252,6 @@ async function collection(url: string): Promise<Collection> {
   return (await res.json()) as Collection
 }
 
-/** What the reader has asked the map for. */
-interface State {
-  year: number
-  grain: Grain
-  generous: boolean
-  hops: number
-  undated: boolean
-  ground: Set<string>
-  selected: string | null
-}
-
 interface Hover {
   x: number
   y: number
@@ -296,10 +288,20 @@ interface TrackEnd {
 export async function renderMap(container: HTMLElement, records: AtlasRecord[]): Promise<void> {
   const tooltip = container.querySelector<HTMLElement>('[data-map-tooltip]')
   const legend = container.querySelector<HTMLElement>('[data-map-legend]')
-  const canvasHost = container.querySelector<HTMLElement>('[data-map-canvas]')
+  const canvasHost = container.querySelector<HTMLDivElement>('[data-map-canvas]')
   const panel = container.querySelector<HTMLElement>('[data-map-panel]')
   const scrub = container.querySelector<HTMLInputElement>('[data-scrub]')
   if (!canvasHost) throw new Error('the map has no canvas host')
+
+  // Search is ready before geometry finishes loading. Carry an early choice into the scene.
+  let pendingSelection: string | null = null
+  let handleSelection: ((id: string) => void) | undefined
+  container.addEventListener('atlas:select', (event) => {
+    const id = (event as CustomEvent<{ node: string }>).detail?.node
+    if (typeof id !== 'string') return
+    if (handleSelection) handleSelection(id)
+    else pendingSelection = id
+  })
 
   const [county, subdivisions, places, cdps, districts, tracts, schools, water, arealWater] =
     await Promise.all([
@@ -341,7 +343,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     for (const f of c.features) f.properties.LEVEL = level
   }
 
-  const shapes = new Map<string, { properties: FeatureProps }>()
+  const shapes = new Map<string, Collection['features'][number]>()
   for (const [c] of LEVELS) {
     for (const f of c.features) shapes.set(shapeKey(f), f)
   }
@@ -353,7 +355,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
    */
   const frameKeys = new Set(county.features.map(shapeKey))
 
-  const shapeSource = {
+  const shapeSource: Collection = {
     type: 'FeatureCollection',
     features: LEVELS.flatMap(([c]) => c.features),
   }
@@ -463,39 +465,32 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
    * is an instrument you can only arrive at from the start — which is the shape the whole site is
    * trying to get out of.
    */
-  const params = new URLSearchParams(globalThis.location.search)
-  const clamp = (n: number) =>
-    Math.min(Math.max(n, eras[0].from), eras[eras.length - 1].to)
-  const asked = Number(params.get('year'))
+  const extent = { from: eras[0].from, to: eras[eras.length - 1].to }
+  let state = parseMapState(globalThis.location.search, extent)
+  const byNode = new Map(records.map((record) => [record.node, record]))
+  const readingData = document.querySelector('[data-atlas-reading]')?.textContent
+  const reading: Record<string, { slug: string; title: string }[]> = readingData
+    ? JSON.parse(readingData)
+    : {}
 
-  const state: State = {
-    year: Number.isFinite(asked) && asked !== 0 ? clamp(asked) : eras[eras.length - 1].to,
-    grain: params.get('grain') === 'year' ? 'year' : 'era',
-    generous: params.get('generous') === '1',
-    // `params.has` rather than a truthiness check: `Number(null)` is 0, which is a valid depth,
-    // so the obvious spelling silently shipped every reader the stated-positions-only view.
-    hops: params.has('hops') && [0, 1, 2, 3].includes(Number(params.get('hops')))
-      ? Number(params.get('hops'))
-      : 3,
-    undated: params.get('undated') === '1',
-    ground: new Set(
-      (params.get('layers') ?? 'subdivisions,municipalities,water').split(',').filter(Boolean),
-    ),
-    selected: params.get('at'),
+  /** Continuous gestures replace their frame; deliberate choices add a navigable stop. */
+  const address = (mode: 'push' | 'replace' = 'replace') => {
+    const search = `?${serializeMapState(state)}`
+    if (mode === 'push' && search === globalThis.location.search) return
+    globalThis.history[mode === 'push' ? 'pushState' : 'replaceState'](null, '', search)
   }
 
-  /** Write the view back, without adding a history entry per drag of the scrub. */
-  const address = () => {
-    const q = new URLSearchParams()
-    q.set('year', String(state.year))
-    if (state.grain !== 'era') q.set('grain', state.grain)
-    if (state.hops !== 3) q.set('hops', String(state.hops))
-    if (state.generous) q.set('generous', '1')
-    if (state.undated) q.set('undated', '1')
-    if (state.selected) q.set('at', state.selected)
-    q.set('layers', [...state.ground].toSorted().join(','))
-    globalThis.history.replaceState(null, '', `?${q}`)
+  const setPanel = (mode: 'closed' | 'preview' | 'expanded') => {
+    container.dataset.panelState = mode
+    const shell = container.querySelector<HTMLElement>('[data-map-panel-shell]')
+    if (shell) shell.inert = mode === 'closed'
+    for (const trigger of container.querySelectorAll('[data-panel-action="preview"]')) {
+      trigger.setAttribute('aria-expanded', String(mode !== 'closed'))
+    }
   }
+
+  const selectedAnchor = (anchor: Anchored) =>
+    anchor.node === state.selected || anchor.records.some((record) => record.node === state.selected)
 
   let hover: Hover | null = null
 
@@ -610,7 +605,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       state.ground.has('tracts') &&
         new GeoJsonLayer({
           id: 'tracts',
-          data: tracts as unknown as object,
+          data: tracts,
           filled: true,
           stroked: true,
           getFillColor: (f: { properties: FeatureProps }) =>
@@ -632,7 +627,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           state.ground.has(m) &&
           new GeoJsonLayer({
             id: `tract-${m}`,
-            data: tracts as unknown as object,
+            data: tracts,
             filled: true,
             stroked: true,
             getFillColor: (f: { properties: FeatureProps }) => {
@@ -665,7 +660,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       state.ground.has('population') &&
         new GeoJsonLayer({
           id: 'voting-districts',
-          data: districts as unknown as object,
+          data: districts,
           filled: true,
           stroked: true,
           getFillColor: (f: { properties: FeatureProps }) =>
@@ -684,7 +679,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       state.ground.has('subdivisions') &&
         new GeoJsonLayer({
           id: 'subdivisions',
-          data: subdivisions as unknown as object,
+          data: subdivisions,
           filled: false,
           stroked: true,
           getLineColor: rgb(p.muted, ghost(190)),
@@ -704,7 +699,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       state.ground.has('schools') &&
         new GeoJsonLayer({
           id: 'school-districts',
-          data: schools as unknown as object,
+          data: schools,
           filled: false,
           stroked: true,
           // Lighter than the township lines and much lighter than the county outline, which is
@@ -726,7 +721,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           data: {
             type: 'FeatureCollection',
             features: [...places.features, ...cdps.features],
-          } as unknown as object,
+          },
           filled: true,
           stroked: true,
           getFillColor: rgb(p.ink, ghost(22)),
@@ -758,7 +753,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       state.ground.has('water') &&
         new GeoJsonLayer({
           id: 'areal-water',
-          data: arealWater as unknown as object,
+          data: arealWater,
           filled: true,
           stroked: false,
           getFillColor: (f: { properties: FeatureProps }) =>
@@ -789,7 +784,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       state.ground.has('water') &&
         new GeoJsonLayer({
           id: 'water',
-          data: water as unknown as object,
+          data: water,
           filled: false,
           stroked: true,
           getLineColor: (f: { properties: FeatureProps }) =>
@@ -825,7 +820,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
       new GeoJsonLayer({
         id: 'county',
-        data: county as unknown as object,
+        data: county,
         filled: false,
         stroked: true,
         getLineColor: rgb(p.ink, ghost(255)),
@@ -839,7 +834,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       // one edge would otherwise be shaded as the whole county, which is not where the tract is.
       new GeoJsonLayer({
         id: 'corpus-shapes',
-        data: shapeSource as unknown as object,
+        data: shapeSource,
         // deck.gl keeps one dataset and decides per feature, so a shape leaving the window is a
         // colour change rather than a reload of the geometry.
         getFillColor: (f: { properties: FeatureProps }) =>
@@ -883,17 +878,17 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         getPosition: (d) => [d.lon, d.lat],
         // The selected mark grows as well as changing ink. Rubric and the 1860 era ink are both
         // reds, so on that one tile a hue change alone says nothing.
-        getRadius: (d) => (d.node === state.selected ? 360 : 190),
+        getRadius: (d) => (selectedAnchor(d) ? 360 : 190),
         radiusMinPixels: 3.5,
         radiusMaxPixels: 13,
         // The strongest ink available, not the era's. The halo under it and the shapes around
         // it already carry the era; a mark in the same hue as the wash it sits on is a mark
         // nobody can find, which is what the first draft of this layer was.
-        getFillColor: (d) => (d.node === state.selected ? rgb(p.selected, 255) : rgb(p.ink, 250)),
+        getFillColor: (d) => (selectedAnchor(d) ? rgb(p.selected, 255) : rgb(p.ink, 250)),
         // A 2px surface ring, not a border: overlapping marks stay separable.
         stroked: true,
         getLineColor: rgb(p.surface, 255),
-        getLineWidth: (d) => (d.node === state.selected ? 130 : 70),
+        getLineWidth: (d) => (selectedAnchor(d) ? 130 : 70),
         lineWidthMinPixels: 2,
         pickable: true,
         updateTriggers: {
@@ -920,9 +915,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         },
         onClick: ({ object }) => {
           const a = object as Anchored | undefined
-          state.selected = a && a.node !== state.selected ? a.node : null
-          refresh()
-          renderPanel()
+          selectRecord(a && a.node !== state.selected ? a.node : null)
         },
       }),
 
@@ -941,9 +934,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           pickable: true,
           onClick: ({ object }) => {
             const a = object as Anchored | undefined
-            state.selected = a && a.node !== state.selected ? a.node : null
-            refresh()
-            renderPanel()
+            selectRecord(a && a.node !== state.selected ? a.node : null)
           },
         }),
 
@@ -993,10 +984,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           },
           onClick: ({ object }) => {
             const d = object as TrackRun | undefined
-            state.selected =
-              d && d.track.node !== state.selected ? d.track.node : null
-            refresh()
-            renderPanel()
+            selectRecord(d && d.track.node !== state.selected ? d.track.node : null)
           },
         }),
 
@@ -1048,10 +1036,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           },
           onClick: ({ object }) => {
             const d = object as TrackEnd | undefined
-            state.selected =
-              d && d.track.node !== state.selected ? d.track.node : null
-            refresh()
-            renderPanel()
+            selectRecord(d && d.track.node !== state.selected ? d.track.node : null)
           },
         }),
 
@@ -1183,7 +1168,40 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       hops: state.hops,
     })
     const pool = [...drawn(records, look), ...(state.undated ? undrawn(records, look) : [])]
+    const selected = byNode.get(state.selected)
     const here = anchored(pool).find((a) => a.node === state.selected)
+      ?? anchored(pool).find((a) => a.records.some((r) => r.node === state.selected))
+    const related = reading[state.selected] ?? []
+    const relatedHtml = related.length
+      ? `<section><h3>Related reading</h3><ul>${related.map((article) =>
+          `<li><a href="/read/${esc(article.slug)}">${esc(article.title)}</a></li>`).join('')}</ul></section>`
+      : ''
+    const selectedWhen = selected?.from === null ? 'Undated' : selected
+      ? selected.to === null ? `From ${selected.from}`
+        : selected.from === selected.to ? String(selected.from) : `${selected.from}–${selected.to}`
+      : ''
+    let selectionHtml = selected
+      ? `<h3 tabindex="-1" data-selected-heading>${esc(selected.label)}</h3>
+        <p class="count">${esc(selected.class)} · ${esc(selectedWhen)} · ${esc(selected.tier)}</p>
+        <p><a href="${entryPath(selected.node)}">Read the entry</a></p>${relatedHtml}`
+      : ''
+
+    if (selected && !pool.some((r) => r.node === selected.node)) {
+      const placed = selected.hops !== null && selected.anchors.length > 0
+      const reasons: string[] = []
+      if (!placed) reasons.push('This record has no map position.')
+      if (selected.from === null && !state.undated) reasons.push('Undated records are hidden in this view.')
+      if (placed && selected.hops! > state.hops) reasons.push('Its placement is beyond the selected placement depth.')
+      if (selected.from !== null && !drawn([selected], { ...look, hops: 3 }).length && placed) {
+        reasons.push('This record is outside the selected time window.')
+      }
+      selectionHtml += `<p class="count">${reasons.join(' ')}</p>${placed
+        ? '<button type="button" data-show-selected>Show this record on the map</button>' : ''}`
+      if (!here) {
+        panel.innerHTML = selectionHtml
+        return
+      }
+    }
 
     if (!here) {
       // A track is not in `anchored` and cannot be: its anchor carries no lat and no lon,
@@ -1202,7 +1220,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
             </li>`,
           )
           .join('')
-        panel.innerHTML = `<h3>${esc(r.label)}</h3>
+        panel.innerHTML = `${selectionHtml}
           <p class="count">${track.points.length} positions, stated by the source in this order, in ${esc(when)}.
           The corpus places this one itself — no edge was followed to reach it.</p>
           <ol class="positions">${positions}</ol>
@@ -1212,7 +1230,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           <p><a href="${entryPath(r.node)}">Read the entry</a></p>`
         return
       }
-      panel.innerHTML = empty
+      panel.innerHTML = selectionHtml || '<p class="empty">This selection is unavailable. Search for a published record or select a mark.</p>'
       return
     }
 
@@ -1243,7 +1261,8 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         </li>`
       })
 
-    panel.innerHTML = `<h3>${esc(anchorLabel(here))}</h3>
+    panel.innerHTML = `${selectionHtml || `<h3>${esc(anchorLabel(here))}</h3>`}
+      <h3>At ${esc(anchorLabel(here))}</h3>
       <p class="count">${here.records.length} record${here.records.length === 1 ? '' : 's'} placed here${
         state.grain === 'era' ? ` in ${esc(eraAt(state.year, eras).label)}` : ` in ${state.year}`
       }. A route means the corpus did not state this position — it was reached across those edges.</p>
@@ -1307,22 +1326,85 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     { padding: 32 },
   )
 
+  const defaultCamera: MapCamera = {
+    longitude: fitted.longitude, latitude: fitted.latitude, zoom: fitted.zoom,
+  }
+  state.camera ??= defaultCamera
+  const distance = container.querySelector<HTMLElement>('[data-map-distance]')
+  const showDistance = () => {
+    if (!distance || !state.camera) return
+    const size = canvasHost.getBoundingClientRect()
+    if (!size.width || !size.height) return
+    const viewport = new WebMercatorViewport({ width: size.width, height: size.height, ...state.camera })
+    const left = viewport.unproject([size.width / 2 - 40, size.height / 2])
+    const right = viewport.unproject([size.width / 2 + 40, size.height / 2])
+    const miles = straightMiles([{ lon: left[0], lat: left[1] }, { lon: right[0], lat: right[1] }])
+    distance.style.width = '80px'
+    distance.style.borderBottom = '2px solid var(--text-muted)'
+    distance.textContent = `${miles < 1 ? miles.toFixed(2) : miles.toFixed(1)} mi`
+  }
+  let cameraTimer: ReturnType<typeof setTimeout> | undefined
+  const cameraProps = () => ({ ...state.camera!, minZoom: 0, maxZoom: 14, bearing: 0, pitch: 0 })
   const deck = new Deck({
     parent: canvasHost,
-    initialViewState: {
-      longitude: fitted.longitude,
-      latitude: fitted.latitude,
-      zoom: fitted.zoom,
-      minZoom: fitted.zoom - 1,
-      maxZoom: 14,
-      bearing: 0,
-      pitch: 0,
+    viewState: cameraProps(),
+    controller: { dragRotate: false, touchRotate: false },
+    onViewStateChange: ({ viewState }) => {
+      const camera = viewState as MapCamera
+      state.camera = { longitude: ((camera.longitude + 180) % 360 + 360) % 360 - 180,
+        latitude: camera.latitude, zoom: camera.zoom }
+      deck.setProps({ viewState: cameraProps() })
+      showDistance()
+      clearTimeout(cameraTimer)
+      cameraTimer = setTimeout(() => address(), 250)
     },
-    controller: { dragRotate: false },
     layers: layers(),
     getCursor: ({ isHovering }) => (isHovering ? 'pointer' : 'grab'),
     style: { position: 'absolute', inset: '0' },
   })
+
+  const moveCamera = (camera: MapCamera) => {
+    clearTimeout(cameraTimer)
+    state.camera = camera
+    deck.setProps({ viewState: cameraProps() })
+    showDistance()
+  }
+
+  const focusRecord = (record: AtlasRecord) => {
+    const positions = record.anchors.flatMap((anchor) => {
+      if (anchor.points.length) return anchor.points.map((p) => [p.lon, p.lat] as [number, number])
+      const shape = anchor.level && anchor.geoid ? shapes.get(`${anchor.level}:${anchor.geoid}`) : undefined
+      if (shape) {
+        const shapeBounds = bounds(shape.geometry)
+        return [[shapeBounds[0], shapeBounds[1]], [shapeBounds[2], shapeBounds[3]]] as [number, number][]
+      }
+      return anchor.lon !== null && anchor.lat !== null ? [[anchor.lon, anchor.lat] as [number, number]] : []
+    })
+    if (!positions.length) return
+    const frameRect = canvasHost.getBoundingClientRect()
+    if (positions.length === 1) {
+      moveCamera({ longitude: positions[0][0], latitude: positions[0][1], zoom: Math.max(state.camera!.zoom, 10) })
+    } else {
+      const focused = new WebMercatorViewport({ width: Math.max(frameRect.width, 1), height: Math.max(frameRect.height, 1) })
+        .fitBounds([
+          [Math.min(...positions.map((p) => p[0])), Math.min(...positions.map((p) => p[1]))],
+          [Math.max(...positions.map((p) => p[0])), Math.max(...positions.map((p) => p[1]))],
+        ], { padding: 64, maxZoom: 12 })
+      moveCamera({ longitude: focused.longitude, latitude: focused.latitude, zoom: focused.zoom })
+    }
+  }
+
+  const selectRecord = (id: string | null, focus = false) => {
+    halt()
+    state.selected = id
+    setPanel(id ? 'preview' : 'closed')
+    if (focus && id) {
+      const record = byNode.get(id)
+      if (record) focusRecord(record)
+    }
+    update('push')
+    if (focus) panel?.querySelector<HTMLElement>('[data-selected-heading]')?.focus({ preventScroll: true })
+  }
 
   const refresh = () => deck.setProps({ layers: layers() })
 
@@ -1334,8 +1416,9 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     renderPanel()
   }
 
-  const update = () => {
-    address()
+  const update = (mode: 'push' | 'replace' = 'push') => {
+    clearTimeout(cameraTimer)
+    address(mode)
     paint()
   }
 
@@ -1472,6 +1555,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     const ended = state.year >= stops[stops.length - 1].year
     head = seek(stops, ended ? stops[0].year : state.year)
     state.year = stops[head.index].year
+    address('push')
     paint()
     label(true)
     frame = requestAnimationFrame(tick)
@@ -1517,14 +1601,18 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     })
   }
 
+  let scrubbing = false
+  scrub?.addEventListener('change', () => { scrubbing = false })
   scrub?.addEventListener('input', () => {
     halt()
     state.year = Number(scrub.value)
-    update()
+    update(scrubbing ? 'replace' : 'push')
+    scrubbing = true
   })
 
   for (const input of container.querySelectorAll<HTMLInputElement>('[data-grain]')) {
     input.addEventListener('change', () => {
+      halt()
       if (input.checked) state.grain = input.value as Grain
       update()
     })
@@ -1532,12 +1620,14 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
   const warrant = container.querySelector<HTMLSelectElement>('[data-warrant]')
   warrant?.addEventListener('change', () => {
+    halt()
     state.hops = Number(warrant.value)
     update()
   })
 
   for (const input of container.querySelectorAll<HTMLInputElement>('[data-toggle]')) {
     input.addEventListener('change', () => {
+      halt()
       if (input.dataset.toggle === 'generous') state.generous = input.checked
       if (input.dataset.toggle === 'undated') state.undated = input.checked
       update()
@@ -1546,6 +1636,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
   for (const input of container.querySelectorAll<HTMLInputElement>('[data-layer]')) {
     input.addEventListener('change', () => {
+      halt()
       const key = input.dataset.layer
       if (!key) return
       if (input.checked) state.ground.add(key)
@@ -1563,26 +1654,125 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
         }
       }
 
-      address()
-      showScale()
-      refresh()
+      update()
     })
   }
 
-  // The controls are rendered by the page with the defaults in them, so a view that arrived in
-  // the URL has to be written back onto them or the reader sees one thing and the widgets say
-  // another.
-  for (const input of container.querySelectorAll<HTMLInputElement>('[data-grain]')) {
-    input.checked = input.value === state.grain
+  const measure = container.querySelector<HTMLSelectElement>('[data-map-measure]')
+  measure?.addEventListener('change', () => {
+    halt()
+    for (const key of CHOROPLETHS) state.ground.delete(key)
+    if ((CHOROPLETHS as readonly string[]).includes(measure.value)) state.ground.add(measure.value)
+    update()
+  })
+
+  /** The URL, canvas and controls agree, including after Back. */
+  const syncControls = () => {
+    for (const input of container.querySelectorAll<HTMLInputElement>('[data-grain]')) {
+      input.checked = input.value === state.grain
+    }
+    if (warrant) warrant.value = String(state.hops)
+    if (measure) measure.value = CHOROPLETHS.find((key) => state.ground.has(key)) ?? ''
+    for (const input of container.querySelectorAll<HTMLInputElement>('[data-layer]')) {
+      input.checked = state.ground.has(input.dataset.layer ?? '')
+    }
+    for (const input of container.querySelectorAll<HTMLInputElement>('[data-toggle]')) {
+      if (input.dataset.toggle === 'generous') input.checked = state.generous
+      if (input.dataset.toggle === 'undated') input.checked = state.undated
+    }
   }
-  if (warrant) warrant.value = String(state.hops)
-  for (const input of container.querySelectorAll<HTMLInputElement>('[data-layer]')) {
-    input.checked = state.ground.has(input.dataset.layer ?? '')
+
+  handleSelection = (id) => {
+    if (!byNode.has(id)) return
+    selectRecord(id, true)
+    for (const drawer of container.querySelectorAll<HTMLDetailsElement>('.search-drawer')) drawer.open = false
   }
-  for (const input of container.querySelectorAll<HTMLInputElement>('[data-toggle]')) {
-    if (input.dataset.toggle === 'generous') input.checked = state.generous
-    if (input.dataset.toggle === 'undated') input.checked = state.undated
-  }
+
+  container.addEventListener('click', async (event) => {
+    const target = (event.target as Element).closest<HTMLElement>('[data-map-action], [data-panel-action], [data-show-selected]')
+    if (!target) return
+    const panelAction = target.dataset.panelAction
+    if (panelAction === 'close' || panelAction === 'preview' || panelAction === 'expand') {
+      setPanel(panelAction === 'expand' ? 'expanded' : panelAction === 'close' ? 'closed' : 'preview')
+      if (panelAction === 'close') container.querySelector<HTMLElement>('.inspector-trigger')?.focus({ preventScroll: true })
+      else panel?.focus({ preventScroll: true })
+      return
+    }
+    if (target.hasAttribute('data-show-selected')) {
+      const record = state.selected ? byNode.get(state.selected) : undefined
+      if (!record) return
+      halt()
+      if (record.from === null) state.undated = true
+      else {
+        state.year = Math.max(extent.from, Math.min(extent.to, record.from))
+        state.grain = 'year'
+      }
+      if (record.hops !== null) state.hops = Math.max(state.hops, record.hops)
+      focusRecord(record)
+      syncControls()
+      update()
+      panel?.querySelector<HTMLElement>('[data-selected-heading]')?.focus({ preventScroll: true })
+      return
+    }
+
+    halt()
+    const action = target.dataset.mapAction
+    const camera = state.camera ?? defaultCamera
+    if (action === 'share') {
+      address()
+      const status = container.querySelector<HTMLElement>('[data-map-share-status]')
+      if (!status) return
+      const url = globalThis.location.href
+      try {
+        await navigator.clipboard.writeText(url)
+        status.textContent = 'Link copied. It includes this map view.'
+      } catch {
+        status.replaceChildren()
+        const labelElement = document.createElement('label')
+        labelElement.textContent = 'Copy this view: '
+        const input = document.createElement('input')
+        input.readOnly = true
+        input.value = url
+        labelElement.append(input)
+        status.append(labelElement)
+        input.focus()
+        input.select()
+      }
+      return
+    }
+    if (action === 'zoom-in' || action === 'zoom-out') {
+      moveCamera({ ...camera, zoom: Math.min(14, Math.max(0, camera.zoom + (action === 'zoom-in' ? 1 : -1))) })
+    } else if (action === 'reset') {
+      const size = canvasHost.getBoundingClientRect()
+      const countyView = new WebMercatorViewport({ width: Math.max(size.width, 1), height: Math.max(size.height, 1) })
+        .fitBounds([[box[0], box[1]], [box[2], box[3]]], { padding: 32 })
+      moveCamera({ longitude: countyView.longitude, latitude: countyView.latitude, zoom: countyView.zoom })
+    } else if (action && ['north', 'south', 'east', 'west'].includes(action)) {
+      const size = canvasHost.getBoundingClientRect()
+      const viewport = new WebMercatorViewport({ width: size.width, height: size.height, ...camera })
+      const [longitude, latitude] = viewport.unproject([
+        size.width / 2 + (action === 'east' ? 100 : action === 'west' ? -100 : 0),
+        size.height / 2 + (action === 'south' ? 100 : action === 'north' ? -100 : 0),
+      ])
+      moveCamera({ ...camera, longitude: ((longitude + 180) % 360 + 360) % 360 - 180,
+        latitude: Math.max(-85, Math.min(85, latitude)) })
+    } else return
+    address('push')
+  })
+
+  globalThis.addEventListener('popstate', () => {
+    clearTimeout(cameraTimer)
+    if (frame) {
+      cancelAnimationFrame(frame)
+      frame = 0
+      label(false)
+    }
+    state = parseMapState(globalThis.location.search, extent)
+    moveCamera(state.camera ?? defaultCamera)
+    syncControls()
+    setPanel(state.selected ? 'preview' : 'closed')
+    paint()
+  })
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', refresh)
   new MutationObserver(refresh).observe(document.documentElement, {
@@ -1590,7 +1780,14 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     attributeFilter: ['data-theme'],
   })
 
-  update()
+  syncControls()
+  setPanel(state.selected ? 'preview' : 'closed')
+  update('replace')
+  showDistance()
+  new ResizeObserver(showDistance).observe(canvasHost)
+  canvasHost.querySelector('[data-map-loading]')?.remove()
+  container.dataset.mapReady = 'true'
+  if (pendingSelection) handleSelection(pendingSelection)
 }
 
 /** Exported for the page, which prints the spine and the ribbon at build time. */
