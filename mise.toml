@@ -320,9 +320,20 @@ if [ ! -d web/dist ]; then echo "web/dist absent — skipping outline (mise run 
 node web/scripts/check-outline.mjs
 """
 
+[tasks.site-browser]
+description = "Run Playwright journeys against the built static site."
+# Playwright serves web/dist with Astro preview. The outline task already depends
+# on the build, so this edge preserves build → outline → browser order without
+# clearing dist while the browser is reading it.
+depends = ["site-outline"]
+run = """
+if [ ! -d web/node_modules ]; then echo "web/node_modules absent — skipping browser tests (mise run site-install)"; exit 0; fi
+cd web && npm run --silent test:e2e
+"""
+
 [tasks.site]
-description = "Lint, test, build and check the outline of the web layer."
-depends = ["site-lint", "site-test", "site-outline"]
+description = "Lint, test, build and check the web layer in a browser."
+depends = ["site-lint", "site-test", "site-browser"]
 
 # ── ci ────────────────────────────────────────────────────────────────────
 # The local equivalent of what .github/workflows/ci.yml runs. It ran `graph-check`
@@ -372,6 +383,5 @@ if [ ! -f web/package.json ]; then
 fi
 mise run site-lint
 mise run site-test
-mise run site-build
-mise run site-outline
+mise run site-browser
 """

@@ -31,7 +31,7 @@
 //   undated        the missing-status ink, which belongs to no era on purpose.
 
 import { Deck, WebMercatorViewport } from '@deck.gl/core'
-import type { FeatureCollection, Geometry } from 'geojson'
+import { createGeographyLoader, type Collection, type FeatureProps, type GeometryName } from '../lib/map-geography'
 // `PathLayer` and nothing from `@deck.gl/geo-layers`. `TripsLayer` lives there, its whole
 // purpose is to animate a position along a path over time, and that is exactly the tween
 // `an-animation-asserts-continuity` refuses — it would draw the storm at a position, at a
@@ -80,20 +80,6 @@ import { column, tableFor, type AtlasRecord } from '../lib/feeds'
 
 type RGBA = [number, number, number, number]
 
-interface FeatureProps {
-  GEOID: string
-  /** Stamped on at load from the file the feature came out of — see `LEVELS`. */
-  LEVEL: string
-  NAME: string
-  BASENAME?: string
-  POP100?: string
-  HU100?: string
-  AREALAND?: string
-  MTFCC?: string
-}
-
-type Collection = FeatureCollection<Geometry, FeatureProps>
-
 /**
  * How a vendored shape is addressed: its summary level, then its key.
  *
@@ -112,18 +98,6 @@ const shapeKey = (f: { properties: FeatureProps }) => `${f.properties.LEVEL}:${f
  * a comparison rather than a smear: you switch, and the little that moves is the finding.
  */
 const CHOROPLETHS = ['population', 'tracts', 'denial', 'priced'] as const
-
-const GEO = {
-  county: '/geo/county.geojson',
-  subdivisions: '/geo/county-subdivisions.geojson',
-  places: '/geo/places.geojson',
-  cdps: '/geo/census-designated-places.geojson',
-  districts: '/geo/voting-districts.geojson',
-  tracts: '/geo/census-tracts.geojson',
-  schools: '/geo/school-districts.geojson',
-  water: '/geo/linear-water.geojson',
-  arealWater: '/geo/areal-water.geojson',
-} as const
 
 /** `#2a78d6` → `[42, 120, 214, alpha]`. */
 function rgb(hex: string, alpha = 255): RGBA {
@@ -246,12 +220,6 @@ export function stackRadius(n: number): number {
   return 260 + Math.sqrt(Math.max(n, 0)) * 340
 }
 
-async function collection(url: string): Promise<Collection> {
-  const res = await fetch(url)
-  if (!res.ok) throw new Error(`${url}: HTTP ${res.status}`)
-  return (await res.json()) as Collection
-}
-
 interface Hover {
   x: number
   y: number
@@ -303,71 +271,49 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     else pendingSelection = id
   })
 
-  const [county, subdivisions, places, cdps, districts, tracts, schools, water, arealWater] =
-    await Promise.all([
-      collection(GEO.county),
-      collection(GEO.subdivisions),
-      collection(GEO.places),
-      collection(GEO.cdps),
-      collection(GEO.districts),
-      collection(GEO.tracts),
-      collection(GEO.schools),
-      collection(GEO.water),
-      collection(GEO.arealWater),
-    ])
-
+  // Only the county frame blocks the first scene. Every other file has its own lifecycle.
+  const geography = createGeographyLoader()
+  const county = await geography.load('county')
+  // Check before starting deck.gl's asynchronous device loop, so an unavailable WebGL
+  // context produces a readable fallback rather than an unhandled initialization rejection.
+  const mapCanvas = document.createElement('canvas')
+  const gl = mapCanvas.getContext('webgl2')
+  if (!gl) {
+    canvasHost.textContent = 'The map could not be drawn. Find in the atlas still provides records and reading links. Reload the page to try again.'
+    return
+  }
+  canvasHost.append(mapCanvas)
+  const emptyCollection: Collection = { type: 'FeatureCollection', features: [] }
+  let subdivisions = emptyCollection, places = emptyCollection, cdps = emptyCollection
+  let districts = emptyCollection, tracts = emptyCollection, schools = emptyCollection
+  let water = emptyCollection, arealWater = emptyCollection
   const eras = spine(records)
-
-  /**
-   * Every Census shape the site holds, by key.
-   *
-   * A polygon whose key is not in here is not a defect in the corpus — it is a shape this
-   * repository has not vendored, and the panel says so rather than dropping it. There are none
-   * today; the school districts were the last twelve and arrived with layer 12.
-   */
-  /**
-   * The summary level each file holds. Places and CDPs share one, because the Census gives them
-   * one code space; school districts have their own, which is what makes this table necessary
-   * rather than decorative — `3904752` is Beaverdam village *and* Upper Scioto Valley Local.
-   */
-  const LEVELS: [Collection, string][] = [
-    [county, 'county'],
-    [subdivisions, 'county-subdivision'],
-    [places, 'place'],
-    [cdps, 'place'],
-    [schools, 'school-district'],
-  ]
-
-  /** The level is stamped onto the feature once, here, so nothing downstream has to remember it. */
-  for (const [c, level] of LEVELS) {
-    for (const f of c.features) f.properties.LEVEL = level
-  }
-
   const shapes = new Map<string, Collection['features'][number]>()
-  for (const [c] of LEVELS) {
-    for (const f of c.features) shapes.set(shapeKey(f), f)
-  }
-  /**
-   * The county's own key. Its shape is the whole frame, so it is stroked and never filled —
-   * tinting every pixel of the county drowns the twelve townships and ten municipalities drawn
-   * inside it, and says nothing the outline was not already saying. Same argument the labels
-   * make about the county's centroid, one encoding along.
-   */
   const frameKeys = new Set(county.features.map(shapeKey))
+  let shapeSource: Collection = emptyCollection
+  let populations: number[] = [], breaks: number[] = []
+  let tractPopulations: number[] = [], tractBreaks: number[] = []
 
-  const shapeSource: Collection = {
-    type: 'FeatureCollection',
-    features: LEVELS.flatMap(([c]) => c.features),
+  const syncGeography = () => {
+    subdivisions = geography.get('subdivisions') ?? emptyCollection
+    places = geography.get('places') ?? emptyCollection
+    cdps = geography.get('cdps') ?? emptyCollection
+    districts = geography.get('districts') ?? emptyCollection
+    tracts = geography.get('tracts') ?? emptyCollection
+    schools = geography.get('schools') ?? emptyCollection
+    water = geography.get('water') ?? emptyCollection
+    arealWater = geography.get('arealWater') ?? emptyCollection
+    // Replace the collection identity so deck.gl notices newly arrived geometry.
+    shapeSource = { type: 'FeatureCollection',
+      features: [county, subdivisions, places, cdps, schools].flatMap((c) => c.features) }
+    shapes.clear()
+    for (const feature of shapeSource.features) shapes.set(shapeKey(feature), feature)
+    populations = districts.features.map((f) => number(f.properties.POP100))
+    breaks = quantileBreaks(populations, 5)
+    tractPopulations = tracts.features.map((f) => number(f.properties.POP100))
+    tractBreaks = quantileBreaks(tractPopulations, 5)
   }
-
-  const populations = districts.features.map((f) => number(f.properties.POP100))
-  const breaks = quantileBreaks(populations, 5)
-
-  // Tracts are their own choropleth, with their own breaks. Sharing the precincts' classing
-  // would put every tract in the top class — a tract holds about eight precincts' worth of
-  // people, and a scale built for one grain says nothing at the other.
-  const tractPopulations = tracts.features.map((f) => number(f.properties.POP100))
-  const tractBreaks = quantileBreaks(tractPopulations, 5)
+  syncGeography()
 
   /**
    * The corpus's two maps of one ground.
@@ -440,12 +386,6 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
    * See `.yidam/decisions/a-river-is-not-at-its-mouth.yml`.
    */
   const watercourses = courses()
-  const named = new Map<string, { properties: FeatureProps }[]>()
-  for (const f of water.features) {
-    const key = f.properties.NAME
-    if (!key) continue
-    named.set(key, [...(named.get(key) ?? []), f])
-  }
   /** One end of a watercourse, as a mark with the note the corpus attached to it. */
   interface CourseEnd extends End {
     label: string
@@ -1344,13 +1284,27 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
     distance.textContent = `${miles < 1 ? miles.toFixed(2) : miles.toFixed(1)} mi`
   }
   let cameraTimer: ReturnType<typeof setTimeout> | undefined
+  let pendingFocus: AtlasRecord | undefined
   const cameraProps = () => ({ ...state.camera!, minZoom: 0, maxZoom: 14, bearing: 0, pitch: 0 })
   const deck = new Deck({
     parent: canvasHost,
+    canvas: mapCanvas,
+    gl,
+    onLoad: () => {
+      canvasHost.querySelector('[data-map-loading]')?.remove()
+      container.dataset.mapReady = 'true'
+    },
+    onError: () => {
+      container.dataset.mapReady = 'false'
+      canvasHost.textContent = 'The map could not be drawn. Find in the atlas still provides records and reading links. Reload the page to try again.'
+    },
     viewState: cameraProps(),
     controller: { dragRotate: false, touchRotate: false },
     onViewStateChange: ({ viewState }) => {
       const camera = viewState as MapCamera
+      if (!state.camera || Math.abs(camera.longitude - state.camera.longitude) > 1e-9 ||
+          Math.abs(camera.latitude - state.camera.latitude) > 1e-9 ||
+          Math.abs(camera.zoom - state.camera.zoom) > 1e-9) pendingFocus = undefined
       state.camera = { longitude: ((camera.longitude + 180) % 360 + 360) % 360 - 180,
         latitude: camera.latitude, zoom: camera.zoom }
       deck.setProps({ viewState: cameraProps() })
@@ -1364,6 +1318,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   })
 
   const moveCamera = (camera: MapCamera) => {
+    pendingFocus = undefined
     clearTimeout(cameraTimer)
     state.camera = camera
     deck.setProps({ viewState: cameraProps() })
@@ -1380,7 +1335,10 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
       }
       return anchor.lon !== null && anchor.lat !== null ? [[anchor.lon, anchor.lat] as [number, number]] : []
     })
-    if (!positions.length) return
+    if (!positions.length) {
+      pendingFocus = record
+      return
+    }
     const frameRect = canvasHost.getBoundingClientRect()
     if (positions.length === 1) {
       moveCamera({ longitude: positions[0][0], latitude: positions[0][1], zoom: Math.max(state.camera!.zoom, 10) })
@@ -1396,6 +1354,7 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
   const selectRecord = (id: string | null, focus = false) => {
     halt()
+    pendingFocus = undefined
     state.selected = id
     setPanel(id ? 'preview' : 'closed')
     if (focus && id) {
@@ -1408,8 +1367,84 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
 
   const refresh = () => deck.setProps({ layers: layers() })
 
+  const geographyLabels: Record<GeometryName, string> = {
+    county: 'County boundary', subdivisions: 'Townships', places: 'Municipalities',
+    cdps: 'Census-designated places', schools: 'School districts', districts: 'Precincts',
+    tracts: 'Census tracts', water: 'Water lines', arealWater: 'Water areas',
+  }
+  const layerStatus = container.querySelector<HTMLElement>('[data-map-layer-status]')
+  let requiredGeography = new Set<GeometryName>()
+
+  const showGeographyStatus = () => {
+    if (!layerStatus) return
+    const waiting = [...requiredGeography].filter((name) => geography.status(name) !== 'ready')
+    layerStatus.hidden = waiting.length === 0
+    layerStatus.replaceChildren()
+    for (const name of waiting) {
+      const row = document.createElement('div')
+      const failed = geography.status(name) === 'error'
+      row.textContent = `${geographyLabels[name]}: ${failed ? 'unavailable' : 'loading…'} `
+      if (failed) {
+        const retry = document.createElement('button')
+        retry.type = 'button'
+        retry.textContent = 'Retry'
+        retry.setAttribute('aria-label', `Retry ${geographyLabels[name].toLowerCase()}`)
+        retry.addEventListener('click', () => loadGeography(name, true))
+        row.append(retry)
+      }
+      layerStatus.append(row)
+    }
+  }
+
+  const loadGeography = (name: GeometryName, retry = false) => {
+    void geography.load(name, { retry }).then(() => {
+      syncGeography()
+      if (pendingFocus && state.selected === pendingFocus.node) {
+        focusRecord(pendingFocus)
+        address()
+      }
+      // A late arrival updates the current view, never the view that started the request.
+      refresh()
+      showScale()
+    }).catch(() => {
+      // Optional geometry cannot take down the county, its records, or other layers.
+    }).finally(showGeographyStatus)
+    showGeographyStatus()
+  }
+
+  const requestGeography = () => {
+    const needed = new Set<GeometryName>()
+    if (state.ground.has('subdivisions')) needed.add('subdivisions')
+    if (state.ground.has('municipalities')) { needed.add('places'); needed.add('cdps') }
+    if (state.ground.has('schools')) needed.add('schools')
+    if (state.ground.has('water')) { needed.add('water'); needed.add('arealWater') }
+    if (state.ground.has('population')) needed.add('districts')
+    if (['tracts', 'denial', 'priced'].some((key) => state.ground.has(key))) needed.add('tracts')
+
+    // Corpus polygons need their geometry even when its neutral base layer is switched off.
+    // Use the same time and placement filters as the scene, and keep the selected record readable.
+    const look = view(state.year, state.grain, eras, { generous: state.generous, hops: state.hops })
+    const visible = [...drawn(records, look), ...(state.undated ? undrawn(records, look) : [])]
+    const selected = state.selected ? byNode.get(state.selected) : undefined
+    if (selected) visible.push(selected)
+    for (const record of visible) {
+      for (const anchor of record.anchors) {
+        if (!anchor.geoid) continue
+        if (anchor.level === 'county-subdivision') needed.add('subdivisions')
+        if (anchor.level === 'place') { needed.add('places'); needed.add('cdps') }
+        if (anchor.level === 'school-district') needed.add('schools')
+      }
+    }
+    requiredGeography = needed
+    for (const name of needed) {
+      if (geography.status(name) === 'idle') loadGeography(name)
+    }
+    showGeographyStatus()
+  }
+
   /** Everything the year touches, without writing the URL. */
   const paint = () => {
+    requestGeography()
     showScale()
     readouts()
     refresh()
@@ -1448,8 +1483,11 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
           ? ({ label: 'People per voting district', breaks, values: populations } as const)
           : null
 
-    if (scale) scale.hidden = grain === null
-    if (!grain || !legend) return
+    const ready = shown || state.ground.has('tracts')
+      ? geography.status('tracts') === 'ready'
+      : geography.status('districts') === 'ready'
+    if (scale) scale.hidden = grain === null || !ready
+    if (!grain || !legend || !ready) return
     if (scaleTitle) scaleTitle.textContent = grain.label
 
     const p = palette()
@@ -1785,8 +1823,6 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   update('replace')
   showDistance()
   new ResizeObserver(showDistance).observe(canvasHost)
-  canvasHost.querySelector('[data-map-loading]')?.remove()
-  container.dataset.mapReady = 'true'
   if (pendingSelection) handleSelection(pendingSelection)
 }
 

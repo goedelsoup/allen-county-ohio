@@ -171,4 +171,128 @@ test.describe('map workspace', () => {
     await expect(page).toHaveURL(/\/entry\/place\/lima/)
     await expect(page.locator('h1')).toHaveText('Lima')
   })
+
+  test('county and records are usable while water is still loading', async ({ page }) => {
+    let release!: () => void
+    const delayed = new Promise<void>((resolve) => { release = resolve })
+    await page.route('**/geo/linear-water.geojson', async (route) => {
+      await delayed
+      await route.continue()
+    })
+    try {
+      await page.goto('/')
+      await waitForMapOutcome(page)
+      await expect(page.locator('[data-map-layer-status]')).toContainText('Water lines: loading')
+      await searchLimaAndShow(page)
+      await expect(page.locator('[data-selected-heading]')).toHaveText('Lima')
+    } finally {
+      release()
+    }
+    await expect(page.locator('[data-map-layer-status]')).toBeHidden()
+  })
+
+  test('measure geography loads on demand, recovers independently, and is cached', async ({ page }) => {
+    let precinctRequests = 0
+    let tractRequests = 0
+    await page.route('**/geo/voting-districts.geojson', async (route) => {
+      precinctRequests++
+      if (precinctRequests === 1) await route.fulfill({ status: 503, body: 'Unavailable' })
+      else await route.continue()
+    })
+    page.on('request', (request) => {
+      if (request.url().endsWith('/geo/census-tracts.geojson')) tractRequests++
+    })
+    await page.goto('/')
+    await waitForMapOutcome(page)
+    await expect(page.locator('[data-map-layer-status]')).toBeHidden()
+    expect(precinctRequests).toBe(0)
+    expect(tractRequests).toBe(0)
+    await page.locator('.layer-menu > summary').click()
+    await page.locator('[data-map-measure]').selectOption('population')
+    await expect(page.getByRole('button', { name: 'Retry precincts' })).toBeVisible()
+    await expect(page.locator('[data-map-scale]')).toBeHidden()
+    await waitForMapOutcome(page)
+    await page.getByRole('button', { name: 'Retry precincts' }).click()
+    await expect(page.locator('[data-map-scale]')).toBeVisible()
+    await expect(page.locator('[data-map-legend]')).not.toContainText('Infinity')
+    await page.locator('[data-map-measure]').selectOption('tracts')
+    await expect(page.locator('[data-map-layer-status]')).toBeHidden()
+    await expect(page.locator('[data-map-scale-title]')).toHaveText('People per census tract')
+    await page.locator('[data-map-measure]').selectOption('population')
+    await expect(page.locator('[data-map-scale-title]')).toHaveText('People per voting district')
+    expect(precinctRequests).toBe(2)
+    expect(tractRequests).toBe(1)
+  })
+
+  test('a late measure response respects the current layer and browser history', async ({ page }) => {
+    let release!: () => void
+    const delayed = new Promise<void>((resolve) => { release = resolve })
+    let requests = 0
+    await page.route('**/geo/voting-districts.geojson', async (route) => {
+      requests++
+      await delayed
+      await route.continue()
+    })
+    await page.goto('/?layers=population')
+    await waitForMapOutcome(page)
+    await page.locator('.layer-menu > summary').click()
+    await page.locator('[data-map-measure]').selectOption('')
+    release()
+    await expect(page.locator('[data-map-layer-status]')).toBeHidden()
+    await expect(page.locator('[data-map-scale]')).toBeHidden()
+    await page.goBack()
+    await expect(page.locator('[data-map-measure]')).toHaveValue('population')
+    await expect(page.locator('[data-map-scale]')).toBeVisible()
+    expect(requests).toBe(1)
+  })
+
+  test('local discovery survives an unavailable WebGL context', async ({ page }) => {
+    await page.addInitScript(() => {
+      const original = HTMLCanvasElement.prototype.getContext
+      HTMLCanvasElement.prototype.getContext = function (this: HTMLCanvasElement, type: string, ...args: unknown[]) {
+        if (type.includes('webgl')) return null
+        return original.call(this, type, ...args)
+      } as typeof original
+    })
+    await page.goto('/')
+    await expect(page.locator('[data-map-canvas]')).toContainText('map could not be drawn')
+    await page.locator('.search-drawer > summary').click()
+    await page.locator('[data-atlas-search-input]').fill('Lima')
+    await page.locator('[data-atlas-search-results] a').first().click()
+    await expect(page.locator('h1')).toHaveText('Lima')
+  })
+
+  for (const moveAfterSelection of [false, true]) {
+    test(`pending polygon focus ${moveAfterSelection ? 'yields to later camera movement' : 'completes when its shape arrives'}`, async ({ page }) => {
+      let release!: () => void
+      const delayed = new Promise<void>((resolve) => { release = resolve })
+      await page.route('**/geo/places.geojson', async (route) => {
+        await delayed
+        await route.continue()
+      })
+      try {
+        await page.goto('/')
+        await waitForMapOutcome(page)
+        const initialZoom = Number(new URL(page.url()).searchParams.get('zoom'))
+        await page.locator('.search-drawer > summary').click()
+        await page.locator('[data-atlas-search-input]').fill('City of Lima')
+        await page.locator('.atlas-search-result').filter({
+          has: page.getByRole('link', { name: 'City of Lima', exact: true }),
+        }).locator('.atlas-search-select').click()
+        await expect(page.locator('[data-selected-heading]')).toHaveText('City of Lima')
+        if (moveAfterSelection) await page.locator('[data-map-action="zoom-in"]').click()
+        const beforeArrival = new URL(page.url()).searchParams
+        release()
+        await expect(page.locator('[data-map-layer-status]')).toBeHidden()
+        const afterArrival = new URL(page.url()).searchParams
+        if (moveAfterSelection) {
+          for (const key of ['lon', 'lat', 'zoom']) expect(afterArrival.get(key)).toBe(beforeArrival.get(key))
+        } else {
+          expect(Number(afterArrival.get('zoom'))).toBeGreaterThan(initialZoom)
+        }
+      } finally {
+        release()
+      }
+    })
+  }
 })

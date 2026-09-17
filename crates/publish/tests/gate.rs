@@ -182,3 +182,17 @@ fn both_gates_run_the_same_cargo_steps() {
     assert!(mise.contains("RUSTDOCFLAGS=\"-D warnings\""));
     assert!(ci.contains("RUSTDOCFLAGS: -D warnings"));
 }
+
+#[test]
+fn both_gates_run_browser_journeys_on_the_built_site() {
+    let mise = read("mise.toml");
+    let ci = read(".github/workflows/ci.yml");
+    let playwright = read("web/playwright.config.ts");
+
+    assert!(mise.contains("mise run site-browser"));
+    assert!(mise.contains("depends = [\"site-outline\"]"));
+    assert!(ci.contains("npx playwright install --with-deps chromium"));
+    assert!(ci.contains("npm run test:e2e"));
+    assert!(ci.contains("actions/upload-artifact@v4"));
+    assert!(playwright.contains("npm run preview -- --host 127.0.0.1 --port 4321"));
+}

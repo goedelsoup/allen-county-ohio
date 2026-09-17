@@ -522,3 +522,15 @@ jobs:
       # how a repository comes to pass the gate its own README tells it to run
       # and fail the build on the next push.
       - run: npm run outline
+      # Playwright exercises the built static site through Astro preview. Install the
+      # browser and its system libraries here; the package version pins Chromium.
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - name: Upload browser failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-failures
+          path: web/test-results/
+          if-no-files-found: ignore
+          retention-days: 7
