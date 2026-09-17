@@ -70,17 +70,25 @@ Map links now carry `lon`, `lat`, and `zoom` alongside the existing time, layer,
 parameters. Deliberate selections add browser-history entries; continuous gestures replace
 their current frame. Back, article return, and Share view preserve that context.
 
-Browser regression journeys run separately from the current composite gate:
+The county frame loads first. Other geography loads independently when a visible layer or
+published record needs it; precinct and tract measures wait until selected. Successful responses
+are cached for the session. An unavailable optional layer offers its own retry, and a missing
+map canvas leaves local search and reading links usable. Choropleth legends wait for their
+geometry so an unfinished request cannot display an empty classification.
+
+Browser regression journeys run in GitHub CI and in `mise run ci`, against the built static site.
+Install Chromium once if you do not have Chrome on macOS:
 
 ```
-cd web
-npx playwright install chromium   # once; installed Chrome is also supported on macOS
-npm run test:e2e
+cd web && npx playwright install chromium
+cd ..
+mise run site-browser             # builds, checks the outline, then runs browser journeys
 ```
 
 These cover the workspace, local discovery, camera restoration, article return, filter conflicts,
-and unavailable geography. Progressive layer loading, browser CI integration, and reader studies
-remain tracked in [the foundations task](https://github.com/goedelsoup/allen-county-ohio/issues/194).
+slow and unavailable geography, independent retry, and unavailable WebGL. CI retains browser
+failure artifacts for seven days. Phone performance budgets and reader studies remain tracked in
+[the foundations task](https://github.com/goedelsoup/allen-county-ohio/issues/194).
 
 ## The two things this file said to settle first
 

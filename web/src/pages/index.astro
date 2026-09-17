@@ -112,6 +112,7 @@ const reading = readingByNode(ARTICLES)
     <div class="map-shell">
       <div class="canvas" data-map-canvas><span data-map-loading>Loading the county map…</span></div>
       <div class="tooltip" data-map-tooltip hidden></div>
+      <div class="layer-status" data-map-layer-status role="status" aria-live="polite" hidden></div>
 
       <div class="map-tools" aria-label="Map tools">
         <details class="search-drawer">
@@ -600,7 +601,7 @@ const reading = readingByNode(ARTICLES)
         console.error(err)
         const host = shell.querySelector('[data-map-canvas]')
         // Say so on the page. A map that silently renders nothing reads as a slow map.
-        if (host) host.textContent = 'The boundary layers could not be loaded.'
+        if (host) host.textContent = 'The county boundary could not be loaded. Find in the atlas still provides records and reading links. Reload the page to try again.'
       })
     }
   </script>
@@ -689,6 +690,29 @@ const reading = readingByNode(ARTICLES)
       pointer-events: none;
       z-index: 2;
     }
+    .layer-status {
+      position: absolute;
+      top: calc(var(--space-4) + 2.8rem);
+      right: var(--space-4);
+      z-index: 1;
+      max-width: min(12rem, 45%);
+      max-height: calc(100% - 12rem);
+      overflow-y: auto;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      background: var(--surface-card);
+      color: var(--text-muted);
+      font-size: var(--size-micro);
+    }
+    .layer-status :global(button) {
+      color: var(--text-strong);
+      background: var(--surface-card);
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-sm);
+      font: inherit;
+      min-height: 2rem;
+      cursor: pointer;
+    }
     .layer-menu,
     .search-drawer,
     .map-actions,
@@ -719,6 +743,10 @@ const reading = readingByNode(ARTICLES)
       cursor: pointer;
       font: var(--type-eyebrow);
       line-height: 2.25rem;
+    }
+    .search-drawer[open],
+    .layer-menu[open] {
+      z-index: 3;
     }
     .search-drawer :global(.atlas-search) {
       max-height: min(30rem, calc(100vh - 12rem));

@@ -174,7 +174,12 @@ jobs:
       # reproduce and passes on a README that is wrong. See finding 7 in
       # `.yidam/decisions/upstream-findings.yml`; `crates/publish/tests/gate.rs` keeps this step.
       - name: Fetch the branches the status block counts
-        run: git fetch --no-tags --prune origin '+refs/heads/*:refs/remotes/origin/*'
+        run: |
+          git fetch --no-tags --prune origin '+refs/heads/*:refs/remotes/origin/*'
+          # The pinned CLI tests phase ancestry against local main. A detached PR checkout
+          # has origin/main only, so it otherwise reports merged phases as still active.
+          # Set the baseline ref without changing the checked-out PR merge or its files.
+          git update-ref refs/heads/main refs/remotes/origin/main
 
       # Build the same yidam this repo was vendored from. `.yidam.toml` records the
       # commit (see VERSIONING.md, Layer 1); pinning to it means the gate cannot
@@ -522,3 +527,15 @@ jobs:
       # how a repository comes to pass the gate its own README tells it to run
       # and fail the build on the next push.
       - run: npm run outline
+      # Playwright exercises the built static site through Astro preview. Install the
+      # browser and its system libraries here; the package version pins Chromium.
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - name: Upload browser failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-failures
+          path: web/test-results/
+          if-no-files-found: ignore
+          retention-days: 7

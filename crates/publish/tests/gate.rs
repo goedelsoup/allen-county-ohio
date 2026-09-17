@@ -150,6 +150,10 @@ fn ci_fetches_the_branches_the_status_block_counts() {
     // redundant beside `fetch-depth: 0`, which is exactly why it is pinned here.
     let ci = read(".github/workflows/ci.yml");
     assert!(
+        ci.contains("git update-ref refs/heads/main refs/remotes/origin/main"),
+        "detached PR checkouts need the pinned CLI's local main baseline to recognize settled phases"
+    );
+    assert!(
         ci.contains("+refs/heads/*:refs/remotes/origin/*"),
         "the corpus job must fetch every branch head, or `yidam status` counts only what the \
          checkout happens to hold — see finding 7 in .yidam/decisions/upstream-findings.yml"
@@ -181,4 +185,18 @@ fn both_gates_run_the_same_cargo_steps() {
     assert!(ci.contains("cargo clippy --all-targets -- -D warnings"));
     assert!(mise.contains("RUSTDOCFLAGS=\"-D warnings\""));
     assert!(ci.contains("RUSTDOCFLAGS: -D warnings"));
+}
+
+#[test]
+fn both_gates_run_browser_journeys_on_the_built_site() {
+    let mise = read("mise.toml");
+    let ci = read(".github/workflows/ci.yml");
+    let playwright = read("web/playwright.config.ts");
+
+    assert!(mise.contains("mise run site-browser"));
+    assert!(mise.contains("depends = [\"site-outline\"]"));
+    assert!(ci.contains("npx playwright install --with-deps chromium"));
+    assert!(ci.contains("npm run test:e2e"));
+    assert!(ci.contains("actions/upload-artifact@v4"));
+    assert!(playwright.contains("npm run preview -- --host 127.0.0.1 --port 4321"));
 }
