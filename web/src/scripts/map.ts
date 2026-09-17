@@ -1289,7 +1289,6 @@ export async function renderMap(container: HTMLElement, records: AtlasRecord[]):
   const deck = new Deck({
     parent: canvasHost,
     canvas: mapCanvas,
-    gl,
     onLoad: () => {
       canvasHost.querySelector('[data-map-loading]')?.remove()
       container.dataset.mapReady = 'true'

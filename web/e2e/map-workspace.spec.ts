@@ -5,6 +5,12 @@ const map = '[data-map]'
 async function waitForMapOutcome(page: import('@playwright/test').Page): Promise<void> {
   await expect(page.locator(map)).toHaveAttribute('data-map-ready', 'true')
   await expect(page.locator('[data-map-canvas] canvas')).toBeVisible()
+  // Supplying a WebGL context can disable deck.gl's automatic drawing-buffer resize.
+  // A CSS-sized 300×150 buffer still looks like a canvas but stretches and crops the county.
+  await expect.poll(() => page.locator('[data-map-canvas] canvas').evaluate((element) => {
+    const canvas = element as HTMLCanvasElement
+    return canvas.width >= canvas.clientWidth && canvas.height >= canvas.clientHeight
+  })).toBe(true)
 }
 
 async function searchLimaAndShow(page: import('@playwright/test').Page): Promise<void> {
