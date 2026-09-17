@@ -13,6 +13,7 @@ interface Props {
 
 const { title, lede, bare = false } = Astro.props
 const here = Astro.url.pathname.replace(/\/$/, '') || '/'
+const isMap = here === MAP.href
 
 const SITE = 'Allen County, Ohio'
 // The home page is already called what the site is called; appending it reads as a stutter.
@@ -56,7 +57,7 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
 
     <div class="head-rule"></div>
 
-    <header class="masthead">
+    <header class:list={['masthead', { 'masthead-map': isMap }]}>
       <div class="masthead-inner">
         {/*
           The wordmark is the map's link, and that is the whole of the rearrangement.
@@ -132,7 +133,7 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
       </div>
     </header>
 
-    <main id="main">
+    <main id="main" class:list={{ 'map-main': isMap }}>
       {
         !bare && (
           <div class="page-head">
@@ -188,6 +189,24 @@ const documentTitle = title === SITE ? SITE : `${title} · ${SITE}`
         max-width: var(--width-content);
         margin: 0 auto;
         padding: var(--space-8) var(--gutter-fluid) var(--space-7);
+      }
+      /* The map is the front door. Its header leaves the map enough first-screen room to act
+         like one, while every reading page keeps the longer editorial masthead. */
+      .masthead-map .masthead-inner {
+        padding-top: var(--space-5);
+        padding-bottom: var(--space-4);
+      }
+      .masthead-map .wordmark-name {
+        font-size: var(--size-display-s);
+      }
+      .masthead-map .wordmark-tags {
+        margin-top: var(--space-2);
+      }
+      .masthead-map .nav-inner a {
+        padding-block: var(--space-3);
+      }
+      main.map-main {
+        padding-top: var(--space-4);
       }
       .wordmark {
         color: var(--text-strong);

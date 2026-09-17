@@ -59,6 +59,29 @@ mise run site-dev         # localhost:4321
 mise run site             # lint, test, build — what CI runs
 ```
 
+The map workspace is being developed through
+[the UX roadmap](https://github.com/goedelsoup/allen-county-ohio/issues/189).
+Its local search reads published record labels and the article registry; it remains usable
+when geography cannot load. A selected record opens a desktop inspector or mobile sheet,
+with related reading and an explicit action when the current time or placement filters hide
+it. The mobile sheet keeps the year control above it.
+
+Map links now carry `lon`, `lat`, and `zoom` alongside the existing time, layer, and selection
+parameters. Deliberate selections add browser-history entries; continuous gestures replace
+their current frame. Back, article return, and Share view preserve that context.
+
+Browser regression journeys run separately from the current composite gate:
+
+```
+cd web
+npx playwright install chromium   # once; installed Chrome is also supported on macOS
+npm run test:e2e
+```
+
+These cover the workspace, local discovery, camera restoration, article return, filter conflicts,
+and unavailable geography. Progressive layer loading, browser CI integration, and reader studies
+remain tracked in [the foundations task](https://github.com/goedelsoup/allen-county-ohio/issues/194).
+
 ## The two things this file said to settle first
 
 They were settled before a page existed, which is why this section is longer than the one

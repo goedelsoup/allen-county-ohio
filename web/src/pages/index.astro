@@ -16,10 +16,13 @@
 // says what it means.
 
 import Base from '../layouts/Base.astro'
+import AtlasSearch from '../components/AtlasSearch.astro'
 import AssertionCard from '../components/AssertionCard.astro'
 import Claim from '../components/Claim.astro'
 import StatTile from '../components/StatTile.astro'
 import { assertion, atlas, manifest, node, seriesById } from '../lib/feeds'
+import { ARTICLES } from '../lib/articles'
+import { inlineJson, readingByNode } from '../lib/map-search'
 import { SECTIONS } from '../lib/sections'
 import { extent, overlays, ribbon, spine } from '../lib/eras'
 import { containedInCounty, layerSize, unheldShapes } from '../lib/ground'
@@ -85,39 +88,87 @@ const edges = tally()
 const claims = lines()
 const watercourses = courses()
 const undrawn = Object.entries(UNDRAWN)
+const reading = readingByNode(ARTICLES)
 ---
 
 <Base
   title="Allen County, Ohio"
   lede="A county of about a hundred thousand people in the northwest quarter of the state, seated at Lima — drawn on its own ground, carrying a year. Move along the axis and the record moves with it: the townships as they are erected, the villages as they incorporate, and every figure this corpus places in the years you are standing in."
+  bare
 >
-  <div class="atlas" data-map>
+  <section class="workspace" aria-labelledby="workspace-title">
+    <header class="workspace-head">
+      <div>
+        <p class="workspace-kicker">Atlas · Allen County, Ohio</p>
+        <h1 id="workspace-title">Allen County, Ohio</h1>
+      </div>
+      <p class="workspace-lede">
+        Drawn on its own ground, carrying a year. Move along the axis and the record moves with it.
+      </p>
+      <p class="workspace-guidance">Choose a mark to inspect the record at that position.</p>
+    </header>
+
+  <div class="atlas" data-map data-panel-state="closed">
     <div class="map-shell">
-      <div class="canvas" data-map-canvas></div>
+      <div class="canvas" data-map-canvas><span data-map-loading>Loading the county map…</span></div>
       <div class="tooltip" data-map-tooltip hidden></div>
 
-      <div class="controls">
+      <div class="map-tools" aria-label="Map tools">
+        <details class="search-drawer">
+          <summary>Find in the atlas</summary>
+          <AtlasSearch />
+        </details>
+        <details class="layer-menu">
+          <summary>Layers <span aria-hidden="true">⌄</span></summary>
+          <div class="controls">
         <fieldset>
-          <legend>Ground</legend>
+          <legend>Base layers</legend>
           <label><input type="checkbox" data-layer="subdivisions" checked /> Townships</label>
           <label><input type="checkbox" data-layer="municipalities" checked /> Municipalities</label>
           <label><input type="checkbox" data-layer="water" checked /> Water</label>
           <label><input type="checkbox" data-layer="schools" /> School districts</label>
           <label><input type="checkbox" data-layer="claims" /> The {claims.length} drawn claims</label>
-          <label><input type="checkbox" data-layer="population" /> People, by precinct</label>
-          <label><input type="checkbox" data-layer="tracts" /> People, by tract</label>
-          <label><input type="checkbox" data-layer="denial" /> Mortgages denied, by tract</label>
-          <label><input type="checkbox" data-layer="priced" /> Mortgages priced high, by tract</label>
         </fieldset>
+
+        <label class="measure">
+          <span>Color the ground</span>
+          <select data-map-measure>
+            <option value="">No measure</option>
+            <option value="population">People, by precinct</option>
+            <option value="tracts">People, by tract</option>
+            <option value="denial">Mortgages denied, by tract</option>
+            <option value="priced">Mortgages priced high, by tract</option>
+          </select>
+        </label>
 
         <div class="scale" data-map-scale hidden>
           <span class="scale-title" data-map-scale-title>People per voting district</span>
           <div class="ramp" data-map-legend></div>
         </div>
+          </div>
+        </details>
+
+        <div class="map-actions" role="group" aria-label="Map view">
+          <button type="button" data-map-action="zoom-in" aria-label="Zoom in">+</button>
+          <button type="button" data-map-action="zoom-out" aria-label="Zoom out">−</button>
+          <button type="button" data-map-action="reset">Reset</button>
+        </div>
+        <div class="map-pan" role="group" aria-label="Pan map">
+          <button type="button" data-map-action="north" aria-label="Pan north">↑</button>
+          <span></span>
+          <button type="button" data-map-action="west" aria-label="Pan west">←</button>
+          <button type="button" data-map-action="south" aria-label="Pan south">↓</button>
+          <button type="button" data-map-action="east" aria-label="Pan east">→</button>
+        </div>
+        <button type="button" class="share" data-map-action="share">Share view</button>
+        <button type="button" class="inspector-trigger" data-panel-action="preview">Inspector</button>
+        <output class="map-distance" data-map-distance aria-label="Map distance"></output>
+        <p class="share-status" data-map-share-status aria-live="polite"></p>
       </div>
     </div>
 
-    <div class="axis">
+    <section class="axis" aria-label="Time">
+      <p class="axis-context">Boundaries: 2020 Census · Record window: <span data-readout="window">—</span></p>
       <div class="spine" role="group" aria-label="Era">
         {
           eras.map((era) => (
@@ -158,13 +209,13 @@ const undrawn = Object.entries(UNDRAWN)
             ))
           }
         </div>
-        <figcaption>
+        <figcaption><details><summary>How to read the timeline</summary>
           How much record each decade holds, drawn in the axis's own spacing — so the tiles above
           and the bars below line up. The {thin.length} decades before {eras[1].from} hold between
           {thinnest} and {thickest} records each; the tallest bar holds {tallest}. That shape is
           why the axis is six tiles rather than a slider: an evenly spaced control would give
           almost all of its travel to almost none of the record.
-        </figcaption>
+        </details></figcaption>
       </figure>
 
       <div class="scrub">
@@ -199,6 +250,7 @@ const undrawn = Object.entries(UNDRAWN)
         geometry throughout, which is why it fades as the years run backwards.
       </p>
 
+      <details class="period-menu"><summary>Named periods</summary>
       <div class="periods" role="group" aria-label="Periods the corpus names">
         {
           periods.map((p) => (
@@ -211,9 +263,12 @@ const undrawn = Object.entries(UNDRAWN)
           ))
         }
       </div>
-    </div>
+      </details>
+    </section>
 
-    <div class="reading">
+    <details class="reading">
+      <summary>Map settings and record reading</summary>
+      <div class="reading-inner">
       <div class="asks">
         <fieldset class="grain">
           <legend>Show</legend>
@@ -272,10 +327,22 @@ const undrawn = Object.entries(UNDRAWN)
         lines existed. The ditches fade with everything else, because a ditch is a thing somebody
         dug.
       </p>
-    </div>
+      </div>
+    </details>
 
-    <aside class="panel" data-map-panel aria-live="polite"></aside>
+    <div class="panel-shell" data-map-panel-shell aria-label="Map inspector">
+      <div class="panel-toolbar">
+        <h2 class="panel-label">Inspector</h2>
+        <div class="panel-actions">
+          <button type="button" data-panel-action="preview">Show</button>
+          <button type="button" data-panel-action="expand">Expand</button>
+          <button type="button" data-panel-action="close">Close</button>
+        </div>
+      </div>
+      <aside class="panel" data-map-panel aria-live="polite" tabindex="-1"></aside>
+    </div>
   </div>
+  </section>
 
   <section class="notes">
     <h2>How to read it</h2>
@@ -520,7 +587,8 @@ const undrawn = Object.entries(UNDRAWN)
     </ul>
   </section>
 
-  <script type="application/json" data-atlas set:html={JSON.stringify(atlas)} is:inline />
+  <script type="application/json" data-atlas set:html={inlineJson(atlas)} is:inline />
+  <script type="application/json" data-atlas-reading set:html={inlineJson(reading)} is:inline />
   <script>
     import { renderMap } from '../scripts/map'
 
@@ -538,17 +606,60 @@ const undrawn = Object.entries(UNDRAWN)
   </script>
 
   <style>
+    .workspace {
+      margin-bottom: var(--space-9);
+    }
+    .workspace-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: var(--space-6);
+      padding: var(--space-5) 0 var(--space-6);
+      border-bottom: 1px solid var(--rule-hairline);
+    }
+    .workspace-kicker {
+      margin: 0 0 var(--space-2);
+      color: var(--text-muted);
+      font: var(--type-eyebrow);
+    }
+    .workspace h1 {
+      margin: 0;
+      font: var(--weight-regular) var(--size-display-m) / 1 var(--font-display);
+      color: var(--text-strong);
+    }
+    .workspace-lede {
+      max-width: 37rem;
+      margin: 0;
+      color: var(--text-body);
+      font-size: var(--size-body-s);
+    }
+    .workspace-guidance {
+      display: none;
+      margin: 0;
+      color: var(--text-muted);
+      font-size: var(--size-body-s);
+    }
     .atlas {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+      grid-template-columns: minmax(0, 1fr) minmax(18rem, 23rem);
       grid-template-areas: 'map panel' 'axis panel' 'reading panel';
       gap: var(--space-5);
-      margin-bottom: var(--space-9);
+      position: relative;
+    }
+    .atlas[data-panel-state='closed'] {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: 'map' 'axis' 'reading';
+    }
+    .atlas[data-panel-state='closed'] .panel-shell {
+      display: none;
+    }
+    .atlas[data-panel-state='expanded'] {
+      grid-template-columns: minmax(0, 1fr) minmax(22rem, 30rem);
     }
     @media (max-width: 60rem) {
       .atlas {
         grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: 'map' 'axis' 'reading' 'panel';
+        grid-template-areas: 'map' 'axis' 'reading';
       }
     }
 
@@ -557,7 +668,7 @@ const undrawn = Object.entries(UNDRAWN)
     .map-shell {
       grid-area: map;
       position: relative;
-      height: clamp(360px, 52vh, 620px);
+      height: clamp(22rem, calc(100svh - 26rem), 46rem);
       border: 1px solid var(--rule-hairline);
       border-radius: var(--radius-md);
       background: var(--surface-card);
@@ -571,26 +682,94 @@ const undrawn = Object.entries(UNDRAWN)
       place-items: center;
       font-size: 0.875rem;
     }
-    .controls {
+    .map-tools {
       position: absolute;
-      left: 0.875rem;
-      bottom: 0.875rem;
+      inset: 0;
+      padding: var(--space-4);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .layer-menu,
+    .search-drawer,
+    .map-actions,
+    .map-pan,
+    .share {
+      pointer-events: auto;
+    }
+    .layer-menu {
+      position: absolute;
+      left: var(--space-4);
+      top: var(--space-4);
+    }
+    .search-drawer {
+      position: absolute;
+      top: calc(var(--space-4) + 2.8rem);
+      left: var(--space-4);
+      width: min(25rem, calc(100vw - 3rem));
+    }
+    .search-drawer summary {
+      width: max-content;
+      max-width: 100%;
+      min-height: 2.25rem;
+      padding: 0 var(--space-4);
+      border: 1px solid var(--rule-hairline);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface-card) 94%, transparent);
+      color: var(--text-body);
+      cursor: pointer;
+      font: var(--type-eyebrow);
+      line-height: 2.25rem;
+    }
+    .search-drawer :global(.atlas-search) {
+      max-height: min(30rem, calc(100vh - 12rem));
+      margin-top: var(--space-2);
+      overflow-y: auto;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 16%);
+    }
+    .layer-menu summary,
+    .map-actions button,
+    .map-pan button,
+    .share,
+    .panel-actions button {
+      min-height: 2.25rem;
+      border: 1px solid var(--rule-hairline);
+      background: color-mix(in srgb, var(--surface-card) 94%, transparent);
+      color: var(--text-body);
+      font: inherit;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .layer-menu summary {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: 0 var(--space-4);
+      border-radius: 999px;
+      list-style: none;
+      font-family: var(--font-smallcaps);
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+    .layer-menu summary::-webkit-details-marker { display: none; }
+    .layer-menu[open] summary { border-radius: var(--radius-md) var(--radius-md) 0 0; }
+    .controls {
+      width: min(17rem, calc(100vw - 3rem));
       display: flex;
       flex-direction: column;
-      /* Each panel sizes to its own content; stretched, the narrow one takes the wide one's
-         width and covers a corner of the county for nothing. */
       align-items: flex-start;
-      gap: 0.625rem;
-      pointer-events: none;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4) var(--space-4);
+      background: color-mix(in srgb, var(--surface-card) 94%, transparent);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--rule-hairline);
+      border-top: 0;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
     }
     .controls fieldset,
     .scale:not([hidden]) {
-      pointer-events: auto;
-      background: color-mix(in srgb, var(--surface-card) 92%, transparent);
-      backdrop-filter: blur(6px);
-      border: 1px solid var(--rule-hairline);
-      border-radius: var(--radius-md);
-      padding: 0.625rem 0.75rem;
+      width: 100%;
+      border: 0;
+      padding: 0;
       margin: 0;
       font-size: 0.8125rem;
     }
@@ -611,6 +790,98 @@ const undrawn = Object.entries(UNDRAWN)
       /* A checkbox row is a hit target; give it the height of one. */
       min-height: 1.5rem;
       cursor: pointer;
+    }
+    .measure {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      color: var(--text-muted);
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .measure select {
+      width: 100%;
+      min-height: 2rem;
+      border: 1px solid var(--rule-hairline);
+      border-radius: var(--radius-sm);
+      background: var(--surface-card);
+      color: var(--text-body);
+      font: inherit;
+      font-size: 0.8125rem;
+      letter-spacing: normal;
+      text-transform: none;
+    }
+    .map-actions {
+      position: absolute;
+      right: var(--space-4);
+      top: var(--space-4);
+      display: flex;
+    }
+    .map-actions button {
+      min-width: 2.25rem;
+      padding: 0 var(--space-3);
+      border-right-width: 0;
+    }
+    .map-actions button:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+    .map-actions button:last-child { border-right-width: 1px; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .map-pan {
+      position: absolute;
+      right: var(--space-4);
+      bottom: var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(3, 2.25rem);
+      grid-template-rows: repeat(2, 2.25rem);
+      gap: 2px;
+    }
+    .map-pan button { padding: 0; }
+    .map-pan button[data-map-action='north'] { grid-column: 2; }
+    .map-pan button[data-map-action='west'] { grid-column: 1; grid-row: 2; }
+    .map-pan button[data-map-action='south'] { grid-column: 2; grid-row: 2; }
+    .map-pan button[data-map-action='east'] { grid-column: 3; grid-row: 2; }
+    .share {
+      position: absolute;
+      left: var(--space-4);
+      bottom: var(--space-4);
+      padding: 0 var(--space-4);
+      border-radius: 999px;
+    }
+    .inspector-trigger {
+      position: absolute;
+      right: var(--space-4);
+      bottom: calc(var(--space-4) + 4.9rem);
+      pointer-events: auto;
+      min-height: 2.25rem;
+      padding: 0 var(--space-4);
+      border: 1px solid var(--rule-hairline);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface-card) 94%, transparent);
+      color: var(--text-body);
+      font: inherit;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .share-status {
+      position: absolute;
+      left: var(--space-4);
+      bottom: calc(var(--space-4) + 2.6rem);
+      max-width: 15rem;
+      margin: 0;
+      padding: 0.2rem 0.45rem;
+      background: color-mix(in srgb, var(--surface-card) 94%, transparent);
+      color: var(--text-muted);
+      font-size: 0.6875rem;
+    }
+    .map-distance {
+      position: absolute;
+      right: var(--space-4);
+      bottom: calc(var(--space-4) + 7.5rem);
+      padding: 0.2rem 0.45rem;
+      background: color-mix(in srgb, var(--surface-card) 94%, transparent);
+      color: var(--text-muted);
+      font: var(--type-data);
+      font-size: var(--size-micro);
     }
     .ramp {
       display: flex;
@@ -680,6 +951,11 @@ const undrawn = Object.entries(UNDRAWN)
       flex-direction: column;
       gap: 0.5rem;
     }
+    .axis-context {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
     .spine {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -738,13 +1014,22 @@ const undrawn = Object.entries(UNDRAWN)
     }
 
     .ribbon {
-      margin: 0.35rem 0 0;
+      margin: 0;
+      order: 3;
     }
+    .period-menu {
+      order: 4;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+    .transport-note { order: 5; }
+    .ribbon summary, .period-menu summary { cursor: pointer; }
+    .share-status:empty { display: none; }
     .bars {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 2px;
-      height: 3.25rem;
+      height: 1.25rem;
     }
     .bar-group {
       display: flex;
@@ -874,9 +1159,19 @@ const undrawn = Object.entries(UNDRAWN)
 
     .reading {
       grid-area: reading;
+      border-top: 1px solid var(--rule-hairline);
+      padding-top: var(--space-4);
+    }
+    .reading > summary {
+      cursor: pointer;
+      color: var(--text-body);
+      font: var(--type-eyebrow);
+    }
+    .reading-inner {
       display: flex;
       flex-direction: column;
       gap: 0.9rem;
+      padding-top: var(--space-4);
     }
     .asks {
       display: flex;
@@ -982,13 +1277,43 @@ const undrawn = Object.entries(UNDRAWN)
 
     /* ---- the panel ---- */
 
-    .panel {
+    .panel-shell {
       grid-area: panel;
       border: 1px solid var(--rule-hairline);
       border-radius: var(--radius-md);
       background: var(--surface-card);
-      padding: 0.85rem 1rem;
       max-height: clamp(360px, 68vh, 760px);
+      min-height: 18rem;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .panel-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--rule-hairline);
+      background: var(--surface-raised);
+    }
+    .panel-label {
+      margin: 0;
+      color: var(--text-muted);
+      font: var(--type-eyebrow);
+    }
+    .panel-actions {
+      display: flex;
+      gap: 2px;
+    }
+    .panel-actions button {
+      min-height: 1.9rem;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-sm);
+    }
+    .panel {
+      min-height: 0;
+      padding: 0.85rem 1rem;
       overflow-y: auto;
     }
     .panel :global(h3) {
@@ -1125,6 +1450,125 @@ const undrawn = Object.entries(UNDRAWN)
       font-size: var(--size-body-l);
       max-width: var(--measure-prose);
       margin-bottom: var(--space-9);
+    }
+
+    @media (max-width: 60rem) {
+      .workspace-head {
+        padding-top: 0;
+        padding-bottom: var(--space-4);
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--space-3);
+      }
+      .workspace h1 {
+        font-size: var(--size-display-s);
+      }
+      .workspace-guidance {
+        display: none;
+      }
+      .map-shell {
+        height: clamp(19rem, calc(100svh - 29rem), 34rem);
+      }
+      .spine,
+      .bars {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .spine button {
+        min-width: 0;
+      }
+      .tile-count {
+        display: none;
+      }
+      .ribbon figcaption,
+      .transport-note {
+        font-size: 0.75rem;
+      }
+      .scrub {
+        gap: var(--space-3);
+      }
+      .scrub label {
+        min-width: 0;
+      }
+      .year {
+        font-size: 1.125rem;
+      }
+      .atlas[data-panel-state='preview'],
+      .atlas[data-panel-state='expanded'] {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .atlas[data-panel-state='preview'] .panel-shell,
+      .atlas[data-panel-state='expanded'] .panel-shell {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 8;
+        max-height: none;
+        min-height: 0;
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+        box-shadow: 0 -12px 30px rgb(0 0 0 / 18%);
+      }
+      .atlas[data-panel-state='preview'] .panel-shell {
+        height: min(13rem, 44svh);
+      }
+      .atlas[data-panel-state='expanded'] .panel-shell {
+        height: min(72svh, 42rem);
+      }
+      .atlas[data-panel-state='preview'] .panel {
+        overflow: auto;
+      }
+      .atlas[data-panel-state='preview'] .scrub,
+      .atlas[data-panel-state='expanded'] .scrub {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 9;
+        margin: 0;
+        padding: var(--space-3) var(--space-4);
+        background: var(--surface-card);
+        border-top: 1px solid var(--rule-hairline);
+      }
+      .atlas[data-panel-state='preview'] .scrub {
+        bottom: min(13rem, 44svh);
+      }
+      .atlas[data-panel-state='expanded'] .scrub {
+        bottom: min(72svh, 42rem);
+      }
+      .atlas[data-panel-state='preview'] [data-panel-action='preview'],
+      .atlas[data-panel-state='expanded'] [data-panel-action='expand'] {
+        display: none;
+      }
+      .panel-toolbar {
+        flex-wrap: wrap;
+      }
+      .panel-actions button {
+        min-height: 2.25rem;
+      }
+      .map-pan {
+        transform: scale(0.9);
+        transform-origin: bottom right;
+      }
+      .search-drawer {
+        width: min(23rem, calc(100vw - 2rem));
+        left: var(--space-3);
+      }
+      .search-drawer :global(.atlas-search) {
+        max-height: min(26rem, calc(100svh - 10rem));
+      }
+      .map-distance {
+        right: calc(var(--space-4) + 0.2rem);
+        bottom: calc(var(--space-4) + 7rem);
+      }
+      .inspector-trigger {
+        right: calc(var(--space-4) + 0.3rem);
+        bottom: calc(var(--space-4) + 4.45rem);
+      }
+    }
+    @media (max-width: 25rem) {
+      .map-actions button { padding-inline: var(--space-2); }
+      .layer-menu summary {
+        padding-inline: var(--space-3);
+      }
     }
   </style>
 </Base>

@@ -1,0 +1,172 @@
+---
+// A local index over what the site already publishes: atlas labels and article titles.
+//
+// The index is assembled here, at build time, from the exported feed and the article registry.
+// It never reads the corpus, carries no prose blocks, and makes no request from the browser.
+
+import { ARTICLES } from '../lib/articles'
+import { atlas } from '../lib/feeds'
+import { buildAtlasSearchIndex, inlineJson } from '../lib/map-search'
+
+const index = buildAtlasSearchIndex(atlas, ARTICLES)
+// `set:html` keeps valid JSON intact; escaping `<` keeps a label from closing the script element.
+const encoded = inlineJson(index)
+---
+
+<section class="atlas-search" data-atlas-search-root aria-labelledby="atlas-search-title">
+  <h2 id="atlas-search-title">Find in the atlas</h2>
+  <form data-atlas-search-form role="search">
+    <label for="atlas-search-query">Place, person, office, event, or article</label>
+    <span class="atlas-search-controls">
+      <input
+        id="atlas-search-query"
+        data-atlas-search-input
+        name="q"
+        type="search"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button type="submit">Search</button>
+      <button type="button" class="quiet" data-atlas-search-clear hidden>Clear</button>
+    </span>
+  </form>
+  <p class="atlas-search-summary" data-atlas-search-summary aria-live="polite"></p>
+  <ol class="atlas-search-results" data-atlas-search-results hidden></ol>
+  <script type="application/json" data-atlas-search-index set:html={encoded} is:inline />
+</section>
+
+<script>
+  import { initAtlasSearch } from '../scripts/map-search'
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-atlas-search-root]')) {
+    initAtlasSearch(root)
+  }
+</script>
+
+<style>
+  .atlas-search {
+    padding: var(--space-6);
+    border: 1px solid var(--rule-hairline);
+    border-radius: var(--radius-md);
+    background: var(--surface-card);
+  }
+
+  h2 {
+    margin: 0 0 var(--space-4);
+    font: var(--type-section);
+    color: var(--text-strong);
+  }
+
+  form label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font: var(--type-eyebrow);
+    letter-spacing: var(--tracking-smallcaps);
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .atlas-search-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  input {
+    flex: 1 1 16rem;
+    min-width: 0;
+    min-height: 2.75rem;
+    padding: var(--pad-control-y) var(--pad-control-x);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    background: var(--surface-raised);
+    color: var(--text-strong);
+    font: var(--type-ui);
+  }
+
+  button {
+    min-height: 2.75rem;
+    padding: var(--pad-control-y) var(--pad-control-x);
+    border: 1px solid var(--rule-strong);
+    border-radius: var(--radius-sm);
+    background: var(--surface-ink);
+    color: var(--text-inverse);
+    font: var(--type-ui);
+    cursor: pointer;
+  }
+
+  button.quiet,
+  :global(.atlas-search-select) {
+    background: transparent;
+    color: var(--text-link);
+    border-color: var(--rule-hairline);
+  }
+
+  input:focus-visible,
+  button:focus-visible,
+  :global(.atlas-search-result-link:focus-visible),
+  :global(.atlas-search-select:focus-visible) {
+    outline: 2px solid var(--rule-focus);
+    outline-offset: 2px;
+  }
+
+  .atlas-search-summary {
+    min-height: 1.45em;
+    margin: var(--space-4) 0 0;
+    color: var(--text-muted);
+    font: var(--type-data);
+  }
+
+  .atlas-search-results {
+    list-style: none;
+    margin: var(--space-4) 0 0;
+    padding: 0;
+    border-top: 1px solid var(--rule-hairline);
+  }
+
+  :global(.atlas-search-result) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-5);
+    padding: var(--space-4) 0;
+    border-bottom: 1px solid var(--rule-hairline);
+  }
+
+  :global(.atlas-search-result-body),
+  :global(.atlas-search-result-meta) {
+    display: block;
+  }
+
+  :global(.atlas-search-result-link) {
+    font: var(--weight-medium) var(--size-body-s) / var(--leading-tight) var(--font-serif);
+  }
+
+  :global(.atlas-search-result-meta) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2) var(--space-4);
+    margin-top: var(--space-1);
+    color: var(--text-faint);
+    font: var(--type-data);
+    font-size: var(--size-micro);
+  }
+
+  :global(.atlas-search-select) {
+    flex: none;
+    min-height: 2.25rem;
+    padding: var(--space-2) var(--space-4);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: var(--radius-sm);
+    font: var(--type-ui);
+    cursor: pointer;
+  }
+
+  @media (width < 34rem) {
+    :global(.atlas-search-result) {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
