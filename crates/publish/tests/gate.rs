@@ -150,6 +150,10 @@ fn ci_fetches_the_branches_the_status_block_counts() {
     // redundant beside `fetch-depth: 0`, which is exactly why it is pinned here.
     let ci = read(".github/workflows/ci.yml");
     assert!(
+        ci.contains("git update-ref refs/heads/main refs/remotes/origin/main"),
+        "detached PR checkouts need the pinned CLI's local main baseline to recognize settled phases"
+    );
+    assert!(
         ci.contains("+refs/heads/*:refs/remotes/origin/*"),
         "the corpus job must fetch every branch head, or `yidam status` counts only what the \
          checkout happens to hold — see finding 7 in .yidam/decisions/upstream-findings.yml"
